@@ -172,27 +172,35 @@ exports.Prisma.BybitOrderInfoScalarFieldEnum = {
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   orderNo: 'orderNo',
-  userId: 'userId'
+  dateTime: 'dateTime',
+  originalData: 'originalData',
+  status: 'status',
+  type: 'type',
+  amount: 'amount',
+  totalPrice: 'totalPrice',
+  processed: 'processed',
+  unitPrice: 'unitPrice',
+  bybitCabinetId: 'bybitCabinetId'
 };
 
 exports.Prisma.BybitTransactionScalarFieldEnum = {
   id: 'id',
   orderNo: 'orderNo',
-  userId: 'userId',
   counterparty: 'counterparty',
   status: 'status',
-  extractedPhones: 'extractedPhones',
-  lastAttemptError: 'lastAttemptError',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   amount: 'amount',
   asset: 'asset',
   dateTime: 'dateTime',
   originalData: 'originalData',
-  processed: 'processed',
   totalPrice: 'totalPrice',
   type: 'type',
-  unitPrice: 'unitPrice'
+  unitPrice: 'unitPrice',
+  processed: 'processed',
+  extractedPhones: 'extractedPhones',
+  lastAttemptError: 'lastAttemptError'
 };
 
 exports.Prisma.CardScalarFieldEnum = {
@@ -405,7 +413,8 @@ exports.Prisma.PasswordScalarFieldEnum = {
   password: 'password',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  comment: 'comment'
+  comment: 'comment',
+  type: 'type'
 };
 
 exports.Prisma.ReportNotificationScalarFieldEnum = {
@@ -602,6 +611,124 @@ exports.Prisma.WorkSessionIdexCabinetScalarFieldEnum = {
   assignedAt: 'assignedAt'
 };
 
+exports.Prisma.BybitCabinetScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  bybitEmail: 'bybitEmail',
+  bybitApiSecret: 'bybitApiSecret',
+  bybitApiToken: 'bybitApiToken',
+  lastBybitSyncAt: 'lastBybitSyncAt',
+  lastBybitSyncStatus: 'lastBybitSyncStatus'
+};
+
+exports.Prisma.BybitClipMatchScalarFieldEnum = {
+  id: 'id',
+  idexTransactionId: 'idexTransactionId',
+  bybitTransactionId: 'bybitTransactionId',
+  timeDifference: 'timeDifference',
+  grossExpense: 'grossExpense',
+  grossIncome: 'grossIncome',
+  grossProfit: 'grossProfit',
+  profitPercentage: 'profitPercentage',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  matchBybitReportId: 'matchBybitReportId',
+  userId: 'userId'
+};
+
+exports.Prisma.BybitTransactionFromCabinetScalarFieldEnum = {
+  id: 'id',
+  orderNo: 'orderNo',
+  counterparty: 'counterparty',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  amount: 'amount',
+  asset: 'asset',
+  dateTime: 'dateTime',
+  originalData: 'originalData',
+  totalPrice: 'totalPrice',
+  type: 'type',
+  unitPrice: 'unitPrice',
+  processed: 'processed',
+  extractedPhones: 'extractedPhones',
+  lastAttemptError: 'lastAttemptError',
+  cabinetId: 'cabinetId'
+};
+
+exports.Prisma.MatchBybitReportScalarFieldEnum = {
+  id: 'id',
+  reportDate: 'reportDate',
+  totalMatches: 'totalMatches',
+  totalProfit: 'totalProfit',
+  averageProfit: 'averageProfit',
+  successRate: 'successRate',
+  timeRangeStart: 'timeRangeStart',
+  timeRangeEnd: 'timeRangeEnd',
+  notes: 'notes',
+  idexCabinets: 'idexCabinets',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+};
+
+exports.Prisma.MatchViresReportScalarFieldEnum = {
+  id: 'id',
+  reportDate: 'reportDate',
+  totalMatches: 'totalMatches',
+  totalProfit: 'totalProfit',
+  averageProfit: 'averageProfit',
+  successRate: 'successRate',
+  timeRangeStart: 'timeRangeStart',
+  timeRangeEnd: 'timeRangeEnd',
+  notes: 'notes',
+  idexCabinets: 'idexCabinets',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+};
+
+exports.Prisma.ViresCabinetScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  login: 'login',
+  password: 'password',
+  type: 'type',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  comment: 'comment',
+  userId: 'userId',
+  lastUpdate: 'lastUpdate'
+};
+
+exports.Prisma.ViresClipMatchScalarFieldEnum = {
+  id: 'id',
+  viresTransactionId: 'viresTransactionId',
+  timeDifference: 'timeDifference',
+  grossExpense: 'grossExpense',
+  grossIncome: 'grossIncome',
+  grossProfit: 'grossProfit',
+  profitPercentage: 'profitPercentage',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  matchViresReportId: 'matchViresReportId',
+  userId: 'userId',
+  bybitTransactionId: 'bybitTransactionId'
+};
+
+exports.Prisma.ViresTransactionPayinScalarFieldEnum = {
+  id: 'id',
+  cabinetId: 'cabinetId',
+  createdAt: 'createdAt',
+  sum_rub: 'sum_rub',
+  sum_usdt: 'sum_usdt',
+  card: 'card',
+  fio: 'fio',
+  bank: 'bank',
+  uuid: 'uuid'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -684,6 +811,10 @@ exports.IdexSyncOrderStatus = exports.$Enums.IdexSyncOrderStatus = {
   FAILED: 'FAILED'
 };
 
+exports.PasswordType = exports.$Enums.PasswordType = {
+  BYBIT: 'BYBIT'
+};
+
 exports.PeriodType = exports.$Enums.PeriodType = {
   TWICE_MONTH: 'TWICE_MONTH',
   THRICE_MONTH: 'THRICE_MONTH',
@@ -733,7 +864,15 @@ exports.Prisma.ModelName = {
   Transaction: 'Transaction',
   User: 'User',
   WorkSession: 'WorkSession',
-  WorkSessionIdexCabinet: 'WorkSessionIdexCabinet'
+  WorkSessionIdexCabinet: 'WorkSessionIdexCabinet',
+  BybitCabinet: 'BybitCabinet',
+  BybitClipMatch: 'BybitClipMatch',
+  BybitTransactionFromCabinet: 'BybitTransactionFromCabinet',
+  MatchBybitReport: 'MatchBybitReport',
+  MatchViresReport: 'MatchViresReport',
+  ViresCabinet: 'ViresCabinet',
+  ViresClipMatch: 'ViresClipMatch',
+  ViresTransactionPayin: 'ViresTransactionPayin'
 };
 
 /**

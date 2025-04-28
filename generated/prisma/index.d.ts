@@ -203,6 +203,46 @@ export type WorkSession = $Result.DefaultSelection<Prisma.$WorkSessionPayload>
  * 
  */
 export type WorkSessionIdexCabinet = $Result.DefaultSelection<Prisma.$WorkSessionIdexCabinetPayload>
+/**
+ * Model BybitCabinet
+ * 
+ */
+export type BybitCabinet = $Result.DefaultSelection<Prisma.$BybitCabinetPayload>
+/**
+ * Model BybitClipMatch
+ * 
+ */
+export type BybitClipMatch = $Result.DefaultSelection<Prisma.$BybitClipMatchPayload>
+/**
+ * Model BybitTransactionFromCabinet
+ * 
+ */
+export type BybitTransactionFromCabinet = $Result.DefaultSelection<Prisma.$BybitTransactionFromCabinetPayload>
+/**
+ * Model MatchBybitReport
+ * 
+ */
+export type MatchBybitReport = $Result.DefaultSelection<Prisma.$MatchBybitReportPayload>
+/**
+ * Model MatchViresReport
+ * 
+ */
+export type MatchViresReport = $Result.DefaultSelection<Prisma.$MatchViresReportPayload>
+/**
+ * Model ViresCabinet
+ * 
+ */
+export type ViresCabinet = $Result.DefaultSelection<Prisma.$ViresCabinetPayload>
+/**
+ * Model ViresClipMatch
+ * 
+ */
+export type ViresClipMatch = $Result.DefaultSelection<Prisma.$ViresClipMatchPayload>
+/**
+ * Model ViresTransactionPayin
+ * 
+ */
+export type ViresTransactionPayin = $Result.DefaultSelection<Prisma.$ViresTransactionPayinPayload>
 
 /**
  * Enums
@@ -295,6 +335,13 @@ export const UserRole: {
 
 export type UserRole = (typeof UserRole)[keyof typeof UserRole]
 
+
+export const PasswordType: {
+  BYBIT: 'BYBIT'
+};
+
+export type PasswordType = (typeof PasswordType)[keyof typeof PasswordType]
+
 }
 
 export type AuditAction = $Enums.AuditAction
@@ -328,6 +375,10 @@ export const SalarySection: typeof $Enums.SalarySection
 export type UserRole = $Enums.UserRole
 
 export const UserRole: typeof $Enums.UserRole
+
+export type PasswordType = $Enums.PasswordType
+
+export const PasswordType: typeof $Enums.PasswordType
 
 /**
  * ##  Prisma Client ʲˢ
@@ -833,6 +884,86 @@ export class PrismaClient<
     * ```
     */
   get workSessionIdexCabinet(): Prisma.WorkSessionIdexCabinetDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.bybitCabinet`: Exposes CRUD operations for the **BybitCabinet** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BybitCabinets
+    * const bybitCabinets = await prisma.bybitCabinet.findMany()
+    * ```
+    */
+  get bybitCabinet(): Prisma.BybitCabinetDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.bybitClipMatch`: Exposes CRUD operations for the **BybitClipMatch** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BybitClipMatches
+    * const bybitClipMatches = await prisma.bybitClipMatch.findMany()
+    * ```
+    */
+  get bybitClipMatch(): Prisma.BybitClipMatchDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.bybitTransactionFromCabinet`: Exposes CRUD operations for the **BybitTransactionFromCabinet** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BybitTransactionFromCabinets
+    * const bybitTransactionFromCabinets = await prisma.bybitTransactionFromCabinet.findMany()
+    * ```
+    */
+  get bybitTransactionFromCabinet(): Prisma.BybitTransactionFromCabinetDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.matchBybitReport`: Exposes CRUD operations for the **MatchBybitReport** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more MatchBybitReports
+    * const matchBybitReports = await prisma.matchBybitReport.findMany()
+    * ```
+    */
+  get matchBybitReport(): Prisma.MatchBybitReportDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.matchViresReport`: Exposes CRUD operations for the **MatchViresReport** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more MatchViresReports
+    * const matchViresReports = await prisma.matchViresReport.findMany()
+    * ```
+    */
+  get matchViresReport(): Prisma.MatchViresReportDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.viresCabinet`: Exposes CRUD operations for the **ViresCabinet** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ViresCabinets
+    * const viresCabinets = await prisma.viresCabinet.findMany()
+    * ```
+    */
+  get viresCabinet(): Prisma.ViresCabinetDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.viresClipMatch`: Exposes CRUD operations for the **ViresClipMatch** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ViresClipMatches
+    * const viresClipMatches = await prisma.viresClipMatch.findMany()
+    * ```
+    */
+  get viresClipMatch(): Prisma.ViresClipMatchDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.viresTransactionPayin`: Exposes CRUD operations for the **ViresTransactionPayin** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ViresTransactionPayins
+    * const viresTransactionPayins = await prisma.viresTransactionPayin.findMany()
+    * ```
+    */
+  get viresTransactionPayin(): Prisma.ViresTransactionPayinDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -1310,7 +1441,15 @@ export namespace Prisma {
     Transaction: 'Transaction',
     User: 'User',
     WorkSession: 'WorkSession',
-    WorkSessionIdexCabinet: 'WorkSessionIdexCabinet'
+    WorkSessionIdexCabinet: 'WorkSessionIdexCabinet',
+    BybitCabinet: 'BybitCabinet',
+    BybitClipMatch: 'BybitClipMatch',
+    BybitTransactionFromCabinet: 'BybitTransactionFromCabinet',
+    MatchBybitReport: 'MatchBybitReport',
+    MatchViresReport: 'MatchViresReport',
+    ViresCabinet: 'ViresCabinet',
+    ViresClipMatch: 'ViresClipMatch',
+    ViresTransactionPayin: 'ViresTransactionPayin'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1329,7 +1468,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "admin" | "auditLog" | "balanceEntry" | "bybitMatch" | "bybitOrderInfo" | "bybitTransaction" | "card" | "cardBalance" | "cardPouring" | "cell" | "column" | "comment" | "filter" | "finRow" | "finRowExpense" | "idexCabinet" | "idexSyncOrder" | "idexTransaction" | "importExport" | "match" | "notificationSettings" | "password" | "reportNotification" | "row" | "salary" | "salaryDebt" | "salaryEarning" | "salaryPayment" | "section" | "shiftReport" | "shiftReportExpense" | "systemSettings" | "table" | "telegramAccount" | "transaction" | "user" | "workSession" | "workSessionIdexCabinet"
+      modelProps: "admin" | "auditLog" | "balanceEntry" | "bybitMatch" | "bybitOrderInfo" | "bybitTransaction" | "card" | "cardBalance" | "cardPouring" | "cell" | "column" | "comment" | "filter" | "finRow" | "finRowExpense" | "idexCabinet" | "idexSyncOrder" | "idexTransaction" | "importExport" | "match" | "notificationSettings" | "password" | "reportNotification" | "row" | "salary" | "salaryDebt" | "salaryEarning" | "salaryPayment" | "section" | "shiftReport" | "shiftReportExpense" | "systemSettings" | "table" | "telegramAccount" | "transaction" | "user" | "workSession" | "workSessionIdexCabinet" | "bybitCabinet" | "bybitClipMatch" | "bybitTransactionFromCabinet" | "matchBybitReport" | "matchViresReport" | "viresCabinet" | "viresClipMatch" | "viresTransactionPayin"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -4145,6 +4284,598 @@ export namespace Prisma {
           }
         }
       }
+      BybitCabinet: {
+        payload: Prisma.$BybitCabinetPayload<ExtArgs>
+        fields: Prisma.BybitCabinetFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BybitCabinetFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BybitCabinetFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>
+          }
+          findFirst: {
+            args: Prisma.BybitCabinetFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BybitCabinetFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>
+          }
+          findMany: {
+            args: Prisma.BybitCabinetFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>[]
+          }
+          create: {
+            args: Prisma.BybitCabinetCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>
+          }
+          createMany: {
+            args: Prisma.BybitCabinetCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BybitCabinetCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>[]
+          }
+          delete: {
+            args: Prisma.BybitCabinetDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>
+          }
+          update: {
+            args: Prisma.BybitCabinetUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>
+          }
+          deleteMany: {
+            args: Prisma.BybitCabinetDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BybitCabinetUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BybitCabinetUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>[]
+          }
+          upsert: {
+            args: Prisma.BybitCabinetUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitCabinetPayload>
+          }
+          aggregate: {
+            args: Prisma.BybitCabinetAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBybitCabinet>
+          }
+          groupBy: {
+            args: Prisma.BybitCabinetGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BybitCabinetGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BybitCabinetCountArgs<ExtArgs>
+            result: $Utils.Optional<BybitCabinetCountAggregateOutputType> | number
+          }
+        }
+      }
+      BybitClipMatch: {
+        payload: Prisma.$BybitClipMatchPayload<ExtArgs>
+        fields: Prisma.BybitClipMatchFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BybitClipMatchFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BybitClipMatchFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>
+          }
+          findFirst: {
+            args: Prisma.BybitClipMatchFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BybitClipMatchFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>
+          }
+          findMany: {
+            args: Prisma.BybitClipMatchFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>[]
+          }
+          create: {
+            args: Prisma.BybitClipMatchCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>
+          }
+          createMany: {
+            args: Prisma.BybitClipMatchCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BybitClipMatchCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>[]
+          }
+          delete: {
+            args: Prisma.BybitClipMatchDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>
+          }
+          update: {
+            args: Prisma.BybitClipMatchUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>
+          }
+          deleteMany: {
+            args: Prisma.BybitClipMatchDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BybitClipMatchUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BybitClipMatchUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>[]
+          }
+          upsert: {
+            args: Prisma.BybitClipMatchUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitClipMatchPayload>
+          }
+          aggregate: {
+            args: Prisma.BybitClipMatchAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBybitClipMatch>
+          }
+          groupBy: {
+            args: Prisma.BybitClipMatchGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BybitClipMatchGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BybitClipMatchCountArgs<ExtArgs>
+            result: $Utils.Optional<BybitClipMatchCountAggregateOutputType> | number
+          }
+        }
+      }
+      BybitTransactionFromCabinet: {
+        payload: Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>
+        fields: Prisma.BybitTransactionFromCabinetFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BybitTransactionFromCabinetFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BybitTransactionFromCabinetFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>
+          }
+          findFirst: {
+            args: Prisma.BybitTransactionFromCabinetFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BybitTransactionFromCabinetFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>
+          }
+          findMany: {
+            args: Prisma.BybitTransactionFromCabinetFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>[]
+          }
+          create: {
+            args: Prisma.BybitTransactionFromCabinetCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>
+          }
+          createMany: {
+            args: Prisma.BybitTransactionFromCabinetCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BybitTransactionFromCabinetCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>[]
+          }
+          delete: {
+            args: Prisma.BybitTransactionFromCabinetDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>
+          }
+          update: {
+            args: Prisma.BybitTransactionFromCabinetUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>
+          }
+          deleteMany: {
+            args: Prisma.BybitTransactionFromCabinetDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BybitTransactionFromCabinetUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BybitTransactionFromCabinetUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>[]
+          }
+          upsert: {
+            args: Prisma.BybitTransactionFromCabinetUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BybitTransactionFromCabinetPayload>
+          }
+          aggregate: {
+            args: Prisma.BybitTransactionFromCabinetAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBybitTransactionFromCabinet>
+          }
+          groupBy: {
+            args: Prisma.BybitTransactionFromCabinetGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BybitTransactionFromCabinetGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BybitTransactionFromCabinetCountArgs<ExtArgs>
+            result: $Utils.Optional<BybitTransactionFromCabinetCountAggregateOutputType> | number
+          }
+        }
+      }
+      MatchBybitReport: {
+        payload: Prisma.$MatchBybitReportPayload<ExtArgs>
+        fields: Prisma.MatchBybitReportFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.MatchBybitReportFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.MatchBybitReportFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>
+          }
+          findFirst: {
+            args: Prisma.MatchBybitReportFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.MatchBybitReportFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>
+          }
+          findMany: {
+            args: Prisma.MatchBybitReportFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>[]
+          }
+          create: {
+            args: Prisma.MatchBybitReportCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>
+          }
+          createMany: {
+            args: Prisma.MatchBybitReportCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.MatchBybitReportCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>[]
+          }
+          delete: {
+            args: Prisma.MatchBybitReportDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>
+          }
+          update: {
+            args: Prisma.MatchBybitReportUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>
+          }
+          deleteMany: {
+            args: Prisma.MatchBybitReportDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.MatchBybitReportUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.MatchBybitReportUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>[]
+          }
+          upsert: {
+            args: Prisma.MatchBybitReportUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchBybitReportPayload>
+          }
+          aggregate: {
+            args: Prisma.MatchBybitReportAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMatchBybitReport>
+          }
+          groupBy: {
+            args: Prisma.MatchBybitReportGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MatchBybitReportGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.MatchBybitReportCountArgs<ExtArgs>
+            result: $Utils.Optional<MatchBybitReportCountAggregateOutputType> | number
+          }
+        }
+      }
+      MatchViresReport: {
+        payload: Prisma.$MatchViresReportPayload<ExtArgs>
+        fields: Prisma.MatchViresReportFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.MatchViresReportFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.MatchViresReportFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>
+          }
+          findFirst: {
+            args: Prisma.MatchViresReportFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.MatchViresReportFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>
+          }
+          findMany: {
+            args: Prisma.MatchViresReportFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>[]
+          }
+          create: {
+            args: Prisma.MatchViresReportCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>
+          }
+          createMany: {
+            args: Prisma.MatchViresReportCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.MatchViresReportCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>[]
+          }
+          delete: {
+            args: Prisma.MatchViresReportDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>
+          }
+          update: {
+            args: Prisma.MatchViresReportUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>
+          }
+          deleteMany: {
+            args: Prisma.MatchViresReportDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.MatchViresReportUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.MatchViresReportUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>[]
+          }
+          upsert: {
+            args: Prisma.MatchViresReportUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MatchViresReportPayload>
+          }
+          aggregate: {
+            args: Prisma.MatchViresReportAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMatchViresReport>
+          }
+          groupBy: {
+            args: Prisma.MatchViresReportGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MatchViresReportGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.MatchViresReportCountArgs<ExtArgs>
+            result: $Utils.Optional<MatchViresReportCountAggregateOutputType> | number
+          }
+        }
+      }
+      ViresCabinet: {
+        payload: Prisma.$ViresCabinetPayload<ExtArgs>
+        fields: Prisma.ViresCabinetFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ViresCabinetFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ViresCabinetFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>
+          }
+          findFirst: {
+            args: Prisma.ViresCabinetFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ViresCabinetFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>
+          }
+          findMany: {
+            args: Prisma.ViresCabinetFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>[]
+          }
+          create: {
+            args: Prisma.ViresCabinetCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>
+          }
+          createMany: {
+            args: Prisma.ViresCabinetCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ViresCabinetCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>[]
+          }
+          delete: {
+            args: Prisma.ViresCabinetDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>
+          }
+          update: {
+            args: Prisma.ViresCabinetUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>
+          }
+          deleteMany: {
+            args: Prisma.ViresCabinetDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ViresCabinetUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ViresCabinetUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>[]
+          }
+          upsert: {
+            args: Prisma.ViresCabinetUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresCabinetPayload>
+          }
+          aggregate: {
+            args: Prisma.ViresCabinetAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateViresCabinet>
+          }
+          groupBy: {
+            args: Prisma.ViresCabinetGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ViresCabinetGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ViresCabinetCountArgs<ExtArgs>
+            result: $Utils.Optional<ViresCabinetCountAggregateOutputType> | number
+          }
+        }
+      }
+      ViresClipMatch: {
+        payload: Prisma.$ViresClipMatchPayload<ExtArgs>
+        fields: Prisma.ViresClipMatchFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ViresClipMatchFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ViresClipMatchFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>
+          }
+          findFirst: {
+            args: Prisma.ViresClipMatchFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ViresClipMatchFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>
+          }
+          findMany: {
+            args: Prisma.ViresClipMatchFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>[]
+          }
+          create: {
+            args: Prisma.ViresClipMatchCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>
+          }
+          createMany: {
+            args: Prisma.ViresClipMatchCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ViresClipMatchCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>[]
+          }
+          delete: {
+            args: Prisma.ViresClipMatchDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>
+          }
+          update: {
+            args: Prisma.ViresClipMatchUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>
+          }
+          deleteMany: {
+            args: Prisma.ViresClipMatchDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ViresClipMatchUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ViresClipMatchUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>[]
+          }
+          upsert: {
+            args: Prisma.ViresClipMatchUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresClipMatchPayload>
+          }
+          aggregate: {
+            args: Prisma.ViresClipMatchAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateViresClipMatch>
+          }
+          groupBy: {
+            args: Prisma.ViresClipMatchGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ViresClipMatchGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ViresClipMatchCountArgs<ExtArgs>
+            result: $Utils.Optional<ViresClipMatchCountAggregateOutputType> | number
+          }
+        }
+      }
+      ViresTransactionPayin: {
+        payload: Prisma.$ViresTransactionPayinPayload<ExtArgs>
+        fields: Prisma.ViresTransactionPayinFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ViresTransactionPayinFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ViresTransactionPayinFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>
+          }
+          findFirst: {
+            args: Prisma.ViresTransactionPayinFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ViresTransactionPayinFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>
+          }
+          findMany: {
+            args: Prisma.ViresTransactionPayinFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>[]
+          }
+          create: {
+            args: Prisma.ViresTransactionPayinCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>
+          }
+          createMany: {
+            args: Prisma.ViresTransactionPayinCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ViresTransactionPayinCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>[]
+          }
+          delete: {
+            args: Prisma.ViresTransactionPayinDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>
+          }
+          update: {
+            args: Prisma.ViresTransactionPayinUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>
+          }
+          deleteMany: {
+            args: Prisma.ViresTransactionPayinDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ViresTransactionPayinUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ViresTransactionPayinUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>[]
+          }
+          upsert: {
+            args: Prisma.ViresTransactionPayinUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ViresTransactionPayinPayload>
+          }
+          aggregate: {
+            args: Prisma.ViresTransactionPayinAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateViresTransactionPayin>
+          }
+          groupBy: {
+            args: Prisma.ViresTransactionPayinGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ViresTransactionPayinGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ViresTransactionPayinCountArgs<ExtArgs>
+            result: $Utils.Optional<ViresTransactionPayinCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -4267,6 +4998,14 @@ export namespace Prisma {
     user?: UserOmit
     workSession?: WorkSessionOmit
     workSessionIdexCabinet?: WorkSessionIdexCabinetOmit
+    bybitCabinet?: BybitCabinetOmit
+    bybitClipMatch?: BybitClipMatchOmit
+    bybitTransactionFromCabinet?: BybitTransactionFromCabinetOmit
+    matchBybitReport?: MatchBybitReportOmit
+    matchViresReport?: MatchViresReportOmit
+    viresCabinet?: ViresCabinetOmit
+    viresClipMatch?: ViresClipMatchOmit
+    viresTransactionPayin?: ViresTransactionPayinOmit
   }
 
   /* Types for Logging */
@@ -4654,11 +5393,13 @@ export namespace Prisma {
    */
 
   export type IdexTransactionCountOutputType = {
+    BybitClipMatch: number
     BybitMatch: number
     Match: number
   }
 
   export type IdexTransactionCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitClipMatch?: boolean | IdexTransactionCountOutputTypeCountBybitClipMatchArgs
     BybitMatch?: boolean | IdexTransactionCountOutputTypeCountBybitMatchArgs
     Match?: boolean | IdexTransactionCountOutputTypeCountMatchArgs
   }
@@ -4672,6 +5413,13 @@ export namespace Prisma {
      * Select specific fields to fetch from the IdexTransactionCountOutputType
      */
     select?: IdexTransactionCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * IdexTransactionCountOutputType without action
+   */
+  export type IdexTransactionCountOutputTypeCountBybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitClipMatchWhereInput
   }
 
   /**
@@ -4935,21 +5683,29 @@ export namespace Prisma {
 
   export type UserCountOutputType = {
     AuditLog: number
-    BybitOrderInfo: number
+    BybitClipMatch: number
     BybitTransaction: number
+    MatchBybitReport: number
+    MatchViresReport: number
     ReportNotification: number
     TelegramAccount: number
     Transaction: number
+    ViresCabinet: number
+    ViresClipMatch: number
     WorkSession: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     AuditLog?: boolean | UserCountOutputTypeCountAuditLogArgs
-    BybitOrderInfo?: boolean | UserCountOutputTypeCountBybitOrderInfoArgs
+    BybitClipMatch?: boolean | UserCountOutputTypeCountBybitClipMatchArgs
     BybitTransaction?: boolean | UserCountOutputTypeCountBybitTransactionArgs
+    MatchBybitReport?: boolean | UserCountOutputTypeCountMatchBybitReportArgs
+    MatchViresReport?: boolean | UserCountOutputTypeCountMatchViresReportArgs
     ReportNotification?: boolean | UserCountOutputTypeCountReportNotificationArgs
     TelegramAccount?: boolean | UserCountOutputTypeCountTelegramAccountArgs
     Transaction?: boolean | UserCountOutputTypeCountTransactionArgs
+    ViresCabinet?: boolean | UserCountOutputTypeCountViresCabinetArgs
+    ViresClipMatch?: boolean | UserCountOutputTypeCountViresClipMatchArgs
     WorkSession?: boolean | UserCountOutputTypeCountWorkSessionArgs
   }
 
@@ -4974,8 +5730,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountBybitOrderInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BybitOrderInfoWhereInput
+  export type UserCountOutputTypeCountBybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitClipMatchWhereInput
   }
 
   /**
@@ -4983,6 +5739,20 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountBybitTransactionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: BybitTransactionWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountMatchBybitReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MatchBybitReportWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountMatchViresReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MatchViresReportWhereInput
   }
 
   /**
@@ -5004,6 +5774,20 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountTransactionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: TransactionWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountViresCabinetArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresCabinetWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresClipMatchWhereInput
   }
 
   /**
@@ -5042,6 +5826,210 @@ export namespace Prisma {
    */
   export type WorkSessionCountOutputTypeCountWorkSessionIdexCabinetArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: WorkSessionIdexCabinetWhereInput
+  }
+
+
+  /**
+   * Count Type BybitCabinetCountOutputType
+   */
+
+  export type BybitCabinetCountOutputType = {
+    BybitTransactionFromCabinet: number
+    BybitOrderInfo: number
+  }
+
+  export type BybitCabinetCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitCabinetCountOutputTypeCountBybitTransactionFromCabinetArgs
+    BybitOrderInfo?: boolean | BybitCabinetCountOutputTypeCountBybitOrderInfoArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * BybitCabinetCountOutputType without action
+   */
+  export type BybitCabinetCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinetCountOutputType
+     */
+    select?: BybitCabinetCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * BybitCabinetCountOutputType without action
+   */
+  export type BybitCabinetCountOutputTypeCountBybitTransactionFromCabinetArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitTransactionFromCabinetWhereInput
+  }
+
+  /**
+   * BybitCabinetCountOutputType without action
+   */
+  export type BybitCabinetCountOutputTypeCountBybitOrderInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitOrderInfoWhereInput
+  }
+
+
+  /**
+   * Count Type BybitTransactionFromCabinetCountOutputType
+   */
+
+  export type BybitTransactionFromCabinetCountOutputType = {
+    BybitClipMatch: number
+    ViresClipMatch: number
+  }
+
+  export type BybitTransactionFromCabinetCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitClipMatch?: boolean | BybitTransactionFromCabinetCountOutputTypeCountBybitClipMatchArgs
+    ViresClipMatch?: boolean | BybitTransactionFromCabinetCountOutputTypeCountViresClipMatchArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * BybitTransactionFromCabinetCountOutputType without action
+   */
+  export type BybitTransactionFromCabinetCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinetCountOutputType
+     */
+    select?: BybitTransactionFromCabinetCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * BybitTransactionFromCabinetCountOutputType without action
+   */
+  export type BybitTransactionFromCabinetCountOutputTypeCountBybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitClipMatchWhereInput
+  }
+
+  /**
+   * BybitTransactionFromCabinetCountOutputType without action
+   */
+  export type BybitTransactionFromCabinetCountOutputTypeCountViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresClipMatchWhereInput
+  }
+
+
+  /**
+   * Count Type MatchBybitReportCountOutputType
+   */
+
+  export type MatchBybitReportCountOutputType = {
+    BybitClipMatch: number
+  }
+
+  export type MatchBybitReportCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitClipMatch?: boolean | MatchBybitReportCountOutputTypeCountBybitClipMatchArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * MatchBybitReportCountOutputType without action
+   */
+  export type MatchBybitReportCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReportCountOutputType
+     */
+    select?: MatchBybitReportCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * MatchBybitReportCountOutputType without action
+   */
+  export type MatchBybitReportCountOutputTypeCountBybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitClipMatchWhereInput
+  }
+
+
+  /**
+   * Count Type MatchViresReportCountOutputType
+   */
+
+  export type MatchViresReportCountOutputType = {
+    ViresClipMatch: number
+  }
+
+  export type MatchViresReportCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ViresClipMatch?: boolean | MatchViresReportCountOutputTypeCountViresClipMatchArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * MatchViresReportCountOutputType without action
+   */
+  export type MatchViresReportCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReportCountOutputType
+     */
+    select?: MatchViresReportCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * MatchViresReportCountOutputType without action
+   */
+  export type MatchViresReportCountOutputTypeCountViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresClipMatchWhereInput
+  }
+
+
+  /**
+   * Count Type ViresCabinetCountOutputType
+   */
+
+  export type ViresCabinetCountOutputType = {
+    ViresTransactionPayin: number
+  }
+
+  export type ViresCabinetCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ViresTransactionPayin?: boolean | ViresCabinetCountOutputTypeCountViresTransactionPayinArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ViresCabinetCountOutputType without action
+   */
+  export type ViresCabinetCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinetCountOutputType
+     */
+    select?: ViresCabinetCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ViresCabinetCountOutputType without action
+   */
+  export type ViresCabinetCountOutputTypeCountViresTransactionPayinArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresTransactionPayinWhereInput
+  }
+
+
+  /**
+   * Count Type ViresTransactionPayinCountOutputType
+   */
+
+  export type ViresTransactionPayinCountOutputType = {
+    ViresClipMatch: number
+  }
+
+  export type ViresTransactionPayinCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ViresClipMatch?: boolean | ViresTransactionPayinCountOutputTypeCountViresClipMatchArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ViresTransactionPayinCountOutputType without action
+   */
+  export type ViresTransactionPayinCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayinCountOutputType
+     */
+    select?: ViresTransactionPayinCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ViresTransactionPayinCountOutputType without action
+   */
+  export type ViresTransactionPayinCountOutputTypeCountViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresClipMatchWhereInput
   }
 
 
@@ -9659,12 +10647,18 @@ export namespace Prisma {
 
   export type BybitOrderInfoAvgAggregateOutputType = {
     id: number | null
-    userId: number | null
+    amount: number | null
+    totalPrice: number | null
+    unitPrice: number | null
+    bybitCabinetId: number | null
   }
 
   export type BybitOrderInfoSumAggregateOutputType = {
     id: number | null
-    userId: number | null
+    amount: number | null
+    totalPrice: number | null
+    unitPrice: number | null
+    bybitCabinetId: number | null
   }
 
   export type BybitOrderInfoMinAggregateOutputType = {
@@ -9672,7 +10666,14 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     orderNo: string | null
-    userId: number | null
+    dateTime: Date | null
+    status: string | null
+    type: string | null
+    amount: number | null
+    totalPrice: number | null
+    processed: boolean | null
+    unitPrice: number | null
+    bybitCabinetId: number | null
   }
 
   export type BybitOrderInfoMaxAggregateOutputType = {
@@ -9680,7 +10681,14 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     orderNo: string | null
-    userId: number | null
+    dateTime: Date | null
+    status: string | null
+    type: string | null
+    amount: number | null
+    totalPrice: number | null
+    processed: boolean | null
+    unitPrice: number | null
+    bybitCabinetId: number | null
   }
 
   export type BybitOrderInfoCountAggregateOutputType = {
@@ -9689,19 +10697,33 @@ export namespace Prisma {
     createdAt: number
     updatedAt: number
     orderNo: number
-    userId: number
+    dateTime: number
+    originalData: number
+    status: number
+    type: number
+    amount: number
+    totalPrice: number
+    processed: number
+    unitPrice: number
+    bybitCabinetId: number
     _all: number
   }
 
 
   export type BybitOrderInfoAvgAggregateInputType = {
     id?: true
-    userId?: true
+    amount?: true
+    totalPrice?: true
+    unitPrice?: true
+    bybitCabinetId?: true
   }
 
   export type BybitOrderInfoSumAggregateInputType = {
     id?: true
-    userId?: true
+    amount?: true
+    totalPrice?: true
+    unitPrice?: true
+    bybitCabinetId?: true
   }
 
   export type BybitOrderInfoMinAggregateInputType = {
@@ -9709,7 +10731,14 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     orderNo?: true
-    userId?: true
+    dateTime?: true
+    status?: true
+    type?: true
+    amount?: true
+    totalPrice?: true
+    processed?: true
+    unitPrice?: true
+    bybitCabinetId?: true
   }
 
   export type BybitOrderInfoMaxAggregateInputType = {
@@ -9717,7 +10746,14 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     orderNo?: true
-    userId?: true
+    dateTime?: true
+    status?: true
+    type?: true
+    amount?: true
+    totalPrice?: true
+    processed?: true
+    unitPrice?: true
+    bybitCabinetId?: true
   }
 
   export type BybitOrderInfoCountAggregateInputType = {
@@ -9726,7 +10762,15 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     orderNo?: true
-    userId?: true
+    dateTime?: true
+    originalData?: true
+    status?: true
+    type?: true
+    amount?: true
+    totalPrice?: true
+    processed?: true
+    unitPrice?: true
+    bybitCabinetId?: true
     _all?: true
   }
 
@@ -9822,7 +10866,15 @@ export namespace Prisma {
     createdAt: Date
     updatedAt: Date
     orderNo: string
-    userId: number
+    dateTime: Date
+    originalData: JsonValue | null
+    status: string
+    type: string
+    amount: number
+    totalPrice: number
+    processed: boolean
+    unitPrice: number
+    bybitCabinetId: number
     _count: BybitOrderInfoCountAggregateOutputType | null
     _avg: BybitOrderInfoAvgAggregateOutputType | null
     _sum: BybitOrderInfoSumAggregateOutputType | null
@@ -9850,8 +10902,16 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     orderNo?: boolean
-    userId?: boolean
-    User?: boolean | UserDefaultArgs<ExtArgs>
+    dateTime?: boolean
+    originalData?: boolean
+    status?: boolean
+    type?: boolean
+    amount?: boolean
+    totalPrice?: boolean
+    processed?: boolean
+    unitPrice?: boolean
+    bybitCabinetId?: boolean
+    cabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["bybitOrderInfo"]>
 
   export type BybitOrderInfoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -9860,8 +10920,16 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     orderNo?: boolean
-    userId?: boolean
-    User?: boolean | UserDefaultArgs<ExtArgs>
+    dateTime?: boolean
+    originalData?: boolean
+    status?: boolean
+    type?: boolean
+    amount?: boolean
+    totalPrice?: boolean
+    processed?: boolean
+    unitPrice?: boolean
+    bybitCabinetId?: boolean
+    cabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["bybitOrderInfo"]>
 
   export type BybitOrderInfoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -9870,8 +10938,16 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     orderNo?: boolean
-    userId?: boolean
-    User?: boolean | UserDefaultArgs<ExtArgs>
+    dateTime?: boolean
+    originalData?: boolean
+    status?: boolean
+    type?: boolean
+    amount?: boolean
+    totalPrice?: boolean
+    processed?: boolean
+    unitPrice?: boolean
+    bybitCabinetId?: boolean
+    cabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["bybitOrderInfo"]>
 
   export type BybitOrderInfoSelectScalar = {
@@ -9880,24 +10956,32 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     orderNo?: boolean
-    userId?: boolean
+    dateTime?: boolean
+    originalData?: boolean
+    status?: boolean
+    type?: boolean
+    amount?: boolean
+    totalPrice?: boolean
+    processed?: boolean
+    unitPrice?: boolean
+    bybitCabinetId?: boolean
   }
 
-  export type BybitOrderInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "phoneNumbers" | "createdAt" | "updatedAt" | "orderNo" | "userId", ExtArgs["result"]["bybitOrderInfo"]>
+  export type BybitOrderInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "phoneNumbers" | "createdAt" | "updatedAt" | "orderNo" | "dateTime" | "originalData" | "status" | "type" | "amount" | "totalPrice" | "processed" | "unitPrice" | "bybitCabinetId", ExtArgs["result"]["bybitOrderInfo"]>
   export type BybitOrderInfoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    User?: boolean | UserDefaultArgs<ExtArgs>
+    cabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
   }
   export type BybitOrderInfoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    User?: boolean | UserDefaultArgs<ExtArgs>
+    cabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
   }
   export type BybitOrderInfoIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    User?: boolean | UserDefaultArgs<ExtArgs>
+    cabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
   }
 
   export type $BybitOrderInfoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "BybitOrderInfo"
     objects: {
-      User: Prisma.$UserPayload<ExtArgs>
+      cabinet: Prisma.$BybitCabinetPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -9905,7 +10989,15 @@ export namespace Prisma {
       createdAt: Date
       updatedAt: Date
       orderNo: string
-      userId: number
+      dateTime: Date
+      originalData: Prisma.JsonValue | null
+      status: string
+      type: string
+      amount: number
+      totalPrice: number
+      processed: boolean
+      unitPrice: number
+      bybitCabinetId: number
     }, ExtArgs["result"]["bybitOrderInfo"]>
     composites: {}
   }
@@ -10300,7 +11392,7 @@ export namespace Prisma {
    */
   export interface Prisma__BybitOrderInfoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    cabinet<T extends BybitCabinetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BybitCabinetDefaultArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -10335,7 +11427,15 @@ export namespace Prisma {
     readonly createdAt: FieldRef<"BybitOrderInfo", 'DateTime'>
     readonly updatedAt: FieldRef<"BybitOrderInfo", 'DateTime'>
     readonly orderNo: FieldRef<"BybitOrderInfo", 'String'>
-    readonly userId: FieldRef<"BybitOrderInfo", 'Int'>
+    readonly dateTime: FieldRef<"BybitOrderInfo", 'DateTime'>
+    readonly originalData: FieldRef<"BybitOrderInfo", 'Json'>
+    readonly status: FieldRef<"BybitOrderInfo", 'String'>
+    readonly type: FieldRef<"BybitOrderInfo", 'String'>
+    readonly amount: FieldRef<"BybitOrderInfo", 'Int'>
+    readonly totalPrice: FieldRef<"BybitOrderInfo", 'Float'>
+    readonly processed: FieldRef<"BybitOrderInfo", 'Boolean'>
+    readonly unitPrice: FieldRef<"BybitOrderInfo", 'Float'>
+    readonly bybitCabinetId: FieldRef<"BybitOrderInfo", 'Int'>
   }
     
 
@@ -10781,57 +11881,57 @@ export namespace Prisma {
   export type BybitTransactionMinAggregateOutputType = {
     id: number | null
     orderNo: string | null
-    userId: number | null
     counterparty: string | null
     status: string | null
-    lastAttemptError: string | null
+    userId: number | null
     createdAt: Date | null
     updatedAt: Date | null
     amount: number | null
     asset: string | null
     dateTime: Date | null
-    processed: boolean | null
     totalPrice: number | null
     type: string | null
     unitPrice: number | null
+    processed: boolean | null
+    lastAttemptError: string | null
   }
 
   export type BybitTransactionMaxAggregateOutputType = {
     id: number | null
     orderNo: string | null
-    userId: number | null
     counterparty: string | null
     status: string | null
-    lastAttemptError: string | null
+    userId: number | null
     createdAt: Date | null
     updatedAt: Date | null
     amount: number | null
     asset: string | null
     dateTime: Date | null
-    processed: boolean | null
     totalPrice: number | null
     type: string | null
     unitPrice: number | null
+    processed: boolean | null
+    lastAttemptError: string | null
   }
 
   export type BybitTransactionCountAggregateOutputType = {
     id: number
     orderNo: number
-    userId: number
     counterparty: number
     status: number
-    extractedPhones: number
-    lastAttemptError: number
+    userId: number
     createdAt: number
     updatedAt: number
     amount: number
     asset: number
     dateTime: number
     originalData: number
-    processed: number
     totalPrice: number
     type: number
     unitPrice: number
+    processed: number
+    extractedPhones: number
+    lastAttemptError: number
     _all: number
   }
 
@@ -10855,57 +11955,57 @@ export namespace Prisma {
   export type BybitTransactionMinAggregateInputType = {
     id?: true
     orderNo?: true
-    userId?: true
     counterparty?: true
     status?: true
-    lastAttemptError?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     amount?: true
     asset?: true
     dateTime?: true
-    processed?: true
     totalPrice?: true
     type?: true
     unitPrice?: true
+    processed?: true
+    lastAttemptError?: true
   }
 
   export type BybitTransactionMaxAggregateInputType = {
     id?: true
     orderNo?: true
-    userId?: true
     counterparty?: true
     status?: true
-    lastAttemptError?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     amount?: true
     asset?: true
     dateTime?: true
-    processed?: true
     totalPrice?: true
     type?: true
     unitPrice?: true
+    processed?: true
+    lastAttemptError?: true
   }
 
   export type BybitTransactionCountAggregateInputType = {
     id?: true
     orderNo?: true
-    userId?: true
     counterparty?: true
     status?: true
-    extractedPhones?: true
-    lastAttemptError?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     amount?: true
     asset?: true
     dateTime?: true
     originalData?: true
-    processed?: true
     totalPrice?: true
     type?: true
     unitPrice?: true
+    processed?: true
+    extractedPhones?: true
+    lastAttemptError?: true
     _all?: true
   }
 
@@ -10998,21 +12098,21 @@ export namespace Prisma {
   export type BybitTransactionGroupByOutputType = {
     id: number
     orderNo: string
-    userId: number
     counterparty: string | null
     status: string
-    extractedPhones: string[]
-    lastAttemptError: string | null
+    userId: number
     createdAt: Date
     updatedAt: Date
     amount: number
     asset: string
     dateTime: Date
     originalData: JsonValue | null
-    processed: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed: boolean
+    extractedPhones: string[]
+    lastAttemptError: string | null
     _count: BybitTransactionCountAggregateOutputType | null
     _avg: BybitTransactionAvgAggregateOutputType | null
     _sum: BybitTransactionSumAggregateOutputType | null
@@ -11037,21 +12137,21 @@ export namespace Prisma {
   export type BybitTransactionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     orderNo?: boolean
-    userId?: boolean
     counterparty?: boolean
     status?: boolean
-    extractedPhones?: boolean
-    lastAttemptError?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     amount?: boolean
     asset?: boolean
     dateTime?: boolean
     originalData?: boolean
-    processed?: boolean
     totalPrice?: boolean
     type?: boolean
     unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
     bybitMatch?: boolean | BybitTransaction$bybitMatchArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | BybitTransactionCountOutputTypeDefaultArgs<ExtArgs>
@@ -11060,66 +12160,66 @@ export namespace Prisma {
   export type BybitTransactionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     orderNo?: boolean
-    userId?: boolean
     counterparty?: boolean
     status?: boolean
-    extractedPhones?: boolean
-    lastAttemptError?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     amount?: boolean
     asset?: boolean
     dateTime?: boolean
     originalData?: boolean
-    processed?: boolean
     totalPrice?: boolean
     type?: boolean
     unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["bybitTransaction"]>
 
   export type BybitTransactionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     orderNo?: boolean
-    userId?: boolean
     counterparty?: boolean
     status?: boolean
-    extractedPhones?: boolean
-    lastAttemptError?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     amount?: boolean
     asset?: boolean
     dateTime?: boolean
     originalData?: boolean
-    processed?: boolean
     totalPrice?: boolean
     type?: boolean
     unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["bybitTransaction"]>
 
   export type BybitTransactionSelectScalar = {
     id?: boolean
     orderNo?: boolean
-    userId?: boolean
     counterparty?: boolean
     status?: boolean
-    extractedPhones?: boolean
-    lastAttemptError?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     amount?: boolean
     asset?: boolean
     dateTime?: boolean
     originalData?: boolean
-    processed?: boolean
     totalPrice?: boolean
     type?: boolean
     unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
   }
 
-  export type BybitTransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "orderNo" | "userId" | "counterparty" | "status" | "extractedPhones" | "lastAttemptError" | "createdAt" | "updatedAt" | "amount" | "asset" | "dateTime" | "originalData" | "processed" | "totalPrice" | "type" | "unitPrice", ExtArgs["result"]["bybitTransaction"]>
+  export type BybitTransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "orderNo" | "counterparty" | "status" | "userId" | "createdAt" | "updatedAt" | "amount" | "asset" | "dateTime" | "originalData" | "totalPrice" | "type" | "unitPrice" | "processed" | "extractedPhones" | "lastAttemptError", ExtArgs["result"]["bybitTransaction"]>
   export type BybitTransactionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     bybitMatch?: boolean | BybitTransaction$bybitMatchArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -11141,21 +12241,21 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       orderNo: string
-      userId: number
       counterparty: string | null
       status: string
-      extractedPhones: string[]
-      lastAttemptError: string | null
+      userId: number
       createdAt: Date
       updatedAt: Date
       amount: number
       asset: string
       dateTime: Date
       originalData: Prisma.JsonValue | null
-      processed: boolean
       totalPrice: number
       type: string
       unitPrice: number
+      processed: boolean
+      extractedPhones: string[]
+      lastAttemptError: string | null
     }, ExtArgs["result"]["bybitTransaction"]>
     composites: {}
   }
@@ -11583,21 +12683,21 @@ export namespace Prisma {
   interface BybitTransactionFieldRefs {
     readonly id: FieldRef<"BybitTransaction", 'Int'>
     readonly orderNo: FieldRef<"BybitTransaction", 'String'>
-    readonly userId: FieldRef<"BybitTransaction", 'Int'>
     readonly counterparty: FieldRef<"BybitTransaction", 'String'>
     readonly status: FieldRef<"BybitTransaction", 'String'>
-    readonly extractedPhones: FieldRef<"BybitTransaction", 'String[]'>
-    readonly lastAttemptError: FieldRef<"BybitTransaction", 'String'>
+    readonly userId: FieldRef<"BybitTransaction", 'Int'>
     readonly createdAt: FieldRef<"BybitTransaction", 'DateTime'>
     readonly updatedAt: FieldRef<"BybitTransaction", 'DateTime'>
     readonly amount: FieldRef<"BybitTransaction", 'Float'>
     readonly asset: FieldRef<"BybitTransaction", 'String'>
     readonly dateTime: FieldRef<"BybitTransaction", 'DateTime'>
     readonly originalData: FieldRef<"BybitTransaction", 'Json'>
-    readonly processed: FieldRef<"BybitTransaction", 'Boolean'>
     readonly totalPrice: FieldRef<"BybitTransaction", 'Float'>
     readonly type: FieldRef<"BybitTransaction", 'String'>
     readonly unitPrice: FieldRef<"BybitTransaction", 'Float'>
+    readonly processed: FieldRef<"BybitTransaction", 'Boolean'>
+    readonly extractedPhones: FieldRef<"BybitTransaction", 'String[]'>
+    readonly lastAttemptError: FieldRef<"BybitTransaction", 'String'>
   }
     
 
@@ -25679,6 +26779,7 @@ export namespace Prisma {
     cabinetId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    BybitClipMatch?: boolean | IdexTransaction$BybitClipMatchArgs<ExtArgs>
     BybitMatch?: boolean | IdexTransaction$BybitMatchArgs<ExtArgs>
     IdexCabinet?: boolean | IdexCabinetDefaultArgs<ExtArgs>
     Match?: boolean | IdexTransaction$MatchArgs<ExtArgs>
@@ -25743,6 +26844,7 @@ export namespace Prisma {
 
   export type IdexTransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "externalId" | "paymentMethodId" | "wallet" | "amount" | "total" | "status" | "approvedAt" | "expiredAt" | "createdAtExternal" | "updatedAtExternal" | "extraData" | "cabinetId" | "createdAt" | "updatedAt", ExtArgs["result"]["idexTransaction"]>
   export type IdexTransactionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitClipMatch?: boolean | IdexTransaction$BybitClipMatchArgs<ExtArgs>
     BybitMatch?: boolean | IdexTransaction$BybitMatchArgs<ExtArgs>
     IdexCabinet?: boolean | IdexCabinetDefaultArgs<ExtArgs>
     Match?: boolean | IdexTransaction$MatchArgs<ExtArgs>
@@ -25758,6 +26860,7 @@ export namespace Prisma {
   export type $IdexTransactionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "IdexTransaction"
     objects: {
+      BybitClipMatch: Prisma.$BybitClipMatchPayload<ExtArgs>[]
       BybitMatch: Prisma.$BybitMatchPayload<ExtArgs>[]
       IdexCabinet: Prisma.$IdexCabinetPayload<ExtArgs>
       Match: Prisma.$MatchPayload<ExtArgs>[]
@@ -26172,6 +27275,7 @@ export namespace Prisma {
    */
   export interface Prisma__IdexTransactionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    BybitClipMatch<T extends IdexTransaction$BybitClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, IdexTransaction$BybitClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     BybitMatch<T extends IdexTransaction$BybitMatchArgs<ExtArgs> = {}>(args?: Subset<T, IdexTransaction$BybitMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     IdexCabinet<T extends IdexCabinetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, IdexCabinetDefaultArgs<ExtArgs>>): Prisma__IdexCabinetClient<$Result.GetResult<Prisma.$IdexCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     Match<T extends IdexTransaction$MatchArgs<ExtArgs> = {}>(args?: Subset<T, IdexTransaction$MatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -26612,6 +27716,30 @@ export namespace Prisma {
      * Limit how many IdexTransactions to delete.
      */
     limit?: number
+  }
+
+  /**
+   * IdexTransaction.BybitClipMatch
+   */
+  export type IdexTransaction$BybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    where?: BybitClipMatchWhereInput
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    cursor?: BybitClipMatchWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BybitClipMatchScalarFieldEnum | BybitClipMatchScalarFieldEnum[]
   }
 
   /**
@@ -29978,6 +31106,7 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     comment: string | null
+    type: $Enums.PasswordType | null
   }
 
   export type PasswordMaxAggregateOutputType = {
@@ -29988,6 +31117,7 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     comment: string | null
+    type: $Enums.PasswordType | null
   }
 
   export type PasswordCountAggregateOutputType = {
@@ -29998,6 +31128,7 @@ export namespace Prisma {
     createdAt: number
     updatedAt: number
     comment: number
+    type: number
     _all: number
   }
 
@@ -30018,6 +31149,7 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     comment?: true
+    type?: true
   }
 
   export type PasswordMaxAggregateInputType = {
@@ -30028,6 +31160,7 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     comment?: true
+    type?: true
   }
 
   export type PasswordCountAggregateInputType = {
@@ -30038,6 +31171,7 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     comment?: true
+    type?: true
     _all?: true
   }
 
@@ -30135,6 +31269,7 @@ export namespace Prisma {
     createdAt: Date
     updatedAt: Date
     comment: string | null
+    type: $Enums.PasswordType | null
     _count: PasswordCountAggregateOutputType | null
     _avg: PasswordAvgAggregateOutputType | null
     _sum: PasswordSumAggregateOutputType | null
@@ -30164,6 +31299,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     comment?: boolean
+    type?: boolean
   }, ExtArgs["result"]["password"]>
 
   export type PasswordSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -30174,6 +31310,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     comment?: boolean
+    type?: boolean
   }, ExtArgs["result"]["password"]>
 
   export type PasswordSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -30184,6 +31321,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     comment?: boolean
+    type?: boolean
   }, ExtArgs["result"]["password"]>
 
   export type PasswordSelectScalar = {
@@ -30194,9 +31332,10 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     comment?: boolean
+    type?: boolean
   }
 
-  export type PasswordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "login" | "password" | "createdAt" | "updatedAt" | "comment", ExtArgs["result"]["password"]>
+  export type PasswordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "login" | "password" | "createdAt" | "updatedAt" | "comment" | "type", ExtArgs["result"]["password"]>
 
   export type $PasswordPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Password"
@@ -30209,6 +31348,7 @@ export namespace Prisma {
       createdAt: Date
       updatedAt: Date
       comment: string | null
+      type: $Enums.PasswordType | null
     }, ExtArgs["result"]["password"]>
     composites: {}
   }
@@ -30639,6 +31779,7 @@ export namespace Prisma {
     readonly createdAt: FieldRef<"Password", 'DateTime'>
     readonly updatedAt: FieldRef<"Password", 'DateTime'>
     readonly comment: FieldRef<"Password", 'String'>
+    readonly type: FieldRef<"Password", 'PasswordType'>
   }
     
 
@@ -46604,11 +47745,15 @@ export namespace Prisma {
     lastBybitSyncAt?: boolean
     lastBybitSyncStatus?: boolean
     AuditLog?: boolean | User$AuditLogArgs<ExtArgs>
-    BybitOrderInfo?: boolean | User$BybitOrderInfoArgs<ExtArgs>
+    BybitClipMatch?: boolean | User$BybitClipMatchArgs<ExtArgs>
     BybitTransaction?: boolean | User$BybitTransactionArgs<ExtArgs>
+    MatchBybitReport?: boolean | User$MatchBybitReportArgs<ExtArgs>
+    MatchViresReport?: boolean | User$MatchViresReportArgs<ExtArgs>
     ReportNotification?: boolean | User$ReportNotificationArgs<ExtArgs>
     TelegramAccount?: boolean | User$TelegramAccountArgs<ExtArgs>
     Transaction?: boolean | User$TransactionArgs<ExtArgs>
+    ViresCabinet?: boolean | User$ViresCabinetArgs<ExtArgs>
+    ViresClipMatch?: boolean | User$ViresClipMatchArgs<ExtArgs>
     WorkSession?: boolean | User$WorkSessionArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
@@ -46661,11 +47806,15 @@ export namespace Prisma {
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "passCode" | "isActive" | "createdAt" | "updatedAt" | "lastNotification" | "role" | "bybitApiSecret" | "bybitApiToken" | "lastBybitSyncAt" | "lastBybitSyncStatus", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     AuditLog?: boolean | User$AuditLogArgs<ExtArgs>
-    BybitOrderInfo?: boolean | User$BybitOrderInfoArgs<ExtArgs>
+    BybitClipMatch?: boolean | User$BybitClipMatchArgs<ExtArgs>
     BybitTransaction?: boolean | User$BybitTransactionArgs<ExtArgs>
+    MatchBybitReport?: boolean | User$MatchBybitReportArgs<ExtArgs>
+    MatchViresReport?: boolean | User$MatchViresReportArgs<ExtArgs>
     ReportNotification?: boolean | User$ReportNotificationArgs<ExtArgs>
     TelegramAccount?: boolean | User$TelegramAccountArgs<ExtArgs>
     Transaction?: boolean | User$TransactionArgs<ExtArgs>
+    ViresCabinet?: boolean | User$ViresCabinetArgs<ExtArgs>
+    ViresClipMatch?: boolean | User$ViresClipMatchArgs<ExtArgs>
     WorkSession?: boolean | User$WorkSessionArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -46676,11 +47825,15 @@ export namespace Prisma {
     name: "User"
     objects: {
       AuditLog: Prisma.$AuditLogPayload<ExtArgs>[]
-      BybitOrderInfo: Prisma.$BybitOrderInfoPayload<ExtArgs>[]
+      BybitClipMatch: Prisma.$BybitClipMatchPayload<ExtArgs>[]
       BybitTransaction: Prisma.$BybitTransactionPayload<ExtArgs>[]
+      MatchBybitReport: Prisma.$MatchBybitReportPayload<ExtArgs>[]
+      MatchViresReport: Prisma.$MatchViresReportPayload<ExtArgs>[]
       ReportNotification: Prisma.$ReportNotificationPayload<ExtArgs>[]
       TelegramAccount: Prisma.$TelegramAccountPayload<ExtArgs>[]
       Transaction: Prisma.$TransactionPayload<ExtArgs>[]
+      ViresCabinet: Prisma.$ViresCabinetPayload<ExtArgs>[]
+      ViresClipMatch: Prisma.$ViresClipMatchPayload<ExtArgs>[]
       WorkSession: Prisma.$WorkSessionPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -47091,11 +48244,15 @@ export namespace Prisma {
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     AuditLog<T extends User$AuditLogArgs<ExtArgs> = {}>(args?: Subset<T, User$AuditLogArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    BybitOrderInfo<T extends User$BybitOrderInfoArgs<ExtArgs> = {}>(args?: Subset<T, User$BybitOrderInfoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitOrderInfoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    BybitClipMatch<T extends User$BybitClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, User$BybitClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     BybitTransaction<T extends User$BybitTransactionArgs<ExtArgs> = {}>(args?: Subset<T, User$BybitTransactionArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitTransactionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    MatchBybitReport<T extends User$MatchBybitReportArgs<ExtArgs> = {}>(args?: Subset<T, User$MatchBybitReportArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    MatchViresReport<T extends User$MatchViresReportArgs<ExtArgs> = {}>(args?: Subset<T, User$MatchViresReportArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     ReportNotification<T extends User$ReportNotificationArgs<ExtArgs> = {}>(args?: Subset<T, User$ReportNotificationArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportNotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     TelegramAccount<T extends User$TelegramAccountArgs<ExtArgs> = {}>(args?: Subset<T, User$TelegramAccountArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TelegramAccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Transaction<T extends User$TransactionArgs<ExtArgs> = {}>(args?: Subset<T, User$TransactionArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ViresCabinet<T extends User$ViresCabinetArgs<ExtArgs> = {}>(args?: Subset<T, User$ViresCabinetArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ViresClipMatch<T extends User$ViresClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, User$ViresClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     WorkSession<T extends User$WorkSessionArgs<ExtArgs> = {}>(args?: Subset<T, User$WorkSessionArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkSessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -47550,27 +48707,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.BybitOrderInfo
+   * User.BybitClipMatch
    */
-  export type User$BybitOrderInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$BybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the BybitOrderInfo
+     * Select specific fields to fetch from the BybitClipMatch
      */
-    select?: BybitOrderInfoSelect<ExtArgs> | null
+    select?: BybitClipMatchSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the BybitOrderInfo
+     * Omit specific fields from the BybitClipMatch
      */
-    omit?: BybitOrderInfoOmit<ExtArgs> | null
+    omit?: BybitClipMatchOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BybitOrderInfoInclude<ExtArgs> | null
-    where?: BybitOrderInfoWhereInput
-    orderBy?: BybitOrderInfoOrderByWithRelationInput | BybitOrderInfoOrderByWithRelationInput[]
-    cursor?: BybitOrderInfoWhereUniqueInput
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    where?: BybitClipMatchWhereInput
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    cursor?: BybitClipMatchWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: BybitOrderInfoScalarFieldEnum | BybitOrderInfoScalarFieldEnum[]
+    distinct?: BybitClipMatchScalarFieldEnum | BybitClipMatchScalarFieldEnum[]
   }
 
   /**
@@ -47595,6 +48752,54 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: BybitTransactionScalarFieldEnum | BybitTransactionScalarFieldEnum[]
+  }
+
+  /**
+   * User.MatchBybitReport
+   */
+  export type User$MatchBybitReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    where?: MatchBybitReportWhereInput
+    orderBy?: MatchBybitReportOrderByWithRelationInput | MatchBybitReportOrderByWithRelationInput[]
+    cursor?: MatchBybitReportWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: MatchBybitReportScalarFieldEnum | MatchBybitReportScalarFieldEnum[]
+  }
+
+  /**
+   * User.MatchViresReport
+   */
+  export type User$MatchViresReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    where?: MatchViresReportWhereInput
+    orderBy?: MatchViresReportOrderByWithRelationInput | MatchViresReportOrderByWithRelationInput[]
+    cursor?: MatchViresReportWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: MatchViresReportScalarFieldEnum | MatchViresReportScalarFieldEnum[]
   }
 
   /**
@@ -47667,6 +48872,54 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: TransactionScalarFieldEnum | TransactionScalarFieldEnum[]
+  }
+
+  /**
+   * User.ViresCabinet
+   */
+  export type User$ViresCabinetArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    where?: ViresCabinetWhereInput
+    orderBy?: ViresCabinetOrderByWithRelationInput | ViresCabinetOrderByWithRelationInput[]
+    cursor?: ViresCabinetWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ViresCabinetScalarFieldEnum | ViresCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * User.ViresClipMatch
+   */
+  export type User$ViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    where?: ViresClipMatchWhereInput
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    cursor?: ViresClipMatchWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ViresClipMatchScalarFieldEnum | ViresClipMatchScalarFieldEnum[]
   }
 
   /**
@@ -49973,6 +51226,9876 @@ export namespace Prisma {
 
 
   /**
+   * Model BybitCabinet
+   */
+
+  export type AggregateBybitCabinet = {
+    _count: BybitCabinetCountAggregateOutputType | null
+    _avg: BybitCabinetAvgAggregateOutputType | null
+    _sum: BybitCabinetSumAggregateOutputType | null
+    _min: BybitCabinetMinAggregateOutputType | null
+    _max: BybitCabinetMaxAggregateOutputType | null
+  }
+
+  export type BybitCabinetAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BybitCabinetSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BybitCabinetMinAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    bybitEmail: string | null
+    bybitApiSecret: string | null
+    bybitApiToken: string | null
+    lastBybitSyncAt: Date | null
+    lastBybitSyncStatus: string | null
+  }
+
+  export type BybitCabinetMaxAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    bybitEmail: string | null
+    bybitApiSecret: string | null
+    bybitApiToken: string | null
+    lastBybitSyncAt: Date | null
+    lastBybitSyncStatus: string | null
+  }
+
+  export type BybitCabinetCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    bybitEmail: number
+    bybitApiSecret: number
+    bybitApiToken: number
+    lastBybitSyncAt: number
+    lastBybitSyncStatus: number
+    _all: number
+  }
+
+
+  export type BybitCabinetAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type BybitCabinetSumAggregateInputType = {
+    id?: true
+  }
+
+  export type BybitCabinetMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    bybitEmail?: true
+    bybitApiSecret?: true
+    bybitApiToken?: true
+    lastBybitSyncAt?: true
+    lastBybitSyncStatus?: true
+  }
+
+  export type BybitCabinetMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    bybitEmail?: true
+    bybitApiSecret?: true
+    bybitApiToken?: true
+    lastBybitSyncAt?: true
+    lastBybitSyncStatus?: true
+  }
+
+  export type BybitCabinetCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    bybitEmail?: true
+    bybitApiSecret?: true
+    bybitApiToken?: true
+    lastBybitSyncAt?: true
+    lastBybitSyncStatus?: true
+    _all?: true
+  }
+
+  export type BybitCabinetAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BybitCabinet to aggregate.
+     */
+    where?: BybitCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitCabinets to fetch.
+     */
+    orderBy?: BybitCabinetOrderByWithRelationInput | BybitCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BybitCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BybitCabinets
+    **/
+    _count?: true | BybitCabinetCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: BybitCabinetAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BybitCabinetSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BybitCabinetMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BybitCabinetMaxAggregateInputType
+  }
+
+  export type GetBybitCabinetAggregateType<T extends BybitCabinetAggregateArgs> = {
+        [P in keyof T & keyof AggregateBybitCabinet]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBybitCabinet[P]>
+      : GetScalarType<T[P], AggregateBybitCabinet[P]>
+  }
+
+
+
+
+  export type BybitCabinetGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitCabinetWhereInput
+    orderBy?: BybitCabinetOrderByWithAggregationInput | BybitCabinetOrderByWithAggregationInput[]
+    by: BybitCabinetScalarFieldEnum[] | BybitCabinetScalarFieldEnum
+    having?: BybitCabinetScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BybitCabinetCountAggregateInputType | true
+    _avg?: BybitCabinetAvgAggregateInputType
+    _sum?: BybitCabinetSumAggregateInputType
+    _min?: BybitCabinetMinAggregateInputType
+    _max?: BybitCabinetMaxAggregateInputType
+  }
+
+  export type BybitCabinetGroupByOutputType = {
+    id: number
+    createdAt: Date
+    updatedAt: Date
+    bybitEmail: string
+    bybitApiSecret: string | null
+    bybitApiToken: string | null
+    lastBybitSyncAt: Date | null
+    lastBybitSyncStatus: string | null
+    _count: BybitCabinetCountAggregateOutputType | null
+    _avg: BybitCabinetAvgAggregateOutputType | null
+    _sum: BybitCabinetSumAggregateOutputType | null
+    _min: BybitCabinetMinAggregateOutputType | null
+    _max: BybitCabinetMaxAggregateOutputType | null
+  }
+
+  type GetBybitCabinetGroupByPayload<T extends BybitCabinetGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BybitCabinetGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BybitCabinetGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BybitCabinetGroupByOutputType[P]>
+            : GetScalarType<T[P], BybitCabinetGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BybitCabinetSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    bybitEmail?: boolean
+    bybitApiSecret?: boolean
+    bybitApiToken?: boolean
+    lastBybitSyncAt?: boolean
+    lastBybitSyncStatus?: boolean
+    BybitTransactionFromCabinet?: boolean | BybitCabinet$BybitTransactionFromCabinetArgs<ExtArgs>
+    BybitOrderInfo?: boolean | BybitCabinet$BybitOrderInfoArgs<ExtArgs>
+    _count?: boolean | BybitCabinetCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bybitCabinet"]>
+
+  export type BybitCabinetSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    bybitEmail?: boolean
+    bybitApiSecret?: boolean
+    bybitApiToken?: boolean
+    lastBybitSyncAt?: boolean
+    lastBybitSyncStatus?: boolean
+  }, ExtArgs["result"]["bybitCabinet"]>
+
+  export type BybitCabinetSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    bybitEmail?: boolean
+    bybitApiSecret?: boolean
+    bybitApiToken?: boolean
+    lastBybitSyncAt?: boolean
+    lastBybitSyncStatus?: boolean
+  }, ExtArgs["result"]["bybitCabinet"]>
+
+  export type BybitCabinetSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    bybitEmail?: boolean
+    bybitApiSecret?: boolean
+    bybitApiToken?: boolean
+    lastBybitSyncAt?: boolean
+    lastBybitSyncStatus?: boolean
+  }
+
+  export type BybitCabinetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "bybitEmail" | "bybitApiSecret" | "bybitApiToken" | "lastBybitSyncAt" | "lastBybitSyncStatus", ExtArgs["result"]["bybitCabinet"]>
+  export type BybitCabinetInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitCabinet$BybitTransactionFromCabinetArgs<ExtArgs>
+    BybitOrderInfo?: boolean | BybitCabinet$BybitOrderInfoArgs<ExtArgs>
+    _count?: boolean | BybitCabinetCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type BybitCabinetIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type BybitCabinetIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $BybitCabinetPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BybitCabinet"
+    objects: {
+      BybitTransactionFromCabinet: Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>[]
+      BybitOrderInfo: Prisma.$BybitOrderInfoPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      createdAt: Date
+      updatedAt: Date
+      bybitEmail: string
+      bybitApiSecret: string | null
+      bybitApiToken: string | null
+      lastBybitSyncAt: Date | null
+      lastBybitSyncStatus: string | null
+    }, ExtArgs["result"]["bybitCabinet"]>
+    composites: {}
+  }
+
+  type BybitCabinetGetPayload<S extends boolean | null | undefined | BybitCabinetDefaultArgs> = $Result.GetResult<Prisma.$BybitCabinetPayload, S>
+
+  type BybitCabinetCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BybitCabinetFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BybitCabinetCountAggregateInputType | true
+    }
+
+  export interface BybitCabinetDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BybitCabinet'], meta: { name: 'BybitCabinet' } }
+    /**
+     * Find zero or one BybitCabinet that matches the filter.
+     * @param {BybitCabinetFindUniqueArgs} args - Arguments to find a BybitCabinet
+     * @example
+     * // Get one BybitCabinet
+     * const bybitCabinet = await prisma.bybitCabinet.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BybitCabinetFindUniqueArgs>(args: SelectSubset<T, BybitCabinetFindUniqueArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BybitCabinet that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BybitCabinetFindUniqueOrThrowArgs} args - Arguments to find a BybitCabinet
+     * @example
+     * // Get one BybitCabinet
+     * const bybitCabinet = await prisma.bybitCabinet.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BybitCabinetFindUniqueOrThrowArgs>(args: SelectSubset<T, BybitCabinetFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BybitCabinet that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitCabinetFindFirstArgs} args - Arguments to find a BybitCabinet
+     * @example
+     * // Get one BybitCabinet
+     * const bybitCabinet = await prisma.bybitCabinet.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BybitCabinetFindFirstArgs>(args?: SelectSubset<T, BybitCabinetFindFirstArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BybitCabinet that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitCabinetFindFirstOrThrowArgs} args - Arguments to find a BybitCabinet
+     * @example
+     * // Get one BybitCabinet
+     * const bybitCabinet = await prisma.bybitCabinet.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BybitCabinetFindFirstOrThrowArgs>(args?: SelectSubset<T, BybitCabinetFindFirstOrThrowArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BybitCabinets that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitCabinetFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BybitCabinets
+     * const bybitCabinets = await prisma.bybitCabinet.findMany()
+     * 
+     * // Get first 10 BybitCabinets
+     * const bybitCabinets = await prisma.bybitCabinet.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bybitCabinetWithIdOnly = await prisma.bybitCabinet.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BybitCabinetFindManyArgs>(args?: SelectSubset<T, BybitCabinetFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BybitCabinet.
+     * @param {BybitCabinetCreateArgs} args - Arguments to create a BybitCabinet.
+     * @example
+     * // Create one BybitCabinet
+     * const BybitCabinet = await prisma.bybitCabinet.create({
+     *   data: {
+     *     // ... data to create a BybitCabinet
+     *   }
+     * })
+     * 
+     */
+    create<T extends BybitCabinetCreateArgs>(args: SelectSubset<T, BybitCabinetCreateArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BybitCabinets.
+     * @param {BybitCabinetCreateManyArgs} args - Arguments to create many BybitCabinets.
+     * @example
+     * // Create many BybitCabinets
+     * const bybitCabinet = await prisma.bybitCabinet.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BybitCabinetCreateManyArgs>(args?: SelectSubset<T, BybitCabinetCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BybitCabinets and returns the data saved in the database.
+     * @param {BybitCabinetCreateManyAndReturnArgs} args - Arguments to create many BybitCabinets.
+     * @example
+     * // Create many BybitCabinets
+     * const bybitCabinet = await prisma.bybitCabinet.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BybitCabinets and only return the `id`
+     * const bybitCabinetWithIdOnly = await prisma.bybitCabinet.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BybitCabinetCreateManyAndReturnArgs>(args?: SelectSubset<T, BybitCabinetCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BybitCabinet.
+     * @param {BybitCabinetDeleteArgs} args - Arguments to delete one BybitCabinet.
+     * @example
+     * // Delete one BybitCabinet
+     * const BybitCabinet = await prisma.bybitCabinet.delete({
+     *   where: {
+     *     // ... filter to delete one BybitCabinet
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BybitCabinetDeleteArgs>(args: SelectSubset<T, BybitCabinetDeleteArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BybitCabinet.
+     * @param {BybitCabinetUpdateArgs} args - Arguments to update one BybitCabinet.
+     * @example
+     * // Update one BybitCabinet
+     * const bybitCabinet = await prisma.bybitCabinet.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BybitCabinetUpdateArgs>(args: SelectSubset<T, BybitCabinetUpdateArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BybitCabinets.
+     * @param {BybitCabinetDeleteManyArgs} args - Arguments to filter BybitCabinets to delete.
+     * @example
+     * // Delete a few BybitCabinets
+     * const { count } = await prisma.bybitCabinet.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BybitCabinetDeleteManyArgs>(args?: SelectSubset<T, BybitCabinetDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BybitCabinets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitCabinetUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BybitCabinets
+     * const bybitCabinet = await prisma.bybitCabinet.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BybitCabinetUpdateManyArgs>(args: SelectSubset<T, BybitCabinetUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BybitCabinets and returns the data updated in the database.
+     * @param {BybitCabinetUpdateManyAndReturnArgs} args - Arguments to update many BybitCabinets.
+     * @example
+     * // Update many BybitCabinets
+     * const bybitCabinet = await prisma.bybitCabinet.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BybitCabinets and only return the `id`
+     * const bybitCabinetWithIdOnly = await prisma.bybitCabinet.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BybitCabinetUpdateManyAndReturnArgs>(args: SelectSubset<T, BybitCabinetUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BybitCabinet.
+     * @param {BybitCabinetUpsertArgs} args - Arguments to update or create a BybitCabinet.
+     * @example
+     * // Update or create a BybitCabinet
+     * const bybitCabinet = await prisma.bybitCabinet.upsert({
+     *   create: {
+     *     // ... data to create a BybitCabinet
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BybitCabinet we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BybitCabinetUpsertArgs>(args: SelectSubset<T, BybitCabinetUpsertArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BybitCabinets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitCabinetCountArgs} args - Arguments to filter BybitCabinets to count.
+     * @example
+     * // Count the number of BybitCabinets
+     * const count = await prisma.bybitCabinet.count({
+     *   where: {
+     *     // ... the filter for the BybitCabinets we want to count
+     *   }
+     * })
+    **/
+    count<T extends BybitCabinetCountArgs>(
+      args?: Subset<T, BybitCabinetCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BybitCabinetCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BybitCabinet.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitCabinetAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BybitCabinetAggregateArgs>(args: Subset<T, BybitCabinetAggregateArgs>): Prisma.PrismaPromise<GetBybitCabinetAggregateType<T>>
+
+    /**
+     * Group by BybitCabinet.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitCabinetGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BybitCabinetGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BybitCabinetGroupByArgs['orderBy'] }
+        : { orderBy?: BybitCabinetGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BybitCabinetGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBybitCabinetGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BybitCabinet model
+   */
+  readonly fields: BybitCabinetFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BybitCabinet.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BybitCabinetClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    BybitTransactionFromCabinet<T extends BybitCabinet$BybitTransactionFromCabinetArgs<ExtArgs> = {}>(args?: Subset<T, BybitCabinet$BybitTransactionFromCabinetArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    BybitOrderInfo<T extends BybitCabinet$BybitOrderInfoArgs<ExtArgs> = {}>(args?: Subset<T, BybitCabinet$BybitOrderInfoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitOrderInfoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BybitCabinet model
+   */
+  interface BybitCabinetFieldRefs {
+    readonly id: FieldRef<"BybitCabinet", 'Int'>
+    readonly createdAt: FieldRef<"BybitCabinet", 'DateTime'>
+    readonly updatedAt: FieldRef<"BybitCabinet", 'DateTime'>
+    readonly bybitEmail: FieldRef<"BybitCabinet", 'String'>
+    readonly bybitApiSecret: FieldRef<"BybitCabinet", 'String'>
+    readonly bybitApiToken: FieldRef<"BybitCabinet", 'String'>
+    readonly lastBybitSyncAt: FieldRef<"BybitCabinet", 'DateTime'>
+    readonly lastBybitSyncStatus: FieldRef<"BybitCabinet", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BybitCabinet findUnique
+   */
+  export type BybitCabinetFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitCabinet to fetch.
+     */
+    where: BybitCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitCabinet findUniqueOrThrow
+   */
+  export type BybitCabinetFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitCabinet to fetch.
+     */
+    where: BybitCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitCabinet findFirst
+   */
+  export type BybitCabinetFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitCabinet to fetch.
+     */
+    where?: BybitCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitCabinets to fetch.
+     */
+    orderBy?: BybitCabinetOrderByWithRelationInput | BybitCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BybitCabinets.
+     */
+    cursor?: BybitCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BybitCabinets.
+     */
+    distinct?: BybitCabinetScalarFieldEnum | BybitCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * BybitCabinet findFirstOrThrow
+   */
+  export type BybitCabinetFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitCabinet to fetch.
+     */
+    where?: BybitCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitCabinets to fetch.
+     */
+    orderBy?: BybitCabinetOrderByWithRelationInput | BybitCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BybitCabinets.
+     */
+    cursor?: BybitCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BybitCabinets.
+     */
+    distinct?: BybitCabinetScalarFieldEnum | BybitCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * BybitCabinet findMany
+   */
+  export type BybitCabinetFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitCabinets to fetch.
+     */
+    where?: BybitCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitCabinets to fetch.
+     */
+    orderBy?: BybitCabinetOrderByWithRelationInput | BybitCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BybitCabinets.
+     */
+    cursor?: BybitCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitCabinets.
+     */
+    skip?: number
+    distinct?: BybitCabinetScalarFieldEnum | BybitCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * BybitCabinet create
+   */
+  export type BybitCabinetCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BybitCabinet.
+     */
+    data: XOR<BybitCabinetCreateInput, BybitCabinetUncheckedCreateInput>
+  }
+
+  /**
+   * BybitCabinet createMany
+   */
+  export type BybitCabinetCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BybitCabinets.
+     */
+    data: BybitCabinetCreateManyInput | BybitCabinetCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BybitCabinet createManyAndReturn
+   */
+  export type BybitCabinetCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * The data used to create many BybitCabinets.
+     */
+    data: BybitCabinetCreateManyInput | BybitCabinetCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BybitCabinet update
+   */
+  export type BybitCabinetUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * The data needed to update a BybitCabinet.
+     */
+    data: XOR<BybitCabinetUpdateInput, BybitCabinetUncheckedUpdateInput>
+    /**
+     * Choose, which BybitCabinet to update.
+     */
+    where: BybitCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitCabinet updateMany
+   */
+  export type BybitCabinetUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BybitCabinets.
+     */
+    data: XOR<BybitCabinetUpdateManyMutationInput, BybitCabinetUncheckedUpdateManyInput>
+    /**
+     * Filter which BybitCabinets to update
+     */
+    where?: BybitCabinetWhereInput
+    /**
+     * Limit how many BybitCabinets to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BybitCabinet updateManyAndReturn
+   */
+  export type BybitCabinetUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * The data used to update BybitCabinets.
+     */
+    data: XOR<BybitCabinetUpdateManyMutationInput, BybitCabinetUncheckedUpdateManyInput>
+    /**
+     * Filter which BybitCabinets to update
+     */
+    where?: BybitCabinetWhereInput
+    /**
+     * Limit how many BybitCabinets to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BybitCabinet upsert
+   */
+  export type BybitCabinetUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BybitCabinet to update in case it exists.
+     */
+    where: BybitCabinetWhereUniqueInput
+    /**
+     * In case the BybitCabinet found by the `where` argument doesn't exist, create a new BybitCabinet with this data.
+     */
+    create: XOR<BybitCabinetCreateInput, BybitCabinetUncheckedCreateInput>
+    /**
+     * In case the BybitCabinet was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BybitCabinetUpdateInput, BybitCabinetUncheckedUpdateInput>
+  }
+
+  /**
+   * BybitCabinet delete
+   */
+  export type BybitCabinetDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+    /**
+     * Filter which BybitCabinet to delete.
+     */
+    where: BybitCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitCabinet deleteMany
+   */
+  export type BybitCabinetDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BybitCabinets to delete
+     */
+    where?: BybitCabinetWhereInput
+    /**
+     * Limit how many BybitCabinets to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BybitCabinet.BybitTransactionFromCabinet
+   */
+  export type BybitCabinet$BybitTransactionFromCabinetArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    where?: BybitTransactionFromCabinetWhereInput
+    orderBy?: BybitTransactionFromCabinetOrderByWithRelationInput | BybitTransactionFromCabinetOrderByWithRelationInput[]
+    cursor?: BybitTransactionFromCabinetWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BybitTransactionFromCabinetScalarFieldEnum | BybitTransactionFromCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * BybitCabinet.BybitOrderInfo
+   */
+  export type BybitCabinet$BybitOrderInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitOrderInfo
+     */
+    select?: BybitOrderInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitOrderInfo
+     */
+    omit?: BybitOrderInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitOrderInfoInclude<ExtArgs> | null
+    where?: BybitOrderInfoWhereInput
+    orderBy?: BybitOrderInfoOrderByWithRelationInput | BybitOrderInfoOrderByWithRelationInput[]
+    cursor?: BybitOrderInfoWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BybitOrderInfoScalarFieldEnum | BybitOrderInfoScalarFieldEnum[]
+  }
+
+  /**
+   * BybitCabinet without action
+   */
+  export type BybitCabinetDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitCabinet
+     */
+    select?: BybitCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitCabinet
+     */
+    omit?: BybitCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitCabinetInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BybitClipMatch
+   */
+
+  export type AggregateBybitClipMatch = {
+    _count: BybitClipMatchCountAggregateOutputType | null
+    _avg: BybitClipMatchAvgAggregateOutputType | null
+    _sum: BybitClipMatchSumAggregateOutputType | null
+    _min: BybitClipMatchMinAggregateOutputType | null
+    _max: BybitClipMatchMaxAggregateOutputType | null
+  }
+
+  export type BybitClipMatchAvgAggregateOutputType = {
+    id: number | null
+    idexTransactionId: number | null
+    bybitTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    matchBybitReportId: number | null
+    userId: number | null
+  }
+
+  export type BybitClipMatchSumAggregateOutputType = {
+    id: number | null
+    idexTransactionId: number | null
+    bybitTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    matchBybitReportId: number | null
+    userId: number | null
+  }
+
+  export type BybitClipMatchMinAggregateOutputType = {
+    id: number | null
+    idexTransactionId: number | null
+    bybitTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    matchBybitReportId: number | null
+    userId: number | null
+  }
+
+  export type BybitClipMatchMaxAggregateOutputType = {
+    id: number | null
+    idexTransactionId: number | null
+    bybitTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    matchBybitReportId: number | null
+    userId: number | null
+  }
+
+  export type BybitClipMatchCountAggregateOutputType = {
+    id: number
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt: number
+    updatedAt: number
+    matchBybitReportId: number
+    userId: number
+    _all: number
+  }
+
+
+  export type BybitClipMatchAvgAggregateInputType = {
+    id?: true
+    idexTransactionId?: true
+    bybitTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    matchBybitReportId?: true
+    userId?: true
+  }
+
+  export type BybitClipMatchSumAggregateInputType = {
+    id?: true
+    idexTransactionId?: true
+    bybitTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    matchBybitReportId?: true
+    userId?: true
+  }
+
+  export type BybitClipMatchMinAggregateInputType = {
+    id?: true
+    idexTransactionId?: true
+    bybitTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    createdAt?: true
+    updatedAt?: true
+    matchBybitReportId?: true
+    userId?: true
+  }
+
+  export type BybitClipMatchMaxAggregateInputType = {
+    id?: true
+    idexTransactionId?: true
+    bybitTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    createdAt?: true
+    updatedAt?: true
+    matchBybitReportId?: true
+    userId?: true
+  }
+
+  export type BybitClipMatchCountAggregateInputType = {
+    id?: true
+    idexTransactionId?: true
+    bybitTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    createdAt?: true
+    updatedAt?: true
+    matchBybitReportId?: true
+    userId?: true
+    _all?: true
+  }
+
+  export type BybitClipMatchAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BybitClipMatch to aggregate.
+     */
+    where?: BybitClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitClipMatches to fetch.
+     */
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BybitClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitClipMatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BybitClipMatches
+    **/
+    _count?: true | BybitClipMatchCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: BybitClipMatchAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BybitClipMatchSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BybitClipMatchMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BybitClipMatchMaxAggregateInputType
+  }
+
+  export type GetBybitClipMatchAggregateType<T extends BybitClipMatchAggregateArgs> = {
+        [P in keyof T & keyof AggregateBybitClipMatch]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBybitClipMatch[P]>
+      : GetScalarType<T[P], AggregateBybitClipMatch[P]>
+  }
+
+
+
+
+  export type BybitClipMatchGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitClipMatchWhereInput
+    orderBy?: BybitClipMatchOrderByWithAggregationInput | BybitClipMatchOrderByWithAggregationInput[]
+    by: BybitClipMatchScalarFieldEnum[] | BybitClipMatchScalarFieldEnum
+    having?: BybitClipMatchScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BybitClipMatchCountAggregateInputType | true
+    _avg?: BybitClipMatchAvgAggregateInputType
+    _sum?: BybitClipMatchSumAggregateInputType
+    _min?: BybitClipMatchMinAggregateInputType
+    _max?: BybitClipMatchMaxAggregateInputType
+  }
+
+  export type BybitClipMatchGroupByOutputType = {
+    id: number
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt: Date
+    updatedAt: Date
+    matchBybitReportId: number | null
+    userId: number
+    _count: BybitClipMatchCountAggregateOutputType | null
+    _avg: BybitClipMatchAvgAggregateOutputType | null
+    _sum: BybitClipMatchSumAggregateOutputType | null
+    _min: BybitClipMatchMinAggregateOutputType | null
+    _max: BybitClipMatchMaxAggregateOutputType | null
+  }
+
+  type GetBybitClipMatchGroupByPayload<T extends BybitClipMatchGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BybitClipMatchGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BybitClipMatchGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BybitClipMatchGroupByOutputType[P]>
+            : GetScalarType<T[P], BybitClipMatchGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BybitClipMatchSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    idexTransactionId?: boolean
+    bybitTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchBybitReportId?: boolean
+    userId?: boolean
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    IdexTransaction?: boolean | IdexTransactionDefaultArgs<ExtArgs>
+    MatchBybitReport?: boolean | BybitClipMatch$MatchBybitReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bybitClipMatch"]>
+
+  export type BybitClipMatchSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    idexTransactionId?: boolean
+    bybitTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchBybitReportId?: boolean
+    userId?: boolean
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    IdexTransaction?: boolean | IdexTransactionDefaultArgs<ExtArgs>
+    MatchBybitReport?: boolean | BybitClipMatch$MatchBybitReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bybitClipMatch"]>
+
+  export type BybitClipMatchSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    idexTransactionId?: boolean
+    bybitTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchBybitReportId?: boolean
+    userId?: boolean
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    IdexTransaction?: boolean | IdexTransactionDefaultArgs<ExtArgs>
+    MatchBybitReport?: boolean | BybitClipMatch$MatchBybitReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bybitClipMatch"]>
+
+  export type BybitClipMatchSelectScalar = {
+    id?: boolean
+    idexTransactionId?: boolean
+    bybitTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchBybitReportId?: boolean
+    userId?: boolean
+  }
+
+  export type BybitClipMatchOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "idexTransactionId" | "bybitTransactionId" | "timeDifference" | "grossExpense" | "grossIncome" | "grossProfit" | "profitPercentage" | "createdAt" | "updatedAt" | "matchBybitReportId" | "userId", ExtArgs["result"]["bybitClipMatch"]>
+  export type BybitClipMatchInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    IdexTransaction?: boolean | IdexTransactionDefaultArgs<ExtArgs>
+    MatchBybitReport?: boolean | BybitClipMatch$MatchBybitReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type BybitClipMatchIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    IdexTransaction?: boolean | IdexTransactionDefaultArgs<ExtArgs>
+    MatchBybitReport?: boolean | BybitClipMatch$MatchBybitReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type BybitClipMatchIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    IdexTransaction?: boolean | IdexTransactionDefaultArgs<ExtArgs>
+    MatchBybitReport?: boolean | BybitClipMatch$MatchBybitReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $BybitClipMatchPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BybitClipMatch"
+    objects: {
+      BybitTransactionFromCabinet: Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>
+      IdexTransaction: Prisma.$IdexTransactionPayload<ExtArgs>
+      MatchBybitReport: Prisma.$MatchBybitReportPayload<ExtArgs> | null
+      User: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      idexTransactionId: number
+      bybitTransactionId: number
+      timeDifference: number
+      grossExpense: number
+      grossIncome: number
+      grossProfit: number
+      profitPercentage: number
+      createdAt: Date
+      updatedAt: Date
+      matchBybitReportId: number | null
+      userId: number
+    }, ExtArgs["result"]["bybitClipMatch"]>
+    composites: {}
+  }
+
+  type BybitClipMatchGetPayload<S extends boolean | null | undefined | BybitClipMatchDefaultArgs> = $Result.GetResult<Prisma.$BybitClipMatchPayload, S>
+
+  type BybitClipMatchCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BybitClipMatchFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BybitClipMatchCountAggregateInputType | true
+    }
+
+  export interface BybitClipMatchDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BybitClipMatch'], meta: { name: 'BybitClipMatch' } }
+    /**
+     * Find zero or one BybitClipMatch that matches the filter.
+     * @param {BybitClipMatchFindUniqueArgs} args - Arguments to find a BybitClipMatch
+     * @example
+     * // Get one BybitClipMatch
+     * const bybitClipMatch = await prisma.bybitClipMatch.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BybitClipMatchFindUniqueArgs>(args: SelectSubset<T, BybitClipMatchFindUniqueArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BybitClipMatch that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BybitClipMatchFindUniqueOrThrowArgs} args - Arguments to find a BybitClipMatch
+     * @example
+     * // Get one BybitClipMatch
+     * const bybitClipMatch = await prisma.bybitClipMatch.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BybitClipMatchFindUniqueOrThrowArgs>(args: SelectSubset<T, BybitClipMatchFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BybitClipMatch that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitClipMatchFindFirstArgs} args - Arguments to find a BybitClipMatch
+     * @example
+     * // Get one BybitClipMatch
+     * const bybitClipMatch = await prisma.bybitClipMatch.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BybitClipMatchFindFirstArgs>(args?: SelectSubset<T, BybitClipMatchFindFirstArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BybitClipMatch that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitClipMatchFindFirstOrThrowArgs} args - Arguments to find a BybitClipMatch
+     * @example
+     * // Get one BybitClipMatch
+     * const bybitClipMatch = await prisma.bybitClipMatch.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BybitClipMatchFindFirstOrThrowArgs>(args?: SelectSubset<T, BybitClipMatchFindFirstOrThrowArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BybitClipMatches that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitClipMatchFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BybitClipMatches
+     * const bybitClipMatches = await prisma.bybitClipMatch.findMany()
+     * 
+     * // Get first 10 BybitClipMatches
+     * const bybitClipMatches = await prisma.bybitClipMatch.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bybitClipMatchWithIdOnly = await prisma.bybitClipMatch.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BybitClipMatchFindManyArgs>(args?: SelectSubset<T, BybitClipMatchFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BybitClipMatch.
+     * @param {BybitClipMatchCreateArgs} args - Arguments to create a BybitClipMatch.
+     * @example
+     * // Create one BybitClipMatch
+     * const BybitClipMatch = await prisma.bybitClipMatch.create({
+     *   data: {
+     *     // ... data to create a BybitClipMatch
+     *   }
+     * })
+     * 
+     */
+    create<T extends BybitClipMatchCreateArgs>(args: SelectSubset<T, BybitClipMatchCreateArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BybitClipMatches.
+     * @param {BybitClipMatchCreateManyArgs} args - Arguments to create many BybitClipMatches.
+     * @example
+     * // Create many BybitClipMatches
+     * const bybitClipMatch = await prisma.bybitClipMatch.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BybitClipMatchCreateManyArgs>(args?: SelectSubset<T, BybitClipMatchCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BybitClipMatches and returns the data saved in the database.
+     * @param {BybitClipMatchCreateManyAndReturnArgs} args - Arguments to create many BybitClipMatches.
+     * @example
+     * // Create many BybitClipMatches
+     * const bybitClipMatch = await prisma.bybitClipMatch.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BybitClipMatches and only return the `id`
+     * const bybitClipMatchWithIdOnly = await prisma.bybitClipMatch.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BybitClipMatchCreateManyAndReturnArgs>(args?: SelectSubset<T, BybitClipMatchCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BybitClipMatch.
+     * @param {BybitClipMatchDeleteArgs} args - Arguments to delete one BybitClipMatch.
+     * @example
+     * // Delete one BybitClipMatch
+     * const BybitClipMatch = await prisma.bybitClipMatch.delete({
+     *   where: {
+     *     // ... filter to delete one BybitClipMatch
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BybitClipMatchDeleteArgs>(args: SelectSubset<T, BybitClipMatchDeleteArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BybitClipMatch.
+     * @param {BybitClipMatchUpdateArgs} args - Arguments to update one BybitClipMatch.
+     * @example
+     * // Update one BybitClipMatch
+     * const bybitClipMatch = await prisma.bybitClipMatch.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BybitClipMatchUpdateArgs>(args: SelectSubset<T, BybitClipMatchUpdateArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BybitClipMatches.
+     * @param {BybitClipMatchDeleteManyArgs} args - Arguments to filter BybitClipMatches to delete.
+     * @example
+     * // Delete a few BybitClipMatches
+     * const { count } = await prisma.bybitClipMatch.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BybitClipMatchDeleteManyArgs>(args?: SelectSubset<T, BybitClipMatchDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BybitClipMatches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitClipMatchUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BybitClipMatches
+     * const bybitClipMatch = await prisma.bybitClipMatch.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BybitClipMatchUpdateManyArgs>(args: SelectSubset<T, BybitClipMatchUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BybitClipMatches and returns the data updated in the database.
+     * @param {BybitClipMatchUpdateManyAndReturnArgs} args - Arguments to update many BybitClipMatches.
+     * @example
+     * // Update many BybitClipMatches
+     * const bybitClipMatch = await prisma.bybitClipMatch.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BybitClipMatches and only return the `id`
+     * const bybitClipMatchWithIdOnly = await prisma.bybitClipMatch.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BybitClipMatchUpdateManyAndReturnArgs>(args: SelectSubset<T, BybitClipMatchUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BybitClipMatch.
+     * @param {BybitClipMatchUpsertArgs} args - Arguments to update or create a BybitClipMatch.
+     * @example
+     * // Update or create a BybitClipMatch
+     * const bybitClipMatch = await prisma.bybitClipMatch.upsert({
+     *   create: {
+     *     // ... data to create a BybitClipMatch
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BybitClipMatch we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BybitClipMatchUpsertArgs>(args: SelectSubset<T, BybitClipMatchUpsertArgs<ExtArgs>>): Prisma__BybitClipMatchClient<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BybitClipMatches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitClipMatchCountArgs} args - Arguments to filter BybitClipMatches to count.
+     * @example
+     * // Count the number of BybitClipMatches
+     * const count = await prisma.bybitClipMatch.count({
+     *   where: {
+     *     // ... the filter for the BybitClipMatches we want to count
+     *   }
+     * })
+    **/
+    count<T extends BybitClipMatchCountArgs>(
+      args?: Subset<T, BybitClipMatchCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BybitClipMatchCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BybitClipMatch.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitClipMatchAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BybitClipMatchAggregateArgs>(args: Subset<T, BybitClipMatchAggregateArgs>): Prisma.PrismaPromise<GetBybitClipMatchAggregateType<T>>
+
+    /**
+     * Group by BybitClipMatch.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitClipMatchGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BybitClipMatchGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BybitClipMatchGroupByArgs['orderBy'] }
+        : { orderBy?: BybitClipMatchGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BybitClipMatchGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBybitClipMatchGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BybitClipMatch model
+   */
+  readonly fields: BybitClipMatchFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BybitClipMatch.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BybitClipMatchClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    BybitTransactionFromCabinet<T extends BybitTransactionFromCabinetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BybitTransactionFromCabinetDefaultArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    IdexTransaction<T extends IdexTransactionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, IdexTransactionDefaultArgs<ExtArgs>>): Prisma__IdexTransactionClient<$Result.GetResult<Prisma.$IdexTransactionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    MatchBybitReport<T extends BybitClipMatch$MatchBybitReportArgs<ExtArgs> = {}>(args?: Subset<T, BybitClipMatch$MatchBybitReportArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BybitClipMatch model
+   */
+  interface BybitClipMatchFieldRefs {
+    readonly id: FieldRef<"BybitClipMatch", 'Int'>
+    readonly idexTransactionId: FieldRef<"BybitClipMatch", 'Int'>
+    readonly bybitTransactionId: FieldRef<"BybitClipMatch", 'Int'>
+    readonly timeDifference: FieldRef<"BybitClipMatch", 'Int'>
+    readonly grossExpense: FieldRef<"BybitClipMatch", 'Float'>
+    readonly grossIncome: FieldRef<"BybitClipMatch", 'Float'>
+    readonly grossProfit: FieldRef<"BybitClipMatch", 'Float'>
+    readonly profitPercentage: FieldRef<"BybitClipMatch", 'Float'>
+    readonly createdAt: FieldRef<"BybitClipMatch", 'DateTime'>
+    readonly updatedAt: FieldRef<"BybitClipMatch", 'DateTime'>
+    readonly matchBybitReportId: FieldRef<"BybitClipMatch", 'Int'>
+    readonly userId: FieldRef<"BybitClipMatch", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BybitClipMatch findUnique
+   */
+  export type BybitClipMatchFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitClipMatch to fetch.
+     */
+    where: BybitClipMatchWhereUniqueInput
+  }
+
+  /**
+   * BybitClipMatch findUniqueOrThrow
+   */
+  export type BybitClipMatchFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitClipMatch to fetch.
+     */
+    where: BybitClipMatchWhereUniqueInput
+  }
+
+  /**
+   * BybitClipMatch findFirst
+   */
+  export type BybitClipMatchFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitClipMatch to fetch.
+     */
+    where?: BybitClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitClipMatches to fetch.
+     */
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BybitClipMatches.
+     */
+    cursor?: BybitClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitClipMatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BybitClipMatches.
+     */
+    distinct?: BybitClipMatchScalarFieldEnum | BybitClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * BybitClipMatch findFirstOrThrow
+   */
+  export type BybitClipMatchFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitClipMatch to fetch.
+     */
+    where?: BybitClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitClipMatches to fetch.
+     */
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BybitClipMatches.
+     */
+    cursor?: BybitClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitClipMatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BybitClipMatches.
+     */
+    distinct?: BybitClipMatchScalarFieldEnum | BybitClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * BybitClipMatch findMany
+   */
+  export type BybitClipMatchFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitClipMatches to fetch.
+     */
+    where?: BybitClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitClipMatches to fetch.
+     */
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BybitClipMatches.
+     */
+    cursor?: BybitClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitClipMatches.
+     */
+    skip?: number
+    distinct?: BybitClipMatchScalarFieldEnum | BybitClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * BybitClipMatch create
+   */
+  export type BybitClipMatchCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BybitClipMatch.
+     */
+    data: XOR<BybitClipMatchCreateInput, BybitClipMatchUncheckedCreateInput>
+  }
+
+  /**
+   * BybitClipMatch createMany
+   */
+  export type BybitClipMatchCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BybitClipMatches.
+     */
+    data: BybitClipMatchCreateManyInput | BybitClipMatchCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BybitClipMatch createManyAndReturn
+   */
+  export type BybitClipMatchCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * The data used to create many BybitClipMatches.
+     */
+    data: BybitClipMatchCreateManyInput | BybitClipMatchCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BybitClipMatch update
+   */
+  export type BybitClipMatchUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * The data needed to update a BybitClipMatch.
+     */
+    data: XOR<BybitClipMatchUpdateInput, BybitClipMatchUncheckedUpdateInput>
+    /**
+     * Choose, which BybitClipMatch to update.
+     */
+    where: BybitClipMatchWhereUniqueInput
+  }
+
+  /**
+   * BybitClipMatch updateMany
+   */
+  export type BybitClipMatchUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BybitClipMatches.
+     */
+    data: XOR<BybitClipMatchUpdateManyMutationInput, BybitClipMatchUncheckedUpdateManyInput>
+    /**
+     * Filter which BybitClipMatches to update
+     */
+    where?: BybitClipMatchWhereInput
+    /**
+     * Limit how many BybitClipMatches to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BybitClipMatch updateManyAndReturn
+   */
+  export type BybitClipMatchUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * The data used to update BybitClipMatches.
+     */
+    data: XOR<BybitClipMatchUpdateManyMutationInput, BybitClipMatchUncheckedUpdateManyInput>
+    /**
+     * Filter which BybitClipMatches to update
+     */
+    where?: BybitClipMatchWhereInput
+    /**
+     * Limit how many BybitClipMatches to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BybitClipMatch upsert
+   */
+  export type BybitClipMatchUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BybitClipMatch to update in case it exists.
+     */
+    where: BybitClipMatchWhereUniqueInput
+    /**
+     * In case the BybitClipMatch found by the `where` argument doesn't exist, create a new BybitClipMatch with this data.
+     */
+    create: XOR<BybitClipMatchCreateInput, BybitClipMatchUncheckedCreateInput>
+    /**
+     * In case the BybitClipMatch was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BybitClipMatchUpdateInput, BybitClipMatchUncheckedUpdateInput>
+  }
+
+  /**
+   * BybitClipMatch delete
+   */
+  export type BybitClipMatchDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter which BybitClipMatch to delete.
+     */
+    where: BybitClipMatchWhereUniqueInput
+  }
+
+  /**
+   * BybitClipMatch deleteMany
+   */
+  export type BybitClipMatchDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BybitClipMatches to delete
+     */
+    where?: BybitClipMatchWhereInput
+    /**
+     * Limit how many BybitClipMatches to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BybitClipMatch.MatchBybitReport
+   */
+  export type BybitClipMatch$MatchBybitReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    where?: MatchBybitReportWhereInput
+  }
+
+  /**
+   * BybitClipMatch without action
+   */
+  export type BybitClipMatchDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BybitTransactionFromCabinet
+   */
+
+  export type AggregateBybitTransactionFromCabinet = {
+    _count: BybitTransactionFromCabinetCountAggregateOutputType | null
+    _avg: BybitTransactionFromCabinetAvgAggregateOutputType | null
+    _sum: BybitTransactionFromCabinetSumAggregateOutputType | null
+    _min: BybitTransactionFromCabinetMinAggregateOutputType | null
+    _max: BybitTransactionFromCabinetMaxAggregateOutputType | null
+  }
+
+  export type BybitTransactionFromCabinetAvgAggregateOutputType = {
+    id: number | null
+    amount: number | null
+    totalPrice: number | null
+    unitPrice: number | null
+    cabinetId: number | null
+  }
+
+  export type BybitTransactionFromCabinetSumAggregateOutputType = {
+    id: number | null
+    amount: number | null
+    totalPrice: number | null
+    unitPrice: number | null
+    cabinetId: number | null
+  }
+
+  export type BybitTransactionFromCabinetMinAggregateOutputType = {
+    id: number | null
+    orderNo: string | null
+    counterparty: string | null
+    status: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    amount: number | null
+    asset: string | null
+    dateTime: Date | null
+    totalPrice: number | null
+    type: string | null
+    unitPrice: number | null
+    processed: boolean | null
+    lastAttemptError: string | null
+    cabinetId: number | null
+  }
+
+  export type BybitTransactionFromCabinetMaxAggregateOutputType = {
+    id: number | null
+    orderNo: string | null
+    counterparty: string | null
+    status: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    amount: number | null
+    asset: string | null
+    dateTime: Date | null
+    totalPrice: number | null
+    type: string | null
+    unitPrice: number | null
+    processed: boolean | null
+    lastAttemptError: string | null
+    cabinetId: number | null
+  }
+
+  export type BybitTransactionFromCabinetCountAggregateOutputType = {
+    id: number
+    orderNo: number
+    counterparty: number
+    status: number
+    createdAt: number
+    updatedAt: number
+    amount: number
+    asset: number
+    dateTime: number
+    originalData: number
+    totalPrice: number
+    type: number
+    unitPrice: number
+    processed: number
+    extractedPhones: number
+    lastAttemptError: number
+    cabinetId: number
+    _all: number
+  }
+
+
+  export type BybitTransactionFromCabinetAvgAggregateInputType = {
+    id?: true
+    amount?: true
+    totalPrice?: true
+    unitPrice?: true
+    cabinetId?: true
+  }
+
+  export type BybitTransactionFromCabinetSumAggregateInputType = {
+    id?: true
+    amount?: true
+    totalPrice?: true
+    unitPrice?: true
+    cabinetId?: true
+  }
+
+  export type BybitTransactionFromCabinetMinAggregateInputType = {
+    id?: true
+    orderNo?: true
+    counterparty?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+    amount?: true
+    asset?: true
+    dateTime?: true
+    totalPrice?: true
+    type?: true
+    unitPrice?: true
+    processed?: true
+    lastAttemptError?: true
+    cabinetId?: true
+  }
+
+  export type BybitTransactionFromCabinetMaxAggregateInputType = {
+    id?: true
+    orderNo?: true
+    counterparty?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+    amount?: true
+    asset?: true
+    dateTime?: true
+    totalPrice?: true
+    type?: true
+    unitPrice?: true
+    processed?: true
+    lastAttemptError?: true
+    cabinetId?: true
+  }
+
+  export type BybitTransactionFromCabinetCountAggregateInputType = {
+    id?: true
+    orderNo?: true
+    counterparty?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+    amount?: true
+    asset?: true
+    dateTime?: true
+    originalData?: true
+    totalPrice?: true
+    type?: true
+    unitPrice?: true
+    processed?: true
+    extractedPhones?: true
+    lastAttemptError?: true
+    cabinetId?: true
+    _all?: true
+  }
+
+  export type BybitTransactionFromCabinetAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BybitTransactionFromCabinet to aggregate.
+     */
+    where?: BybitTransactionFromCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitTransactionFromCabinets to fetch.
+     */
+    orderBy?: BybitTransactionFromCabinetOrderByWithRelationInput | BybitTransactionFromCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BybitTransactionFromCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitTransactionFromCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitTransactionFromCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BybitTransactionFromCabinets
+    **/
+    _count?: true | BybitTransactionFromCabinetCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: BybitTransactionFromCabinetAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BybitTransactionFromCabinetSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BybitTransactionFromCabinetMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BybitTransactionFromCabinetMaxAggregateInputType
+  }
+
+  export type GetBybitTransactionFromCabinetAggregateType<T extends BybitTransactionFromCabinetAggregateArgs> = {
+        [P in keyof T & keyof AggregateBybitTransactionFromCabinet]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBybitTransactionFromCabinet[P]>
+      : GetScalarType<T[P], AggregateBybitTransactionFromCabinet[P]>
+  }
+
+
+
+
+  export type BybitTransactionFromCabinetGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BybitTransactionFromCabinetWhereInput
+    orderBy?: BybitTransactionFromCabinetOrderByWithAggregationInput | BybitTransactionFromCabinetOrderByWithAggregationInput[]
+    by: BybitTransactionFromCabinetScalarFieldEnum[] | BybitTransactionFromCabinetScalarFieldEnum
+    having?: BybitTransactionFromCabinetScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BybitTransactionFromCabinetCountAggregateInputType | true
+    _avg?: BybitTransactionFromCabinetAvgAggregateInputType
+    _sum?: BybitTransactionFromCabinetSumAggregateInputType
+    _min?: BybitTransactionFromCabinetMinAggregateInputType
+    _max?: BybitTransactionFromCabinetMaxAggregateInputType
+  }
+
+  export type BybitTransactionFromCabinetGroupByOutputType = {
+    id: number
+    orderNo: string
+    counterparty: string | null
+    status: string
+    createdAt: Date
+    updatedAt: Date
+    amount: number
+    asset: string
+    dateTime: Date
+    originalData: JsonValue | null
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed: boolean
+    extractedPhones: string[]
+    lastAttemptError: string | null
+    cabinetId: number
+    _count: BybitTransactionFromCabinetCountAggregateOutputType | null
+    _avg: BybitTransactionFromCabinetAvgAggregateOutputType | null
+    _sum: BybitTransactionFromCabinetSumAggregateOutputType | null
+    _min: BybitTransactionFromCabinetMinAggregateOutputType | null
+    _max: BybitTransactionFromCabinetMaxAggregateOutputType | null
+  }
+
+  type GetBybitTransactionFromCabinetGroupByPayload<T extends BybitTransactionFromCabinetGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BybitTransactionFromCabinetGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BybitTransactionFromCabinetGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BybitTransactionFromCabinetGroupByOutputType[P]>
+            : GetScalarType<T[P], BybitTransactionFromCabinetGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BybitTransactionFromCabinetSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    orderNo?: boolean
+    counterparty?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    amount?: boolean
+    asset?: boolean
+    dateTime?: boolean
+    originalData?: boolean
+    totalPrice?: boolean
+    type?: boolean
+    unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
+    cabinetId?: boolean
+    BybitClipMatch?: boolean | BybitTransactionFromCabinet$BybitClipMatchArgs<ExtArgs>
+    BybitCabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
+    ViresClipMatch?: boolean | BybitTransactionFromCabinet$ViresClipMatchArgs<ExtArgs>
+    _count?: boolean | BybitTransactionFromCabinetCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bybitTransactionFromCabinet"]>
+
+  export type BybitTransactionFromCabinetSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    orderNo?: boolean
+    counterparty?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    amount?: boolean
+    asset?: boolean
+    dateTime?: boolean
+    originalData?: boolean
+    totalPrice?: boolean
+    type?: boolean
+    unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
+    cabinetId?: boolean
+    BybitCabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bybitTransactionFromCabinet"]>
+
+  export type BybitTransactionFromCabinetSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    orderNo?: boolean
+    counterparty?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    amount?: boolean
+    asset?: boolean
+    dateTime?: boolean
+    originalData?: boolean
+    totalPrice?: boolean
+    type?: boolean
+    unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
+    cabinetId?: boolean
+    BybitCabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["bybitTransactionFromCabinet"]>
+
+  export type BybitTransactionFromCabinetSelectScalar = {
+    id?: boolean
+    orderNo?: boolean
+    counterparty?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    amount?: boolean
+    asset?: boolean
+    dateTime?: boolean
+    originalData?: boolean
+    totalPrice?: boolean
+    type?: boolean
+    unitPrice?: boolean
+    processed?: boolean
+    extractedPhones?: boolean
+    lastAttemptError?: boolean
+    cabinetId?: boolean
+  }
+
+  export type BybitTransactionFromCabinetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "orderNo" | "counterparty" | "status" | "createdAt" | "updatedAt" | "amount" | "asset" | "dateTime" | "originalData" | "totalPrice" | "type" | "unitPrice" | "processed" | "extractedPhones" | "lastAttemptError" | "cabinetId", ExtArgs["result"]["bybitTransactionFromCabinet"]>
+  export type BybitTransactionFromCabinetInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitClipMatch?: boolean | BybitTransactionFromCabinet$BybitClipMatchArgs<ExtArgs>
+    BybitCabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
+    ViresClipMatch?: boolean | BybitTransactionFromCabinet$ViresClipMatchArgs<ExtArgs>
+    _count?: boolean | BybitTransactionFromCabinetCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type BybitTransactionFromCabinetIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitCabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
+  }
+  export type BybitTransactionFromCabinetIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitCabinet?: boolean | BybitCabinetDefaultArgs<ExtArgs>
+  }
+
+  export type $BybitTransactionFromCabinetPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BybitTransactionFromCabinet"
+    objects: {
+      BybitClipMatch: Prisma.$BybitClipMatchPayload<ExtArgs>[]
+      BybitCabinet: Prisma.$BybitCabinetPayload<ExtArgs>
+      ViresClipMatch: Prisma.$ViresClipMatchPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      orderNo: string
+      counterparty: string | null
+      status: string
+      createdAt: Date
+      updatedAt: Date
+      amount: number
+      asset: string
+      dateTime: Date
+      originalData: Prisma.JsonValue | null
+      totalPrice: number
+      type: string
+      unitPrice: number
+      processed: boolean
+      extractedPhones: string[]
+      lastAttemptError: string | null
+      cabinetId: number
+    }, ExtArgs["result"]["bybitTransactionFromCabinet"]>
+    composites: {}
+  }
+
+  type BybitTransactionFromCabinetGetPayload<S extends boolean | null | undefined | BybitTransactionFromCabinetDefaultArgs> = $Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload, S>
+
+  type BybitTransactionFromCabinetCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BybitTransactionFromCabinetFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BybitTransactionFromCabinetCountAggregateInputType | true
+    }
+
+  export interface BybitTransactionFromCabinetDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BybitTransactionFromCabinet'], meta: { name: 'BybitTransactionFromCabinet' } }
+    /**
+     * Find zero or one BybitTransactionFromCabinet that matches the filter.
+     * @param {BybitTransactionFromCabinetFindUniqueArgs} args - Arguments to find a BybitTransactionFromCabinet
+     * @example
+     * // Get one BybitTransactionFromCabinet
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BybitTransactionFromCabinetFindUniqueArgs>(args: SelectSubset<T, BybitTransactionFromCabinetFindUniqueArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BybitTransactionFromCabinet that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BybitTransactionFromCabinetFindUniqueOrThrowArgs} args - Arguments to find a BybitTransactionFromCabinet
+     * @example
+     * // Get one BybitTransactionFromCabinet
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BybitTransactionFromCabinetFindUniqueOrThrowArgs>(args: SelectSubset<T, BybitTransactionFromCabinetFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BybitTransactionFromCabinet that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitTransactionFromCabinetFindFirstArgs} args - Arguments to find a BybitTransactionFromCabinet
+     * @example
+     * // Get one BybitTransactionFromCabinet
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BybitTransactionFromCabinetFindFirstArgs>(args?: SelectSubset<T, BybitTransactionFromCabinetFindFirstArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BybitTransactionFromCabinet that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitTransactionFromCabinetFindFirstOrThrowArgs} args - Arguments to find a BybitTransactionFromCabinet
+     * @example
+     * // Get one BybitTransactionFromCabinet
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BybitTransactionFromCabinetFindFirstOrThrowArgs>(args?: SelectSubset<T, BybitTransactionFromCabinetFindFirstOrThrowArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BybitTransactionFromCabinets that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitTransactionFromCabinetFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BybitTransactionFromCabinets
+     * const bybitTransactionFromCabinets = await prisma.bybitTransactionFromCabinet.findMany()
+     * 
+     * // Get first 10 BybitTransactionFromCabinets
+     * const bybitTransactionFromCabinets = await prisma.bybitTransactionFromCabinet.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bybitTransactionFromCabinetWithIdOnly = await prisma.bybitTransactionFromCabinet.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BybitTransactionFromCabinetFindManyArgs>(args?: SelectSubset<T, BybitTransactionFromCabinetFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BybitTransactionFromCabinet.
+     * @param {BybitTransactionFromCabinetCreateArgs} args - Arguments to create a BybitTransactionFromCabinet.
+     * @example
+     * // Create one BybitTransactionFromCabinet
+     * const BybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.create({
+     *   data: {
+     *     // ... data to create a BybitTransactionFromCabinet
+     *   }
+     * })
+     * 
+     */
+    create<T extends BybitTransactionFromCabinetCreateArgs>(args: SelectSubset<T, BybitTransactionFromCabinetCreateArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BybitTransactionFromCabinets.
+     * @param {BybitTransactionFromCabinetCreateManyArgs} args - Arguments to create many BybitTransactionFromCabinets.
+     * @example
+     * // Create many BybitTransactionFromCabinets
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BybitTransactionFromCabinetCreateManyArgs>(args?: SelectSubset<T, BybitTransactionFromCabinetCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BybitTransactionFromCabinets and returns the data saved in the database.
+     * @param {BybitTransactionFromCabinetCreateManyAndReturnArgs} args - Arguments to create many BybitTransactionFromCabinets.
+     * @example
+     * // Create many BybitTransactionFromCabinets
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BybitTransactionFromCabinets and only return the `id`
+     * const bybitTransactionFromCabinetWithIdOnly = await prisma.bybitTransactionFromCabinet.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BybitTransactionFromCabinetCreateManyAndReturnArgs>(args?: SelectSubset<T, BybitTransactionFromCabinetCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BybitTransactionFromCabinet.
+     * @param {BybitTransactionFromCabinetDeleteArgs} args - Arguments to delete one BybitTransactionFromCabinet.
+     * @example
+     * // Delete one BybitTransactionFromCabinet
+     * const BybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.delete({
+     *   where: {
+     *     // ... filter to delete one BybitTransactionFromCabinet
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BybitTransactionFromCabinetDeleteArgs>(args: SelectSubset<T, BybitTransactionFromCabinetDeleteArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BybitTransactionFromCabinet.
+     * @param {BybitTransactionFromCabinetUpdateArgs} args - Arguments to update one BybitTransactionFromCabinet.
+     * @example
+     * // Update one BybitTransactionFromCabinet
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BybitTransactionFromCabinetUpdateArgs>(args: SelectSubset<T, BybitTransactionFromCabinetUpdateArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BybitTransactionFromCabinets.
+     * @param {BybitTransactionFromCabinetDeleteManyArgs} args - Arguments to filter BybitTransactionFromCabinets to delete.
+     * @example
+     * // Delete a few BybitTransactionFromCabinets
+     * const { count } = await prisma.bybitTransactionFromCabinet.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BybitTransactionFromCabinetDeleteManyArgs>(args?: SelectSubset<T, BybitTransactionFromCabinetDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BybitTransactionFromCabinets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitTransactionFromCabinetUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BybitTransactionFromCabinets
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BybitTransactionFromCabinetUpdateManyArgs>(args: SelectSubset<T, BybitTransactionFromCabinetUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BybitTransactionFromCabinets and returns the data updated in the database.
+     * @param {BybitTransactionFromCabinetUpdateManyAndReturnArgs} args - Arguments to update many BybitTransactionFromCabinets.
+     * @example
+     * // Update many BybitTransactionFromCabinets
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BybitTransactionFromCabinets and only return the `id`
+     * const bybitTransactionFromCabinetWithIdOnly = await prisma.bybitTransactionFromCabinet.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BybitTransactionFromCabinetUpdateManyAndReturnArgs>(args: SelectSubset<T, BybitTransactionFromCabinetUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BybitTransactionFromCabinet.
+     * @param {BybitTransactionFromCabinetUpsertArgs} args - Arguments to update or create a BybitTransactionFromCabinet.
+     * @example
+     * // Update or create a BybitTransactionFromCabinet
+     * const bybitTransactionFromCabinet = await prisma.bybitTransactionFromCabinet.upsert({
+     *   create: {
+     *     // ... data to create a BybitTransactionFromCabinet
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BybitTransactionFromCabinet we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BybitTransactionFromCabinetUpsertArgs>(args: SelectSubset<T, BybitTransactionFromCabinetUpsertArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BybitTransactionFromCabinets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitTransactionFromCabinetCountArgs} args - Arguments to filter BybitTransactionFromCabinets to count.
+     * @example
+     * // Count the number of BybitTransactionFromCabinets
+     * const count = await prisma.bybitTransactionFromCabinet.count({
+     *   where: {
+     *     // ... the filter for the BybitTransactionFromCabinets we want to count
+     *   }
+     * })
+    **/
+    count<T extends BybitTransactionFromCabinetCountArgs>(
+      args?: Subset<T, BybitTransactionFromCabinetCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BybitTransactionFromCabinetCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BybitTransactionFromCabinet.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitTransactionFromCabinetAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BybitTransactionFromCabinetAggregateArgs>(args: Subset<T, BybitTransactionFromCabinetAggregateArgs>): Prisma.PrismaPromise<GetBybitTransactionFromCabinetAggregateType<T>>
+
+    /**
+     * Group by BybitTransactionFromCabinet.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BybitTransactionFromCabinetGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BybitTransactionFromCabinetGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BybitTransactionFromCabinetGroupByArgs['orderBy'] }
+        : { orderBy?: BybitTransactionFromCabinetGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BybitTransactionFromCabinetGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBybitTransactionFromCabinetGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BybitTransactionFromCabinet model
+   */
+  readonly fields: BybitTransactionFromCabinetFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BybitTransactionFromCabinet.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BybitTransactionFromCabinetClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    BybitClipMatch<T extends BybitTransactionFromCabinet$BybitClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, BybitTransactionFromCabinet$BybitClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    BybitCabinet<T extends BybitCabinetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BybitCabinetDefaultArgs<ExtArgs>>): Prisma__BybitCabinetClient<$Result.GetResult<Prisma.$BybitCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    ViresClipMatch<T extends BybitTransactionFromCabinet$ViresClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, BybitTransactionFromCabinet$ViresClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BybitTransactionFromCabinet model
+   */
+  interface BybitTransactionFromCabinetFieldRefs {
+    readonly id: FieldRef<"BybitTransactionFromCabinet", 'Int'>
+    readonly orderNo: FieldRef<"BybitTransactionFromCabinet", 'String'>
+    readonly counterparty: FieldRef<"BybitTransactionFromCabinet", 'String'>
+    readonly status: FieldRef<"BybitTransactionFromCabinet", 'String'>
+    readonly createdAt: FieldRef<"BybitTransactionFromCabinet", 'DateTime'>
+    readonly updatedAt: FieldRef<"BybitTransactionFromCabinet", 'DateTime'>
+    readonly amount: FieldRef<"BybitTransactionFromCabinet", 'Float'>
+    readonly asset: FieldRef<"BybitTransactionFromCabinet", 'String'>
+    readonly dateTime: FieldRef<"BybitTransactionFromCabinet", 'DateTime'>
+    readonly originalData: FieldRef<"BybitTransactionFromCabinet", 'Json'>
+    readonly totalPrice: FieldRef<"BybitTransactionFromCabinet", 'Float'>
+    readonly type: FieldRef<"BybitTransactionFromCabinet", 'String'>
+    readonly unitPrice: FieldRef<"BybitTransactionFromCabinet", 'Float'>
+    readonly processed: FieldRef<"BybitTransactionFromCabinet", 'Boolean'>
+    readonly extractedPhones: FieldRef<"BybitTransactionFromCabinet", 'String[]'>
+    readonly lastAttemptError: FieldRef<"BybitTransactionFromCabinet", 'String'>
+    readonly cabinetId: FieldRef<"BybitTransactionFromCabinet", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BybitTransactionFromCabinet findUnique
+   */
+  export type BybitTransactionFromCabinetFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitTransactionFromCabinet to fetch.
+     */
+    where: BybitTransactionFromCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitTransactionFromCabinet findUniqueOrThrow
+   */
+  export type BybitTransactionFromCabinetFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitTransactionFromCabinet to fetch.
+     */
+    where: BybitTransactionFromCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitTransactionFromCabinet findFirst
+   */
+  export type BybitTransactionFromCabinetFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitTransactionFromCabinet to fetch.
+     */
+    where?: BybitTransactionFromCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitTransactionFromCabinets to fetch.
+     */
+    orderBy?: BybitTransactionFromCabinetOrderByWithRelationInput | BybitTransactionFromCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BybitTransactionFromCabinets.
+     */
+    cursor?: BybitTransactionFromCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitTransactionFromCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitTransactionFromCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BybitTransactionFromCabinets.
+     */
+    distinct?: BybitTransactionFromCabinetScalarFieldEnum | BybitTransactionFromCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * BybitTransactionFromCabinet findFirstOrThrow
+   */
+  export type BybitTransactionFromCabinetFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitTransactionFromCabinet to fetch.
+     */
+    where?: BybitTransactionFromCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitTransactionFromCabinets to fetch.
+     */
+    orderBy?: BybitTransactionFromCabinetOrderByWithRelationInput | BybitTransactionFromCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BybitTransactionFromCabinets.
+     */
+    cursor?: BybitTransactionFromCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitTransactionFromCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitTransactionFromCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BybitTransactionFromCabinets.
+     */
+    distinct?: BybitTransactionFromCabinetScalarFieldEnum | BybitTransactionFromCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * BybitTransactionFromCabinet findMany
+   */
+  export type BybitTransactionFromCabinetFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which BybitTransactionFromCabinets to fetch.
+     */
+    where?: BybitTransactionFromCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BybitTransactionFromCabinets to fetch.
+     */
+    orderBy?: BybitTransactionFromCabinetOrderByWithRelationInput | BybitTransactionFromCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BybitTransactionFromCabinets.
+     */
+    cursor?: BybitTransactionFromCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BybitTransactionFromCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BybitTransactionFromCabinets.
+     */
+    skip?: number
+    distinct?: BybitTransactionFromCabinetScalarFieldEnum | BybitTransactionFromCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * BybitTransactionFromCabinet create
+   */
+  export type BybitTransactionFromCabinetCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BybitTransactionFromCabinet.
+     */
+    data: XOR<BybitTransactionFromCabinetCreateInput, BybitTransactionFromCabinetUncheckedCreateInput>
+  }
+
+  /**
+   * BybitTransactionFromCabinet createMany
+   */
+  export type BybitTransactionFromCabinetCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BybitTransactionFromCabinets.
+     */
+    data: BybitTransactionFromCabinetCreateManyInput | BybitTransactionFromCabinetCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BybitTransactionFromCabinet createManyAndReturn
+   */
+  export type BybitTransactionFromCabinetCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * The data used to create many BybitTransactionFromCabinets.
+     */
+    data: BybitTransactionFromCabinetCreateManyInput | BybitTransactionFromCabinetCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BybitTransactionFromCabinet update
+   */
+  export type BybitTransactionFromCabinetUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * The data needed to update a BybitTransactionFromCabinet.
+     */
+    data: XOR<BybitTransactionFromCabinetUpdateInput, BybitTransactionFromCabinetUncheckedUpdateInput>
+    /**
+     * Choose, which BybitTransactionFromCabinet to update.
+     */
+    where: BybitTransactionFromCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitTransactionFromCabinet updateMany
+   */
+  export type BybitTransactionFromCabinetUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BybitTransactionFromCabinets.
+     */
+    data: XOR<BybitTransactionFromCabinetUpdateManyMutationInput, BybitTransactionFromCabinetUncheckedUpdateManyInput>
+    /**
+     * Filter which BybitTransactionFromCabinets to update
+     */
+    where?: BybitTransactionFromCabinetWhereInput
+    /**
+     * Limit how many BybitTransactionFromCabinets to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BybitTransactionFromCabinet updateManyAndReturn
+   */
+  export type BybitTransactionFromCabinetUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * The data used to update BybitTransactionFromCabinets.
+     */
+    data: XOR<BybitTransactionFromCabinetUpdateManyMutationInput, BybitTransactionFromCabinetUncheckedUpdateManyInput>
+    /**
+     * Filter which BybitTransactionFromCabinets to update
+     */
+    where?: BybitTransactionFromCabinetWhereInput
+    /**
+     * Limit how many BybitTransactionFromCabinets to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BybitTransactionFromCabinet upsert
+   */
+  export type BybitTransactionFromCabinetUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BybitTransactionFromCabinet to update in case it exists.
+     */
+    where: BybitTransactionFromCabinetWhereUniqueInput
+    /**
+     * In case the BybitTransactionFromCabinet found by the `where` argument doesn't exist, create a new BybitTransactionFromCabinet with this data.
+     */
+    create: XOR<BybitTransactionFromCabinetCreateInput, BybitTransactionFromCabinetUncheckedCreateInput>
+    /**
+     * In case the BybitTransactionFromCabinet was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BybitTransactionFromCabinetUpdateInput, BybitTransactionFromCabinetUncheckedUpdateInput>
+  }
+
+  /**
+   * BybitTransactionFromCabinet delete
+   */
+  export type BybitTransactionFromCabinetDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+    /**
+     * Filter which BybitTransactionFromCabinet to delete.
+     */
+    where: BybitTransactionFromCabinetWhereUniqueInput
+  }
+
+  /**
+   * BybitTransactionFromCabinet deleteMany
+   */
+  export type BybitTransactionFromCabinetDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BybitTransactionFromCabinets to delete
+     */
+    where?: BybitTransactionFromCabinetWhereInput
+    /**
+     * Limit how many BybitTransactionFromCabinets to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BybitTransactionFromCabinet.BybitClipMatch
+   */
+  export type BybitTransactionFromCabinet$BybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    where?: BybitClipMatchWhereInput
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    cursor?: BybitClipMatchWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BybitClipMatchScalarFieldEnum | BybitClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * BybitTransactionFromCabinet.ViresClipMatch
+   */
+  export type BybitTransactionFromCabinet$ViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    where?: ViresClipMatchWhereInput
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    cursor?: ViresClipMatchWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ViresClipMatchScalarFieldEnum | ViresClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * BybitTransactionFromCabinet without action
+   */
+  export type BybitTransactionFromCabinetDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitTransactionFromCabinet
+     */
+    select?: BybitTransactionFromCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitTransactionFromCabinet
+     */
+    omit?: BybitTransactionFromCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitTransactionFromCabinetInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model MatchBybitReport
+   */
+
+  export type AggregateMatchBybitReport = {
+    _count: MatchBybitReportCountAggregateOutputType | null
+    _avg: MatchBybitReportAvgAggregateOutputType | null
+    _sum: MatchBybitReportSumAggregateOutputType | null
+    _min: MatchBybitReportMinAggregateOutputType | null
+    _max: MatchBybitReportMaxAggregateOutputType | null
+  }
+
+  export type MatchBybitReportAvgAggregateOutputType = {
+    id: number | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    userId: number | null
+  }
+
+  export type MatchBybitReportSumAggregateOutputType = {
+    id: number | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    userId: number | null
+  }
+
+  export type MatchBybitReportMinAggregateOutputType = {
+    id: number | null
+    reportDate: Date | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    timeRangeStart: Date | null
+    timeRangeEnd: Date | null
+    notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: number | null
+  }
+
+  export type MatchBybitReportMaxAggregateOutputType = {
+    id: number | null
+    reportDate: Date | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    timeRangeStart: Date | null
+    timeRangeEnd: Date | null
+    notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: number | null
+  }
+
+  export type MatchBybitReportCountAggregateOutputType = {
+    id: number
+    reportDate: number
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: number
+    timeRangeEnd: number
+    notes: number
+    idexCabinets: number
+    createdAt: number
+    updatedAt: number
+    userId: number
+    _all: number
+  }
+
+
+  export type MatchBybitReportAvgAggregateInputType = {
+    id?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    userId?: true
+  }
+
+  export type MatchBybitReportSumAggregateInputType = {
+    id?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    userId?: true
+  }
+
+  export type MatchBybitReportMinAggregateInputType = {
+    id?: true
+    reportDate?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    timeRangeStart?: true
+    timeRangeEnd?: true
+    notes?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+  }
+
+  export type MatchBybitReportMaxAggregateInputType = {
+    id?: true
+    reportDate?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    timeRangeStart?: true
+    timeRangeEnd?: true
+    notes?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+  }
+
+  export type MatchBybitReportCountAggregateInputType = {
+    id?: true
+    reportDate?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    timeRangeStart?: true
+    timeRangeEnd?: true
+    notes?: true
+    idexCabinets?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    _all?: true
+  }
+
+  export type MatchBybitReportAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MatchBybitReport to aggregate.
+     */
+    where?: MatchBybitReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchBybitReports to fetch.
+     */
+    orderBy?: MatchBybitReportOrderByWithRelationInput | MatchBybitReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: MatchBybitReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchBybitReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchBybitReports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned MatchBybitReports
+    **/
+    _count?: true | MatchBybitReportCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: MatchBybitReportAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: MatchBybitReportSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: MatchBybitReportMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: MatchBybitReportMaxAggregateInputType
+  }
+
+  export type GetMatchBybitReportAggregateType<T extends MatchBybitReportAggregateArgs> = {
+        [P in keyof T & keyof AggregateMatchBybitReport]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateMatchBybitReport[P]>
+      : GetScalarType<T[P], AggregateMatchBybitReport[P]>
+  }
+
+
+
+
+  export type MatchBybitReportGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MatchBybitReportWhereInput
+    orderBy?: MatchBybitReportOrderByWithAggregationInput | MatchBybitReportOrderByWithAggregationInput[]
+    by: MatchBybitReportScalarFieldEnum[] | MatchBybitReportScalarFieldEnum
+    having?: MatchBybitReportScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: MatchBybitReportCountAggregateInputType | true
+    _avg?: MatchBybitReportAvgAggregateInputType
+    _sum?: MatchBybitReportSumAggregateInputType
+    _min?: MatchBybitReportMinAggregateInputType
+    _max?: MatchBybitReportMaxAggregateInputType
+  }
+
+  export type MatchBybitReportGroupByOutputType = {
+    id: number
+    reportDate: Date
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date
+    timeRangeEnd: Date
+    notes: string | null
+    idexCabinets: JsonValue | null
+    createdAt: Date
+    updatedAt: Date
+    userId: number
+    _count: MatchBybitReportCountAggregateOutputType | null
+    _avg: MatchBybitReportAvgAggregateOutputType | null
+    _sum: MatchBybitReportSumAggregateOutputType | null
+    _min: MatchBybitReportMinAggregateOutputType | null
+    _max: MatchBybitReportMaxAggregateOutputType | null
+  }
+
+  type GetMatchBybitReportGroupByPayload<T extends MatchBybitReportGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<MatchBybitReportGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof MatchBybitReportGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], MatchBybitReportGroupByOutputType[P]>
+            : GetScalarType<T[P], MatchBybitReportGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type MatchBybitReportSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    BybitClipMatch?: boolean | MatchBybitReport$BybitClipMatchArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    _count?: boolean | MatchBybitReportCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["matchBybitReport"]>
+
+  export type MatchBybitReportSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["matchBybitReport"]>
+
+  export type MatchBybitReportSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["matchBybitReport"]>
+
+  export type MatchBybitReportSelectScalar = {
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+  }
+
+  export type MatchBybitReportOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "reportDate" | "totalMatches" | "totalProfit" | "averageProfit" | "successRate" | "timeRangeStart" | "timeRangeEnd" | "notes" | "idexCabinets" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["matchBybitReport"]>
+  export type MatchBybitReportInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitClipMatch?: boolean | MatchBybitReport$BybitClipMatchArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    _count?: boolean | MatchBybitReportCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type MatchBybitReportIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type MatchBybitReportIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $MatchBybitReportPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MatchBybitReport"
+    objects: {
+      BybitClipMatch: Prisma.$BybitClipMatchPayload<ExtArgs>[]
+      User: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      reportDate: Date
+      totalMatches: number
+      totalProfit: number
+      averageProfit: number
+      successRate: number
+      timeRangeStart: Date
+      timeRangeEnd: Date
+      notes: string | null
+      idexCabinets: Prisma.JsonValue | null
+      createdAt: Date
+      updatedAt: Date
+      userId: number
+    }, ExtArgs["result"]["matchBybitReport"]>
+    composites: {}
+  }
+
+  type MatchBybitReportGetPayload<S extends boolean | null | undefined | MatchBybitReportDefaultArgs> = $Result.GetResult<Prisma.$MatchBybitReportPayload, S>
+
+  type MatchBybitReportCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MatchBybitReportFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MatchBybitReportCountAggregateInputType | true
+    }
+
+  export interface MatchBybitReportDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MatchBybitReport'], meta: { name: 'MatchBybitReport' } }
+    /**
+     * Find zero or one MatchBybitReport that matches the filter.
+     * @param {MatchBybitReportFindUniqueArgs} args - Arguments to find a MatchBybitReport
+     * @example
+     * // Get one MatchBybitReport
+     * const matchBybitReport = await prisma.matchBybitReport.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends MatchBybitReportFindUniqueArgs>(args: SelectSubset<T, MatchBybitReportFindUniqueArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one MatchBybitReport that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {MatchBybitReportFindUniqueOrThrowArgs} args - Arguments to find a MatchBybitReport
+     * @example
+     * // Get one MatchBybitReport
+     * const matchBybitReport = await prisma.matchBybitReport.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends MatchBybitReportFindUniqueOrThrowArgs>(args: SelectSubset<T, MatchBybitReportFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MatchBybitReport that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchBybitReportFindFirstArgs} args - Arguments to find a MatchBybitReport
+     * @example
+     * // Get one MatchBybitReport
+     * const matchBybitReport = await prisma.matchBybitReport.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends MatchBybitReportFindFirstArgs>(args?: SelectSubset<T, MatchBybitReportFindFirstArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MatchBybitReport that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchBybitReportFindFirstOrThrowArgs} args - Arguments to find a MatchBybitReport
+     * @example
+     * // Get one MatchBybitReport
+     * const matchBybitReport = await prisma.matchBybitReport.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends MatchBybitReportFindFirstOrThrowArgs>(args?: SelectSubset<T, MatchBybitReportFindFirstOrThrowArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more MatchBybitReports that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchBybitReportFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all MatchBybitReports
+     * const matchBybitReports = await prisma.matchBybitReport.findMany()
+     * 
+     * // Get first 10 MatchBybitReports
+     * const matchBybitReports = await prisma.matchBybitReport.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const matchBybitReportWithIdOnly = await prisma.matchBybitReport.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends MatchBybitReportFindManyArgs>(args?: SelectSubset<T, MatchBybitReportFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a MatchBybitReport.
+     * @param {MatchBybitReportCreateArgs} args - Arguments to create a MatchBybitReport.
+     * @example
+     * // Create one MatchBybitReport
+     * const MatchBybitReport = await prisma.matchBybitReport.create({
+     *   data: {
+     *     // ... data to create a MatchBybitReport
+     *   }
+     * })
+     * 
+     */
+    create<T extends MatchBybitReportCreateArgs>(args: SelectSubset<T, MatchBybitReportCreateArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many MatchBybitReports.
+     * @param {MatchBybitReportCreateManyArgs} args - Arguments to create many MatchBybitReports.
+     * @example
+     * // Create many MatchBybitReports
+     * const matchBybitReport = await prisma.matchBybitReport.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends MatchBybitReportCreateManyArgs>(args?: SelectSubset<T, MatchBybitReportCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many MatchBybitReports and returns the data saved in the database.
+     * @param {MatchBybitReportCreateManyAndReturnArgs} args - Arguments to create many MatchBybitReports.
+     * @example
+     * // Create many MatchBybitReports
+     * const matchBybitReport = await prisma.matchBybitReport.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many MatchBybitReports and only return the `id`
+     * const matchBybitReportWithIdOnly = await prisma.matchBybitReport.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends MatchBybitReportCreateManyAndReturnArgs>(args?: SelectSubset<T, MatchBybitReportCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a MatchBybitReport.
+     * @param {MatchBybitReportDeleteArgs} args - Arguments to delete one MatchBybitReport.
+     * @example
+     * // Delete one MatchBybitReport
+     * const MatchBybitReport = await prisma.matchBybitReport.delete({
+     *   where: {
+     *     // ... filter to delete one MatchBybitReport
+     *   }
+     * })
+     * 
+     */
+    delete<T extends MatchBybitReportDeleteArgs>(args: SelectSubset<T, MatchBybitReportDeleteArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one MatchBybitReport.
+     * @param {MatchBybitReportUpdateArgs} args - Arguments to update one MatchBybitReport.
+     * @example
+     * // Update one MatchBybitReport
+     * const matchBybitReport = await prisma.matchBybitReport.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends MatchBybitReportUpdateArgs>(args: SelectSubset<T, MatchBybitReportUpdateArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more MatchBybitReports.
+     * @param {MatchBybitReportDeleteManyArgs} args - Arguments to filter MatchBybitReports to delete.
+     * @example
+     * // Delete a few MatchBybitReports
+     * const { count } = await prisma.matchBybitReport.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends MatchBybitReportDeleteManyArgs>(args?: SelectSubset<T, MatchBybitReportDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MatchBybitReports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchBybitReportUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many MatchBybitReports
+     * const matchBybitReport = await prisma.matchBybitReport.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends MatchBybitReportUpdateManyArgs>(args: SelectSubset<T, MatchBybitReportUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MatchBybitReports and returns the data updated in the database.
+     * @param {MatchBybitReportUpdateManyAndReturnArgs} args - Arguments to update many MatchBybitReports.
+     * @example
+     * // Update many MatchBybitReports
+     * const matchBybitReport = await prisma.matchBybitReport.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more MatchBybitReports and only return the `id`
+     * const matchBybitReportWithIdOnly = await prisma.matchBybitReport.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends MatchBybitReportUpdateManyAndReturnArgs>(args: SelectSubset<T, MatchBybitReportUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one MatchBybitReport.
+     * @param {MatchBybitReportUpsertArgs} args - Arguments to update or create a MatchBybitReport.
+     * @example
+     * // Update or create a MatchBybitReport
+     * const matchBybitReport = await prisma.matchBybitReport.upsert({
+     *   create: {
+     *     // ... data to create a MatchBybitReport
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the MatchBybitReport we want to update
+     *   }
+     * })
+     */
+    upsert<T extends MatchBybitReportUpsertArgs>(args: SelectSubset<T, MatchBybitReportUpsertArgs<ExtArgs>>): Prisma__MatchBybitReportClient<$Result.GetResult<Prisma.$MatchBybitReportPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of MatchBybitReports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchBybitReportCountArgs} args - Arguments to filter MatchBybitReports to count.
+     * @example
+     * // Count the number of MatchBybitReports
+     * const count = await prisma.matchBybitReport.count({
+     *   where: {
+     *     // ... the filter for the MatchBybitReports we want to count
+     *   }
+     * })
+    **/
+    count<T extends MatchBybitReportCountArgs>(
+      args?: Subset<T, MatchBybitReportCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], MatchBybitReportCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a MatchBybitReport.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchBybitReportAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends MatchBybitReportAggregateArgs>(args: Subset<T, MatchBybitReportAggregateArgs>): Prisma.PrismaPromise<GetMatchBybitReportAggregateType<T>>
+
+    /**
+     * Group by MatchBybitReport.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchBybitReportGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends MatchBybitReportGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: MatchBybitReportGroupByArgs['orderBy'] }
+        : { orderBy?: MatchBybitReportGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, MatchBybitReportGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMatchBybitReportGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the MatchBybitReport model
+   */
+  readonly fields: MatchBybitReportFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for MatchBybitReport.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__MatchBybitReportClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    BybitClipMatch<T extends MatchBybitReport$BybitClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, MatchBybitReport$BybitClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BybitClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the MatchBybitReport model
+   */
+  interface MatchBybitReportFieldRefs {
+    readonly id: FieldRef<"MatchBybitReport", 'Int'>
+    readonly reportDate: FieldRef<"MatchBybitReport", 'DateTime'>
+    readonly totalMatches: FieldRef<"MatchBybitReport", 'Int'>
+    readonly totalProfit: FieldRef<"MatchBybitReport", 'Float'>
+    readonly averageProfit: FieldRef<"MatchBybitReport", 'Float'>
+    readonly successRate: FieldRef<"MatchBybitReport", 'Float'>
+    readonly timeRangeStart: FieldRef<"MatchBybitReport", 'DateTime'>
+    readonly timeRangeEnd: FieldRef<"MatchBybitReport", 'DateTime'>
+    readonly notes: FieldRef<"MatchBybitReport", 'String'>
+    readonly idexCabinets: FieldRef<"MatchBybitReport", 'Json'>
+    readonly createdAt: FieldRef<"MatchBybitReport", 'DateTime'>
+    readonly updatedAt: FieldRef<"MatchBybitReport", 'DateTime'>
+    readonly userId: FieldRef<"MatchBybitReport", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * MatchBybitReport findUnique
+   */
+  export type MatchBybitReportFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchBybitReport to fetch.
+     */
+    where: MatchBybitReportWhereUniqueInput
+  }
+
+  /**
+   * MatchBybitReport findUniqueOrThrow
+   */
+  export type MatchBybitReportFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchBybitReport to fetch.
+     */
+    where: MatchBybitReportWhereUniqueInput
+  }
+
+  /**
+   * MatchBybitReport findFirst
+   */
+  export type MatchBybitReportFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchBybitReport to fetch.
+     */
+    where?: MatchBybitReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchBybitReports to fetch.
+     */
+    orderBy?: MatchBybitReportOrderByWithRelationInput | MatchBybitReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MatchBybitReports.
+     */
+    cursor?: MatchBybitReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchBybitReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchBybitReports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MatchBybitReports.
+     */
+    distinct?: MatchBybitReportScalarFieldEnum | MatchBybitReportScalarFieldEnum[]
+  }
+
+  /**
+   * MatchBybitReport findFirstOrThrow
+   */
+  export type MatchBybitReportFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchBybitReport to fetch.
+     */
+    where?: MatchBybitReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchBybitReports to fetch.
+     */
+    orderBy?: MatchBybitReportOrderByWithRelationInput | MatchBybitReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MatchBybitReports.
+     */
+    cursor?: MatchBybitReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchBybitReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchBybitReports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MatchBybitReports.
+     */
+    distinct?: MatchBybitReportScalarFieldEnum | MatchBybitReportScalarFieldEnum[]
+  }
+
+  /**
+   * MatchBybitReport findMany
+   */
+  export type MatchBybitReportFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchBybitReports to fetch.
+     */
+    where?: MatchBybitReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchBybitReports to fetch.
+     */
+    orderBy?: MatchBybitReportOrderByWithRelationInput | MatchBybitReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing MatchBybitReports.
+     */
+    cursor?: MatchBybitReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchBybitReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchBybitReports.
+     */
+    skip?: number
+    distinct?: MatchBybitReportScalarFieldEnum | MatchBybitReportScalarFieldEnum[]
+  }
+
+  /**
+   * MatchBybitReport create
+   */
+  export type MatchBybitReportCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * The data needed to create a MatchBybitReport.
+     */
+    data: XOR<MatchBybitReportCreateInput, MatchBybitReportUncheckedCreateInput>
+  }
+
+  /**
+   * MatchBybitReport createMany
+   */
+  export type MatchBybitReportCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many MatchBybitReports.
+     */
+    data: MatchBybitReportCreateManyInput | MatchBybitReportCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * MatchBybitReport createManyAndReturn
+   */
+  export type MatchBybitReportCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * The data used to create many MatchBybitReports.
+     */
+    data: MatchBybitReportCreateManyInput | MatchBybitReportCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * MatchBybitReport update
+   */
+  export type MatchBybitReportUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * The data needed to update a MatchBybitReport.
+     */
+    data: XOR<MatchBybitReportUpdateInput, MatchBybitReportUncheckedUpdateInput>
+    /**
+     * Choose, which MatchBybitReport to update.
+     */
+    where: MatchBybitReportWhereUniqueInput
+  }
+
+  /**
+   * MatchBybitReport updateMany
+   */
+  export type MatchBybitReportUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update MatchBybitReports.
+     */
+    data: XOR<MatchBybitReportUpdateManyMutationInput, MatchBybitReportUncheckedUpdateManyInput>
+    /**
+     * Filter which MatchBybitReports to update
+     */
+    where?: MatchBybitReportWhereInput
+    /**
+     * Limit how many MatchBybitReports to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * MatchBybitReport updateManyAndReturn
+   */
+  export type MatchBybitReportUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * The data used to update MatchBybitReports.
+     */
+    data: XOR<MatchBybitReportUpdateManyMutationInput, MatchBybitReportUncheckedUpdateManyInput>
+    /**
+     * Filter which MatchBybitReports to update
+     */
+    where?: MatchBybitReportWhereInput
+    /**
+     * Limit how many MatchBybitReports to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * MatchBybitReport upsert
+   */
+  export type MatchBybitReportUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * The filter to search for the MatchBybitReport to update in case it exists.
+     */
+    where: MatchBybitReportWhereUniqueInput
+    /**
+     * In case the MatchBybitReport found by the `where` argument doesn't exist, create a new MatchBybitReport with this data.
+     */
+    create: XOR<MatchBybitReportCreateInput, MatchBybitReportUncheckedCreateInput>
+    /**
+     * In case the MatchBybitReport was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<MatchBybitReportUpdateInput, MatchBybitReportUncheckedUpdateInput>
+  }
+
+  /**
+   * MatchBybitReport delete
+   */
+  export type MatchBybitReportDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+    /**
+     * Filter which MatchBybitReport to delete.
+     */
+    where: MatchBybitReportWhereUniqueInput
+  }
+
+  /**
+   * MatchBybitReport deleteMany
+   */
+  export type MatchBybitReportDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MatchBybitReports to delete
+     */
+    where?: MatchBybitReportWhereInput
+    /**
+     * Limit how many MatchBybitReports to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * MatchBybitReport.BybitClipMatch
+   */
+  export type MatchBybitReport$BybitClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BybitClipMatch
+     */
+    select?: BybitClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BybitClipMatch
+     */
+    omit?: BybitClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BybitClipMatchInclude<ExtArgs> | null
+    where?: BybitClipMatchWhereInput
+    orderBy?: BybitClipMatchOrderByWithRelationInput | BybitClipMatchOrderByWithRelationInput[]
+    cursor?: BybitClipMatchWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BybitClipMatchScalarFieldEnum | BybitClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * MatchBybitReport without action
+   */
+  export type MatchBybitReportDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchBybitReport
+     */
+    select?: MatchBybitReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchBybitReport
+     */
+    omit?: MatchBybitReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchBybitReportInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model MatchViresReport
+   */
+
+  export type AggregateMatchViresReport = {
+    _count: MatchViresReportCountAggregateOutputType | null
+    _avg: MatchViresReportAvgAggregateOutputType | null
+    _sum: MatchViresReportSumAggregateOutputType | null
+    _min: MatchViresReportMinAggregateOutputType | null
+    _max: MatchViresReportMaxAggregateOutputType | null
+  }
+
+  export type MatchViresReportAvgAggregateOutputType = {
+    id: number | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    userId: number | null
+  }
+
+  export type MatchViresReportSumAggregateOutputType = {
+    id: number | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    userId: number | null
+  }
+
+  export type MatchViresReportMinAggregateOutputType = {
+    id: number | null
+    reportDate: Date | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    timeRangeStart: Date | null
+    timeRangeEnd: Date | null
+    notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: number | null
+  }
+
+  export type MatchViresReportMaxAggregateOutputType = {
+    id: number | null
+    reportDate: Date | null
+    totalMatches: number | null
+    totalProfit: number | null
+    averageProfit: number | null
+    successRate: number | null
+    timeRangeStart: Date | null
+    timeRangeEnd: Date | null
+    notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: number | null
+  }
+
+  export type MatchViresReportCountAggregateOutputType = {
+    id: number
+    reportDate: number
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: number
+    timeRangeEnd: number
+    notes: number
+    idexCabinets: number
+    createdAt: number
+    updatedAt: number
+    userId: number
+    _all: number
+  }
+
+
+  export type MatchViresReportAvgAggregateInputType = {
+    id?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    userId?: true
+  }
+
+  export type MatchViresReportSumAggregateInputType = {
+    id?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    userId?: true
+  }
+
+  export type MatchViresReportMinAggregateInputType = {
+    id?: true
+    reportDate?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    timeRangeStart?: true
+    timeRangeEnd?: true
+    notes?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+  }
+
+  export type MatchViresReportMaxAggregateInputType = {
+    id?: true
+    reportDate?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    timeRangeStart?: true
+    timeRangeEnd?: true
+    notes?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+  }
+
+  export type MatchViresReportCountAggregateInputType = {
+    id?: true
+    reportDate?: true
+    totalMatches?: true
+    totalProfit?: true
+    averageProfit?: true
+    successRate?: true
+    timeRangeStart?: true
+    timeRangeEnd?: true
+    notes?: true
+    idexCabinets?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    _all?: true
+  }
+
+  export type MatchViresReportAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MatchViresReport to aggregate.
+     */
+    where?: MatchViresReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchViresReports to fetch.
+     */
+    orderBy?: MatchViresReportOrderByWithRelationInput | MatchViresReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: MatchViresReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchViresReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchViresReports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned MatchViresReports
+    **/
+    _count?: true | MatchViresReportCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: MatchViresReportAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: MatchViresReportSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: MatchViresReportMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: MatchViresReportMaxAggregateInputType
+  }
+
+  export type GetMatchViresReportAggregateType<T extends MatchViresReportAggregateArgs> = {
+        [P in keyof T & keyof AggregateMatchViresReport]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateMatchViresReport[P]>
+      : GetScalarType<T[P], AggregateMatchViresReport[P]>
+  }
+
+
+
+
+  export type MatchViresReportGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MatchViresReportWhereInput
+    orderBy?: MatchViresReportOrderByWithAggregationInput | MatchViresReportOrderByWithAggregationInput[]
+    by: MatchViresReportScalarFieldEnum[] | MatchViresReportScalarFieldEnum
+    having?: MatchViresReportScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: MatchViresReportCountAggregateInputType | true
+    _avg?: MatchViresReportAvgAggregateInputType
+    _sum?: MatchViresReportSumAggregateInputType
+    _min?: MatchViresReportMinAggregateInputType
+    _max?: MatchViresReportMaxAggregateInputType
+  }
+
+  export type MatchViresReportGroupByOutputType = {
+    id: number
+    reportDate: Date
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date
+    timeRangeEnd: Date
+    notes: string | null
+    idexCabinets: JsonValue | null
+    createdAt: Date
+    updatedAt: Date
+    userId: number
+    _count: MatchViresReportCountAggregateOutputType | null
+    _avg: MatchViresReportAvgAggregateOutputType | null
+    _sum: MatchViresReportSumAggregateOutputType | null
+    _min: MatchViresReportMinAggregateOutputType | null
+    _max: MatchViresReportMaxAggregateOutputType | null
+  }
+
+  type GetMatchViresReportGroupByPayload<T extends MatchViresReportGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<MatchViresReportGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof MatchViresReportGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], MatchViresReportGroupByOutputType[P]>
+            : GetScalarType<T[P], MatchViresReportGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type MatchViresReportSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresClipMatch?: boolean | MatchViresReport$ViresClipMatchArgs<ExtArgs>
+    _count?: boolean | MatchViresReportCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["matchViresReport"]>
+
+  export type MatchViresReportSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["matchViresReport"]>
+
+  export type MatchViresReportSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["matchViresReport"]>
+
+  export type MatchViresReportSelectScalar = {
+    id?: boolean
+    reportDate?: boolean
+    totalMatches?: boolean
+    totalProfit?: boolean
+    averageProfit?: boolean
+    successRate?: boolean
+    timeRangeStart?: boolean
+    timeRangeEnd?: boolean
+    notes?: boolean
+    idexCabinets?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+  }
+
+  export type MatchViresReportOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "reportDate" | "totalMatches" | "totalProfit" | "averageProfit" | "successRate" | "timeRangeStart" | "timeRangeEnd" | "notes" | "idexCabinets" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["matchViresReport"]>
+  export type MatchViresReportInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresClipMatch?: boolean | MatchViresReport$ViresClipMatchArgs<ExtArgs>
+    _count?: boolean | MatchViresReportCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type MatchViresReportIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type MatchViresReportIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $MatchViresReportPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MatchViresReport"
+    objects: {
+      User: Prisma.$UserPayload<ExtArgs>
+      ViresClipMatch: Prisma.$ViresClipMatchPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      reportDate: Date
+      totalMatches: number
+      totalProfit: number
+      averageProfit: number
+      successRate: number
+      timeRangeStart: Date
+      timeRangeEnd: Date
+      notes: string | null
+      idexCabinets: Prisma.JsonValue | null
+      createdAt: Date
+      updatedAt: Date
+      userId: number
+    }, ExtArgs["result"]["matchViresReport"]>
+    composites: {}
+  }
+
+  type MatchViresReportGetPayload<S extends boolean | null | undefined | MatchViresReportDefaultArgs> = $Result.GetResult<Prisma.$MatchViresReportPayload, S>
+
+  type MatchViresReportCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MatchViresReportFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MatchViresReportCountAggregateInputType | true
+    }
+
+  export interface MatchViresReportDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MatchViresReport'], meta: { name: 'MatchViresReport' } }
+    /**
+     * Find zero or one MatchViresReport that matches the filter.
+     * @param {MatchViresReportFindUniqueArgs} args - Arguments to find a MatchViresReport
+     * @example
+     * // Get one MatchViresReport
+     * const matchViresReport = await prisma.matchViresReport.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends MatchViresReportFindUniqueArgs>(args: SelectSubset<T, MatchViresReportFindUniqueArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one MatchViresReport that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {MatchViresReportFindUniqueOrThrowArgs} args - Arguments to find a MatchViresReport
+     * @example
+     * // Get one MatchViresReport
+     * const matchViresReport = await prisma.matchViresReport.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends MatchViresReportFindUniqueOrThrowArgs>(args: SelectSubset<T, MatchViresReportFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MatchViresReport that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchViresReportFindFirstArgs} args - Arguments to find a MatchViresReport
+     * @example
+     * // Get one MatchViresReport
+     * const matchViresReport = await prisma.matchViresReport.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends MatchViresReportFindFirstArgs>(args?: SelectSubset<T, MatchViresReportFindFirstArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MatchViresReport that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchViresReportFindFirstOrThrowArgs} args - Arguments to find a MatchViresReport
+     * @example
+     * // Get one MatchViresReport
+     * const matchViresReport = await prisma.matchViresReport.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends MatchViresReportFindFirstOrThrowArgs>(args?: SelectSubset<T, MatchViresReportFindFirstOrThrowArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more MatchViresReports that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchViresReportFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all MatchViresReports
+     * const matchViresReports = await prisma.matchViresReport.findMany()
+     * 
+     * // Get first 10 MatchViresReports
+     * const matchViresReports = await prisma.matchViresReport.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const matchViresReportWithIdOnly = await prisma.matchViresReport.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends MatchViresReportFindManyArgs>(args?: SelectSubset<T, MatchViresReportFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a MatchViresReport.
+     * @param {MatchViresReportCreateArgs} args - Arguments to create a MatchViresReport.
+     * @example
+     * // Create one MatchViresReport
+     * const MatchViresReport = await prisma.matchViresReport.create({
+     *   data: {
+     *     // ... data to create a MatchViresReport
+     *   }
+     * })
+     * 
+     */
+    create<T extends MatchViresReportCreateArgs>(args: SelectSubset<T, MatchViresReportCreateArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many MatchViresReports.
+     * @param {MatchViresReportCreateManyArgs} args - Arguments to create many MatchViresReports.
+     * @example
+     * // Create many MatchViresReports
+     * const matchViresReport = await prisma.matchViresReport.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends MatchViresReportCreateManyArgs>(args?: SelectSubset<T, MatchViresReportCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many MatchViresReports and returns the data saved in the database.
+     * @param {MatchViresReportCreateManyAndReturnArgs} args - Arguments to create many MatchViresReports.
+     * @example
+     * // Create many MatchViresReports
+     * const matchViresReport = await prisma.matchViresReport.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many MatchViresReports and only return the `id`
+     * const matchViresReportWithIdOnly = await prisma.matchViresReport.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends MatchViresReportCreateManyAndReturnArgs>(args?: SelectSubset<T, MatchViresReportCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a MatchViresReport.
+     * @param {MatchViresReportDeleteArgs} args - Arguments to delete one MatchViresReport.
+     * @example
+     * // Delete one MatchViresReport
+     * const MatchViresReport = await prisma.matchViresReport.delete({
+     *   where: {
+     *     // ... filter to delete one MatchViresReport
+     *   }
+     * })
+     * 
+     */
+    delete<T extends MatchViresReportDeleteArgs>(args: SelectSubset<T, MatchViresReportDeleteArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one MatchViresReport.
+     * @param {MatchViresReportUpdateArgs} args - Arguments to update one MatchViresReport.
+     * @example
+     * // Update one MatchViresReport
+     * const matchViresReport = await prisma.matchViresReport.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends MatchViresReportUpdateArgs>(args: SelectSubset<T, MatchViresReportUpdateArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more MatchViresReports.
+     * @param {MatchViresReportDeleteManyArgs} args - Arguments to filter MatchViresReports to delete.
+     * @example
+     * // Delete a few MatchViresReports
+     * const { count } = await prisma.matchViresReport.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends MatchViresReportDeleteManyArgs>(args?: SelectSubset<T, MatchViresReportDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MatchViresReports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchViresReportUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many MatchViresReports
+     * const matchViresReport = await prisma.matchViresReport.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends MatchViresReportUpdateManyArgs>(args: SelectSubset<T, MatchViresReportUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MatchViresReports and returns the data updated in the database.
+     * @param {MatchViresReportUpdateManyAndReturnArgs} args - Arguments to update many MatchViresReports.
+     * @example
+     * // Update many MatchViresReports
+     * const matchViresReport = await prisma.matchViresReport.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more MatchViresReports and only return the `id`
+     * const matchViresReportWithIdOnly = await prisma.matchViresReport.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends MatchViresReportUpdateManyAndReturnArgs>(args: SelectSubset<T, MatchViresReportUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one MatchViresReport.
+     * @param {MatchViresReportUpsertArgs} args - Arguments to update or create a MatchViresReport.
+     * @example
+     * // Update or create a MatchViresReport
+     * const matchViresReport = await prisma.matchViresReport.upsert({
+     *   create: {
+     *     // ... data to create a MatchViresReport
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the MatchViresReport we want to update
+     *   }
+     * })
+     */
+    upsert<T extends MatchViresReportUpsertArgs>(args: SelectSubset<T, MatchViresReportUpsertArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of MatchViresReports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchViresReportCountArgs} args - Arguments to filter MatchViresReports to count.
+     * @example
+     * // Count the number of MatchViresReports
+     * const count = await prisma.matchViresReport.count({
+     *   where: {
+     *     // ... the filter for the MatchViresReports we want to count
+     *   }
+     * })
+    **/
+    count<T extends MatchViresReportCountArgs>(
+      args?: Subset<T, MatchViresReportCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], MatchViresReportCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a MatchViresReport.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchViresReportAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends MatchViresReportAggregateArgs>(args: Subset<T, MatchViresReportAggregateArgs>): Prisma.PrismaPromise<GetMatchViresReportAggregateType<T>>
+
+    /**
+     * Group by MatchViresReport.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MatchViresReportGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends MatchViresReportGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: MatchViresReportGroupByArgs['orderBy'] }
+        : { orderBy?: MatchViresReportGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, MatchViresReportGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMatchViresReportGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the MatchViresReport model
+   */
+  readonly fields: MatchViresReportFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for MatchViresReport.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__MatchViresReportClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    ViresClipMatch<T extends MatchViresReport$ViresClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, MatchViresReport$ViresClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the MatchViresReport model
+   */
+  interface MatchViresReportFieldRefs {
+    readonly id: FieldRef<"MatchViresReport", 'Int'>
+    readonly reportDate: FieldRef<"MatchViresReport", 'DateTime'>
+    readonly totalMatches: FieldRef<"MatchViresReport", 'Int'>
+    readonly totalProfit: FieldRef<"MatchViresReport", 'Float'>
+    readonly averageProfit: FieldRef<"MatchViresReport", 'Float'>
+    readonly successRate: FieldRef<"MatchViresReport", 'Float'>
+    readonly timeRangeStart: FieldRef<"MatchViresReport", 'DateTime'>
+    readonly timeRangeEnd: FieldRef<"MatchViresReport", 'DateTime'>
+    readonly notes: FieldRef<"MatchViresReport", 'String'>
+    readonly idexCabinets: FieldRef<"MatchViresReport", 'Json'>
+    readonly createdAt: FieldRef<"MatchViresReport", 'DateTime'>
+    readonly updatedAt: FieldRef<"MatchViresReport", 'DateTime'>
+    readonly userId: FieldRef<"MatchViresReport", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * MatchViresReport findUnique
+   */
+  export type MatchViresReportFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchViresReport to fetch.
+     */
+    where: MatchViresReportWhereUniqueInput
+  }
+
+  /**
+   * MatchViresReport findUniqueOrThrow
+   */
+  export type MatchViresReportFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchViresReport to fetch.
+     */
+    where: MatchViresReportWhereUniqueInput
+  }
+
+  /**
+   * MatchViresReport findFirst
+   */
+  export type MatchViresReportFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchViresReport to fetch.
+     */
+    where?: MatchViresReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchViresReports to fetch.
+     */
+    orderBy?: MatchViresReportOrderByWithRelationInput | MatchViresReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MatchViresReports.
+     */
+    cursor?: MatchViresReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchViresReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchViresReports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MatchViresReports.
+     */
+    distinct?: MatchViresReportScalarFieldEnum | MatchViresReportScalarFieldEnum[]
+  }
+
+  /**
+   * MatchViresReport findFirstOrThrow
+   */
+  export type MatchViresReportFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchViresReport to fetch.
+     */
+    where?: MatchViresReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchViresReports to fetch.
+     */
+    orderBy?: MatchViresReportOrderByWithRelationInput | MatchViresReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MatchViresReports.
+     */
+    cursor?: MatchViresReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchViresReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchViresReports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MatchViresReports.
+     */
+    distinct?: MatchViresReportScalarFieldEnum | MatchViresReportScalarFieldEnum[]
+  }
+
+  /**
+   * MatchViresReport findMany
+   */
+  export type MatchViresReportFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * Filter, which MatchViresReports to fetch.
+     */
+    where?: MatchViresReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MatchViresReports to fetch.
+     */
+    orderBy?: MatchViresReportOrderByWithRelationInput | MatchViresReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing MatchViresReports.
+     */
+    cursor?: MatchViresReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MatchViresReports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MatchViresReports.
+     */
+    skip?: number
+    distinct?: MatchViresReportScalarFieldEnum | MatchViresReportScalarFieldEnum[]
+  }
+
+  /**
+   * MatchViresReport create
+   */
+  export type MatchViresReportCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * The data needed to create a MatchViresReport.
+     */
+    data: XOR<MatchViresReportCreateInput, MatchViresReportUncheckedCreateInput>
+  }
+
+  /**
+   * MatchViresReport createMany
+   */
+  export type MatchViresReportCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many MatchViresReports.
+     */
+    data: MatchViresReportCreateManyInput | MatchViresReportCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * MatchViresReport createManyAndReturn
+   */
+  export type MatchViresReportCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * The data used to create many MatchViresReports.
+     */
+    data: MatchViresReportCreateManyInput | MatchViresReportCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * MatchViresReport update
+   */
+  export type MatchViresReportUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * The data needed to update a MatchViresReport.
+     */
+    data: XOR<MatchViresReportUpdateInput, MatchViresReportUncheckedUpdateInput>
+    /**
+     * Choose, which MatchViresReport to update.
+     */
+    where: MatchViresReportWhereUniqueInput
+  }
+
+  /**
+   * MatchViresReport updateMany
+   */
+  export type MatchViresReportUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update MatchViresReports.
+     */
+    data: XOR<MatchViresReportUpdateManyMutationInput, MatchViresReportUncheckedUpdateManyInput>
+    /**
+     * Filter which MatchViresReports to update
+     */
+    where?: MatchViresReportWhereInput
+    /**
+     * Limit how many MatchViresReports to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * MatchViresReport updateManyAndReturn
+   */
+  export type MatchViresReportUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * The data used to update MatchViresReports.
+     */
+    data: XOR<MatchViresReportUpdateManyMutationInput, MatchViresReportUncheckedUpdateManyInput>
+    /**
+     * Filter which MatchViresReports to update
+     */
+    where?: MatchViresReportWhereInput
+    /**
+     * Limit how many MatchViresReports to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * MatchViresReport upsert
+   */
+  export type MatchViresReportUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * The filter to search for the MatchViresReport to update in case it exists.
+     */
+    where: MatchViresReportWhereUniqueInput
+    /**
+     * In case the MatchViresReport found by the `where` argument doesn't exist, create a new MatchViresReport with this data.
+     */
+    create: XOR<MatchViresReportCreateInput, MatchViresReportUncheckedCreateInput>
+    /**
+     * In case the MatchViresReport was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<MatchViresReportUpdateInput, MatchViresReportUncheckedUpdateInput>
+  }
+
+  /**
+   * MatchViresReport delete
+   */
+  export type MatchViresReportDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    /**
+     * Filter which MatchViresReport to delete.
+     */
+    where: MatchViresReportWhereUniqueInput
+  }
+
+  /**
+   * MatchViresReport deleteMany
+   */
+  export type MatchViresReportDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MatchViresReports to delete
+     */
+    where?: MatchViresReportWhereInput
+    /**
+     * Limit how many MatchViresReports to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * MatchViresReport.ViresClipMatch
+   */
+  export type MatchViresReport$ViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    where?: ViresClipMatchWhereInput
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    cursor?: ViresClipMatchWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ViresClipMatchScalarFieldEnum | ViresClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * MatchViresReport without action
+   */
+  export type MatchViresReportDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ViresCabinet
+   */
+
+  export type AggregateViresCabinet = {
+    _count: ViresCabinetCountAggregateOutputType | null
+    _avg: ViresCabinetAvgAggregateOutputType | null
+    _sum: ViresCabinetSumAggregateOutputType | null
+    _min: ViresCabinetMinAggregateOutputType | null
+    _max: ViresCabinetMaxAggregateOutputType | null
+  }
+
+  export type ViresCabinetAvgAggregateOutputType = {
+    id: number | null
+    userId: number | null
+  }
+
+  export type ViresCabinetSumAggregateOutputType = {
+    id: number | null
+    userId: number | null
+  }
+
+  export type ViresCabinetMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    login: string | null
+    password: string | null
+    type: $Enums.PasswordType | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    comment: string | null
+    userId: number | null
+    lastUpdate: Date | null
+  }
+
+  export type ViresCabinetMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    login: string | null
+    password: string | null
+    type: $Enums.PasswordType | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    comment: string | null
+    userId: number | null
+    lastUpdate: Date | null
+  }
+
+  export type ViresCabinetCountAggregateOutputType = {
+    id: number
+    name: number
+    login: number
+    password: number
+    type: number
+    createdAt: number
+    updatedAt: number
+    comment: number
+    userId: number
+    lastUpdate: number
+    _all: number
+  }
+
+
+  export type ViresCabinetAvgAggregateInputType = {
+    id?: true
+    userId?: true
+  }
+
+  export type ViresCabinetSumAggregateInputType = {
+    id?: true
+    userId?: true
+  }
+
+  export type ViresCabinetMinAggregateInputType = {
+    id?: true
+    name?: true
+    login?: true
+    password?: true
+    type?: true
+    createdAt?: true
+    updatedAt?: true
+    comment?: true
+    userId?: true
+    lastUpdate?: true
+  }
+
+  export type ViresCabinetMaxAggregateInputType = {
+    id?: true
+    name?: true
+    login?: true
+    password?: true
+    type?: true
+    createdAt?: true
+    updatedAt?: true
+    comment?: true
+    userId?: true
+    lastUpdate?: true
+  }
+
+  export type ViresCabinetCountAggregateInputType = {
+    id?: true
+    name?: true
+    login?: true
+    password?: true
+    type?: true
+    createdAt?: true
+    updatedAt?: true
+    comment?: true
+    userId?: true
+    lastUpdate?: true
+    _all?: true
+  }
+
+  export type ViresCabinetAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ViresCabinet to aggregate.
+     */
+    where?: ViresCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresCabinets to fetch.
+     */
+    orderBy?: ViresCabinetOrderByWithRelationInput | ViresCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ViresCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ViresCabinets
+    **/
+    _count?: true | ViresCabinetCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ViresCabinetAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ViresCabinetSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ViresCabinetMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ViresCabinetMaxAggregateInputType
+  }
+
+  export type GetViresCabinetAggregateType<T extends ViresCabinetAggregateArgs> = {
+        [P in keyof T & keyof AggregateViresCabinet]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateViresCabinet[P]>
+      : GetScalarType<T[P], AggregateViresCabinet[P]>
+  }
+
+
+
+
+  export type ViresCabinetGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresCabinetWhereInput
+    orderBy?: ViresCabinetOrderByWithAggregationInput | ViresCabinetOrderByWithAggregationInput[]
+    by: ViresCabinetScalarFieldEnum[] | ViresCabinetScalarFieldEnum
+    having?: ViresCabinetScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ViresCabinetCountAggregateInputType | true
+    _avg?: ViresCabinetAvgAggregateInputType
+    _sum?: ViresCabinetSumAggregateInputType
+    _min?: ViresCabinetMinAggregateInputType
+    _max?: ViresCabinetMaxAggregateInputType
+  }
+
+  export type ViresCabinetGroupByOutputType = {
+    id: number
+    name: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt: Date
+    updatedAt: Date
+    comment: string | null
+    userId: number
+    lastUpdate: Date
+    _count: ViresCabinetCountAggregateOutputType | null
+    _avg: ViresCabinetAvgAggregateOutputType | null
+    _sum: ViresCabinetSumAggregateOutputType | null
+    _min: ViresCabinetMinAggregateOutputType | null
+    _max: ViresCabinetMaxAggregateOutputType | null
+  }
+
+  type GetViresCabinetGroupByPayload<T extends ViresCabinetGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ViresCabinetGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ViresCabinetGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ViresCabinetGroupByOutputType[P]>
+            : GetScalarType<T[P], ViresCabinetGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ViresCabinetSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    login?: boolean
+    password?: boolean
+    type?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    comment?: boolean
+    userId?: boolean
+    lastUpdate?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresCabinet$ViresTransactionPayinArgs<ExtArgs>
+    _count?: boolean | ViresCabinetCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresCabinet"]>
+
+  export type ViresCabinetSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    login?: boolean
+    password?: boolean
+    type?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    comment?: boolean
+    userId?: boolean
+    lastUpdate?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresCabinet"]>
+
+  export type ViresCabinetSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    login?: boolean
+    password?: boolean
+    type?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    comment?: boolean
+    userId?: boolean
+    lastUpdate?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresCabinet"]>
+
+  export type ViresCabinetSelectScalar = {
+    id?: boolean
+    name?: boolean
+    login?: boolean
+    password?: boolean
+    type?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    comment?: boolean
+    userId?: boolean
+    lastUpdate?: boolean
+  }
+
+  export type ViresCabinetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "login" | "password" | "type" | "createdAt" | "updatedAt" | "comment" | "userId" | "lastUpdate", ExtArgs["result"]["viresCabinet"]>
+  export type ViresCabinetInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresCabinet$ViresTransactionPayinArgs<ExtArgs>
+    _count?: boolean | ViresCabinetCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ViresCabinetIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type ViresCabinetIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $ViresCabinetPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ViresCabinet"
+    objects: {
+      User: Prisma.$UserPayload<ExtArgs>
+      ViresTransactionPayin: Prisma.$ViresTransactionPayinPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string | null
+      login: string
+      password: string
+      type: $Enums.PasswordType
+      createdAt: Date
+      updatedAt: Date
+      comment: string | null
+      userId: number
+      lastUpdate: Date
+    }, ExtArgs["result"]["viresCabinet"]>
+    composites: {}
+  }
+
+  type ViresCabinetGetPayload<S extends boolean | null | undefined | ViresCabinetDefaultArgs> = $Result.GetResult<Prisma.$ViresCabinetPayload, S>
+
+  type ViresCabinetCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ViresCabinetFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ViresCabinetCountAggregateInputType | true
+    }
+
+  export interface ViresCabinetDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ViresCabinet'], meta: { name: 'ViresCabinet' } }
+    /**
+     * Find zero or one ViresCabinet that matches the filter.
+     * @param {ViresCabinetFindUniqueArgs} args - Arguments to find a ViresCabinet
+     * @example
+     * // Get one ViresCabinet
+     * const viresCabinet = await prisma.viresCabinet.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ViresCabinetFindUniqueArgs>(args: SelectSubset<T, ViresCabinetFindUniqueArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ViresCabinet that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ViresCabinetFindUniqueOrThrowArgs} args - Arguments to find a ViresCabinet
+     * @example
+     * // Get one ViresCabinet
+     * const viresCabinet = await prisma.viresCabinet.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ViresCabinetFindUniqueOrThrowArgs>(args: SelectSubset<T, ViresCabinetFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ViresCabinet that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresCabinetFindFirstArgs} args - Arguments to find a ViresCabinet
+     * @example
+     * // Get one ViresCabinet
+     * const viresCabinet = await prisma.viresCabinet.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ViresCabinetFindFirstArgs>(args?: SelectSubset<T, ViresCabinetFindFirstArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ViresCabinet that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresCabinetFindFirstOrThrowArgs} args - Arguments to find a ViresCabinet
+     * @example
+     * // Get one ViresCabinet
+     * const viresCabinet = await prisma.viresCabinet.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ViresCabinetFindFirstOrThrowArgs>(args?: SelectSubset<T, ViresCabinetFindFirstOrThrowArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ViresCabinets that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresCabinetFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ViresCabinets
+     * const viresCabinets = await prisma.viresCabinet.findMany()
+     * 
+     * // Get first 10 ViresCabinets
+     * const viresCabinets = await prisma.viresCabinet.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const viresCabinetWithIdOnly = await prisma.viresCabinet.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ViresCabinetFindManyArgs>(args?: SelectSubset<T, ViresCabinetFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ViresCabinet.
+     * @param {ViresCabinetCreateArgs} args - Arguments to create a ViresCabinet.
+     * @example
+     * // Create one ViresCabinet
+     * const ViresCabinet = await prisma.viresCabinet.create({
+     *   data: {
+     *     // ... data to create a ViresCabinet
+     *   }
+     * })
+     * 
+     */
+    create<T extends ViresCabinetCreateArgs>(args: SelectSubset<T, ViresCabinetCreateArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ViresCabinets.
+     * @param {ViresCabinetCreateManyArgs} args - Arguments to create many ViresCabinets.
+     * @example
+     * // Create many ViresCabinets
+     * const viresCabinet = await prisma.viresCabinet.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ViresCabinetCreateManyArgs>(args?: SelectSubset<T, ViresCabinetCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ViresCabinets and returns the data saved in the database.
+     * @param {ViresCabinetCreateManyAndReturnArgs} args - Arguments to create many ViresCabinets.
+     * @example
+     * // Create many ViresCabinets
+     * const viresCabinet = await prisma.viresCabinet.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ViresCabinets and only return the `id`
+     * const viresCabinetWithIdOnly = await prisma.viresCabinet.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ViresCabinetCreateManyAndReturnArgs>(args?: SelectSubset<T, ViresCabinetCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ViresCabinet.
+     * @param {ViresCabinetDeleteArgs} args - Arguments to delete one ViresCabinet.
+     * @example
+     * // Delete one ViresCabinet
+     * const ViresCabinet = await prisma.viresCabinet.delete({
+     *   where: {
+     *     // ... filter to delete one ViresCabinet
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ViresCabinetDeleteArgs>(args: SelectSubset<T, ViresCabinetDeleteArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ViresCabinet.
+     * @param {ViresCabinetUpdateArgs} args - Arguments to update one ViresCabinet.
+     * @example
+     * // Update one ViresCabinet
+     * const viresCabinet = await prisma.viresCabinet.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ViresCabinetUpdateArgs>(args: SelectSubset<T, ViresCabinetUpdateArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ViresCabinets.
+     * @param {ViresCabinetDeleteManyArgs} args - Arguments to filter ViresCabinets to delete.
+     * @example
+     * // Delete a few ViresCabinets
+     * const { count } = await prisma.viresCabinet.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ViresCabinetDeleteManyArgs>(args?: SelectSubset<T, ViresCabinetDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ViresCabinets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresCabinetUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ViresCabinets
+     * const viresCabinet = await prisma.viresCabinet.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ViresCabinetUpdateManyArgs>(args: SelectSubset<T, ViresCabinetUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ViresCabinets and returns the data updated in the database.
+     * @param {ViresCabinetUpdateManyAndReturnArgs} args - Arguments to update many ViresCabinets.
+     * @example
+     * // Update many ViresCabinets
+     * const viresCabinet = await prisma.viresCabinet.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ViresCabinets and only return the `id`
+     * const viresCabinetWithIdOnly = await prisma.viresCabinet.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ViresCabinetUpdateManyAndReturnArgs>(args: SelectSubset<T, ViresCabinetUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ViresCabinet.
+     * @param {ViresCabinetUpsertArgs} args - Arguments to update or create a ViresCabinet.
+     * @example
+     * // Update or create a ViresCabinet
+     * const viresCabinet = await prisma.viresCabinet.upsert({
+     *   create: {
+     *     // ... data to create a ViresCabinet
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ViresCabinet we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ViresCabinetUpsertArgs>(args: SelectSubset<T, ViresCabinetUpsertArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ViresCabinets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresCabinetCountArgs} args - Arguments to filter ViresCabinets to count.
+     * @example
+     * // Count the number of ViresCabinets
+     * const count = await prisma.viresCabinet.count({
+     *   where: {
+     *     // ... the filter for the ViresCabinets we want to count
+     *   }
+     * })
+    **/
+    count<T extends ViresCabinetCountArgs>(
+      args?: Subset<T, ViresCabinetCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ViresCabinetCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ViresCabinet.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresCabinetAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ViresCabinetAggregateArgs>(args: Subset<T, ViresCabinetAggregateArgs>): Prisma.PrismaPromise<GetViresCabinetAggregateType<T>>
+
+    /**
+     * Group by ViresCabinet.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresCabinetGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ViresCabinetGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ViresCabinetGroupByArgs['orderBy'] }
+        : { orderBy?: ViresCabinetGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ViresCabinetGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetViresCabinetGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ViresCabinet model
+   */
+  readonly fields: ViresCabinetFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ViresCabinet.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ViresCabinetClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    ViresTransactionPayin<T extends ViresCabinet$ViresTransactionPayinArgs<ExtArgs> = {}>(args?: Subset<T, ViresCabinet$ViresTransactionPayinArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ViresCabinet model
+   */
+  interface ViresCabinetFieldRefs {
+    readonly id: FieldRef<"ViresCabinet", 'Int'>
+    readonly name: FieldRef<"ViresCabinet", 'String'>
+    readonly login: FieldRef<"ViresCabinet", 'String'>
+    readonly password: FieldRef<"ViresCabinet", 'String'>
+    readonly type: FieldRef<"ViresCabinet", 'PasswordType'>
+    readonly createdAt: FieldRef<"ViresCabinet", 'DateTime'>
+    readonly updatedAt: FieldRef<"ViresCabinet", 'DateTime'>
+    readonly comment: FieldRef<"ViresCabinet", 'String'>
+    readonly userId: FieldRef<"ViresCabinet", 'Int'>
+    readonly lastUpdate: FieldRef<"ViresCabinet", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ViresCabinet findUnique
+   */
+  export type ViresCabinetFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresCabinet to fetch.
+     */
+    where: ViresCabinetWhereUniqueInput
+  }
+
+  /**
+   * ViresCabinet findUniqueOrThrow
+   */
+  export type ViresCabinetFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresCabinet to fetch.
+     */
+    where: ViresCabinetWhereUniqueInput
+  }
+
+  /**
+   * ViresCabinet findFirst
+   */
+  export type ViresCabinetFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresCabinet to fetch.
+     */
+    where?: ViresCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresCabinets to fetch.
+     */
+    orderBy?: ViresCabinetOrderByWithRelationInput | ViresCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ViresCabinets.
+     */
+    cursor?: ViresCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ViresCabinets.
+     */
+    distinct?: ViresCabinetScalarFieldEnum | ViresCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * ViresCabinet findFirstOrThrow
+   */
+  export type ViresCabinetFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresCabinet to fetch.
+     */
+    where?: ViresCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresCabinets to fetch.
+     */
+    orderBy?: ViresCabinetOrderByWithRelationInput | ViresCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ViresCabinets.
+     */
+    cursor?: ViresCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresCabinets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ViresCabinets.
+     */
+    distinct?: ViresCabinetScalarFieldEnum | ViresCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * ViresCabinet findMany
+   */
+  export type ViresCabinetFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresCabinets to fetch.
+     */
+    where?: ViresCabinetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresCabinets to fetch.
+     */
+    orderBy?: ViresCabinetOrderByWithRelationInput | ViresCabinetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ViresCabinets.
+     */
+    cursor?: ViresCabinetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresCabinets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresCabinets.
+     */
+    skip?: number
+    distinct?: ViresCabinetScalarFieldEnum | ViresCabinetScalarFieldEnum[]
+  }
+
+  /**
+   * ViresCabinet create
+   */
+  export type ViresCabinetCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ViresCabinet.
+     */
+    data: XOR<ViresCabinetCreateInput, ViresCabinetUncheckedCreateInput>
+  }
+
+  /**
+   * ViresCabinet createMany
+   */
+  export type ViresCabinetCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ViresCabinets.
+     */
+    data: ViresCabinetCreateManyInput | ViresCabinetCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ViresCabinet createManyAndReturn
+   */
+  export type ViresCabinetCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * The data used to create many ViresCabinets.
+     */
+    data: ViresCabinetCreateManyInput | ViresCabinetCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ViresCabinet update
+   */
+  export type ViresCabinetUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ViresCabinet.
+     */
+    data: XOR<ViresCabinetUpdateInput, ViresCabinetUncheckedUpdateInput>
+    /**
+     * Choose, which ViresCabinet to update.
+     */
+    where: ViresCabinetWhereUniqueInput
+  }
+
+  /**
+   * ViresCabinet updateMany
+   */
+  export type ViresCabinetUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ViresCabinets.
+     */
+    data: XOR<ViresCabinetUpdateManyMutationInput, ViresCabinetUncheckedUpdateManyInput>
+    /**
+     * Filter which ViresCabinets to update
+     */
+    where?: ViresCabinetWhereInput
+    /**
+     * Limit how many ViresCabinets to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ViresCabinet updateManyAndReturn
+   */
+  export type ViresCabinetUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * The data used to update ViresCabinets.
+     */
+    data: XOR<ViresCabinetUpdateManyMutationInput, ViresCabinetUncheckedUpdateManyInput>
+    /**
+     * Filter which ViresCabinets to update
+     */
+    where?: ViresCabinetWhereInput
+    /**
+     * Limit how many ViresCabinets to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ViresCabinet upsert
+   */
+  export type ViresCabinetUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ViresCabinet to update in case it exists.
+     */
+    where: ViresCabinetWhereUniqueInput
+    /**
+     * In case the ViresCabinet found by the `where` argument doesn't exist, create a new ViresCabinet with this data.
+     */
+    create: XOR<ViresCabinetCreateInput, ViresCabinetUncheckedCreateInput>
+    /**
+     * In case the ViresCabinet was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ViresCabinetUpdateInput, ViresCabinetUncheckedUpdateInput>
+  }
+
+  /**
+   * ViresCabinet delete
+   */
+  export type ViresCabinetDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+    /**
+     * Filter which ViresCabinet to delete.
+     */
+    where: ViresCabinetWhereUniqueInput
+  }
+
+  /**
+   * ViresCabinet deleteMany
+   */
+  export type ViresCabinetDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ViresCabinets to delete
+     */
+    where?: ViresCabinetWhereInput
+    /**
+     * Limit how many ViresCabinets to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ViresCabinet.ViresTransactionPayin
+   */
+  export type ViresCabinet$ViresTransactionPayinArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    where?: ViresTransactionPayinWhereInput
+    orderBy?: ViresTransactionPayinOrderByWithRelationInput | ViresTransactionPayinOrderByWithRelationInput[]
+    cursor?: ViresTransactionPayinWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ViresTransactionPayinScalarFieldEnum | ViresTransactionPayinScalarFieldEnum[]
+  }
+
+  /**
+   * ViresCabinet without action
+   */
+  export type ViresCabinetDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresCabinet
+     */
+    select?: ViresCabinetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresCabinet
+     */
+    omit?: ViresCabinetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresCabinetInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ViresClipMatch
+   */
+
+  export type AggregateViresClipMatch = {
+    _count: ViresClipMatchCountAggregateOutputType | null
+    _avg: ViresClipMatchAvgAggregateOutputType | null
+    _sum: ViresClipMatchSumAggregateOutputType | null
+    _min: ViresClipMatchMinAggregateOutputType | null
+    _max: ViresClipMatchMaxAggregateOutputType | null
+  }
+
+  export type ViresClipMatchAvgAggregateOutputType = {
+    id: number | null
+    viresTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    matchViresReportId: number | null
+    userId: number | null
+    bybitTransactionId: number | null
+  }
+
+  export type ViresClipMatchSumAggregateOutputType = {
+    id: number | null
+    viresTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    matchViresReportId: number | null
+    userId: number | null
+    bybitTransactionId: number | null
+  }
+
+  export type ViresClipMatchMinAggregateOutputType = {
+    id: number | null
+    viresTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    matchViresReportId: number | null
+    userId: number | null
+    bybitTransactionId: number | null
+  }
+
+  export type ViresClipMatchMaxAggregateOutputType = {
+    id: number | null
+    viresTransactionId: number | null
+    timeDifference: number | null
+    grossExpense: number | null
+    grossIncome: number | null
+    grossProfit: number | null
+    profitPercentage: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    matchViresReportId: number | null
+    userId: number | null
+    bybitTransactionId: number | null
+  }
+
+  export type ViresClipMatchCountAggregateOutputType = {
+    id: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt: number
+    updatedAt: number
+    matchViresReportId: number
+    userId: number
+    bybitTransactionId: number
+    _all: number
+  }
+
+
+  export type ViresClipMatchAvgAggregateInputType = {
+    id?: true
+    viresTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    matchViresReportId?: true
+    userId?: true
+    bybitTransactionId?: true
+  }
+
+  export type ViresClipMatchSumAggregateInputType = {
+    id?: true
+    viresTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    matchViresReportId?: true
+    userId?: true
+    bybitTransactionId?: true
+  }
+
+  export type ViresClipMatchMinAggregateInputType = {
+    id?: true
+    viresTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    createdAt?: true
+    updatedAt?: true
+    matchViresReportId?: true
+    userId?: true
+    bybitTransactionId?: true
+  }
+
+  export type ViresClipMatchMaxAggregateInputType = {
+    id?: true
+    viresTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    createdAt?: true
+    updatedAt?: true
+    matchViresReportId?: true
+    userId?: true
+    bybitTransactionId?: true
+  }
+
+  export type ViresClipMatchCountAggregateInputType = {
+    id?: true
+    viresTransactionId?: true
+    timeDifference?: true
+    grossExpense?: true
+    grossIncome?: true
+    grossProfit?: true
+    profitPercentage?: true
+    createdAt?: true
+    updatedAt?: true
+    matchViresReportId?: true
+    userId?: true
+    bybitTransactionId?: true
+    _all?: true
+  }
+
+  export type ViresClipMatchAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ViresClipMatch to aggregate.
+     */
+    where?: ViresClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresClipMatches to fetch.
+     */
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ViresClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresClipMatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ViresClipMatches
+    **/
+    _count?: true | ViresClipMatchCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ViresClipMatchAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ViresClipMatchSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ViresClipMatchMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ViresClipMatchMaxAggregateInputType
+  }
+
+  export type GetViresClipMatchAggregateType<T extends ViresClipMatchAggregateArgs> = {
+        [P in keyof T & keyof AggregateViresClipMatch]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateViresClipMatch[P]>
+      : GetScalarType<T[P], AggregateViresClipMatch[P]>
+  }
+
+
+
+
+  export type ViresClipMatchGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresClipMatchWhereInput
+    orderBy?: ViresClipMatchOrderByWithAggregationInput | ViresClipMatchOrderByWithAggregationInput[]
+    by: ViresClipMatchScalarFieldEnum[] | ViresClipMatchScalarFieldEnum
+    having?: ViresClipMatchScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ViresClipMatchCountAggregateInputType | true
+    _avg?: ViresClipMatchAvgAggregateInputType
+    _sum?: ViresClipMatchSumAggregateInputType
+    _min?: ViresClipMatchMinAggregateInputType
+    _max?: ViresClipMatchMaxAggregateInputType
+  }
+
+  export type ViresClipMatchGroupByOutputType = {
+    id: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt: Date
+    updatedAt: Date
+    matchViresReportId: number | null
+    userId: number
+    bybitTransactionId: number
+    _count: ViresClipMatchCountAggregateOutputType | null
+    _avg: ViresClipMatchAvgAggregateOutputType | null
+    _sum: ViresClipMatchSumAggregateOutputType | null
+    _min: ViresClipMatchMinAggregateOutputType | null
+    _max: ViresClipMatchMaxAggregateOutputType | null
+  }
+
+  type GetViresClipMatchGroupByPayload<T extends ViresClipMatchGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ViresClipMatchGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ViresClipMatchGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ViresClipMatchGroupByOutputType[P]>
+            : GetScalarType<T[P], ViresClipMatchGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ViresClipMatchSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    viresTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchViresReportId?: boolean
+    userId?: boolean
+    bybitTransactionId?: boolean
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    MatchViresReport?: boolean | ViresClipMatch$MatchViresReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresTransactionPayinDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresClipMatch"]>
+
+  export type ViresClipMatchSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    viresTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchViresReportId?: boolean
+    userId?: boolean
+    bybitTransactionId?: boolean
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    MatchViresReport?: boolean | ViresClipMatch$MatchViresReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresTransactionPayinDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresClipMatch"]>
+
+  export type ViresClipMatchSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    viresTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchViresReportId?: boolean
+    userId?: boolean
+    bybitTransactionId?: boolean
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    MatchViresReport?: boolean | ViresClipMatch$MatchViresReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresTransactionPayinDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresClipMatch"]>
+
+  export type ViresClipMatchSelectScalar = {
+    id?: boolean
+    viresTransactionId?: boolean
+    timeDifference?: boolean
+    grossExpense?: boolean
+    grossIncome?: boolean
+    grossProfit?: boolean
+    profitPercentage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    matchViresReportId?: boolean
+    userId?: boolean
+    bybitTransactionId?: boolean
+  }
+
+  export type ViresClipMatchOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "viresTransactionId" | "timeDifference" | "grossExpense" | "grossIncome" | "grossProfit" | "profitPercentage" | "createdAt" | "updatedAt" | "matchViresReportId" | "userId" | "bybitTransactionId", ExtArgs["result"]["viresClipMatch"]>
+  export type ViresClipMatchInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    MatchViresReport?: boolean | ViresClipMatch$MatchViresReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresTransactionPayinDefaultArgs<ExtArgs>
+  }
+  export type ViresClipMatchIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    MatchViresReport?: boolean | ViresClipMatch$MatchViresReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresTransactionPayinDefaultArgs<ExtArgs>
+  }
+  export type ViresClipMatchIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    BybitTransactionFromCabinet?: boolean | BybitTransactionFromCabinetDefaultArgs<ExtArgs>
+    MatchViresReport?: boolean | ViresClipMatch$MatchViresReportArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    ViresTransactionPayin?: boolean | ViresTransactionPayinDefaultArgs<ExtArgs>
+  }
+
+  export type $ViresClipMatchPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ViresClipMatch"
+    objects: {
+      BybitTransactionFromCabinet: Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>
+      MatchViresReport: Prisma.$MatchViresReportPayload<ExtArgs> | null
+      User: Prisma.$UserPayload<ExtArgs>
+      ViresTransactionPayin: Prisma.$ViresTransactionPayinPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      viresTransactionId: number
+      timeDifference: number
+      grossExpense: number
+      grossIncome: number
+      grossProfit: number
+      profitPercentage: number
+      createdAt: Date
+      updatedAt: Date
+      matchViresReportId: number | null
+      userId: number
+      bybitTransactionId: number
+    }, ExtArgs["result"]["viresClipMatch"]>
+    composites: {}
+  }
+
+  type ViresClipMatchGetPayload<S extends boolean | null | undefined | ViresClipMatchDefaultArgs> = $Result.GetResult<Prisma.$ViresClipMatchPayload, S>
+
+  type ViresClipMatchCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ViresClipMatchFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ViresClipMatchCountAggregateInputType | true
+    }
+
+  export interface ViresClipMatchDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ViresClipMatch'], meta: { name: 'ViresClipMatch' } }
+    /**
+     * Find zero or one ViresClipMatch that matches the filter.
+     * @param {ViresClipMatchFindUniqueArgs} args - Arguments to find a ViresClipMatch
+     * @example
+     * // Get one ViresClipMatch
+     * const viresClipMatch = await prisma.viresClipMatch.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ViresClipMatchFindUniqueArgs>(args: SelectSubset<T, ViresClipMatchFindUniqueArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ViresClipMatch that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ViresClipMatchFindUniqueOrThrowArgs} args - Arguments to find a ViresClipMatch
+     * @example
+     * // Get one ViresClipMatch
+     * const viresClipMatch = await prisma.viresClipMatch.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ViresClipMatchFindUniqueOrThrowArgs>(args: SelectSubset<T, ViresClipMatchFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ViresClipMatch that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresClipMatchFindFirstArgs} args - Arguments to find a ViresClipMatch
+     * @example
+     * // Get one ViresClipMatch
+     * const viresClipMatch = await prisma.viresClipMatch.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ViresClipMatchFindFirstArgs>(args?: SelectSubset<T, ViresClipMatchFindFirstArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ViresClipMatch that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresClipMatchFindFirstOrThrowArgs} args - Arguments to find a ViresClipMatch
+     * @example
+     * // Get one ViresClipMatch
+     * const viresClipMatch = await prisma.viresClipMatch.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ViresClipMatchFindFirstOrThrowArgs>(args?: SelectSubset<T, ViresClipMatchFindFirstOrThrowArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ViresClipMatches that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresClipMatchFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ViresClipMatches
+     * const viresClipMatches = await prisma.viresClipMatch.findMany()
+     * 
+     * // Get first 10 ViresClipMatches
+     * const viresClipMatches = await prisma.viresClipMatch.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const viresClipMatchWithIdOnly = await prisma.viresClipMatch.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ViresClipMatchFindManyArgs>(args?: SelectSubset<T, ViresClipMatchFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ViresClipMatch.
+     * @param {ViresClipMatchCreateArgs} args - Arguments to create a ViresClipMatch.
+     * @example
+     * // Create one ViresClipMatch
+     * const ViresClipMatch = await prisma.viresClipMatch.create({
+     *   data: {
+     *     // ... data to create a ViresClipMatch
+     *   }
+     * })
+     * 
+     */
+    create<T extends ViresClipMatchCreateArgs>(args: SelectSubset<T, ViresClipMatchCreateArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ViresClipMatches.
+     * @param {ViresClipMatchCreateManyArgs} args - Arguments to create many ViresClipMatches.
+     * @example
+     * // Create many ViresClipMatches
+     * const viresClipMatch = await prisma.viresClipMatch.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ViresClipMatchCreateManyArgs>(args?: SelectSubset<T, ViresClipMatchCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ViresClipMatches and returns the data saved in the database.
+     * @param {ViresClipMatchCreateManyAndReturnArgs} args - Arguments to create many ViresClipMatches.
+     * @example
+     * // Create many ViresClipMatches
+     * const viresClipMatch = await prisma.viresClipMatch.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ViresClipMatches and only return the `id`
+     * const viresClipMatchWithIdOnly = await prisma.viresClipMatch.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ViresClipMatchCreateManyAndReturnArgs>(args?: SelectSubset<T, ViresClipMatchCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ViresClipMatch.
+     * @param {ViresClipMatchDeleteArgs} args - Arguments to delete one ViresClipMatch.
+     * @example
+     * // Delete one ViresClipMatch
+     * const ViresClipMatch = await prisma.viresClipMatch.delete({
+     *   where: {
+     *     // ... filter to delete one ViresClipMatch
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ViresClipMatchDeleteArgs>(args: SelectSubset<T, ViresClipMatchDeleteArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ViresClipMatch.
+     * @param {ViresClipMatchUpdateArgs} args - Arguments to update one ViresClipMatch.
+     * @example
+     * // Update one ViresClipMatch
+     * const viresClipMatch = await prisma.viresClipMatch.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ViresClipMatchUpdateArgs>(args: SelectSubset<T, ViresClipMatchUpdateArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ViresClipMatches.
+     * @param {ViresClipMatchDeleteManyArgs} args - Arguments to filter ViresClipMatches to delete.
+     * @example
+     * // Delete a few ViresClipMatches
+     * const { count } = await prisma.viresClipMatch.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ViresClipMatchDeleteManyArgs>(args?: SelectSubset<T, ViresClipMatchDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ViresClipMatches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresClipMatchUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ViresClipMatches
+     * const viresClipMatch = await prisma.viresClipMatch.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ViresClipMatchUpdateManyArgs>(args: SelectSubset<T, ViresClipMatchUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ViresClipMatches and returns the data updated in the database.
+     * @param {ViresClipMatchUpdateManyAndReturnArgs} args - Arguments to update many ViresClipMatches.
+     * @example
+     * // Update many ViresClipMatches
+     * const viresClipMatch = await prisma.viresClipMatch.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ViresClipMatches and only return the `id`
+     * const viresClipMatchWithIdOnly = await prisma.viresClipMatch.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ViresClipMatchUpdateManyAndReturnArgs>(args: SelectSubset<T, ViresClipMatchUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ViresClipMatch.
+     * @param {ViresClipMatchUpsertArgs} args - Arguments to update or create a ViresClipMatch.
+     * @example
+     * // Update or create a ViresClipMatch
+     * const viresClipMatch = await prisma.viresClipMatch.upsert({
+     *   create: {
+     *     // ... data to create a ViresClipMatch
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ViresClipMatch we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ViresClipMatchUpsertArgs>(args: SelectSubset<T, ViresClipMatchUpsertArgs<ExtArgs>>): Prisma__ViresClipMatchClient<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ViresClipMatches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresClipMatchCountArgs} args - Arguments to filter ViresClipMatches to count.
+     * @example
+     * // Count the number of ViresClipMatches
+     * const count = await prisma.viresClipMatch.count({
+     *   where: {
+     *     // ... the filter for the ViresClipMatches we want to count
+     *   }
+     * })
+    **/
+    count<T extends ViresClipMatchCountArgs>(
+      args?: Subset<T, ViresClipMatchCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ViresClipMatchCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ViresClipMatch.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresClipMatchAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ViresClipMatchAggregateArgs>(args: Subset<T, ViresClipMatchAggregateArgs>): Prisma.PrismaPromise<GetViresClipMatchAggregateType<T>>
+
+    /**
+     * Group by ViresClipMatch.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresClipMatchGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ViresClipMatchGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ViresClipMatchGroupByArgs['orderBy'] }
+        : { orderBy?: ViresClipMatchGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ViresClipMatchGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetViresClipMatchGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ViresClipMatch model
+   */
+  readonly fields: ViresClipMatchFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ViresClipMatch.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ViresClipMatchClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    BybitTransactionFromCabinet<T extends BybitTransactionFromCabinetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BybitTransactionFromCabinetDefaultArgs<ExtArgs>>): Prisma__BybitTransactionFromCabinetClient<$Result.GetResult<Prisma.$BybitTransactionFromCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    MatchViresReport<T extends ViresClipMatch$MatchViresReportArgs<ExtArgs> = {}>(args?: Subset<T, ViresClipMatch$MatchViresReportArgs<ExtArgs>>): Prisma__MatchViresReportClient<$Result.GetResult<Prisma.$MatchViresReportPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    ViresTransactionPayin<T extends ViresTransactionPayinDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ViresTransactionPayinDefaultArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ViresClipMatch model
+   */
+  interface ViresClipMatchFieldRefs {
+    readonly id: FieldRef<"ViresClipMatch", 'Int'>
+    readonly viresTransactionId: FieldRef<"ViresClipMatch", 'Int'>
+    readonly timeDifference: FieldRef<"ViresClipMatch", 'Int'>
+    readonly grossExpense: FieldRef<"ViresClipMatch", 'Float'>
+    readonly grossIncome: FieldRef<"ViresClipMatch", 'Float'>
+    readonly grossProfit: FieldRef<"ViresClipMatch", 'Float'>
+    readonly profitPercentage: FieldRef<"ViresClipMatch", 'Float'>
+    readonly createdAt: FieldRef<"ViresClipMatch", 'DateTime'>
+    readonly updatedAt: FieldRef<"ViresClipMatch", 'DateTime'>
+    readonly matchViresReportId: FieldRef<"ViresClipMatch", 'Int'>
+    readonly userId: FieldRef<"ViresClipMatch", 'Int'>
+    readonly bybitTransactionId: FieldRef<"ViresClipMatch", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ViresClipMatch findUnique
+   */
+  export type ViresClipMatchFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresClipMatch to fetch.
+     */
+    where: ViresClipMatchWhereUniqueInput
+  }
+
+  /**
+   * ViresClipMatch findUniqueOrThrow
+   */
+  export type ViresClipMatchFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresClipMatch to fetch.
+     */
+    where: ViresClipMatchWhereUniqueInput
+  }
+
+  /**
+   * ViresClipMatch findFirst
+   */
+  export type ViresClipMatchFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresClipMatch to fetch.
+     */
+    where?: ViresClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresClipMatches to fetch.
+     */
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ViresClipMatches.
+     */
+    cursor?: ViresClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresClipMatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ViresClipMatches.
+     */
+    distinct?: ViresClipMatchScalarFieldEnum | ViresClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * ViresClipMatch findFirstOrThrow
+   */
+  export type ViresClipMatchFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresClipMatch to fetch.
+     */
+    where?: ViresClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresClipMatches to fetch.
+     */
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ViresClipMatches.
+     */
+    cursor?: ViresClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresClipMatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ViresClipMatches.
+     */
+    distinct?: ViresClipMatchScalarFieldEnum | ViresClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * ViresClipMatch findMany
+   */
+  export type ViresClipMatchFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresClipMatches to fetch.
+     */
+    where?: ViresClipMatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresClipMatches to fetch.
+     */
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ViresClipMatches.
+     */
+    cursor?: ViresClipMatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresClipMatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresClipMatches.
+     */
+    skip?: number
+    distinct?: ViresClipMatchScalarFieldEnum | ViresClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * ViresClipMatch create
+   */
+  export type ViresClipMatchCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ViresClipMatch.
+     */
+    data: XOR<ViresClipMatchCreateInput, ViresClipMatchUncheckedCreateInput>
+  }
+
+  /**
+   * ViresClipMatch createMany
+   */
+  export type ViresClipMatchCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ViresClipMatches.
+     */
+    data: ViresClipMatchCreateManyInput | ViresClipMatchCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ViresClipMatch createManyAndReturn
+   */
+  export type ViresClipMatchCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * The data used to create many ViresClipMatches.
+     */
+    data: ViresClipMatchCreateManyInput | ViresClipMatchCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ViresClipMatch update
+   */
+  export type ViresClipMatchUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ViresClipMatch.
+     */
+    data: XOR<ViresClipMatchUpdateInput, ViresClipMatchUncheckedUpdateInput>
+    /**
+     * Choose, which ViresClipMatch to update.
+     */
+    where: ViresClipMatchWhereUniqueInput
+  }
+
+  /**
+   * ViresClipMatch updateMany
+   */
+  export type ViresClipMatchUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ViresClipMatches.
+     */
+    data: XOR<ViresClipMatchUpdateManyMutationInput, ViresClipMatchUncheckedUpdateManyInput>
+    /**
+     * Filter which ViresClipMatches to update
+     */
+    where?: ViresClipMatchWhereInput
+    /**
+     * Limit how many ViresClipMatches to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ViresClipMatch updateManyAndReturn
+   */
+  export type ViresClipMatchUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * The data used to update ViresClipMatches.
+     */
+    data: XOR<ViresClipMatchUpdateManyMutationInput, ViresClipMatchUncheckedUpdateManyInput>
+    /**
+     * Filter which ViresClipMatches to update
+     */
+    where?: ViresClipMatchWhereInput
+    /**
+     * Limit how many ViresClipMatches to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ViresClipMatch upsert
+   */
+  export type ViresClipMatchUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ViresClipMatch to update in case it exists.
+     */
+    where: ViresClipMatchWhereUniqueInput
+    /**
+     * In case the ViresClipMatch found by the `where` argument doesn't exist, create a new ViresClipMatch with this data.
+     */
+    create: XOR<ViresClipMatchCreateInput, ViresClipMatchUncheckedCreateInput>
+    /**
+     * In case the ViresClipMatch was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ViresClipMatchUpdateInput, ViresClipMatchUncheckedUpdateInput>
+  }
+
+  /**
+   * ViresClipMatch delete
+   */
+  export type ViresClipMatchDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    /**
+     * Filter which ViresClipMatch to delete.
+     */
+    where: ViresClipMatchWhereUniqueInput
+  }
+
+  /**
+   * ViresClipMatch deleteMany
+   */
+  export type ViresClipMatchDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ViresClipMatches to delete
+     */
+    where?: ViresClipMatchWhereInput
+    /**
+     * Limit how many ViresClipMatches to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ViresClipMatch.MatchViresReport
+   */
+  export type ViresClipMatch$MatchViresReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MatchViresReport
+     */
+    select?: MatchViresReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MatchViresReport
+     */
+    omit?: MatchViresReportOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MatchViresReportInclude<ExtArgs> | null
+    where?: MatchViresReportWhereInput
+  }
+
+  /**
+   * ViresClipMatch without action
+   */
+  export type ViresClipMatchDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ViresTransactionPayin
+   */
+
+  export type AggregateViresTransactionPayin = {
+    _count: ViresTransactionPayinCountAggregateOutputType | null
+    _avg: ViresTransactionPayinAvgAggregateOutputType | null
+    _sum: ViresTransactionPayinSumAggregateOutputType | null
+    _min: ViresTransactionPayinMinAggregateOutputType | null
+    _max: ViresTransactionPayinMaxAggregateOutputType | null
+  }
+
+  export type ViresTransactionPayinAvgAggregateOutputType = {
+    id: number | null
+    cabinetId: number | null
+    sum_rub: number | null
+    sum_usdt: number | null
+  }
+
+  export type ViresTransactionPayinSumAggregateOutputType = {
+    id: number | null
+    cabinetId: number | null
+    sum_rub: number | null
+    sum_usdt: number | null
+  }
+
+  export type ViresTransactionPayinMinAggregateOutputType = {
+    id: number | null
+    cabinetId: number | null
+    createdAt: Date | null
+    sum_rub: number | null
+    sum_usdt: number | null
+    card: string | null
+    fio: string | null
+    bank: string | null
+    uuid: string | null
+  }
+
+  export type ViresTransactionPayinMaxAggregateOutputType = {
+    id: number | null
+    cabinetId: number | null
+    createdAt: Date | null
+    sum_rub: number | null
+    sum_usdt: number | null
+    card: string | null
+    fio: string | null
+    bank: string | null
+    uuid: string | null
+  }
+
+  export type ViresTransactionPayinCountAggregateOutputType = {
+    id: number
+    cabinetId: number
+    createdAt: number
+    sum_rub: number
+    sum_usdt: number
+    card: number
+    fio: number
+    bank: number
+    uuid: number
+    _all: number
+  }
+
+
+  export type ViresTransactionPayinAvgAggregateInputType = {
+    id?: true
+    cabinetId?: true
+    sum_rub?: true
+    sum_usdt?: true
+  }
+
+  export type ViresTransactionPayinSumAggregateInputType = {
+    id?: true
+    cabinetId?: true
+    sum_rub?: true
+    sum_usdt?: true
+  }
+
+  export type ViresTransactionPayinMinAggregateInputType = {
+    id?: true
+    cabinetId?: true
+    createdAt?: true
+    sum_rub?: true
+    sum_usdt?: true
+    card?: true
+    fio?: true
+    bank?: true
+    uuid?: true
+  }
+
+  export type ViresTransactionPayinMaxAggregateInputType = {
+    id?: true
+    cabinetId?: true
+    createdAt?: true
+    sum_rub?: true
+    sum_usdt?: true
+    card?: true
+    fio?: true
+    bank?: true
+    uuid?: true
+  }
+
+  export type ViresTransactionPayinCountAggregateInputType = {
+    id?: true
+    cabinetId?: true
+    createdAt?: true
+    sum_rub?: true
+    sum_usdt?: true
+    card?: true
+    fio?: true
+    bank?: true
+    uuid?: true
+    _all?: true
+  }
+
+  export type ViresTransactionPayinAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ViresTransactionPayin to aggregate.
+     */
+    where?: ViresTransactionPayinWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresTransactionPayins to fetch.
+     */
+    orderBy?: ViresTransactionPayinOrderByWithRelationInput | ViresTransactionPayinOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ViresTransactionPayinWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresTransactionPayins from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresTransactionPayins.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ViresTransactionPayins
+    **/
+    _count?: true | ViresTransactionPayinCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ViresTransactionPayinAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ViresTransactionPayinSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ViresTransactionPayinMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ViresTransactionPayinMaxAggregateInputType
+  }
+
+  export type GetViresTransactionPayinAggregateType<T extends ViresTransactionPayinAggregateArgs> = {
+        [P in keyof T & keyof AggregateViresTransactionPayin]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateViresTransactionPayin[P]>
+      : GetScalarType<T[P], AggregateViresTransactionPayin[P]>
+  }
+
+
+
+
+  export type ViresTransactionPayinGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ViresTransactionPayinWhereInput
+    orderBy?: ViresTransactionPayinOrderByWithAggregationInput | ViresTransactionPayinOrderByWithAggregationInput[]
+    by: ViresTransactionPayinScalarFieldEnum[] | ViresTransactionPayinScalarFieldEnum
+    having?: ViresTransactionPayinScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ViresTransactionPayinCountAggregateInputType | true
+    _avg?: ViresTransactionPayinAvgAggregateInputType
+    _sum?: ViresTransactionPayinSumAggregateInputType
+    _min?: ViresTransactionPayinMinAggregateInputType
+    _max?: ViresTransactionPayinMaxAggregateInputType
+  }
+
+  export type ViresTransactionPayinGroupByOutputType = {
+    id: number
+    cabinetId: number
+    createdAt: Date
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+    _count: ViresTransactionPayinCountAggregateOutputType | null
+    _avg: ViresTransactionPayinAvgAggregateOutputType | null
+    _sum: ViresTransactionPayinSumAggregateOutputType | null
+    _min: ViresTransactionPayinMinAggregateOutputType | null
+    _max: ViresTransactionPayinMaxAggregateOutputType | null
+  }
+
+  type GetViresTransactionPayinGroupByPayload<T extends ViresTransactionPayinGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ViresTransactionPayinGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ViresTransactionPayinGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ViresTransactionPayinGroupByOutputType[P]>
+            : GetScalarType<T[P], ViresTransactionPayinGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ViresTransactionPayinSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cabinetId?: boolean
+    createdAt?: boolean
+    sum_rub?: boolean
+    sum_usdt?: boolean
+    card?: boolean
+    fio?: boolean
+    bank?: boolean
+    uuid?: boolean
+    ViresClipMatch?: boolean | ViresTransactionPayin$ViresClipMatchArgs<ExtArgs>
+    ViresCabinet?: boolean | ViresCabinetDefaultArgs<ExtArgs>
+    _count?: boolean | ViresTransactionPayinCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresTransactionPayin"]>
+
+  export type ViresTransactionPayinSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cabinetId?: boolean
+    createdAt?: boolean
+    sum_rub?: boolean
+    sum_usdt?: boolean
+    card?: boolean
+    fio?: boolean
+    bank?: boolean
+    uuid?: boolean
+    ViresCabinet?: boolean | ViresCabinetDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresTransactionPayin"]>
+
+  export type ViresTransactionPayinSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cabinetId?: boolean
+    createdAt?: boolean
+    sum_rub?: boolean
+    sum_usdt?: boolean
+    card?: boolean
+    fio?: boolean
+    bank?: boolean
+    uuid?: boolean
+    ViresCabinet?: boolean | ViresCabinetDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["viresTransactionPayin"]>
+
+  export type ViresTransactionPayinSelectScalar = {
+    id?: boolean
+    cabinetId?: boolean
+    createdAt?: boolean
+    sum_rub?: boolean
+    sum_usdt?: boolean
+    card?: boolean
+    fio?: boolean
+    bank?: boolean
+    uuid?: boolean
+  }
+
+  export type ViresTransactionPayinOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cabinetId" | "createdAt" | "sum_rub" | "sum_usdt" | "card" | "fio" | "bank" | "uuid", ExtArgs["result"]["viresTransactionPayin"]>
+  export type ViresTransactionPayinInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ViresClipMatch?: boolean | ViresTransactionPayin$ViresClipMatchArgs<ExtArgs>
+    ViresCabinet?: boolean | ViresCabinetDefaultArgs<ExtArgs>
+    _count?: boolean | ViresTransactionPayinCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ViresTransactionPayinIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ViresCabinet?: boolean | ViresCabinetDefaultArgs<ExtArgs>
+  }
+  export type ViresTransactionPayinIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ViresCabinet?: boolean | ViresCabinetDefaultArgs<ExtArgs>
+  }
+
+  export type $ViresTransactionPayinPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ViresTransactionPayin"
+    objects: {
+      ViresClipMatch: Prisma.$ViresClipMatchPayload<ExtArgs>[]
+      ViresCabinet: Prisma.$ViresCabinetPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      cabinetId: number
+      createdAt: Date
+      sum_rub: number
+      sum_usdt: number
+      card: string
+      fio: string
+      bank: string
+      uuid: string
+    }, ExtArgs["result"]["viresTransactionPayin"]>
+    composites: {}
+  }
+
+  type ViresTransactionPayinGetPayload<S extends boolean | null | undefined | ViresTransactionPayinDefaultArgs> = $Result.GetResult<Prisma.$ViresTransactionPayinPayload, S>
+
+  type ViresTransactionPayinCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ViresTransactionPayinFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ViresTransactionPayinCountAggregateInputType | true
+    }
+
+  export interface ViresTransactionPayinDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ViresTransactionPayin'], meta: { name: 'ViresTransactionPayin' } }
+    /**
+     * Find zero or one ViresTransactionPayin that matches the filter.
+     * @param {ViresTransactionPayinFindUniqueArgs} args - Arguments to find a ViresTransactionPayin
+     * @example
+     * // Get one ViresTransactionPayin
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ViresTransactionPayinFindUniqueArgs>(args: SelectSubset<T, ViresTransactionPayinFindUniqueArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ViresTransactionPayin that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ViresTransactionPayinFindUniqueOrThrowArgs} args - Arguments to find a ViresTransactionPayin
+     * @example
+     * // Get one ViresTransactionPayin
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ViresTransactionPayinFindUniqueOrThrowArgs>(args: SelectSubset<T, ViresTransactionPayinFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ViresTransactionPayin that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresTransactionPayinFindFirstArgs} args - Arguments to find a ViresTransactionPayin
+     * @example
+     * // Get one ViresTransactionPayin
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ViresTransactionPayinFindFirstArgs>(args?: SelectSubset<T, ViresTransactionPayinFindFirstArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ViresTransactionPayin that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresTransactionPayinFindFirstOrThrowArgs} args - Arguments to find a ViresTransactionPayin
+     * @example
+     * // Get one ViresTransactionPayin
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ViresTransactionPayinFindFirstOrThrowArgs>(args?: SelectSubset<T, ViresTransactionPayinFindFirstOrThrowArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ViresTransactionPayins that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresTransactionPayinFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ViresTransactionPayins
+     * const viresTransactionPayins = await prisma.viresTransactionPayin.findMany()
+     * 
+     * // Get first 10 ViresTransactionPayins
+     * const viresTransactionPayins = await prisma.viresTransactionPayin.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const viresTransactionPayinWithIdOnly = await prisma.viresTransactionPayin.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ViresTransactionPayinFindManyArgs>(args?: SelectSubset<T, ViresTransactionPayinFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ViresTransactionPayin.
+     * @param {ViresTransactionPayinCreateArgs} args - Arguments to create a ViresTransactionPayin.
+     * @example
+     * // Create one ViresTransactionPayin
+     * const ViresTransactionPayin = await prisma.viresTransactionPayin.create({
+     *   data: {
+     *     // ... data to create a ViresTransactionPayin
+     *   }
+     * })
+     * 
+     */
+    create<T extends ViresTransactionPayinCreateArgs>(args: SelectSubset<T, ViresTransactionPayinCreateArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ViresTransactionPayins.
+     * @param {ViresTransactionPayinCreateManyArgs} args - Arguments to create many ViresTransactionPayins.
+     * @example
+     * // Create many ViresTransactionPayins
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ViresTransactionPayinCreateManyArgs>(args?: SelectSubset<T, ViresTransactionPayinCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ViresTransactionPayins and returns the data saved in the database.
+     * @param {ViresTransactionPayinCreateManyAndReturnArgs} args - Arguments to create many ViresTransactionPayins.
+     * @example
+     * // Create many ViresTransactionPayins
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ViresTransactionPayins and only return the `id`
+     * const viresTransactionPayinWithIdOnly = await prisma.viresTransactionPayin.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ViresTransactionPayinCreateManyAndReturnArgs>(args?: SelectSubset<T, ViresTransactionPayinCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ViresTransactionPayin.
+     * @param {ViresTransactionPayinDeleteArgs} args - Arguments to delete one ViresTransactionPayin.
+     * @example
+     * // Delete one ViresTransactionPayin
+     * const ViresTransactionPayin = await prisma.viresTransactionPayin.delete({
+     *   where: {
+     *     // ... filter to delete one ViresTransactionPayin
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ViresTransactionPayinDeleteArgs>(args: SelectSubset<T, ViresTransactionPayinDeleteArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ViresTransactionPayin.
+     * @param {ViresTransactionPayinUpdateArgs} args - Arguments to update one ViresTransactionPayin.
+     * @example
+     * // Update one ViresTransactionPayin
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ViresTransactionPayinUpdateArgs>(args: SelectSubset<T, ViresTransactionPayinUpdateArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ViresTransactionPayins.
+     * @param {ViresTransactionPayinDeleteManyArgs} args - Arguments to filter ViresTransactionPayins to delete.
+     * @example
+     * // Delete a few ViresTransactionPayins
+     * const { count } = await prisma.viresTransactionPayin.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ViresTransactionPayinDeleteManyArgs>(args?: SelectSubset<T, ViresTransactionPayinDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ViresTransactionPayins.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresTransactionPayinUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ViresTransactionPayins
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ViresTransactionPayinUpdateManyArgs>(args: SelectSubset<T, ViresTransactionPayinUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ViresTransactionPayins and returns the data updated in the database.
+     * @param {ViresTransactionPayinUpdateManyAndReturnArgs} args - Arguments to update many ViresTransactionPayins.
+     * @example
+     * // Update many ViresTransactionPayins
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ViresTransactionPayins and only return the `id`
+     * const viresTransactionPayinWithIdOnly = await prisma.viresTransactionPayin.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ViresTransactionPayinUpdateManyAndReturnArgs>(args: SelectSubset<T, ViresTransactionPayinUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ViresTransactionPayin.
+     * @param {ViresTransactionPayinUpsertArgs} args - Arguments to update or create a ViresTransactionPayin.
+     * @example
+     * // Update or create a ViresTransactionPayin
+     * const viresTransactionPayin = await prisma.viresTransactionPayin.upsert({
+     *   create: {
+     *     // ... data to create a ViresTransactionPayin
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ViresTransactionPayin we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ViresTransactionPayinUpsertArgs>(args: SelectSubset<T, ViresTransactionPayinUpsertArgs<ExtArgs>>): Prisma__ViresTransactionPayinClient<$Result.GetResult<Prisma.$ViresTransactionPayinPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ViresTransactionPayins.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresTransactionPayinCountArgs} args - Arguments to filter ViresTransactionPayins to count.
+     * @example
+     * // Count the number of ViresTransactionPayins
+     * const count = await prisma.viresTransactionPayin.count({
+     *   where: {
+     *     // ... the filter for the ViresTransactionPayins we want to count
+     *   }
+     * })
+    **/
+    count<T extends ViresTransactionPayinCountArgs>(
+      args?: Subset<T, ViresTransactionPayinCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ViresTransactionPayinCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ViresTransactionPayin.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresTransactionPayinAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ViresTransactionPayinAggregateArgs>(args: Subset<T, ViresTransactionPayinAggregateArgs>): Prisma.PrismaPromise<GetViresTransactionPayinAggregateType<T>>
+
+    /**
+     * Group by ViresTransactionPayin.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ViresTransactionPayinGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ViresTransactionPayinGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ViresTransactionPayinGroupByArgs['orderBy'] }
+        : { orderBy?: ViresTransactionPayinGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ViresTransactionPayinGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetViresTransactionPayinGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ViresTransactionPayin model
+   */
+  readonly fields: ViresTransactionPayinFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ViresTransactionPayin.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ViresTransactionPayinClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    ViresClipMatch<T extends ViresTransactionPayin$ViresClipMatchArgs<ExtArgs> = {}>(args?: Subset<T, ViresTransactionPayin$ViresClipMatchArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ViresClipMatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ViresCabinet<T extends ViresCabinetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ViresCabinetDefaultArgs<ExtArgs>>): Prisma__ViresCabinetClient<$Result.GetResult<Prisma.$ViresCabinetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ViresTransactionPayin model
+   */
+  interface ViresTransactionPayinFieldRefs {
+    readonly id: FieldRef<"ViresTransactionPayin", 'Int'>
+    readonly cabinetId: FieldRef<"ViresTransactionPayin", 'Int'>
+    readonly createdAt: FieldRef<"ViresTransactionPayin", 'DateTime'>
+    readonly sum_rub: FieldRef<"ViresTransactionPayin", 'Float'>
+    readonly sum_usdt: FieldRef<"ViresTransactionPayin", 'Float'>
+    readonly card: FieldRef<"ViresTransactionPayin", 'String'>
+    readonly fio: FieldRef<"ViresTransactionPayin", 'String'>
+    readonly bank: FieldRef<"ViresTransactionPayin", 'String'>
+    readonly uuid: FieldRef<"ViresTransactionPayin", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ViresTransactionPayin findUnique
+   */
+  export type ViresTransactionPayinFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresTransactionPayin to fetch.
+     */
+    where: ViresTransactionPayinWhereUniqueInput
+  }
+
+  /**
+   * ViresTransactionPayin findUniqueOrThrow
+   */
+  export type ViresTransactionPayinFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresTransactionPayin to fetch.
+     */
+    where: ViresTransactionPayinWhereUniqueInput
+  }
+
+  /**
+   * ViresTransactionPayin findFirst
+   */
+  export type ViresTransactionPayinFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresTransactionPayin to fetch.
+     */
+    where?: ViresTransactionPayinWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresTransactionPayins to fetch.
+     */
+    orderBy?: ViresTransactionPayinOrderByWithRelationInput | ViresTransactionPayinOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ViresTransactionPayins.
+     */
+    cursor?: ViresTransactionPayinWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresTransactionPayins from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresTransactionPayins.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ViresTransactionPayins.
+     */
+    distinct?: ViresTransactionPayinScalarFieldEnum | ViresTransactionPayinScalarFieldEnum[]
+  }
+
+  /**
+   * ViresTransactionPayin findFirstOrThrow
+   */
+  export type ViresTransactionPayinFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresTransactionPayin to fetch.
+     */
+    where?: ViresTransactionPayinWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresTransactionPayins to fetch.
+     */
+    orderBy?: ViresTransactionPayinOrderByWithRelationInput | ViresTransactionPayinOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ViresTransactionPayins.
+     */
+    cursor?: ViresTransactionPayinWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresTransactionPayins from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresTransactionPayins.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ViresTransactionPayins.
+     */
+    distinct?: ViresTransactionPayinScalarFieldEnum | ViresTransactionPayinScalarFieldEnum[]
+  }
+
+  /**
+   * ViresTransactionPayin findMany
+   */
+  export type ViresTransactionPayinFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * Filter, which ViresTransactionPayins to fetch.
+     */
+    where?: ViresTransactionPayinWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ViresTransactionPayins to fetch.
+     */
+    orderBy?: ViresTransactionPayinOrderByWithRelationInput | ViresTransactionPayinOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ViresTransactionPayins.
+     */
+    cursor?: ViresTransactionPayinWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ViresTransactionPayins from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ViresTransactionPayins.
+     */
+    skip?: number
+    distinct?: ViresTransactionPayinScalarFieldEnum | ViresTransactionPayinScalarFieldEnum[]
+  }
+
+  /**
+   * ViresTransactionPayin create
+   */
+  export type ViresTransactionPayinCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ViresTransactionPayin.
+     */
+    data: XOR<ViresTransactionPayinCreateInput, ViresTransactionPayinUncheckedCreateInput>
+  }
+
+  /**
+   * ViresTransactionPayin createMany
+   */
+  export type ViresTransactionPayinCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ViresTransactionPayins.
+     */
+    data: ViresTransactionPayinCreateManyInput | ViresTransactionPayinCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ViresTransactionPayin createManyAndReturn
+   */
+  export type ViresTransactionPayinCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * The data used to create many ViresTransactionPayins.
+     */
+    data: ViresTransactionPayinCreateManyInput | ViresTransactionPayinCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ViresTransactionPayin update
+   */
+  export type ViresTransactionPayinUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ViresTransactionPayin.
+     */
+    data: XOR<ViresTransactionPayinUpdateInput, ViresTransactionPayinUncheckedUpdateInput>
+    /**
+     * Choose, which ViresTransactionPayin to update.
+     */
+    where: ViresTransactionPayinWhereUniqueInput
+  }
+
+  /**
+   * ViresTransactionPayin updateMany
+   */
+  export type ViresTransactionPayinUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ViresTransactionPayins.
+     */
+    data: XOR<ViresTransactionPayinUpdateManyMutationInput, ViresTransactionPayinUncheckedUpdateManyInput>
+    /**
+     * Filter which ViresTransactionPayins to update
+     */
+    where?: ViresTransactionPayinWhereInput
+    /**
+     * Limit how many ViresTransactionPayins to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ViresTransactionPayin updateManyAndReturn
+   */
+  export type ViresTransactionPayinUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * The data used to update ViresTransactionPayins.
+     */
+    data: XOR<ViresTransactionPayinUpdateManyMutationInput, ViresTransactionPayinUncheckedUpdateManyInput>
+    /**
+     * Filter which ViresTransactionPayins to update
+     */
+    where?: ViresTransactionPayinWhereInput
+    /**
+     * Limit how many ViresTransactionPayins to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ViresTransactionPayin upsert
+   */
+  export type ViresTransactionPayinUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ViresTransactionPayin to update in case it exists.
+     */
+    where: ViresTransactionPayinWhereUniqueInput
+    /**
+     * In case the ViresTransactionPayin found by the `where` argument doesn't exist, create a new ViresTransactionPayin with this data.
+     */
+    create: XOR<ViresTransactionPayinCreateInput, ViresTransactionPayinUncheckedCreateInput>
+    /**
+     * In case the ViresTransactionPayin was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ViresTransactionPayinUpdateInput, ViresTransactionPayinUncheckedUpdateInput>
+  }
+
+  /**
+   * ViresTransactionPayin delete
+   */
+  export type ViresTransactionPayinDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+    /**
+     * Filter which ViresTransactionPayin to delete.
+     */
+    where: ViresTransactionPayinWhereUniqueInput
+  }
+
+  /**
+   * ViresTransactionPayin deleteMany
+   */
+  export type ViresTransactionPayinDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ViresTransactionPayins to delete
+     */
+    where?: ViresTransactionPayinWhereInput
+    /**
+     * Limit how many ViresTransactionPayins to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ViresTransactionPayin.ViresClipMatch
+   */
+  export type ViresTransactionPayin$ViresClipMatchArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresClipMatch
+     */
+    select?: ViresClipMatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresClipMatch
+     */
+    omit?: ViresClipMatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresClipMatchInclude<ExtArgs> | null
+    where?: ViresClipMatchWhereInput
+    orderBy?: ViresClipMatchOrderByWithRelationInput | ViresClipMatchOrderByWithRelationInput[]
+    cursor?: ViresClipMatchWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ViresClipMatchScalarFieldEnum | ViresClipMatchScalarFieldEnum[]
+  }
+
+  /**
+   * ViresTransactionPayin without action
+   */
+  export type ViresTransactionPayinDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ViresTransactionPayin
+     */
+    select?: ViresTransactionPayinSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ViresTransactionPayin
+     */
+    omit?: ViresTransactionPayinOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ViresTransactionPayinInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -50053,7 +61176,15 @@ export namespace Prisma {
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     orderNo: 'orderNo',
-    userId: 'userId'
+    dateTime: 'dateTime',
+    originalData: 'originalData',
+    status: 'status',
+    type: 'type',
+    amount: 'amount',
+    totalPrice: 'totalPrice',
+    processed: 'processed',
+    unitPrice: 'unitPrice',
+    bybitCabinetId: 'bybitCabinetId'
   };
 
   export type BybitOrderInfoScalarFieldEnum = (typeof BybitOrderInfoScalarFieldEnum)[keyof typeof BybitOrderInfoScalarFieldEnum]
@@ -50062,21 +61193,21 @@ export namespace Prisma {
   export const BybitTransactionScalarFieldEnum: {
     id: 'id',
     orderNo: 'orderNo',
-    userId: 'userId',
     counterparty: 'counterparty',
     status: 'status',
-    extractedPhones: 'extractedPhones',
-    lastAttemptError: 'lastAttemptError',
+    userId: 'userId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     amount: 'amount',
     asset: 'asset',
     dateTime: 'dateTime',
     originalData: 'originalData',
-    processed: 'processed',
     totalPrice: 'totalPrice',
     type: 'type',
-    unitPrice: 'unitPrice'
+    unitPrice: 'unitPrice',
+    processed: 'processed',
+    extractedPhones: 'extractedPhones',
+    lastAttemptError: 'lastAttemptError'
   };
 
   export type BybitTransactionScalarFieldEnum = (typeof BybitTransactionScalarFieldEnum)[keyof typeof BybitTransactionScalarFieldEnum]
@@ -50337,7 +61468,8 @@ export namespace Prisma {
     password: 'password',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    comment: 'comment'
+    comment: 'comment',
+    type: 'type'
   };
 
   export type PasswordScalarFieldEnum = (typeof PasswordScalarFieldEnum)[keyof typeof PasswordScalarFieldEnum]
@@ -50585,6 +61717,148 @@ export namespace Prisma {
   export type WorkSessionIdexCabinetScalarFieldEnum = (typeof WorkSessionIdexCabinetScalarFieldEnum)[keyof typeof WorkSessionIdexCabinetScalarFieldEnum]
 
 
+  export const BybitCabinetScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    bybitEmail: 'bybitEmail',
+    bybitApiSecret: 'bybitApiSecret',
+    bybitApiToken: 'bybitApiToken',
+    lastBybitSyncAt: 'lastBybitSyncAt',
+    lastBybitSyncStatus: 'lastBybitSyncStatus'
+  };
+
+  export type BybitCabinetScalarFieldEnum = (typeof BybitCabinetScalarFieldEnum)[keyof typeof BybitCabinetScalarFieldEnum]
+
+
+  export const BybitClipMatchScalarFieldEnum: {
+    id: 'id',
+    idexTransactionId: 'idexTransactionId',
+    bybitTransactionId: 'bybitTransactionId',
+    timeDifference: 'timeDifference',
+    grossExpense: 'grossExpense',
+    grossIncome: 'grossIncome',
+    grossProfit: 'grossProfit',
+    profitPercentage: 'profitPercentage',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    matchBybitReportId: 'matchBybitReportId',
+    userId: 'userId'
+  };
+
+  export type BybitClipMatchScalarFieldEnum = (typeof BybitClipMatchScalarFieldEnum)[keyof typeof BybitClipMatchScalarFieldEnum]
+
+
+  export const BybitTransactionFromCabinetScalarFieldEnum: {
+    id: 'id',
+    orderNo: 'orderNo',
+    counterparty: 'counterparty',
+    status: 'status',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    amount: 'amount',
+    asset: 'asset',
+    dateTime: 'dateTime',
+    originalData: 'originalData',
+    totalPrice: 'totalPrice',
+    type: 'type',
+    unitPrice: 'unitPrice',
+    processed: 'processed',
+    extractedPhones: 'extractedPhones',
+    lastAttemptError: 'lastAttemptError',
+    cabinetId: 'cabinetId'
+  };
+
+  export type BybitTransactionFromCabinetScalarFieldEnum = (typeof BybitTransactionFromCabinetScalarFieldEnum)[keyof typeof BybitTransactionFromCabinetScalarFieldEnum]
+
+
+  export const MatchBybitReportScalarFieldEnum: {
+    id: 'id',
+    reportDate: 'reportDate',
+    totalMatches: 'totalMatches',
+    totalProfit: 'totalProfit',
+    averageProfit: 'averageProfit',
+    successRate: 'successRate',
+    timeRangeStart: 'timeRangeStart',
+    timeRangeEnd: 'timeRangeEnd',
+    notes: 'notes',
+    idexCabinets: 'idexCabinets',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    userId: 'userId'
+  };
+
+  export type MatchBybitReportScalarFieldEnum = (typeof MatchBybitReportScalarFieldEnum)[keyof typeof MatchBybitReportScalarFieldEnum]
+
+
+  export const MatchViresReportScalarFieldEnum: {
+    id: 'id',
+    reportDate: 'reportDate',
+    totalMatches: 'totalMatches',
+    totalProfit: 'totalProfit',
+    averageProfit: 'averageProfit',
+    successRate: 'successRate',
+    timeRangeStart: 'timeRangeStart',
+    timeRangeEnd: 'timeRangeEnd',
+    notes: 'notes',
+    idexCabinets: 'idexCabinets',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    userId: 'userId'
+  };
+
+  export type MatchViresReportScalarFieldEnum = (typeof MatchViresReportScalarFieldEnum)[keyof typeof MatchViresReportScalarFieldEnum]
+
+
+  export const ViresCabinetScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    login: 'login',
+    password: 'password',
+    type: 'type',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    comment: 'comment',
+    userId: 'userId',
+    lastUpdate: 'lastUpdate'
+  };
+
+  export type ViresCabinetScalarFieldEnum = (typeof ViresCabinetScalarFieldEnum)[keyof typeof ViresCabinetScalarFieldEnum]
+
+
+  export const ViresClipMatchScalarFieldEnum: {
+    id: 'id',
+    viresTransactionId: 'viresTransactionId',
+    timeDifference: 'timeDifference',
+    grossExpense: 'grossExpense',
+    grossIncome: 'grossIncome',
+    grossProfit: 'grossProfit',
+    profitPercentage: 'profitPercentage',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    matchViresReportId: 'matchViresReportId',
+    userId: 'userId',
+    bybitTransactionId: 'bybitTransactionId'
+  };
+
+  export type ViresClipMatchScalarFieldEnum = (typeof ViresClipMatchScalarFieldEnum)[keyof typeof ViresClipMatchScalarFieldEnum]
+
+
+  export const ViresTransactionPayinScalarFieldEnum: {
+    id: 'id',
+    cabinetId: 'cabinetId',
+    createdAt: 'createdAt',
+    sum_rub: 'sum_rub',
+    sum_usdt: 'sum_usdt',
+    card: 'card',
+    fio: 'fio',
+    bank: 'bank',
+    uuid: 'uuid'
+  };
+
+  export type ViresTransactionPayinScalarFieldEnum = (typeof ViresTransactionPayinScalarFieldEnum)[keyof typeof ViresTransactionPayinScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -50810,6 +62084,20 @@ export namespace Prisma {
    * Reference to a field of type 'BigInt[]'
    */
   export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'PasswordType'
+   */
+  export type EnumPasswordTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PasswordType'>
+    
+
+
+  /**
+   * Reference to a field of type 'PasswordType[]'
+   */
+  export type ListEnumPasswordTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PasswordType[]'>
     
 
 
@@ -51173,8 +62461,16 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
     updatedAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
     orderNo?: StringFilter<"BybitOrderInfo"> | string
-    userId?: IntFilter<"BybitOrderInfo"> | number
-    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+    dateTime?: DateTimeFilter<"BybitOrderInfo"> | Date | string
+    originalData?: JsonNullableFilter<"BybitOrderInfo">
+    status?: StringFilter<"BybitOrderInfo"> | string
+    type?: StringFilter<"BybitOrderInfo"> | string
+    amount?: IntFilter<"BybitOrderInfo"> | number
+    totalPrice?: FloatFilter<"BybitOrderInfo"> | number
+    processed?: BoolFilter<"BybitOrderInfo"> | boolean
+    unitPrice?: FloatFilter<"BybitOrderInfo"> | number
+    bybitCabinetId?: IntFilter<"BybitOrderInfo"> | number
+    cabinet?: XOR<BybitCabinetScalarRelationFilter, BybitCabinetWhereInput>
   }
 
   export type BybitOrderInfoOrderByWithRelationInput = {
@@ -51183,13 +62479,21 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
-    User?: UserOrderByWithRelationInput
+    dateTime?: SortOrder
+    originalData?: SortOrderInput | SortOrder
+    status?: SortOrder
+    type?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    processed?: SortOrder
+    unitPrice?: SortOrder
+    bybitCabinetId?: SortOrder
+    cabinet?: BybitCabinetOrderByWithRelationInput
   }
 
   export type BybitOrderInfoWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    orderNo_userId?: BybitOrderInfoOrderNoUserIdCompoundUniqueInput
+    orderNo_bybitCabinetId?: BybitOrderInfoOrderNoBybitCabinetIdCompoundUniqueInput
     AND?: BybitOrderInfoWhereInput | BybitOrderInfoWhereInput[]
     OR?: BybitOrderInfoWhereInput[]
     NOT?: BybitOrderInfoWhereInput | BybitOrderInfoWhereInput[]
@@ -51197,9 +62501,17 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
     updatedAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
     orderNo?: StringFilter<"BybitOrderInfo"> | string
-    userId?: IntFilter<"BybitOrderInfo"> | number
-    User?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id" | "orderNo_userId">
+    dateTime?: DateTimeFilter<"BybitOrderInfo"> | Date | string
+    originalData?: JsonNullableFilter<"BybitOrderInfo">
+    status?: StringFilter<"BybitOrderInfo"> | string
+    type?: StringFilter<"BybitOrderInfo"> | string
+    amount?: IntFilter<"BybitOrderInfo"> | number
+    totalPrice?: FloatFilter<"BybitOrderInfo"> | number
+    processed?: BoolFilter<"BybitOrderInfo"> | boolean
+    unitPrice?: FloatFilter<"BybitOrderInfo"> | number
+    bybitCabinetId?: IntFilter<"BybitOrderInfo"> | number
+    cabinet?: XOR<BybitCabinetScalarRelationFilter, BybitCabinetWhereInput>
+  }, "id" | "orderNo_bybitCabinetId">
 
   export type BybitOrderInfoOrderByWithAggregationInput = {
     id?: SortOrder
@@ -51207,7 +62519,15 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
+    dateTime?: SortOrder
+    originalData?: SortOrderInput | SortOrder
+    status?: SortOrder
+    type?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    processed?: SortOrder
+    unitPrice?: SortOrder
+    bybitCabinetId?: SortOrder
     _count?: BybitOrderInfoCountOrderByAggregateInput
     _avg?: BybitOrderInfoAvgOrderByAggregateInput
     _max?: BybitOrderInfoMaxOrderByAggregateInput
@@ -51224,7 +62544,15 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"BybitOrderInfo"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"BybitOrderInfo"> | Date | string
     orderNo?: StringWithAggregatesFilter<"BybitOrderInfo"> | string
-    userId?: IntWithAggregatesFilter<"BybitOrderInfo"> | number
+    dateTime?: DateTimeWithAggregatesFilter<"BybitOrderInfo"> | Date | string
+    originalData?: JsonNullableWithAggregatesFilter<"BybitOrderInfo">
+    status?: StringWithAggregatesFilter<"BybitOrderInfo"> | string
+    type?: StringWithAggregatesFilter<"BybitOrderInfo"> | string
+    amount?: IntWithAggregatesFilter<"BybitOrderInfo"> | number
+    totalPrice?: FloatWithAggregatesFilter<"BybitOrderInfo"> | number
+    processed?: BoolWithAggregatesFilter<"BybitOrderInfo"> | boolean
+    unitPrice?: FloatWithAggregatesFilter<"BybitOrderInfo"> | number
+    bybitCabinetId?: IntWithAggregatesFilter<"BybitOrderInfo"> | number
   }
 
   export type BybitTransactionWhereInput = {
@@ -51233,21 +62561,21 @@ export namespace Prisma {
     NOT?: BybitTransactionWhereInput | BybitTransactionWhereInput[]
     id?: IntFilter<"BybitTransaction"> | number
     orderNo?: StringFilter<"BybitTransaction"> | string
-    userId?: IntFilter<"BybitTransaction"> | number
     counterparty?: StringNullableFilter<"BybitTransaction"> | string | null
     status?: StringFilter<"BybitTransaction"> | string
-    extractedPhones?: StringNullableListFilter<"BybitTransaction">
-    lastAttemptError?: StringNullableFilter<"BybitTransaction"> | string | null
+    userId?: IntFilter<"BybitTransaction"> | number
     createdAt?: DateTimeFilter<"BybitTransaction"> | Date | string
     updatedAt?: DateTimeFilter<"BybitTransaction"> | Date | string
     amount?: FloatFilter<"BybitTransaction"> | number
     asset?: StringFilter<"BybitTransaction"> | string
     dateTime?: DateTimeFilter<"BybitTransaction"> | Date | string
     originalData?: JsonNullableFilter<"BybitTransaction">
-    processed?: BoolFilter<"BybitTransaction"> | boolean
     totalPrice?: FloatFilter<"BybitTransaction"> | number
     type?: StringFilter<"BybitTransaction"> | string
     unitPrice?: FloatFilter<"BybitTransaction"> | number
+    processed?: BoolFilter<"BybitTransaction"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransaction">
+    lastAttemptError?: StringNullableFilter<"BybitTransaction"> | string | null
     bybitMatch?: BybitMatchListRelationFilter
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
@@ -51255,21 +62583,21 @@ export namespace Prisma {
   export type BybitTransactionOrderByWithRelationInput = {
     id?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
     counterparty?: SortOrderInput | SortOrder
     status?: SortOrder
-    extractedPhones?: SortOrder
-    lastAttemptError?: SortOrderInput | SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     amount?: SortOrder
     asset?: SortOrder
     dateTime?: SortOrder
     originalData?: SortOrderInput | SortOrder
-    processed?: SortOrder
     totalPrice?: SortOrder
     type?: SortOrder
     unitPrice?: SortOrder
+    processed?: SortOrder
+    extractedPhones?: SortOrder
+    lastAttemptError?: SortOrderInput | SortOrder
     bybitMatch?: BybitMatchOrderByRelationAggregateInput
     user?: UserOrderByWithRelationInput
   }
@@ -51281,21 +62609,21 @@ export namespace Prisma {
     AND?: BybitTransactionWhereInput | BybitTransactionWhereInput[]
     OR?: BybitTransactionWhereInput[]
     NOT?: BybitTransactionWhereInput | BybitTransactionWhereInput[]
-    userId?: IntFilter<"BybitTransaction"> | number
     counterparty?: StringNullableFilter<"BybitTransaction"> | string | null
     status?: StringFilter<"BybitTransaction"> | string
-    extractedPhones?: StringNullableListFilter<"BybitTransaction">
-    lastAttemptError?: StringNullableFilter<"BybitTransaction"> | string | null
+    userId?: IntFilter<"BybitTransaction"> | number
     createdAt?: DateTimeFilter<"BybitTransaction"> | Date | string
     updatedAt?: DateTimeFilter<"BybitTransaction"> | Date | string
     amount?: FloatFilter<"BybitTransaction"> | number
     asset?: StringFilter<"BybitTransaction"> | string
     dateTime?: DateTimeFilter<"BybitTransaction"> | Date | string
     originalData?: JsonNullableFilter<"BybitTransaction">
-    processed?: BoolFilter<"BybitTransaction"> | boolean
     totalPrice?: FloatFilter<"BybitTransaction"> | number
     type?: StringFilter<"BybitTransaction"> | string
     unitPrice?: FloatFilter<"BybitTransaction"> | number
+    processed?: BoolFilter<"BybitTransaction"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransaction">
+    lastAttemptError?: StringNullableFilter<"BybitTransaction"> | string | null
     bybitMatch?: BybitMatchListRelationFilter
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "orderNo" | "orderNo_userId">
@@ -51303,21 +62631,21 @@ export namespace Prisma {
   export type BybitTransactionOrderByWithAggregationInput = {
     id?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
     counterparty?: SortOrderInput | SortOrder
     status?: SortOrder
-    extractedPhones?: SortOrder
-    lastAttemptError?: SortOrderInput | SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     amount?: SortOrder
     asset?: SortOrder
     dateTime?: SortOrder
     originalData?: SortOrderInput | SortOrder
-    processed?: SortOrder
     totalPrice?: SortOrder
     type?: SortOrder
     unitPrice?: SortOrder
+    processed?: SortOrder
+    extractedPhones?: SortOrder
+    lastAttemptError?: SortOrderInput | SortOrder
     _count?: BybitTransactionCountOrderByAggregateInput
     _avg?: BybitTransactionAvgOrderByAggregateInput
     _max?: BybitTransactionMaxOrderByAggregateInput
@@ -51331,21 +62659,21 @@ export namespace Prisma {
     NOT?: BybitTransactionScalarWhereWithAggregatesInput | BybitTransactionScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"BybitTransaction"> | number
     orderNo?: StringWithAggregatesFilter<"BybitTransaction"> | string
-    userId?: IntWithAggregatesFilter<"BybitTransaction"> | number
     counterparty?: StringNullableWithAggregatesFilter<"BybitTransaction"> | string | null
     status?: StringWithAggregatesFilter<"BybitTransaction"> | string
-    extractedPhones?: StringNullableListFilter<"BybitTransaction">
-    lastAttemptError?: StringNullableWithAggregatesFilter<"BybitTransaction"> | string | null
+    userId?: IntWithAggregatesFilter<"BybitTransaction"> | number
     createdAt?: DateTimeWithAggregatesFilter<"BybitTransaction"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"BybitTransaction"> | Date | string
     amount?: FloatWithAggregatesFilter<"BybitTransaction"> | number
     asset?: StringWithAggregatesFilter<"BybitTransaction"> | string
     dateTime?: DateTimeWithAggregatesFilter<"BybitTransaction"> | Date | string
     originalData?: JsonNullableWithAggregatesFilter<"BybitTransaction">
-    processed?: BoolWithAggregatesFilter<"BybitTransaction"> | boolean
     totalPrice?: FloatWithAggregatesFilter<"BybitTransaction"> | number
     type?: StringWithAggregatesFilter<"BybitTransaction"> | string
     unitPrice?: FloatWithAggregatesFilter<"BybitTransaction"> | number
+    processed?: BoolWithAggregatesFilter<"BybitTransaction"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransaction">
+    lastAttemptError?: StringNullableWithAggregatesFilter<"BybitTransaction"> | string | null
   }
 
   export type CardWhereInput = {
@@ -52362,6 +63690,7 @@ export namespace Prisma {
     cabinetId?: IntFilter<"IdexTransaction"> | number
     createdAt?: DateTimeFilter<"IdexTransaction"> | Date | string
     updatedAt?: DateTimeFilter<"IdexTransaction"> | Date | string
+    BybitClipMatch?: BybitClipMatchListRelationFilter
     BybitMatch?: BybitMatchListRelationFilter
     IdexCabinet?: XOR<IdexCabinetScalarRelationFilter, IdexCabinetWhereInput>
     Match?: MatchListRelationFilter
@@ -52383,6 +63712,7 @@ export namespace Prisma {
     cabinetId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    BybitClipMatch?: BybitClipMatchOrderByRelationAggregateInput
     BybitMatch?: BybitMatchOrderByRelationAggregateInput
     IdexCabinet?: IdexCabinetOrderByWithRelationInput
     Match?: MatchOrderByRelationAggregateInput
@@ -52408,6 +63738,7 @@ export namespace Prisma {
     cabinetId?: IntFilter<"IdexTransaction"> | number
     createdAt?: DateTimeFilter<"IdexTransaction"> | Date | string
     updatedAt?: DateTimeFilter<"IdexTransaction"> | Date | string
+    BybitClipMatch?: BybitClipMatchListRelationFilter
     BybitMatch?: BybitMatchListRelationFilter
     IdexCabinet?: XOR<IdexCabinetScalarRelationFilter, IdexCabinetWhereInput>
     Match?: MatchListRelationFilter
@@ -52672,6 +64003,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Password"> | Date | string
     updatedAt?: DateTimeFilter<"Password"> | Date | string
     comment?: StringNullableFilter<"Password"> | string | null
+    type?: EnumPasswordTypeNullableFilter<"Password"> | $Enums.PasswordType | null
   }
 
   export type PasswordOrderByWithRelationInput = {
@@ -52682,6 +64014,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     comment?: SortOrderInput | SortOrder
+    type?: SortOrderInput | SortOrder
   }
 
   export type PasswordWhereUniqueInput = Prisma.AtLeast<{
@@ -52695,6 +64028,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Password"> | Date | string
     updatedAt?: DateTimeFilter<"Password"> | Date | string
     comment?: StringNullableFilter<"Password"> | string | null
+    type?: EnumPasswordTypeNullableFilter<"Password"> | $Enums.PasswordType | null
   }, "id">
 
   export type PasswordOrderByWithAggregationInput = {
@@ -52705,6 +64039,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     comment?: SortOrderInput | SortOrder
+    type?: SortOrderInput | SortOrder
     _count?: PasswordCountOrderByAggregateInput
     _avg?: PasswordAvgOrderByAggregateInput
     _max?: PasswordMaxOrderByAggregateInput
@@ -52723,6 +64058,7 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"Password"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Password"> | Date | string
     comment?: StringNullableWithAggregatesFilter<"Password"> | string | null
+    type?: EnumPasswordTypeNullableWithAggregatesFilter<"Password"> | $Enums.PasswordType | null
   }
 
   export type ReportNotificationWhereInput = {
@@ -53796,11 +65132,15 @@ export namespace Prisma {
     lastBybitSyncAt?: DateTimeNullableFilter<"User"> | Date | string | null
     lastBybitSyncStatus?: StringNullableFilter<"User"> | string | null
     AuditLog?: AuditLogListRelationFilter
-    BybitOrderInfo?: BybitOrderInfoListRelationFilter
+    BybitClipMatch?: BybitClipMatchListRelationFilter
     BybitTransaction?: BybitTransactionListRelationFilter
+    MatchBybitReport?: MatchBybitReportListRelationFilter
+    MatchViresReport?: MatchViresReportListRelationFilter
     ReportNotification?: ReportNotificationListRelationFilter
     TelegramAccount?: TelegramAccountListRelationFilter
     Transaction?: TransactionListRelationFilter
+    ViresCabinet?: ViresCabinetListRelationFilter
+    ViresClipMatch?: ViresClipMatchListRelationFilter
     WorkSession?: WorkSessionListRelationFilter
   }
 
@@ -53818,11 +65158,15 @@ export namespace Prisma {
     lastBybitSyncAt?: SortOrderInput | SortOrder
     lastBybitSyncStatus?: SortOrderInput | SortOrder
     AuditLog?: AuditLogOrderByRelationAggregateInput
-    BybitOrderInfo?: BybitOrderInfoOrderByRelationAggregateInput
+    BybitClipMatch?: BybitClipMatchOrderByRelationAggregateInput
     BybitTransaction?: BybitTransactionOrderByRelationAggregateInput
+    MatchBybitReport?: MatchBybitReportOrderByRelationAggregateInput
+    MatchViresReport?: MatchViresReportOrderByRelationAggregateInput
     ReportNotification?: ReportNotificationOrderByRelationAggregateInput
     TelegramAccount?: TelegramAccountOrderByRelationAggregateInput
     Transaction?: TransactionOrderByRelationAggregateInput
+    ViresCabinet?: ViresCabinetOrderByRelationAggregateInput
+    ViresClipMatch?: ViresClipMatchOrderByRelationAggregateInput
     WorkSession?: WorkSessionOrderByRelationAggregateInput
   }
 
@@ -53843,11 +65187,15 @@ export namespace Prisma {
     lastBybitSyncAt?: DateTimeNullableFilter<"User"> | Date | string | null
     lastBybitSyncStatus?: StringNullableFilter<"User"> | string | null
     AuditLog?: AuditLogListRelationFilter
-    BybitOrderInfo?: BybitOrderInfoListRelationFilter
+    BybitClipMatch?: BybitClipMatchListRelationFilter
     BybitTransaction?: BybitTransactionListRelationFilter
+    MatchBybitReport?: MatchBybitReportListRelationFilter
+    MatchViresReport?: MatchViresReportListRelationFilter
     ReportNotification?: ReportNotificationListRelationFilter
     TelegramAccount?: TelegramAccountListRelationFilter
     Transaction?: TransactionListRelationFilter
+    ViresCabinet?: ViresCabinetListRelationFilter
+    ViresClipMatch?: ViresClipMatchListRelationFilter
     WorkSession?: WorkSessionListRelationFilter
   }, "id" | "passCode">
 
@@ -54018,6 +65366,771 @@ export namespace Prisma {
     workSessionId?: IntWithAggregatesFilter<"WorkSessionIdexCabinet"> | number
     idexCabinetId?: IntWithAggregatesFilter<"WorkSessionIdexCabinet"> | number
     assignedAt?: DateTimeWithAggregatesFilter<"WorkSessionIdexCabinet"> | Date | string
+  }
+
+  export type BybitCabinetWhereInput = {
+    AND?: BybitCabinetWhereInput | BybitCabinetWhereInput[]
+    OR?: BybitCabinetWhereInput[]
+    NOT?: BybitCabinetWhereInput | BybitCabinetWhereInput[]
+    id?: IntFilter<"BybitCabinet"> | number
+    createdAt?: DateTimeFilter<"BybitCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitCabinet"> | Date | string
+    bybitEmail?: StringFilter<"BybitCabinet"> | string
+    bybitApiSecret?: StringNullableFilter<"BybitCabinet"> | string | null
+    bybitApiToken?: StringNullableFilter<"BybitCabinet"> | string | null
+    lastBybitSyncAt?: DateTimeNullableFilter<"BybitCabinet"> | Date | string | null
+    lastBybitSyncStatus?: StringNullableFilter<"BybitCabinet"> | string | null
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetListRelationFilter
+    BybitOrderInfo?: BybitOrderInfoListRelationFilter
+  }
+
+  export type BybitCabinetOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    bybitEmail?: SortOrder
+    bybitApiSecret?: SortOrderInput | SortOrder
+    bybitApiToken?: SortOrderInput | SortOrder
+    lastBybitSyncAt?: SortOrderInput | SortOrder
+    lastBybitSyncStatus?: SortOrderInput | SortOrder
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetOrderByRelationAggregateInput
+    BybitOrderInfo?: BybitOrderInfoOrderByRelationAggregateInput
+  }
+
+  export type BybitCabinetWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: BybitCabinetWhereInput | BybitCabinetWhereInput[]
+    OR?: BybitCabinetWhereInput[]
+    NOT?: BybitCabinetWhereInput | BybitCabinetWhereInput[]
+    createdAt?: DateTimeFilter<"BybitCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitCabinet"> | Date | string
+    bybitEmail?: StringFilter<"BybitCabinet"> | string
+    bybitApiSecret?: StringNullableFilter<"BybitCabinet"> | string | null
+    bybitApiToken?: StringNullableFilter<"BybitCabinet"> | string | null
+    lastBybitSyncAt?: DateTimeNullableFilter<"BybitCabinet"> | Date | string | null
+    lastBybitSyncStatus?: StringNullableFilter<"BybitCabinet"> | string | null
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetListRelationFilter
+    BybitOrderInfo?: BybitOrderInfoListRelationFilter
+  }, "id">
+
+  export type BybitCabinetOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    bybitEmail?: SortOrder
+    bybitApiSecret?: SortOrderInput | SortOrder
+    bybitApiToken?: SortOrderInput | SortOrder
+    lastBybitSyncAt?: SortOrderInput | SortOrder
+    lastBybitSyncStatus?: SortOrderInput | SortOrder
+    _count?: BybitCabinetCountOrderByAggregateInput
+    _avg?: BybitCabinetAvgOrderByAggregateInput
+    _max?: BybitCabinetMaxOrderByAggregateInput
+    _min?: BybitCabinetMinOrderByAggregateInput
+    _sum?: BybitCabinetSumOrderByAggregateInput
+  }
+
+  export type BybitCabinetScalarWhereWithAggregatesInput = {
+    AND?: BybitCabinetScalarWhereWithAggregatesInput | BybitCabinetScalarWhereWithAggregatesInput[]
+    OR?: BybitCabinetScalarWhereWithAggregatesInput[]
+    NOT?: BybitCabinetScalarWhereWithAggregatesInput | BybitCabinetScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"BybitCabinet"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"BybitCabinet"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"BybitCabinet"> | Date | string
+    bybitEmail?: StringWithAggregatesFilter<"BybitCabinet"> | string
+    bybitApiSecret?: StringNullableWithAggregatesFilter<"BybitCabinet"> | string | null
+    bybitApiToken?: StringNullableWithAggregatesFilter<"BybitCabinet"> | string | null
+    lastBybitSyncAt?: DateTimeNullableWithAggregatesFilter<"BybitCabinet"> | Date | string | null
+    lastBybitSyncStatus?: StringNullableWithAggregatesFilter<"BybitCabinet"> | string | null
+  }
+
+  export type BybitClipMatchWhereInput = {
+    AND?: BybitClipMatchWhereInput | BybitClipMatchWhereInput[]
+    OR?: BybitClipMatchWhereInput[]
+    NOT?: BybitClipMatchWhereInput | BybitClipMatchWhereInput[]
+    id?: IntFilter<"BybitClipMatch"> | number
+    idexTransactionId?: IntFilter<"BybitClipMatch"> | number
+    bybitTransactionId?: IntFilter<"BybitClipMatch"> | number
+    timeDifference?: IntFilter<"BybitClipMatch"> | number
+    grossExpense?: FloatFilter<"BybitClipMatch"> | number
+    grossIncome?: FloatFilter<"BybitClipMatch"> | number
+    grossProfit?: FloatFilter<"BybitClipMatch"> | number
+    profitPercentage?: FloatFilter<"BybitClipMatch"> | number
+    createdAt?: DateTimeFilter<"BybitClipMatch"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitClipMatch"> | Date | string
+    matchBybitReportId?: IntNullableFilter<"BybitClipMatch"> | number | null
+    userId?: IntFilter<"BybitClipMatch"> | number
+    BybitTransactionFromCabinet?: XOR<BybitTransactionFromCabinetScalarRelationFilter, BybitTransactionFromCabinetWhereInput>
+    IdexTransaction?: XOR<IdexTransactionScalarRelationFilter, IdexTransactionWhereInput>
+    MatchBybitReport?: XOR<MatchBybitReportNullableScalarRelationFilter, MatchBybitReportWhereInput> | null
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type BybitClipMatchOrderByWithRelationInput = {
+    id?: SortOrder
+    idexTransactionId?: SortOrder
+    bybitTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchBybitReportId?: SortOrderInput | SortOrder
+    userId?: SortOrder
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetOrderByWithRelationInput
+    IdexTransaction?: IdexTransactionOrderByWithRelationInput
+    MatchBybitReport?: MatchBybitReportOrderByWithRelationInput
+    User?: UserOrderByWithRelationInput
+  }
+
+  export type BybitClipMatchWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: BybitClipMatchWhereInput | BybitClipMatchWhereInput[]
+    OR?: BybitClipMatchWhereInput[]
+    NOT?: BybitClipMatchWhereInput | BybitClipMatchWhereInput[]
+    idexTransactionId?: IntFilter<"BybitClipMatch"> | number
+    bybitTransactionId?: IntFilter<"BybitClipMatch"> | number
+    timeDifference?: IntFilter<"BybitClipMatch"> | number
+    grossExpense?: FloatFilter<"BybitClipMatch"> | number
+    grossIncome?: FloatFilter<"BybitClipMatch"> | number
+    grossProfit?: FloatFilter<"BybitClipMatch"> | number
+    profitPercentage?: FloatFilter<"BybitClipMatch"> | number
+    createdAt?: DateTimeFilter<"BybitClipMatch"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitClipMatch"> | Date | string
+    matchBybitReportId?: IntNullableFilter<"BybitClipMatch"> | number | null
+    userId?: IntFilter<"BybitClipMatch"> | number
+    BybitTransactionFromCabinet?: XOR<BybitTransactionFromCabinetScalarRelationFilter, BybitTransactionFromCabinetWhereInput>
+    IdexTransaction?: XOR<IdexTransactionScalarRelationFilter, IdexTransactionWhereInput>
+    MatchBybitReport?: XOR<MatchBybitReportNullableScalarRelationFilter, MatchBybitReportWhereInput> | null
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id">
+
+  export type BybitClipMatchOrderByWithAggregationInput = {
+    id?: SortOrder
+    idexTransactionId?: SortOrder
+    bybitTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchBybitReportId?: SortOrderInput | SortOrder
+    userId?: SortOrder
+    _count?: BybitClipMatchCountOrderByAggregateInput
+    _avg?: BybitClipMatchAvgOrderByAggregateInput
+    _max?: BybitClipMatchMaxOrderByAggregateInput
+    _min?: BybitClipMatchMinOrderByAggregateInput
+    _sum?: BybitClipMatchSumOrderByAggregateInput
+  }
+
+  export type BybitClipMatchScalarWhereWithAggregatesInput = {
+    AND?: BybitClipMatchScalarWhereWithAggregatesInput | BybitClipMatchScalarWhereWithAggregatesInput[]
+    OR?: BybitClipMatchScalarWhereWithAggregatesInput[]
+    NOT?: BybitClipMatchScalarWhereWithAggregatesInput | BybitClipMatchScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"BybitClipMatch"> | number
+    idexTransactionId?: IntWithAggregatesFilter<"BybitClipMatch"> | number
+    bybitTransactionId?: IntWithAggregatesFilter<"BybitClipMatch"> | number
+    timeDifference?: IntWithAggregatesFilter<"BybitClipMatch"> | number
+    grossExpense?: FloatWithAggregatesFilter<"BybitClipMatch"> | number
+    grossIncome?: FloatWithAggregatesFilter<"BybitClipMatch"> | number
+    grossProfit?: FloatWithAggregatesFilter<"BybitClipMatch"> | number
+    profitPercentage?: FloatWithAggregatesFilter<"BybitClipMatch"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"BybitClipMatch"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"BybitClipMatch"> | Date | string
+    matchBybitReportId?: IntNullableWithAggregatesFilter<"BybitClipMatch"> | number | null
+    userId?: IntWithAggregatesFilter<"BybitClipMatch"> | number
+  }
+
+  export type BybitTransactionFromCabinetWhereInput = {
+    AND?: BybitTransactionFromCabinetWhereInput | BybitTransactionFromCabinetWhereInput[]
+    OR?: BybitTransactionFromCabinetWhereInput[]
+    NOT?: BybitTransactionFromCabinetWhereInput | BybitTransactionFromCabinetWhereInput[]
+    id?: IntFilter<"BybitTransactionFromCabinet"> | number
+    orderNo?: StringFilter<"BybitTransactionFromCabinet"> | string
+    counterparty?: StringNullableFilter<"BybitTransactionFromCabinet"> | string | null
+    status?: StringFilter<"BybitTransactionFromCabinet"> | string
+    createdAt?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    amount?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    asset?: StringFilter<"BybitTransactionFromCabinet"> | string
+    dateTime?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    originalData?: JsonNullableFilter<"BybitTransactionFromCabinet">
+    totalPrice?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    type?: StringFilter<"BybitTransactionFromCabinet"> | string
+    unitPrice?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    processed?: BoolFilter<"BybitTransactionFromCabinet"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransactionFromCabinet">
+    lastAttemptError?: StringNullableFilter<"BybitTransactionFromCabinet"> | string | null
+    cabinetId?: IntFilter<"BybitTransactionFromCabinet"> | number
+    BybitClipMatch?: BybitClipMatchListRelationFilter
+    BybitCabinet?: XOR<BybitCabinetScalarRelationFilter, BybitCabinetWhereInput>
+    ViresClipMatch?: ViresClipMatchListRelationFilter
+  }
+
+  export type BybitTransactionFromCabinetOrderByWithRelationInput = {
+    id?: SortOrder
+    orderNo?: SortOrder
+    counterparty?: SortOrderInput | SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    amount?: SortOrder
+    asset?: SortOrder
+    dateTime?: SortOrder
+    originalData?: SortOrderInput | SortOrder
+    totalPrice?: SortOrder
+    type?: SortOrder
+    unitPrice?: SortOrder
+    processed?: SortOrder
+    extractedPhones?: SortOrder
+    lastAttemptError?: SortOrderInput | SortOrder
+    cabinetId?: SortOrder
+    BybitClipMatch?: BybitClipMatchOrderByRelationAggregateInput
+    BybitCabinet?: BybitCabinetOrderByWithRelationInput
+    ViresClipMatch?: ViresClipMatchOrderByRelationAggregateInput
+  }
+
+  export type BybitTransactionFromCabinetWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    orderNo?: string
+    AND?: BybitTransactionFromCabinetWhereInput | BybitTransactionFromCabinetWhereInput[]
+    OR?: BybitTransactionFromCabinetWhereInput[]
+    NOT?: BybitTransactionFromCabinetWhereInput | BybitTransactionFromCabinetWhereInput[]
+    counterparty?: StringNullableFilter<"BybitTransactionFromCabinet"> | string | null
+    status?: StringFilter<"BybitTransactionFromCabinet"> | string
+    createdAt?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    amount?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    asset?: StringFilter<"BybitTransactionFromCabinet"> | string
+    dateTime?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    originalData?: JsonNullableFilter<"BybitTransactionFromCabinet">
+    totalPrice?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    type?: StringFilter<"BybitTransactionFromCabinet"> | string
+    unitPrice?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    processed?: BoolFilter<"BybitTransactionFromCabinet"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransactionFromCabinet">
+    lastAttemptError?: StringNullableFilter<"BybitTransactionFromCabinet"> | string | null
+    cabinetId?: IntFilter<"BybitTransactionFromCabinet"> | number
+    BybitClipMatch?: BybitClipMatchListRelationFilter
+    BybitCabinet?: XOR<BybitCabinetScalarRelationFilter, BybitCabinetWhereInput>
+    ViresClipMatch?: ViresClipMatchListRelationFilter
+  }, "id" | "orderNo">
+
+  export type BybitTransactionFromCabinetOrderByWithAggregationInput = {
+    id?: SortOrder
+    orderNo?: SortOrder
+    counterparty?: SortOrderInput | SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    amount?: SortOrder
+    asset?: SortOrder
+    dateTime?: SortOrder
+    originalData?: SortOrderInput | SortOrder
+    totalPrice?: SortOrder
+    type?: SortOrder
+    unitPrice?: SortOrder
+    processed?: SortOrder
+    extractedPhones?: SortOrder
+    lastAttemptError?: SortOrderInput | SortOrder
+    cabinetId?: SortOrder
+    _count?: BybitTransactionFromCabinetCountOrderByAggregateInput
+    _avg?: BybitTransactionFromCabinetAvgOrderByAggregateInput
+    _max?: BybitTransactionFromCabinetMaxOrderByAggregateInput
+    _min?: BybitTransactionFromCabinetMinOrderByAggregateInput
+    _sum?: BybitTransactionFromCabinetSumOrderByAggregateInput
+  }
+
+  export type BybitTransactionFromCabinetScalarWhereWithAggregatesInput = {
+    AND?: BybitTransactionFromCabinetScalarWhereWithAggregatesInput | BybitTransactionFromCabinetScalarWhereWithAggregatesInput[]
+    OR?: BybitTransactionFromCabinetScalarWhereWithAggregatesInput[]
+    NOT?: BybitTransactionFromCabinetScalarWhereWithAggregatesInput | BybitTransactionFromCabinetScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"BybitTransactionFromCabinet"> | number
+    orderNo?: StringWithAggregatesFilter<"BybitTransactionFromCabinet"> | string
+    counterparty?: StringNullableWithAggregatesFilter<"BybitTransactionFromCabinet"> | string | null
+    status?: StringWithAggregatesFilter<"BybitTransactionFromCabinet"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"BybitTransactionFromCabinet"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"BybitTransactionFromCabinet"> | Date | string
+    amount?: FloatWithAggregatesFilter<"BybitTransactionFromCabinet"> | number
+    asset?: StringWithAggregatesFilter<"BybitTransactionFromCabinet"> | string
+    dateTime?: DateTimeWithAggregatesFilter<"BybitTransactionFromCabinet"> | Date | string
+    originalData?: JsonNullableWithAggregatesFilter<"BybitTransactionFromCabinet">
+    totalPrice?: FloatWithAggregatesFilter<"BybitTransactionFromCabinet"> | number
+    type?: StringWithAggregatesFilter<"BybitTransactionFromCabinet"> | string
+    unitPrice?: FloatWithAggregatesFilter<"BybitTransactionFromCabinet"> | number
+    processed?: BoolWithAggregatesFilter<"BybitTransactionFromCabinet"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransactionFromCabinet">
+    lastAttemptError?: StringNullableWithAggregatesFilter<"BybitTransactionFromCabinet"> | string | null
+    cabinetId?: IntWithAggregatesFilter<"BybitTransactionFromCabinet"> | number
+  }
+
+  export type MatchBybitReportWhereInput = {
+    AND?: MatchBybitReportWhereInput | MatchBybitReportWhereInput[]
+    OR?: MatchBybitReportWhereInput[]
+    NOT?: MatchBybitReportWhereInput | MatchBybitReportWhereInput[]
+    id?: IntFilter<"MatchBybitReport"> | number
+    reportDate?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    totalMatches?: IntFilter<"MatchBybitReport"> | number
+    totalProfit?: FloatFilter<"MatchBybitReport"> | number
+    averageProfit?: FloatFilter<"MatchBybitReport"> | number
+    successRate?: FloatFilter<"MatchBybitReport"> | number
+    timeRangeStart?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    timeRangeEnd?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    notes?: StringNullableFilter<"MatchBybitReport"> | string | null
+    idexCabinets?: JsonNullableFilter<"MatchBybitReport">
+    createdAt?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    updatedAt?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    userId?: IntFilter<"MatchBybitReport"> | number
+    BybitClipMatch?: BybitClipMatchListRelationFilter
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type MatchBybitReportOrderByWithRelationInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrderInput | SortOrder
+    idexCabinets?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    BybitClipMatch?: BybitClipMatchOrderByRelationAggregateInput
+    User?: UserOrderByWithRelationInput
+  }
+
+  export type MatchBybitReportWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: MatchBybitReportWhereInput | MatchBybitReportWhereInput[]
+    OR?: MatchBybitReportWhereInput[]
+    NOT?: MatchBybitReportWhereInput | MatchBybitReportWhereInput[]
+    reportDate?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    totalMatches?: IntFilter<"MatchBybitReport"> | number
+    totalProfit?: FloatFilter<"MatchBybitReport"> | number
+    averageProfit?: FloatFilter<"MatchBybitReport"> | number
+    successRate?: FloatFilter<"MatchBybitReport"> | number
+    timeRangeStart?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    timeRangeEnd?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    notes?: StringNullableFilter<"MatchBybitReport"> | string | null
+    idexCabinets?: JsonNullableFilter<"MatchBybitReport">
+    createdAt?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    updatedAt?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    userId?: IntFilter<"MatchBybitReport"> | number
+    BybitClipMatch?: BybitClipMatchListRelationFilter
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id">
+
+  export type MatchBybitReportOrderByWithAggregationInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrderInput | SortOrder
+    idexCabinets?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    _count?: MatchBybitReportCountOrderByAggregateInput
+    _avg?: MatchBybitReportAvgOrderByAggregateInput
+    _max?: MatchBybitReportMaxOrderByAggregateInput
+    _min?: MatchBybitReportMinOrderByAggregateInput
+    _sum?: MatchBybitReportSumOrderByAggregateInput
+  }
+
+  export type MatchBybitReportScalarWhereWithAggregatesInput = {
+    AND?: MatchBybitReportScalarWhereWithAggregatesInput | MatchBybitReportScalarWhereWithAggregatesInput[]
+    OR?: MatchBybitReportScalarWhereWithAggregatesInput[]
+    NOT?: MatchBybitReportScalarWhereWithAggregatesInput | MatchBybitReportScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"MatchBybitReport"> | number
+    reportDate?: DateTimeWithAggregatesFilter<"MatchBybitReport"> | Date | string
+    totalMatches?: IntWithAggregatesFilter<"MatchBybitReport"> | number
+    totalProfit?: FloatWithAggregatesFilter<"MatchBybitReport"> | number
+    averageProfit?: FloatWithAggregatesFilter<"MatchBybitReport"> | number
+    successRate?: FloatWithAggregatesFilter<"MatchBybitReport"> | number
+    timeRangeStart?: DateTimeWithAggregatesFilter<"MatchBybitReport"> | Date | string
+    timeRangeEnd?: DateTimeWithAggregatesFilter<"MatchBybitReport"> | Date | string
+    notes?: StringNullableWithAggregatesFilter<"MatchBybitReport"> | string | null
+    idexCabinets?: JsonNullableWithAggregatesFilter<"MatchBybitReport">
+    createdAt?: DateTimeWithAggregatesFilter<"MatchBybitReport"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"MatchBybitReport"> | Date | string
+    userId?: IntWithAggregatesFilter<"MatchBybitReport"> | number
+  }
+
+  export type MatchViresReportWhereInput = {
+    AND?: MatchViresReportWhereInput | MatchViresReportWhereInput[]
+    OR?: MatchViresReportWhereInput[]
+    NOT?: MatchViresReportWhereInput | MatchViresReportWhereInput[]
+    id?: IntFilter<"MatchViresReport"> | number
+    reportDate?: DateTimeFilter<"MatchViresReport"> | Date | string
+    totalMatches?: IntFilter<"MatchViresReport"> | number
+    totalProfit?: FloatFilter<"MatchViresReport"> | number
+    averageProfit?: FloatFilter<"MatchViresReport"> | number
+    successRate?: FloatFilter<"MatchViresReport"> | number
+    timeRangeStart?: DateTimeFilter<"MatchViresReport"> | Date | string
+    timeRangeEnd?: DateTimeFilter<"MatchViresReport"> | Date | string
+    notes?: StringNullableFilter<"MatchViresReport"> | string | null
+    idexCabinets?: JsonNullableFilter<"MatchViresReport">
+    createdAt?: DateTimeFilter<"MatchViresReport"> | Date | string
+    updatedAt?: DateTimeFilter<"MatchViresReport"> | Date | string
+    userId?: IntFilter<"MatchViresReport"> | number
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+    ViresClipMatch?: ViresClipMatchListRelationFilter
+  }
+
+  export type MatchViresReportOrderByWithRelationInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrderInput | SortOrder
+    idexCabinets?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    User?: UserOrderByWithRelationInput
+    ViresClipMatch?: ViresClipMatchOrderByRelationAggregateInput
+  }
+
+  export type MatchViresReportWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: MatchViresReportWhereInput | MatchViresReportWhereInput[]
+    OR?: MatchViresReportWhereInput[]
+    NOT?: MatchViresReportWhereInput | MatchViresReportWhereInput[]
+    reportDate?: DateTimeFilter<"MatchViresReport"> | Date | string
+    totalMatches?: IntFilter<"MatchViresReport"> | number
+    totalProfit?: FloatFilter<"MatchViresReport"> | number
+    averageProfit?: FloatFilter<"MatchViresReport"> | number
+    successRate?: FloatFilter<"MatchViresReport"> | number
+    timeRangeStart?: DateTimeFilter<"MatchViresReport"> | Date | string
+    timeRangeEnd?: DateTimeFilter<"MatchViresReport"> | Date | string
+    notes?: StringNullableFilter<"MatchViresReport"> | string | null
+    idexCabinets?: JsonNullableFilter<"MatchViresReport">
+    createdAt?: DateTimeFilter<"MatchViresReport"> | Date | string
+    updatedAt?: DateTimeFilter<"MatchViresReport"> | Date | string
+    userId?: IntFilter<"MatchViresReport"> | number
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+    ViresClipMatch?: ViresClipMatchListRelationFilter
+  }, "id">
+
+  export type MatchViresReportOrderByWithAggregationInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrderInput | SortOrder
+    idexCabinets?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    _count?: MatchViresReportCountOrderByAggregateInput
+    _avg?: MatchViresReportAvgOrderByAggregateInput
+    _max?: MatchViresReportMaxOrderByAggregateInput
+    _min?: MatchViresReportMinOrderByAggregateInput
+    _sum?: MatchViresReportSumOrderByAggregateInput
+  }
+
+  export type MatchViresReportScalarWhereWithAggregatesInput = {
+    AND?: MatchViresReportScalarWhereWithAggregatesInput | MatchViresReportScalarWhereWithAggregatesInput[]
+    OR?: MatchViresReportScalarWhereWithAggregatesInput[]
+    NOT?: MatchViresReportScalarWhereWithAggregatesInput | MatchViresReportScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"MatchViresReport"> | number
+    reportDate?: DateTimeWithAggregatesFilter<"MatchViresReport"> | Date | string
+    totalMatches?: IntWithAggregatesFilter<"MatchViresReport"> | number
+    totalProfit?: FloatWithAggregatesFilter<"MatchViresReport"> | number
+    averageProfit?: FloatWithAggregatesFilter<"MatchViresReport"> | number
+    successRate?: FloatWithAggregatesFilter<"MatchViresReport"> | number
+    timeRangeStart?: DateTimeWithAggregatesFilter<"MatchViresReport"> | Date | string
+    timeRangeEnd?: DateTimeWithAggregatesFilter<"MatchViresReport"> | Date | string
+    notes?: StringNullableWithAggregatesFilter<"MatchViresReport"> | string | null
+    idexCabinets?: JsonNullableWithAggregatesFilter<"MatchViresReport">
+    createdAt?: DateTimeWithAggregatesFilter<"MatchViresReport"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"MatchViresReport"> | Date | string
+    userId?: IntWithAggregatesFilter<"MatchViresReport"> | number
+  }
+
+  export type ViresCabinetWhereInput = {
+    AND?: ViresCabinetWhereInput | ViresCabinetWhereInput[]
+    OR?: ViresCabinetWhereInput[]
+    NOT?: ViresCabinetWhereInput | ViresCabinetWhereInput[]
+    id?: IntFilter<"ViresCabinet"> | number
+    name?: StringNullableFilter<"ViresCabinet"> | string | null
+    login?: StringFilter<"ViresCabinet"> | string
+    password?: StringFilter<"ViresCabinet"> | string
+    type?: EnumPasswordTypeFilter<"ViresCabinet"> | $Enums.PasswordType
+    createdAt?: DateTimeFilter<"ViresCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"ViresCabinet"> | Date | string
+    comment?: StringNullableFilter<"ViresCabinet"> | string | null
+    userId?: IntFilter<"ViresCabinet"> | number
+    lastUpdate?: DateTimeFilter<"ViresCabinet"> | Date | string
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+    ViresTransactionPayin?: ViresTransactionPayinListRelationFilter
+  }
+
+  export type ViresCabinetOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    login?: SortOrder
+    password?: SortOrder
+    type?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    comment?: SortOrderInput | SortOrder
+    userId?: SortOrder
+    lastUpdate?: SortOrder
+    User?: UserOrderByWithRelationInput
+    ViresTransactionPayin?: ViresTransactionPayinOrderByRelationAggregateInput
+  }
+
+  export type ViresCabinetWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: ViresCabinetWhereInput | ViresCabinetWhereInput[]
+    OR?: ViresCabinetWhereInput[]
+    NOT?: ViresCabinetWhereInput | ViresCabinetWhereInput[]
+    name?: StringNullableFilter<"ViresCabinet"> | string | null
+    login?: StringFilter<"ViresCabinet"> | string
+    password?: StringFilter<"ViresCabinet"> | string
+    type?: EnumPasswordTypeFilter<"ViresCabinet"> | $Enums.PasswordType
+    createdAt?: DateTimeFilter<"ViresCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"ViresCabinet"> | Date | string
+    comment?: StringNullableFilter<"ViresCabinet"> | string | null
+    userId?: IntFilter<"ViresCabinet"> | number
+    lastUpdate?: DateTimeFilter<"ViresCabinet"> | Date | string
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+    ViresTransactionPayin?: ViresTransactionPayinListRelationFilter
+  }, "id">
+
+  export type ViresCabinetOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    login?: SortOrder
+    password?: SortOrder
+    type?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    comment?: SortOrderInput | SortOrder
+    userId?: SortOrder
+    lastUpdate?: SortOrder
+    _count?: ViresCabinetCountOrderByAggregateInput
+    _avg?: ViresCabinetAvgOrderByAggregateInput
+    _max?: ViresCabinetMaxOrderByAggregateInput
+    _min?: ViresCabinetMinOrderByAggregateInput
+    _sum?: ViresCabinetSumOrderByAggregateInput
+  }
+
+  export type ViresCabinetScalarWhereWithAggregatesInput = {
+    AND?: ViresCabinetScalarWhereWithAggregatesInput | ViresCabinetScalarWhereWithAggregatesInput[]
+    OR?: ViresCabinetScalarWhereWithAggregatesInput[]
+    NOT?: ViresCabinetScalarWhereWithAggregatesInput | ViresCabinetScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"ViresCabinet"> | number
+    name?: StringNullableWithAggregatesFilter<"ViresCabinet"> | string | null
+    login?: StringWithAggregatesFilter<"ViresCabinet"> | string
+    password?: StringWithAggregatesFilter<"ViresCabinet"> | string
+    type?: EnumPasswordTypeWithAggregatesFilter<"ViresCabinet"> | $Enums.PasswordType
+    createdAt?: DateTimeWithAggregatesFilter<"ViresCabinet"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ViresCabinet"> | Date | string
+    comment?: StringNullableWithAggregatesFilter<"ViresCabinet"> | string | null
+    userId?: IntWithAggregatesFilter<"ViresCabinet"> | number
+    lastUpdate?: DateTimeWithAggregatesFilter<"ViresCabinet"> | Date | string
+  }
+
+  export type ViresClipMatchWhereInput = {
+    AND?: ViresClipMatchWhereInput | ViresClipMatchWhereInput[]
+    OR?: ViresClipMatchWhereInput[]
+    NOT?: ViresClipMatchWhereInput | ViresClipMatchWhereInput[]
+    id?: IntFilter<"ViresClipMatch"> | number
+    viresTransactionId?: IntFilter<"ViresClipMatch"> | number
+    timeDifference?: IntFilter<"ViresClipMatch"> | number
+    grossExpense?: FloatFilter<"ViresClipMatch"> | number
+    grossIncome?: FloatFilter<"ViresClipMatch"> | number
+    grossProfit?: FloatFilter<"ViresClipMatch"> | number
+    profitPercentage?: FloatFilter<"ViresClipMatch"> | number
+    createdAt?: DateTimeFilter<"ViresClipMatch"> | Date | string
+    updatedAt?: DateTimeFilter<"ViresClipMatch"> | Date | string
+    matchViresReportId?: IntNullableFilter<"ViresClipMatch"> | number | null
+    userId?: IntFilter<"ViresClipMatch"> | number
+    bybitTransactionId?: IntFilter<"ViresClipMatch"> | number
+    BybitTransactionFromCabinet?: XOR<BybitTransactionFromCabinetScalarRelationFilter, BybitTransactionFromCabinetWhereInput>
+    MatchViresReport?: XOR<MatchViresReportNullableScalarRelationFilter, MatchViresReportWhereInput> | null
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+    ViresTransactionPayin?: XOR<ViresTransactionPayinScalarRelationFilter, ViresTransactionPayinWhereInput>
+  }
+
+  export type ViresClipMatchOrderByWithRelationInput = {
+    id?: SortOrder
+    viresTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchViresReportId?: SortOrderInput | SortOrder
+    userId?: SortOrder
+    bybitTransactionId?: SortOrder
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetOrderByWithRelationInput
+    MatchViresReport?: MatchViresReportOrderByWithRelationInput
+    User?: UserOrderByWithRelationInput
+    ViresTransactionPayin?: ViresTransactionPayinOrderByWithRelationInput
+  }
+
+  export type ViresClipMatchWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: ViresClipMatchWhereInput | ViresClipMatchWhereInput[]
+    OR?: ViresClipMatchWhereInput[]
+    NOT?: ViresClipMatchWhereInput | ViresClipMatchWhereInput[]
+    viresTransactionId?: IntFilter<"ViresClipMatch"> | number
+    timeDifference?: IntFilter<"ViresClipMatch"> | number
+    grossExpense?: FloatFilter<"ViresClipMatch"> | number
+    grossIncome?: FloatFilter<"ViresClipMatch"> | number
+    grossProfit?: FloatFilter<"ViresClipMatch"> | number
+    profitPercentage?: FloatFilter<"ViresClipMatch"> | number
+    createdAt?: DateTimeFilter<"ViresClipMatch"> | Date | string
+    updatedAt?: DateTimeFilter<"ViresClipMatch"> | Date | string
+    matchViresReportId?: IntNullableFilter<"ViresClipMatch"> | number | null
+    userId?: IntFilter<"ViresClipMatch"> | number
+    bybitTransactionId?: IntFilter<"ViresClipMatch"> | number
+    BybitTransactionFromCabinet?: XOR<BybitTransactionFromCabinetScalarRelationFilter, BybitTransactionFromCabinetWhereInput>
+    MatchViresReport?: XOR<MatchViresReportNullableScalarRelationFilter, MatchViresReportWhereInput> | null
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
+    ViresTransactionPayin?: XOR<ViresTransactionPayinScalarRelationFilter, ViresTransactionPayinWhereInput>
+  }, "id">
+
+  export type ViresClipMatchOrderByWithAggregationInput = {
+    id?: SortOrder
+    viresTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchViresReportId?: SortOrderInput | SortOrder
+    userId?: SortOrder
+    bybitTransactionId?: SortOrder
+    _count?: ViresClipMatchCountOrderByAggregateInput
+    _avg?: ViresClipMatchAvgOrderByAggregateInput
+    _max?: ViresClipMatchMaxOrderByAggregateInput
+    _min?: ViresClipMatchMinOrderByAggregateInput
+    _sum?: ViresClipMatchSumOrderByAggregateInput
+  }
+
+  export type ViresClipMatchScalarWhereWithAggregatesInput = {
+    AND?: ViresClipMatchScalarWhereWithAggregatesInput | ViresClipMatchScalarWhereWithAggregatesInput[]
+    OR?: ViresClipMatchScalarWhereWithAggregatesInput[]
+    NOT?: ViresClipMatchScalarWhereWithAggregatesInput | ViresClipMatchScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"ViresClipMatch"> | number
+    viresTransactionId?: IntWithAggregatesFilter<"ViresClipMatch"> | number
+    timeDifference?: IntWithAggregatesFilter<"ViresClipMatch"> | number
+    grossExpense?: FloatWithAggregatesFilter<"ViresClipMatch"> | number
+    grossIncome?: FloatWithAggregatesFilter<"ViresClipMatch"> | number
+    grossProfit?: FloatWithAggregatesFilter<"ViresClipMatch"> | number
+    profitPercentage?: FloatWithAggregatesFilter<"ViresClipMatch"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"ViresClipMatch"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ViresClipMatch"> | Date | string
+    matchViresReportId?: IntNullableWithAggregatesFilter<"ViresClipMatch"> | number | null
+    userId?: IntWithAggregatesFilter<"ViresClipMatch"> | number
+    bybitTransactionId?: IntWithAggregatesFilter<"ViresClipMatch"> | number
+  }
+
+  export type ViresTransactionPayinWhereInput = {
+    AND?: ViresTransactionPayinWhereInput | ViresTransactionPayinWhereInput[]
+    OR?: ViresTransactionPayinWhereInput[]
+    NOT?: ViresTransactionPayinWhereInput | ViresTransactionPayinWhereInput[]
+    id?: IntFilter<"ViresTransactionPayin"> | number
+    cabinetId?: IntFilter<"ViresTransactionPayin"> | number
+    createdAt?: DateTimeFilter<"ViresTransactionPayin"> | Date | string
+    sum_rub?: FloatFilter<"ViresTransactionPayin"> | number
+    sum_usdt?: FloatFilter<"ViresTransactionPayin"> | number
+    card?: StringFilter<"ViresTransactionPayin"> | string
+    fio?: StringFilter<"ViresTransactionPayin"> | string
+    bank?: StringFilter<"ViresTransactionPayin"> | string
+    uuid?: StringFilter<"ViresTransactionPayin"> | string
+    ViresClipMatch?: ViresClipMatchListRelationFilter
+    ViresCabinet?: XOR<ViresCabinetScalarRelationFilter, ViresCabinetWhereInput>
+  }
+
+  export type ViresTransactionPayinOrderByWithRelationInput = {
+    id?: SortOrder
+    cabinetId?: SortOrder
+    createdAt?: SortOrder
+    sum_rub?: SortOrder
+    sum_usdt?: SortOrder
+    card?: SortOrder
+    fio?: SortOrder
+    bank?: SortOrder
+    uuid?: SortOrder
+    ViresClipMatch?: ViresClipMatchOrderByRelationAggregateInput
+    ViresCabinet?: ViresCabinetOrderByWithRelationInput
+  }
+
+  export type ViresTransactionPayinWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    uuid?: string
+    AND?: ViresTransactionPayinWhereInput | ViresTransactionPayinWhereInput[]
+    OR?: ViresTransactionPayinWhereInput[]
+    NOT?: ViresTransactionPayinWhereInput | ViresTransactionPayinWhereInput[]
+    cabinetId?: IntFilter<"ViresTransactionPayin"> | number
+    createdAt?: DateTimeFilter<"ViresTransactionPayin"> | Date | string
+    sum_rub?: FloatFilter<"ViresTransactionPayin"> | number
+    sum_usdt?: FloatFilter<"ViresTransactionPayin"> | number
+    card?: StringFilter<"ViresTransactionPayin"> | string
+    fio?: StringFilter<"ViresTransactionPayin"> | string
+    bank?: StringFilter<"ViresTransactionPayin"> | string
+    ViresClipMatch?: ViresClipMatchListRelationFilter
+    ViresCabinet?: XOR<ViresCabinetScalarRelationFilter, ViresCabinetWhereInput>
+  }, "id" | "uuid">
+
+  export type ViresTransactionPayinOrderByWithAggregationInput = {
+    id?: SortOrder
+    cabinetId?: SortOrder
+    createdAt?: SortOrder
+    sum_rub?: SortOrder
+    sum_usdt?: SortOrder
+    card?: SortOrder
+    fio?: SortOrder
+    bank?: SortOrder
+    uuid?: SortOrder
+    _count?: ViresTransactionPayinCountOrderByAggregateInput
+    _avg?: ViresTransactionPayinAvgOrderByAggregateInput
+    _max?: ViresTransactionPayinMaxOrderByAggregateInput
+    _min?: ViresTransactionPayinMinOrderByAggregateInput
+    _sum?: ViresTransactionPayinSumOrderByAggregateInput
+  }
+
+  export type ViresTransactionPayinScalarWhereWithAggregatesInput = {
+    AND?: ViresTransactionPayinScalarWhereWithAggregatesInput | ViresTransactionPayinScalarWhereWithAggregatesInput[]
+    OR?: ViresTransactionPayinScalarWhereWithAggregatesInput[]
+    NOT?: ViresTransactionPayinScalarWhereWithAggregatesInput | ViresTransactionPayinScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"ViresTransactionPayin"> | number
+    cabinetId?: IntWithAggregatesFilter<"ViresTransactionPayin"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"ViresTransactionPayin"> | Date | string
+    sum_rub?: FloatWithAggregatesFilter<"ViresTransactionPayin"> | number
+    sum_usdt?: FloatWithAggregatesFilter<"ViresTransactionPayin"> | number
+    card?: StringWithAggregatesFilter<"ViresTransactionPayin"> | string
+    fio?: StringWithAggregatesFilter<"ViresTransactionPayin"> | string
+    bank?: StringWithAggregatesFilter<"ViresTransactionPayin"> | string
+    uuid?: StringWithAggregatesFilter<"ViresTransactionPayin"> | string
   }
 
   export type AdminCreateInput = {
@@ -54350,7 +66463,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt: Date | string
     orderNo: string
-    User: UserCreateNestedOneWithoutBybitOrderInfoInput
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status: string
+    type: string
+    amount: number
+    totalPrice: number
+    processed?: boolean
+    unitPrice: number
+    cabinet: BybitCabinetCreateNestedOneWithoutBybitOrderInfoInput
   }
 
   export type BybitOrderInfoUncheckedCreateInput = {
@@ -54359,7 +66480,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt: Date | string
     orderNo: string
-    userId: number
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status: string
+    type: string
+    amount: number
+    totalPrice: number
+    processed?: boolean
+    unitPrice: number
+    bybitCabinetId: number
   }
 
   export type BybitOrderInfoUpdateInput = {
@@ -54367,7 +66496,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     orderNo?: StringFieldUpdateOperationsInput | string
-    User?: UserUpdateOneRequiredWithoutBybitOrderInfoNestedInput
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    amount?: IntFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    cabinet?: BybitCabinetUpdateOneRequiredWithoutBybitOrderInfoNestedInput
   }
 
   export type BybitOrderInfoUncheckedUpdateInput = {
@@ -54376,7 +66513,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     orderNo?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    amount?: IntFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    bybitCabinetId?: IntFieldUpdateOperationsInput | number
   }
 
   export type BybitOrderInfoCreateManyInput = {
@@ -54385,7 +66530,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt: Date | string
     orderNo: string
-    userId: number
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status: string
+    type: string
+    amount: number
+    totalPrice: number
+    processed?: boolean
+    unitPrice: number
+    bybitCabinetId: number
   }
 
   export type BybitOrderInfoUpdateManyMutationInput = {
@@ -54393,6 +66546,14 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     orderNo?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    amount?: IntFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    unitPrice?: FloatFieldUpdateOperationsInput | number
   }
 
   export type BybitOrderInfoUncheckedUpdateManyInput = {
@@ -54401,25 +66562,33 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     orderNo?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    amount?: IntFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    bybitCabinetId?: IntFieldUpdateOperationsInput | number
   }
 
   export type BybitTransactionCreateInput = {
     orderNo: string
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
     bybitMatch?: BybitMatchCreateNestedManyWithoutBybitTransactionInput
     user: UserCreateNestedOneWithoutBybitTransactionInput
   }
@@ -54427,21 +66596,21 @@ export namespace Prisma {
   export type BybitTransactionUncheckedCreateInput = {
     id?: number
     orderNo: string
-    userId: number
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
+    userId: number
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
     bybitMatch?: BybitMatchUncheckedCreateNestedManyWithoutBybitTransactionInput
   }
 
@@ -54449,18 +66618,18 @@ export namespace Prisma {
     orderNo?: StringFieldUpdateOperationsInput | string
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     bybitMatch?: BybitMatchUpdateManyWithoutBybitTransactionNestedInput
     user?: UserUpdateOneRequiredWithoutBybitTransactionNestedInput
   }
@@ -54468,80 +66637,80 @@ export namespace Prisma {
   export type BybitTransactionUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     orderNo?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     bybitMatch?: BybitMatchUncheckedUpdateManyWithoutBybitTransactionNestedInput
   }
 
   export type BybitTransactionCreateManyInput = {
     id?: number
     orderNo: string
-    userId: number
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
+    userId: number
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
   }
 
   export type BybitTransactionUpdateManyMutationInput = {
     orderNo?: StringFieldUpdateOperationsInput | string
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type BybitTransactionUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     orderNo?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CardCreateInput = {
@@ -55640,6 +67809,7 @@ export namespace Prisma {
     extraData: JsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutIdexTransactionInput
     BybitMatch?: BybitMatchCreateNestedManyWithoutIdexTransactionInput
     IdexCabinet: IdexCabinetCreateNestedOneWithoutIdexTransactionInput
     Match?: MatchCreateNestedManyWithoutIdexTransactionInput
@@ -55661,6 +67831,7 @@ export namespace Prisma {
     cabinetId: number
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
     BybitMatch?: BybitMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
     Match?: MatchUncheckedCreateNestedManyWithoutIdexTransactionInput
   }
@@ -55679,6 +67850,7 @@ export namespace Prisma {
     extraData?: JsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutIdexTransactionNestedInput
     BybitMatch?: BybitMatchUpdateManyWithoutIdexTransactionNestedInput
     IdexCabinet?: IdexCabinetUpdateOneRequiredWithoutIdexTransactionNestedInput
     Match?: MatchUpdateManyWithoutIdexTransactionNestedInput
@@ -55700,6 +67872,7 @@ export namespace Prisma {
     cabinetId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
     BybitMatch?: BybitMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
     Match?: MatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
   }
@@ -55969,6 +68142,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt: Date | string
     comment?: string | null
+    type?: $Enums.PasswordType | null
   }
 
   export type PasswordUncheckedCreateInput = {
@@ -55979,6 +68153,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt: Date | string
     comment?: string | null
+    type?: $Enums.PasswordType | null
   }
 
   export type PasswordUpdateInput = {
@@ -55988,6 +68163,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     comment?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableEnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType | null
   }
 
   export type PasswordUncheckedUpdateInput = {
@@ -55998,6 +68174,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     comment?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableEnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType | null
   }
 
   export type PasswordCreateManyInput = {
@@ -56008,6 +68185,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt: Date | string
     comment?: string | null
+    type?: $Enums.PasswordType | null
   }
 
   export type PasswordUpdateManyMutationInput = {
@@ -56017,6 +68195,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     comment?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableEnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType | null
   }
 
   export type PasswordUncheckedUpdateManyInput = {
@@ -56027,6 +68206,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     comment?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableEnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType | null
   }
 
   export type ReportNotificationCreateInput = {
@@ -57168,11 +69348,15 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
     Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
   }
 
@@ -57190,11 +69374,15 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
     Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -57211,11 +69399,15 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
   }
 
@@ -57233,11 +69425,15 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -57407,6 +69603,827 @@ export namespace Prisma {
     workSessionId?: IntFieldUpdateOperationsInput | number
     idexCabinetId?: IntFieldUpdateOperationsInput | number
     assignedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BybitCabinetCreateInput = {
+    createdAt?: Date | string
+    updatedAt: Date | string
+    bybitEmail: string
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetCreateNestedManyWithoutBybitCabinetInput
+    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutCabinetInput
+  }
+
+  export type BybitCabinetUncheckedCreateInput = {
+    id?: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    bybitEmail: string
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUncheckedCreateNestedManyWithoutBybitCabinetInput
+    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutCabinetInput
+  }
+
+  export type BybitCabinetUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bybitEmail?: StringFieldUpdateOperationsInput | string
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateManyWithoutBybitCabinetNestedInput
+    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutCabinetNestedInput
+  }
+
+  export type BybitCabinetUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bybitEmail?: StringFieldUpdateOperationsInput | string
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUncheckedUpdateManyWithoutBybitCabinetNestedInput
+    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutCabinetNestedInput
+  }
+
+  export type BybitCabinetCreateManyInput = {
+    id?: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    bybitEmail: string
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+  }
+
+  export type BybitCabinetUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bybitEmail?: StringFieldUpdateOperationsInput | string
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BybitCabinetUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bybitEmail?: StringFieldUpdateOperationsInput | string
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BybitClipMatchCreateInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutBybitClipMatchInput
+    IdexTransaction: IdexTransactionCreateNestedOneWithoutBybitClipMatchInput
+    MatchBybitReport?: MatchBybitReportCreateNestedOneWithoutBybitClipMatchInput
+    User: UserCreateNestedOneWithoutBybitClipMatchInput
+  }
+
+  export type BybitClipMatchUncheckedCreateInput = {
+    id?: number
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchBybitReportId?: number | null
+    userId: number
+  }
+
+  export type BybitClipMatchUpdateInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    IdexTransaction?: IdexTransactionUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateOneWithoutBybitClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutBybitClipMatchNestedInput
+  }
+
+  export type BybitClipMatchUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type BybitClipMatchCreateManyInput = {
+    id?: number
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchBybitReportId?: number | null
+    userId: number
+  }
+
+  export type BybitClipMatchUpdateManyMutationInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BybitClipMatchUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type BybitTransactionFromCabinetCreateInput = {
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput
+    BybitCabinet: BybitCabinetCreateNestedOneWithoutBybitTransactionFromCabinetInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedCreateInput = {
+    id?: number
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    cabinetId: number
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetUpdateInput = {
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+    BybitCabinet?: BybitCabinetUpdateOneRequiredWithoutBybitTransactionFromCabinetNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinetId?: IntFieldUpdateOperationsInput | number
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type BybitTransactionFromCabinetCreateManyInput = {
+    id?: number
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    cabinetId: number
+  }
+
+  export type BybitTransactionFromCabinetUpdateManyMutationInput = {
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BybitTransactionFromCabinetUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinetId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type MatchBybitReportCreateInput = {
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutMatchBybitReportInput
+    User?: UserCreateNestedOneWithoutMatchBybitReportInput
+  }
+
+  export type MatchBybitReportUncheckedCreateInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId?: number
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutMatchBybitReportInput
+  }
+
+  export type MatchBybitReportUpdateInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutMatchBybitReportNestedInput
+    User?: UserUpdateOneRequiredWithoutMatchBybitReportNestedInput
+  }
+
+  export type MatchBybitReportUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutMatchBybitReportNestedInput
+  }
+
+  export type MatchBybitReportCreateManyInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId?: number
+  }
+
+  export type MatchBybitReportUpdateManyMutationInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MatchBybitReportUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type MatchViresReportCreateInput = {
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    User?: UserCreateNestedOneWithoutMatchViresReportInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutMatchViresReportInput
+  }
+
+  export type MatchViresReportUncheckedCreateInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId?: number
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutMatchViresReportInput
+  }
+
+  export type MatchViresReportUpdateInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    User?: UserUpdateOneRequiredWithoutMatchViresReportNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutMatchViresReportNestedInput
+  }
+
+  export type MatchViresReportUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutMatchViresReportNestedInput
+  }
+
+  export type MatchViresReportCreateManyInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId?: number
+  }
+
+  export type MatchViresReportUpdateManyMutationInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MatchViresReportUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresCabinetCreateInput = {
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    lastUpdate: Date | string
+    User: UserCreateNestedOneWithoutViresCabinetInput
+    ViresTransactionPayin?: ViresTransactionPayinCreateNestedManyWithoutViresCabinetInput
+  }
+
+  export type ViresCabinetUncheckedCreateInput = {
+    id?: number
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    userId: number
+    lastUpdate: Date | string
+    ViresTransactionPayin?: ViresTransactionPayinUncheckedCreateNestedManyWithoutViresCabinetInput
+  }
+
+  export type ViresCabinetUpdateInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    User?: UserUpdateOneRequiredWithoutViresCabinetNestedInput
+    ViresTransactionPayin?: ViresTransactionPayinUpdateManyWithoutViresCabinetNestedInput
+  }
+
+  export type ViresCabinetUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: IntFieldUpdateOperationsInput | number
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    ViresTransactionPayin?: ViresTransactionPayinUncheckedUpdateManyWithoutViresCabinetNestedInput
+  }
+
+  export type ViresCabinetCreateManyInput = {
+    id?: number
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    userId: number
+    lastUpdate: Date | string
+  }
+
+  export type ViresCabinetUpdateManyMutationInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ViresCabinetUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: IntFieldUpdateOperationsInput | number
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ViresClipMatchCreateInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutViresClipMatchInput
+    MatchViresReport?: MatchViresReportCreateNestedOneWithoutViresClipMatchInput
+    User: UserCreateNestedOneWithoutViresClipMatchInput
+    ViresTransactionPayin: ViresTransactionPayinCreateNestedOneWithoutViresClipMatchInput
+  }
+
+  export type ViresClipMatchUncheckedCreateInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    userId: number
+    bybitTransactionId: number
+  }
+
+  export type ViresClipMatchUpdateInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutViresClipMatchNestedInput
+    MatchViresReport?: MatchViresReportUpdateOneWithoutViresClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutViresClipMatchNestedInput
+    ViresTransactionPayin?: ViresTransactionPayinUpdateOneRequiredWithoutViresClipMatchNestedInput
+  }
+
+  export type ViresClipMatchUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresClipMatchCreateManyInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    userId: number
+    bybitTransactionId: number
+  }
+
+  export type ViresClipMatchUpdateManyMutationInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresTransactionPayinCreateInput = {
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutViresTransactionPayinInput
+    ViresCabinet: ViresCabinetCreateNestedOneWithoutViresTransactionPayinInput
+  }
+
+  export type ViresTransactionPayinUncheckedCreateInput = {
+    id?: number
+    cabinetId: number
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutViresTransactionPayinInput
+  }
+
+  export type ViresTransactionPayinUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutViresTransactionPayinNestedInput
+    ViresCabinet?: ViresCabinetUpdateOneRequiredWithoutViresTransactionPayinNestedInput
+  }
+
+  export type ViresTransactionPayinUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    cabinetId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutViresTransactionPayinNestedInput
+  }
+
+  export type ViresTransactionPayinCreateManyInput = {
+    id?: number
+    cabinetId: number
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+  }
+
+  export type ViresTransactionPayinUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ViresTransactionPayinUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    cabinetId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -57913,9 +70930,19 @@ export namespace Prisma {
     isEmpty?: boolean
   }
 
-  export type BybitOrderInfoOrderNoUserIdCompoundUniqueInput = {
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type BybitCabinetScalarRelationFilter = {
+    is?: BybitCabinetWhereInput
+    isNot?: BybitCabinetWhereInput
+  }
+
+  export type BybitOrderInfoOrderNoBybitCabinetIdCompoundUniqueInput = {
     orderNo: string
-    userId: number
+    bybitCabinetId: number
   }
 
   export type BybitOrderInfoCountOrderByAggregateInput = {
@@ -57924,12 +70951,23 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
+    dateTime?: SortOrder
+    originalData?: SortOrder
+    status?: SortOrder
+    type?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    processed?: SortOrder
+    unitPrice?: SortOrder
+    bybitCabinetId?: SortOrder
   }
 
   export type BybitOrderInfoAvgOrderByAggregateInput = {
     id?: SortOrder
-    userId?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    unitPrice?: SortOrder
+    bybitCabinetId?: SortOrder
   }
 
   export type BybitOrderInfoMaxOrderByAggregateInput = {
@@ -57937,7 +70975,14 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
+    dateTime?: SortOrder
+    status?: SortOrder
+    type?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    processed?: SortOrder
+    unitPrice?: SortOrder
+    bybitCabinetId?: SortOrder
   }
 
   export type BybitOrderInfoMinOrderByAggregateInput = {
@@ -57945,17 +70990,30 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
+    dateTime?: SortOrder
+    status?: SortOrder
+    type?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    processed?: SortOrder
+    unitPrice?: SortOrder
+    bybitCabinetId?: SortOrder
   }
 
   export type BybitOrderInfoSumOrderByAggregateInput = {
     id?: SortOrder
-    userId?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    unitPrice?: SortOrder
+    bybitCabinetId?: SortOrder
   }
 
-  export type BoolFilter<$PrismaModel = never> = {
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type BybitMatchListRelationFilter = {
@@ -57976,21 +71034,21 @@ export namespace Prisma {
   export type BybitTransactionCountOrderByAggregateInput = {
     id?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
     counterparty?: SortOrder
     status?: SortOrder
-    extractedPhones?: SortOrder
-    lastAttemptError?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     amount?: SortOrder
     asset?: SortOrder
     dateTime?: SortOrder
     originalData?: SortOrder
-    processed?: SortOrder
     totalPrice?: SortOrder
     type?: SortOrder
     unitPrice?: SortOrder
+    processed?: SortOrder
+    extractedPhones?: SortOrder
+    lastAttemptError?: SortOrder
   }
 
   export type BybitTransactionAvgOrderByAggregateInput = {
@@ -58004,37 +71062,37 @@ export namespace Prisma {
   export type BybitTransactionMaxOrderByAggregateInput = {
     id?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
     counterparty?: SortOrder
     status?: SortOrder
-    lastAttemptError?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     amount?: SortOrder
     asset?: SortOrder
     dateTime?: SortOrder
-    processed?: SortOrder
     totalPrice?: SortOrder
     type?: SortOrder
     unitPrice?: SortOrder
+    processed?: SortOrder
+    lastAttemptError?: SortOrder
   }
 
   export type BybitTransactionMinOrderByAggregateInput = {
     id?: SortOrder
     orderNo?: SortOrder
-    userId?: SortOrder
     counterparty?: SortOrder
     status?: SortOrder
-    lastAttemptError?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     amount?: SortOrder
     asset?: SortOrder
     dateTime?: SortOrder
-    processed?: SortOrder
     totalPrice?: SortOrder
     type?: SortOrder
     unitPrice?: SortOrder
+    processed?: SortOrder
+    lastAttemptError?: SortOrder
   }
 
   export type BybitTransactionSumOrderByAggregateInput = {
@@ -58043,14 +71101,6 @@ export namespace Prisma {
     amount?: SortOrder
     totalPrice?: SortOrder
     unitPrice?: SortOrder
-  }
-
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type EnumCardStatusFilter<$PrismaModel = never> = {
@@ -58967,6 +72017,12 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type BybitClipMatchListRelationFilter = {
+    every?: BybitClipMatchWhereInput
+    some?: BybitClipMatchWhereInput
+    none?: BybitClipMatchWhereInput
+  }
+
   export type IdexCabinetScalarRelationFilter = {
     is?: IdexCabinetWhereInput
     isNot?: IdexCabinetWhereInput
@@ -58976,6 +72032,10 @@ export namespace Prisma {
     every?: MatchWhereInput
     some?: MatchWhereInput
     none?: MatchWhereInput
+  }
+
+  export type BybitClipMatchOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type MatchOrderByRelationAggregateInput = {
@@ -59230,6 +72290,13 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type EnumPasswordTypeNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPasswordTypeNullableFilter<$PrismaModel> | $Enums.PasswordType | null
+  }
+
   export type PasswordCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -59238,6 +72305,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     comment?: SortOrder
+    type?: SortOrder
   }
 
   export type PasswordAvgOrderByAggregateInput = {
@@ -59252,6 +72320,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     comment?: SortOrder
+    type?: SortOrder
   }
 
   export type PasswordMinOrderByAggregateInput = {
@@ -59262,10 +72331,21 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     comment?: SortOrder
+    type?: SortOrder
   }
 
   export type PasswordSumOrderByAggregateInput = {
     id?: SortOrder
+  }
+
+  export type EnumPasswordTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPasswordTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.PasswordType | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumPasswordTypeNullableFilter<$PrismaModel>
+    _max?: NestedEnumPasswordTypeNullableFilter<$PrismaModel>
   }
 
   export type ReportNotificationCountOrderByAggregateInput = {
@@ -60049,16 +73129,22 @@ export namespace Prisma {
     not?: NestedEnumUserRoleFilter<$PrismaModel> | $Enums.UserRole
   }
 
-  export type BybitOrderInfoListRelationFilter = {
-    every?: BybitOrderInfoWhereInput
-    some?: BybitOrderInfoWhereInput
-    none?: BybitOrderInfoWhereInput
-  }
-
   export type BybitTransactionListRelationFilter = {
     every?: BybitTransactionWhereInput
     some?: BybitTransactionWhereInput
     none?: BybitTransactionWhereInput
+  }
+
+  export type MatchBybitReportListRelationFilter = {
+    every?: MatchBybitReportWhereInput
+    some?: MatchBybitReportWhereInput
+    none?: MatchBybitReportWhereInput
+  }
+
+  export type MatchViresReportListRelationFilter = {
+    every?: MatchViresReportWhereInput
+    some?: MatchViresReportWhereInput
+    none?: MatchViresReportWhereInput
   }
 
   export type ReportNotificationListRelationFilter = {
@@ -60079,17 +73165,33 @@ export namespace Prisma {
     none?: TransactionWhereInput
   }
 
+  export type ViresCabinetListRelationFilter = {
+    every?: ViresCabinetWhereInput
+    some?: ViresCabinetWhereInput
+    none?: ViresCabinetWhereInput
+  }
+
+  export type ViresClipMatchListRelationFilter = {
+    every?: ViresClipMatchWhereInput
+    some?: ViresClipMatchWhereInput
+    none?: ViresClipMatchWhereInput
+  }
+
   export type WorkSessionListRelationFilter = {
     every?: WorkSessionWhereInput
     some?: WorkSessionWhereInput
     none?: WorkSessionWhereInput
   }
 
-  export type BybitOrderInfoOrderByRelationAggregateInput = {
+  export type BybitTransactionOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type BybitTransactionOrderByRelationAggregateInput = {
+  export type MatchBybitReportOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type MatchViresReportOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -60102,6 +73204,14 @@ export namespace Prisma {
   }
 
   export type TransactionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ViresCabinetOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ViresClipMatchOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -60258,6 +73368,560 @@ export namespace Prisma {
     idexCabinetId?: SortOrder
   }
 
+  export type BybitTransactionFromCabinetListRelationFilter = {
+    every?: BybitTransactionFromCabinetWhereInput
+    some?: BybitTransactionFromCabinetWhereInput
+    none?: BybitTransactionFromCabinetWhereInput
+  }
+
+  export type BybitOrderInfoListRelationFilter = {
+    every?: BybitOrderInfoWhereInput
+    some?: BybitOrderInfoWhereInput
+    none?: BybitOrderInfoWhereInput
+  }
+
+  export type BybitTransactionFromCabinetOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BybitOrderInfoOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BybitCabinetCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    bybitEmail?: SortOrder
+    bybitApiSecret?: SortOrder
+    bybitApiToken?: SortOrder
+    lastBybitSyncAt?: SortOrder
+    lastBybitSyncStatus?: SortOrder
+  }
+
+  export type BybitCabinetAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type BybitCabinetMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    bybitEmail?: SortOrder
+    bybitApiSecret?: SortOrder
+    bybitApiToken?: SortOrder
+    lastBybitSyncAt?: SortOrder
+    lastBybitSyncStatus?: SortOrder
+  }
+
+  export type BybitCabinetMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    bybitEmail?: SortOrder
+    bybitApiSecret?: SortOrder
+    bybitApiToken?: SortOrder
+    lastBybitSyncAt?: SortOrder
+    lastBybitSyncStatus?: SortOrder
+  }
+
+  export type BybitCabinetSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type BybitTransactionFromCabinetScalarRelationFilter = {
+    is?: BybitTransactionFromCabinetWhereInput
+    isNot?: BybitTransactionFromCabinetWhereInput
+  }
+
+  export type MatchBybitReportNullableScalarRelationFilter = {
+    is?: MatchBybitReportWhereInput | null
+    isNot?: MatchBybitReportWhereInput | null
+  }
+
+  export type BybitClipMatchCountOrderByAggregateInput = {
+    id?: SortOrder
+    idexTransactionId?: SortOrder
+    bybitTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchBybitReportId?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type BybitClipMatchAvgOrderByAggregateInput = {
+    id?: SortOrder
+    idexTransactionId?: SortOrder
+    bybitTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    matchBybitReportId?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type BybitClipMatchMaxOrderByAggregateInput = {
+    id?: SortOrder
+    idexTransactionId?: SortOrder
+    bybitTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchBybitReportId?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type BybitClipMatchMinOrderByAggregateInput = {
+    id?: SortOrder
+    idexTransactionId?: SortOrder
+    bybitTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchBybitReportId?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type BybitClipMatchSumOrderByAggregateInput = {
+    id?: SortOrder
+    idexTransactionId?: SortOrder
+    bybitTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    matchBybitReportId?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type BybitTransactionFromCabinetCountOrderByAggregateInput = {
+    id?: SortOrder
+    orderNo?: SortOrder
+    counterparty?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    amount?: SortOrder
+    asset?: SortOrder
+    dateTime?: SortOrder
+    originalData?: SortOrder
+    totalPrice?: SortOrder
+    type?: SortOrder
+    unitPrice?: SortOrder
+    processed?: SortOrder
+    extractedPhones?: SortOrder
+    lastAttemptError?: SortOrder
+    cabinetId?: SortOrder
+  }
+
+  export type BybitTransactionFromCabinetAvgOrderByAggregateInput = {
+    id?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    unitPrice?: SortOrder
+    cabinetId?: SortOrder
+  }
+
+  export type BybitTransactionFromCabinetMaxOrderByAggregateInput = {
+    id?: SortOrder
+    orderNo?: SortOrder
+    counterparty?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    amount?: SortOrder
+    asset?: SortOrder
+    dateTime?: SortOrder
+    totalPrice?: SortOrder
+    type?: SortOrder
+    unitPrice?: SortOrder
+    processed?: SortOrder
+    lastAttemptError?: SortOrder
+    cabinetId?: SortOrder
+  }
+
+  export type BybitTransactionFromCabinetMinOrderByAggregateInput = {
+    id?: SortOrder
+    orderNo?: SortOrder
+    counterparty?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    amount?: SortOrder
+    asset?: SortOrder
+    dateTime?: SortOrder
+    totalPrice?: SortOrder
+    type?: SortOrder
+    unitPrice?: SortOrder
+    processed?: SortOrder
+    lastAttemptError?: SortOrder
+    cabinetId?: SortOrder
+  }
+
+  export type BybitTransactionFromCabinetSumOrderByAggregateInput = {
+    id?: SortOrder
+    amount?: SortOrder
+    totalPrice?: SortOrder
+    unitPrice?: SortOrder
+    cabinetId?: SortOrder
+  }
+
+  export type MatchBybitReportCountOrderByAggregateInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrder
+    idexCabinets?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchBybitReportAvgOrderByAggregateInput = {
+    id?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchBybitReportMaxOrderByAggregateInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchBybitReportMinOrderByAggregateInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchBybitReportSumOrderByAggregateInput = {
+    id?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchViresReportCountOrderByAggregateInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrder
+    idexCabinets?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchViresReportAvgOrderByAggregateInput = {
+    id?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchViresReportMaxOrderByAggregateInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchViresReportMinOrderByAggregateInput = {
+    id?: SortOrder
+    reportDate?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    timeRangeStart?: SortOrder
+    timeRangeEnd?: SortOrder
+    notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type MatchViresReportSumOrderByAggregateInput = {
+    id?: SortOrder
+    totalMatches?: SortOrder
+    totalProfit?: SortOrder
+    averageProfit?: SortOrder
+    successRate?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type EnumPasswordTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumPasswordTypeFilter<$PrismaModel> | $Enums.PasswordType
+  }
+
+  export type ViresTransactionPayinListRelationFilter = {
+    every?: ViresTransactionPayinWhereInput
+    some?: ViresTransactionPayinWhereInput
+    none?: ViresTransactionPayinWhereInput
+  }
+
+  export type ViresTransactionPayinOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ViresCabinetCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    login?: SortOrder
+    password?: SortOrder
+    type?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    comment?: SortOrder
+    userId?: SortOrder
+    lastUpdate?: SortOrder
+  }
+
+  export type ViresCabinetAvgOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type ViresCabinetMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    login?: SortOrder
+    password?: SortOrder
+    type?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    comment?: SortOrder
+    userId?: SortOrder
+    lastUpdate?: SortOrder
+  }
+
+  export type ViresCabinetMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    login?: SortOrder
+    password?: SortOrder
+    type?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    comment?: SortOrder
+    userId?: SortOrder
+    lastUpdate?: SortOrder
+  }
+
+  export type ViresCabinetSumOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type EnumPasswordTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumPasswordTypeWithAggregatesFilter<$PrismaModel> | $Enums.PasswordType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumPasswordTypeFilter<$PrismaModel>
+    _max?: NestedEnumPasswordTypeFilter<$PrismaModel>
+  }
+
+  export type MatchViresReportNullableScalarRelationFilter = {
+    is?: MatchViresReportWhereInput | null
+    isNot?: MatchViresReportWhereInput | null
+  }
+
+  export type ViresTransactionPayinScalarRelationFilter = {
+    is?: ViresTransactionPayinWhereInput
+    isNot?: ViresTransactionPayinWhereInput
+  }
+
+  export type ViresClipMatchCountOrderByAggregateInput = {
+    id?: SortOrder
+    viresTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchViresReportId?: SortOrder
+    userId?: SortOrder
+    bybitTransactionId?: SortOrder
+  }
+
+  export type ViresClipMatchAvgOrderByAggregateInput = {
+    id?: SortOrder
+    viresTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    matchViresReportId?: SortOrder
+    userId?: SortOrder
+    bybitTransactionId?: SortOrder
+  }
+
+  export type ViresClipMatchMaxOrderByAggregateInput = {
+    id?: SortOrder
+    viresTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchViresReportId?: SortOrder
+    userId?: SortOrder
+    bybitTransactionId?: SortOrder
+  }
+
+  export type ViresClipMatchMinOrderByAggregateInput = {
+    id?: SortOrder
+    viresTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    matchViresReportId?: SortOrder
+    userId?: SortOrder
+    bybitTransactionId?: SortOrder
+  }
+
+  export type ViresClipMatchSumOrderByAggregateInput = {
+    id?: SortOrder
+    viresTransactionId?: SortOrder
+    timeDifference?: SortOrder
+    grossExpense?: SortOrder
+    grossIncome?: SortOrder
+    grossProfit?: SortOrder
+    profitPercentage?: SortOrder
+    matchViresReportId?: SortOrder
+    userId?: SortOrder
+    bybitTransactionId?: SortOrder
+  }
+
+  export type ViresCabinetScalarRelationFilter = {
+    is?: ViresCabinetWhereInput
+    isNot?: ViresCabinetWhereInput
+  }
+
+  export type ViresTransactionPayinCountOrderByAggregateInput = {
+    id?: SortOrder
+    cabinetId?: SortOrder
+    createdAt?: SortOrder
+    sum_rub?: SortOrder
+    sum_usdt?: SortOrder
+    card?: SortOrder
+    fio?: SortOrder
+    bank?: SortOrder
+    uuid?: SortOrder
+  }
+
+  export type ViresTransactionPayinAvgOrderByAggregateInput = {
+    id?: SortOrder
+    cabinetId?: SortOrder
+    sum_rub?: SortOrder
+    sum_usdt?: SortOrder
+  }
+
+  export type ViresTransactionPayinMaxOrderByAggregateInput = {
+    id?: SortOrder
+    cabinetId?: SortOrder
+    createdAt?: SortOrder
+    sum_rub?: SortOrder
+    sum_usdt?: SortOrder
+    card?: SortOrder
+    fio?: SortOrder
+    bank?: SortOrder
+    uuid?: SortOrder
+  }
+
+  export type ViresTransactionPayinMinOrderByAggregateInput = {
+    id?: SortOrder
+    cabinetId?: SortOrder
+    createdAt?: SortOrder
+    sum_rub?: SortOrder
+    sum_usdt?: SortOrder
+    card?: SortOrder
+    fio?: SortOrder
+    bank?: SortOrder
+    uuid?: SortOrder
+  }
+
+  export type ViresTransactionPayinSumOrderByAggregateInput = {
+    id?: SortOrder
+    cabinetId?: SortOrder
+    sum_rub?: SortOrder
+    sum_usdt?: SortOrder
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -60396,10 +74060,10 @@ export namespace Prisma {
     set: string[]
   }
 
-  export type UserCreateNestedOneWithoutBybitOrderInfoInput = {
-    create?: XOR<UserCreateWithoutBybitOrderInfoInput, UserUncheckedCreateWithoutBybitOrderInfoInput>
-    connectOrCreate?: UserCreateOrConnectWithoutBybitOrderInfoInput
-    connect?: UserWhereUniqueInput
+  export type BybitCabinetCreateNestedOneWithoutBybitOrderInfoInput = {
+    create?: XOR<BybitCabinetCreateWithoutBybitOrderInfoInput, BybitCabinetUncheckedCreateWithoutBybitOrderInfoInput>
+    connectOrCreate?: BybitCabinetCreateOrConnectWithoutBybitOrderInfoInput
+    connect?: BybitCabinetWhereUniqueInput
   }
 
   export type BybitOrderInfoUpdatephoneNumbersInput = {
@@ -60407,12 +74071,16 @@ export namespace Prisma {
     push?: string | string[]
   }
 
-  export type UserUpdateOneRequiredWithoutBybitOrderInfoNestedInput = {
-    create?: XOR<UserCreateWithoutBybitOrderInfoInput, UserUncheckedCreateWithoutBybitOrderInfoInput>
-    connectOrCreate?: UserCreateOrConnectWithoutBybitOrderInfoInput
-    upsert?: UserUpsertWithoutBybitOrderInfoInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutBybitOrderInfoInput, UserUpdateWithoutBybitOrderInfoInput>, UserUncheckedUpdateWithoutBybitOrderInfoInput>
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type BybitCabinetUpdateOneRequiredWithoutBybitOrderInfoNestedInput = {
+    create?: XOR<BybitCabinetCreateWithoutBybitOrderInfoInput, BybitCabinetUncheckedCreateWithoutBybitOrderInfoInput>
+    connectOrCreate?: BybitCabinetCreateOrConnectWithoutBybitOrderInfoInput
+    upsert?: BybitCabinetUpsertWithoutBybitOrderInfoInput
+    connect?: BybitCabinetWhereUniqueInput
+    update?: XOR<XOR<BybitCabinetUpdateToOneWithWhereWithoutBybitOrderInfoInput, BybitCabinetUpdateWithoutBybitOrderInfoInput>, BybitCabinetUncheckedUpdateWithoutBybitOrderInfoInput>
   }
 
   export type BybitTransactionCreateextractedPhonesInput = {
@@ -60442,10 +74110,6 @@ export namespace Prisma {
   export type BybitTransactionUpdateextractedPhonesInput = {
     set?: string[]
     push?: string | string[]
-  }
-
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
   }
 
   export type BybitMatchUpdateManyWithoutBybitTransactionNestedInput = {
@@ -61185,6 +74849,13 @@ export namespace Prisma {
     update?: XOR<XOR<IdexCabinetUpdateToOneWithWhereWithoutIdexSyncOrderInput, IdexCabinetUpdateWithoutIdexSyncOrderInput>, IdexCabinetUncheckedUpdateWithoutIdexSyncOrderInput>
   }
 
+  export type BybitClipMatchCreateNestedManyWithoutIdexTransactionInput = {
+    create?: XOR<BybitClipMatchCreateWithoutIdexTransactionInput, BybitClipMatchUncheckedCreateWithoutIdexTransactionInput> | BybitClipMatchCreateWithoutIdexTransactionInput[] | BybitClipMatchUncheckedCreateWithoutIdexTransactionInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutIdexTransactionInput | BybitClipMatchCreateOrConnectWithoutIdexTransactionInput[]
+    createMany?: BybitClipMatchCreateManyIdexTransactionInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+  }
+
   export type BybitMatchCreateNestedManyWithoutIdexTransactionInput = {
     create?: XOR<BybitMatchCreateWithoutIdexTransactionInput, BybitMatchUncheckedCreateWithoutIdexTransactionInput> | BybitMatchCreateWithoutIdexTransactionInput[] | BybitMatchUncheckedCreateWithoutIdexTransactionInput[]
     connectOrCreate?: BybitMatchCreateOrConnectWithoutIdexTransactionInput | BybitMatchCreateOrConnectWithoutIdexTransactionInput[]
@@ -61203,6 +74874,13 @@ export namespace Prisma {
     connectOrCreate?: MatchCreateOrConnectWithoutIdexTransactionInput | MatchCreateOrConnectWithoutIdexTransactionInput[]
     createMany?: MatchCreateManyIdexTransactionInputEnvelope
     connect?: MatchWhereUniqueInput | MatchWhereUniqueInput[]
+  }
+
+  export type BybitClipMatchUncheckedCreateNestedManyWithoutIdexTransactionInput = {
+    create?: XOR<BybitClipMatchCreateWithoutIdexTransactionInput, BybitClipMatchUncheckedCreateWithoutIdexTransactionInput> | BybitClipMatchCreateWithoutIdexTransactionInput[] | BybitClipMatchUncheckedCreateWithoutIdexTransactionInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutIdexTransactionInput | BybitClipMatchCreateOrConnectWithoutIdexTransactionInput[]
+    createMany?: BybitClipMatchCreateManyIdexTransactionInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
   }
 
   export type BybitMatchUncheckedCreateNestedManyWithoutIdexTransactionInput = {
@@ -61225,6 +74903,20 @@ export namespace Prisma {
     decrement?: bigint | number
     multiply?: bigint | number
     divide?: bigint | number
+  }
+
+  export type BybitClipMatchUpdateManyWithoutIdexTransactionNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutIdexTransactionInput, BybitClipMatchUncheckedCreateWithoutIdexTransactionInput> | BybitClipMatchCreateWithoutIdexTransactionInput[] | BybitClipMatchUncheckedCreateWithoutIdexTransactionInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutIdexTransactionInput | BybitClipMatchCreateOrConnectWithoutIdexTransactionInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutIdexTransactionInput | BybitClipMatchUpsertWithWhereUniqueWithoutIdexTransactionInput[]
+    createMany?: BybitClipMatchCreateManyIdexTransactionInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutIdexTransactionInput | BybitClipMatchUpdateWithWhereUniqueWithoutIdexTransactionInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutIdexTransactionInput | BybitClipMatchUpdateManyWithWhereWithoutIdexTransactionInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
   }
 
   export type BybitMatchUpdateManyWithoutIdexTransactionNestedInput = {
@@ -61261,6 +74953,20 @@ export namespace Prisma {
     update?: MatchUpdateWithWhereUniqueWithoutIdexTransactionInput | MatchUpdateWithWhereUniqueWithoutIdexTransactionInput[]
     updateMany?: MatchUpdateManyWithWhereWithoutIdexTransactionInput | MatchUpdateManyWithWhereWithoutIdexTransactionInput[]
     deleteMany?: MatchScalarWhereInput | MatchScalarWhereInput[]
+  }
+
+  export type BybitClipMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutIdexTransactionInput, BybitClipMatchUncheckedCreateWithoutIdexTransactionInput> | BybitClipMatchCreateWithoutIdexTransactionInput[] | BybitClipMatchUncheckedCreateWithoutIdexTransactionInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutIdexTransactionInput | BybitClipMatchCreateOrConnectWithoutIdexTransactionInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutIdexTransactionInput | BybitClipMatchUpsertWithWhereUniqueWithoutIdexTransactionInput[]
+    createMany?: BybitClipMatchCreateManyIdexTransactionInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutIdexTransactionInput | BybitClipMatchUpdateWithWhereUniqueWithoutIdexTransactionInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutIdexTransactionInput | BybitClipMatchUpdateManyWithWhereWithoutIdexTransactionInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
   }
 
   export type BybitMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput = {
@@ -61317,6 +75023,10 @@ export namespace Prisma {
     upsert?: TransactionUpsertWithoutMatchInput
     connect?: TransactionWhereUniqueInput
     update?: XOR<XOR<TransactionUpdateToOneWithWhereWithoutMatchInput, TransactionUpdateWithoutMatchInput>, TransactionUncheckedUpdateWithoutMatchInput>
+  }
+
+  export type NullableEnumPasswordTypeFieldUpdateOperationsInput = {
+    set?: $Enums.PasswordType | null
   }
 
   export type UserCreateNestedOneWithoutReportNotificationInput = {
@@ -61978,11 +75688,11 @@ export namespace Prisma {
     connect?: AuditLogWhereUniqueInput | AuditLogWhereUniqueInput[]
   }
 
-  export type BybitOrderInfoCreateNestedManyWithoutUserInput = {
-    create?: XOR<BybitOrderInfoCreateWithoutUserInput, BybitOrderInfoUncheckedCreateWithoutUserInput> | BybitOrderInfoCreateWithoutUserInput[] | BybitOrderInfoUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutUserInput | BybitOrderInfoCreateOrConnectWithoutUserInput[]
-    createMany?: BybitOrderInfoCreateManyUserInputEnvelope
-    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+  export type BybitClipMatchCreateNestedManyWithoutUserInput = {
+    create?: XOR<BybitClipMatchCreateWithoutUserInput, BybitClipMatchUncheckedCreateWithoutUserInput> | BybitClipMatchCreateWithoutUserInput[] | BybitClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutUserInput | BybitClipMatchCreateOrConnectWithoutUserInput[]
+    createMany?: BybitClipMatchCreateManyUserInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
   }
 
   export type BybitTransactionCreateNestedManyWithoutUserInput = {
@@ -61990,6 +75700,20 @@ export namespace Prisma {
     connectOrCreate?: BybitTransactionCreateOrConnectWithoutUserInput | BybitTransactionCreateOrConnectWithoutUserInput[]
     createMany?: BybitTransactionCreateManyUserInputEnvelope
     connect?: BybitTransactionWhereUniqueInput | BybitTransactionWhereUniqueInput[]
+  }
+
+  export type MatchBybitReportCreateNestedManyWithoutUserInput = {
+    create?: XOR<MatchBybitReportCreateWithoutUserInput, MatchBybitReportUncheckedCreateWithoutUserInput> | MatchBybitReportCreateWithoutUserInput[] | MatchBybitReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchBybitReportCreateOrConnectWithoutUserInput | MatchBybitReportCreateOrConnectWithoutUserInput[]
+    createMany?: MatchBybitReportCreateManyUserInputEnvelope
+    connect?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+  }
+
+  export type MatchViresReportCreateNestedManyWithoutUserInput = {
+    create?: XOR<MatchViresReportCreateWithoutUserInput, MatchViresReportUncheckedCreateWithoutUserInput> | MatchViresReportCreateWithoutUserInput[] | MatchViresReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchViresReportCreateOrConnectWithoutUserInput | MatchViresReportCreateOrConnectWithoutUserInput[]
+    createMany?: MatchViresReportCreateManyUserInputEnvelope
+    connect?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
   }
 
   export type ReportNotificationCreateNestedManyWithoutUserInput = {
@@ -62013,6 +75737,20 @@ export namespace Prisma {
     connect?: TransactionWhereUniqueInput | TransactionWhereUniqueInput[]
   }
 
+  export type ViresCabinetCreateNestedManyWithoutUserInput = {
+    create?: XOR<ViresCabinetCreateWithoutUserInput, ViresCabinetUncheckedCreateWithoutUserInput> | ViresCabinetCreateWithoutUserInput[] | ViresCabinetUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresCabinetCreateOrConnectWithoutUserInput | ViresCabinetCreateOrConnectWithoutUserInput[]
+    createMany?: ViresCabinetCreateManyUserInputEnvelope
+    connect?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+  }
+
+  export type ViresClipMatchCreateNestedManyWithoutUserInput = {
+    create?: XOR<ViresClipMatchCreateWithoutUserInput, ViresClipMatchUncheckedCreateWithoutUserInput> | ViresClipMatchCreateWithoutUserInput[] | ViresClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutUserInput | ViresClipMatchCreateOrConnectWithoutUserInput[]
+    createMany?: ViresClipMatchCreateManyUserInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+  }
+
   export type WorkSessionCreateNestedManyWithoutUserInput = {
     create?: XOR<WorkSessionCreateWithoutUserInput, WorkSessionUncheckedCreateWithoutUserInput> | WorkSessionCreateWithoutUserInput[] | WorkSessionUncheckedCreateWithoutUserInput[]
     connectOrCreate?: WorkSessionCreateOrConnectWithoutUserInput | WorkSessionCreateOrConnectWithoutUserInput[]
@@ -62027,11 +75765,11 @@ export namespace Prisma {
     connect?: AuditLogWhereUniqueInput | AuditLogWhereUniqueInput[]
   }
 
-  export type BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<BybitOrderInfoCreateWithoutUserInput, BybitOrderInfoUncheckedCreateWithoutUserInput> | BybitOrderInfoCreateWithoutUserInput[] | BybitOrderInfoUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutUserInput | BybitOrderInfoCreateOrConnectWithoutUserInput[]
-    createMany?: BybitOrderInfoCreateManyUserInputEnvelope
-    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+  export type BybitClipMatchUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<BybitClipMatchCreateWithoutUserInput, BybitClipMatchUncheckedCreateWithoutUserInput> | BybitClipMatchCreateWithoutUserInput[] | BybitClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutUserInput | BybitClipMatchCreateOrConnectWithoutUserInput[]
+    createMany?: BybitClipMatchCreateManyUserInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
   }
 
   export type BybitTransactionUncheckedCreateNestedManyWithoutUserInput = {
@@ -62039,6 +75777,20 @@ export namespace Prisma {
     connectOrCreate?: BybitTransactionCreateOrConnectWithoutUserInput | BybitTransactionCreateOrConnectWithoutUserInput[]
     createMany?: BybitTransactionCreateManyUserInputEnvelope
     connect?: BybitTransactionWhereUniqueInput | BybitTransactionWhereUniqueInput[]
+  }
+
+  export type MatchBybitReportUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<MatchBybitReportCreateWithoutUserInput, MatchBybitReportUncheckedCreateWithoutUserInput> | MatchBybitReportCreateWithoutUserInput[] | MatchBybitReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchBybitReportCreateOrConnectWithoutUserInput | MatchBybitReportCreateOrConnectWithoutUserInput[]
+    createMany?: MatchBybitReportCreateManyUserInputEnvelope
+    connect?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+  }
+
+  export type MatchViresReportUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<MatchViresReportCreateWithoutUserInput, MatchViresReportUncheckedCreateWithoutUserInput> | MatchViresReportCreateWithoutUserInput[] | MatchViresReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchViresReportCreateOrConnectWithoutUserInput | MatchViresReportCreateOrConnectWithoutUserInput[]
+    createMany?: MatchViresReportCreateManyUserInputEnvelope
+    connect?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
   }
 
   export type ReportNotificationUncheckedCreateNestedManyWithoutUserInput = {
@@ -62060,6 +75812,20 @@ export namespace Prisma {
     connectOrCreate?: TransactionCreateOrConnectWithoutUserInput | TransactionCreateOrConnectWithoutUserInput[]
     createMany?: TransactionCreateManyUserInputEnvelope
     connect?: TransactionWhereUniqueInput | TransactionWhereUniqueInput[]
+  }
+
+  export type ViresCabinetUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ViresCabinetCreateWithoutUserInput, ViresCabinetUncheckedCreateWithoutUserInput> | ViresCabinetCreateWithoutUserInput[] | ViresCabinetUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresCabinetCreateOrConnectWithoutUserInput | ViresCabinetCreateOrConnectWithoutUserInput[]
+    createMany?: ViresCabinetCreateManyUserInputEnvelope
+    connect?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+  }
+
+  export type ViresClipMatchUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ViresClipMatchCreateWithoutUserInput, ViresClipMatchUncheckedCreateWithoutUserInput> | ViresClipMatchCreateWithoutUserInput[] | ViresClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutUserInput | ViresClipMatchCreateOrConnectWithoutUserInput[]
+    createMany?: ViresClipMatchCreateManyUserInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
   }
 
   export type WorkSessionUncheckedCreateNestedManyWithoutUserInput = {
@@ -62087,18 +75853,18 @@ export namespace Prisma {
     deleteMany?: AuditLogScalarWhereInput | AuditLogScalarWhereInput[]
   }
 
-  export type BybitOrderInfoUpdateManyWithoutUserNestedInput = {
-    create?: XOR<BybitOrderInfoCreateWithoutUserInput, BybitOrderInfoUncheckedCreateWithoutUserInput> | BybitOrderInfoCreateWithoutUserInput[] | BybitOrderInfoUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutUserInput | BybitOrderInfoCreateOrConnectWithoutUserInput[]
-    upsert?: BybitOrderInfoUpsertWithWhereUniqueWithoutUserInput | BybitOrderInfoUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: BybitOrderInfoCreateManyUserInputEnvelope
-    set?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    disconnect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    delete?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    update?: BybitOrderInfoUpdateWithWhereUniqueWithoutUserInput | BybitOrderInfoUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: BybitOrderInfoUpdateManyWithWhereWithoutUserInput | BybitOrderInfoUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
+  export type BybitClipMatchUpdateManyWithoutUserNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutUserInput, BybitClipMatchUncheckedCreateWithoutUserInput> | BybitClipMatchCreateWithoutUserInput[] | BybitClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutUserInput | BybitClipMatchCreateOrConnectWithoutUserInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutUserInput | BybitClipMatchUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: BybitClipMatchCreateManyUserInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutUserInput | BybitClipMatchUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutUserInput | BybitClipMatchUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
   }
 
   export type BybitTransactionUpdateManyWithoutUserNestedInput = {
@@ -62113,6 +75879,34 @@ export namespace Prisma {
     update?: BybitTransactionUpdateWithWhereUniqueWithoutUserInput | BybitTransactionUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: BybitTransactionUpdateManyWithWhereWithoutUserInput | BybitTransactionUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: BybitTransactionScalarWhereInput | BybitTransactionScalarWhereInput[]
+  }
+
+  export type MatchBybitReportUpdateManyWithoutUserNestedInput = {
+    create?: XOR<MatchBybitReportCreateWithoutUserInput, MatchBybitReportUncheckedCreateWithoutUserInput> | MatchBybitReportCreateWithoutUserInput[] | MatchBybitReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchBybitReportCreateOrConnectWithoutUserInput | MatchBybitReportCreateOrConnectWithoutUserInput[]
+    upsert?: MatchBybitReportUpsertWithWhereUniqueWithoutUserInput | MatchBybitReportUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: MatchBybitReportCreateManyUserInputEnvelope
+    set?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    disconnect?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    delete?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    connect?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    update?: MatchBybitReportUpdateWithWhereUniqueWithoutUserInput | MatchBybitReportUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: MatchBybitReportUpdateManyWithWhereWithoutUserInput | MatchBybitReportUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: MatchBybitReportScalarWhereInput | MatchBybitReportScalarWhereInput[]
+  }
+
+  export type MatchViresReportUpdateManyWithoutUserNestedInput = {
+    create?: XOR<MatchViresReportCreateWithoutUserInput, MatchViresReportUncheckedCreateWithoutUserInput> | MatchViresReportCreateWithoutUserInput[] | MatchViresReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchViresReportCreateOrConnectWithoutUserInput | MatchViresReportCreateOrConnectWithoutUserInput[]
+    upsert?: MatchViresReportUpsertWithWhereUniqueWithoutUserInput | MatchViresReportUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: MatchViresReportCreateManyUserInputEnvelope
+    set?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    disconnect?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    delete?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    connect?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    update?: MatchViresReportUpdateWithWhereUniqueWithoutUserInput | MatchViresReportUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: MatchViresReportUpdateManyWithWhereWithoutUserInput | MatchViresReportUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: MatchViresReportScalarWhereInput | MatchViresReportScalarWhereInput[]
   }
 
   export type ReportNotificationUpdateManyWithoutUserNestedInput = {
@@ -62157,6 +75951,34 @@ export namespace Prisma {
     deleteMany?: TransactionScalarWhereInput | TransactionScalarWhereInput[]
   }
 
+  export type ViresCabinetUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ViresCabinetCreateWithoutUserInput, ViresCabinetUncheckedCreateWithoutUserInput> | ViresCabinetCreateWithoutUserInput[] | ViresCabinetUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresCabinetCreateOrConnectWithoutUserInput | ViresCabinetCreateOrConnectWithoutUserInput[]
+    upsert?: ViresCabinetUpsertWithWhereUniqueWithoutUserInput | ViresCabinetUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ViresCabinetCreateManyUserInputEnvelope
+    set?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    disconnect?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    delete?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    connect?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    update?: ViresCabinetUpdateWithWhereUniqueWithoutUserInput | ViresCabinetUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ViresCabinetUpdateManyWithWhereWithoutUserInput | ViresCabinetUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ViresCabinetScalarWhereInput | ViresCabinetScalarWhereInput[]
+  }
+
+  export type ViresClipMatchUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutUserInput, ViresClipMatchUncheckedCreateWithoutUserInput> | ViresClipMatchCreateWithoutUserInput[] | ViresClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutUserInput | ViresClipMatchCreateOrConnectWithoutUserInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutUserInput | ViresClipMatchUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ViresClipMatchCreateManyUserInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutUserInput | ViresClipMatchUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutUserInput | ViresClipMatchUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+  }
+
   export type WorkSessionUpdateManyWithoutUserNestedInput = {
     create?: XOR<WorkSessionCreateWithoutUserInput, WorkSessionUncheckedCreateWithoutUserInput> | WorkSessionCreateWithoutUserInput[] | WorkSessionUncheckedCreateWithoutUserInput[]
     connectOrCreate?: WorkSessionCreateOrConnectWithoutUserInput | WorkSessionCreateOrConnectWithoutUserInput[]
@@ -62185,18 +76007,18 @@ export namespace Prisma {
     deleteMany?: AuditLogScalarWhereInput | AuditLogScalarWhereInput[]
   }
 
-  export type BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<BybitOrderInfoCreateWithoutUserInput, BybitOrderInfoUncheckedCreateWithoutUserInput> | BybitOrderInfoCreateWithoutUserInput[] | BybitOrderInfoUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutUserInput | BybitOrderInfoCreateOrConnectWithoutUserInput[]
-    upsert?: BybitOrderInfoUpsertWithWhereUniqueWithoutUserInput | BybitOrderInfoUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: BybitOrderInfoCreateManyUserInputEnvelope
-    set?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    disconnect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    delete?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
-    update?: BybitOrderInfoUpdateWithWhereUniqueWithoutUserInput | BybitOrderInfoUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: BybitOrderInfoUpdateManyWithWhereWithoutUserInput | BybitOrderInfoUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
+  export type BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutUserInput, BybitClipMatchUncheckedCreateWithoutUserInput> | BybitClipMatchCreateWithoutUserInput[] | BybitClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutUserInput | BybitClipMatchCreateOrConnectWithoutUserInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutUserInput | BybitClipMatchUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: BybitClipMatchCreateManyUserInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutUserInput | BybitClipMatchUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutUserInput | BybitClipMatchUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
   }
 
   export type BybitTransactionUncheckedUpdateManyWithoutUserNestedInput = {
@@ -62211,6 +76033,34 @@ export namespace Prisma {
     update?: BybitTransactionUpdateWithWhereUniqueWithoutUserInput | BybitTransactionUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: BybitTransactionUpdateManyWithWhereWithoutUserInput | BybitTransactionUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: BybitTransactionScalarWhereInput | BybitTransactionScalarWhereInput[]
+  }
+
+  export type MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<MatchBybitReportCreateWithoutUserInput, MatchBybitReportUncheckedCreateWithoutUserInput> | MatchBybitReportCreateWithoutUserInput[] | MatchBybitReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchBybitReportCreateOrConnectWithoutUserInput | MatchBybitReportCreateOrConnectWithoutUserInput[]
+    upsert?: MatchBybitReportUpsertWithWhereUniqueWithoutUserInput | MatchBybitReportUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: MatchBybitReportCreateManyUserInputEnvelope
+    set?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    disconnect?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    delete?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    connect?: MatchBybitReportWhereUniqueInput | MatchBybitReportWhereUniqueInput[]
+    update?: MatchBybitReportUpdateWithWhereUniqueWithoutUserInput | MatchBybitReportUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: MatchBybitReportUpdateManyWithWhereWithoutUserInput | MatchBybitReportUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: MatchBybitReportScalarWhereInput | MatchBybitReportScalarWhereInput[]
+  }
+
+  export type MatchViresReportUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<MatchViresReportCreateWithoutUserInput, MatchViresReportUncheckedCreateWithoutUserInput> | MatchViresReportCreateWithoutUserInput[] | MatchViresReportUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: MatchViresReportCreateOrConnectWithoutUserInput | MatchViresReportCreateOrConnectWithoutUserInput[]
+    upsert?: MatchViresReportUpsertWithWhereUniqueWithoutUserInput | MatchViresReportUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: MatchViresReportCreateManyUserInputEnvelope
+    set?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    disconnect?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    delete?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    connect?: MatchViresReportWhereUniqueInput | MatchViresReportWhereUniqueInput[]
+    update?: MatchViresReportUpdateWithWhereUniqueWithoutUserInput | MatchViresReportUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: MatchViresReportUpdateManyWithWhereWithoutUserInput | MatchViresReportUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: MatchViresReportScalarWhereInput | MatchViresReportScalarWhereInput[]
   }
 
   export type ReportNotificationUncheckedUpdateManyWithoutUserNestedInput = {
@@ -62253,6 +76103,34 @@ export namespace Prisma {
     update?: TransactionUpdateWithWhereUniqueWithoutUserInput | TransactionUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: TransactionUpdateManyWithWhereWithoutUserInput | TransactionUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: TransactionScalarWhereInput | TransactionScalarWhereInput[]
+  }
+
+  export type ViresCabinetUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ViresCabinetCreateWithoutUserInput, ViresCabinetUncheckedCreateWithoutUserInput> | ViresCabinetCreateWithoutUserInput[] | ViresCabinetUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresCabinetCreateOrConnectWithoutUserInput | ViresCabinetCreateOrConnectWithoutUserInput[]
+    upsert?: ViresCabinetUpsertWithWhereUniqueWithoutUserInput | ViresCabinetUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ViresCabinetCreateManyUserInputEnvelope
+    set?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    disconnect?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    delete?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    connect?: ViresCabinetWhereUniqueInput | ViresCabinetWhereUniqueInput[]
+    update?: ViresCabinetUpdateWithWhereUniqueWithoutUserInput | ViresCabinetUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ViresCabinetUpdateManyWithWhereWithoutUserInput | ViresCabinetUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ViresCabinetScalarWhereInput | ViresCabinetScalarWhereInput[]
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutUserInput, ViresClipMatchUncheckedCreateWithoutUserInput> | ViresClipMatchCreateWithoutUserInput[] | ViresClipMatchUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutUserInput | ViresClipMatchCreateOrConnectWithoutUserInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutUserInput | ViresClipMatchUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ViresClipMatchCreateManyUserInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutUserInput | ViresClipMatchUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutUserInput | ViresClipMatchUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
   }
 
   export type WorkSessionUncheckedUpdateManyWithoutUserNestedInput = {
@@ -62351,6 +76229,541 @@ export namespace Prisma {
     upsert?: WorkSessionUpsertWithoutWorkSessionIdexCabinetInput
     connect?: WorkSessionWhereUniqueInput
     update?: XOR<XOR<WorkSessionUpdateToOneWithWhereWithoutWorkSessionIdexCabinetInput, WorkSessionUpdateWithoutWorkSessionIdexCabinetInput>, WorkSessionUncheckedUpdateWithoutWorkSessionIdexCabinetInput>
+  }
+
+  export type BybitTransactionFromCabinetCreateNestedManyWithoutBybitCabinetInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput> | BybitTransactionFromCabinetCreateWithoutBybitCabinetInput[] | BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput[]
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput | BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput[]
+    createMany?: BybitTransactionFromCabinetCreateManyBybitCabinetInputEnvelope
+    connect?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+  }
+
+  export type BybitOrderInfoCreateNestedManyWithoutCabinetInput = {
+    create?: XOR<BybitOrderInfoCreateWithoutCabinetInput, BybitOrderInfoUncheckedCreateWithoutCabinetInput> | BybitOrderInfoCreateWithoutCabinetInput[] | BybitOrderInfoUncheckedCreateWithoutCabinetInput[]
+    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutCabinetInput | BybitOrderInfoCreateOrConnectWithoutCabinetInput[]
+    createMany?: BybitOrderInfoCreateManyCabinetInputEnvelope
+    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+  }
+
+  export type BybitTransactionFromCabinetUncheckedCreateNestedManyWithoutBybitCabinetInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput> | BybitTransactionFromCabinetCreateWithoutBybitCabinetInput[] | BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput[]
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput | BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput[]
+    createMany?: BybitTransactionFromCabinetCreateManyBybitCabinetInputEnvelope
+    connect?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+  }
+
+  export type BybitOrderInfoUncheckedCreateNestedManyWithoutCabinetInput = {
+    create?: XOR<BybitOrderInfoCreateWithoutCabinetInput, BybitOrderInfoUncheckedCreateWithoutCabinetInput> | BybitOrderInfoCreateWithoutCabinetInput[] | BybitOrderInfoUncheckedCreateWithoutCabinetInput[]
+    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutCabinetInput | BybitOrderInfoCreateOrConnectWithoutCabinetInput[]
+    createMany?: BybitOrderInfoCreateManyCabinetInputEnvelope
+    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+  }
+
+  export type BybitTransactionFromCabinetUpdateManyWithoutBybitCabinetNestedInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput> | BybitTransactionFromCabinetCreateWithoutBybitCabinetInput[] | BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput[]
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput | BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput[]
+    upsert?: BybitTransactionFromCabinetUpsertWithWhereUniqueWithoutBybitCabinetInput | BybitTransactionFromCabinetUpsertWithWhereUniqueWithoutBybitCabinetInput[]
+    createMany?: BybitTransactionFromCabinetCreateManyBybitCabinetInputEnvelope
+    set?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    disconnect?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    delete?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    connect?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    update?: BybitTransactionFromCabinetUpdateWithWhereUniqueWithoutBybitCabinetInput | BybitTransactionFromCabinetUpdateWithWhereUniqueWithoutBybitCabinetInput[]
+    updateMany?: BybitTransactionFromCabinetUpdateManyWithWhereWithoutBybitCabinetInput | BybitTransactionFromCabinetUpdateManyWithWhereWithoutBybitCabinetInput[]
+    deleteMany?: BybitTransactionFromCabinetScalarWhereInput | BybitTransactionFromCabinetScalarWhereInput[]
+  }
+
+  export type BybitOrderInfoUpdateManyWithoutCabinetNestedInput = {
+    create?: XOR<BybitOrderInfoCreateWithoutCabinetInput, BybitOrderInfoUncheckedCreateWithoutCabinetInput> | BybitOrderInfoCreateWithoutCabinetInput[] | BybitOrderInfoUncheckedCreateWithoutCabinetInput[]
+    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutCabinetInput | BybitOrderInfoCreateOrConnectWithoutCabinetInput[]
+    upsert?: BybitOrderInfoUpsertWithWhereUniqueWithoutCabinetInput | BybitOrderInfoUpsertWithWhereUniqueWithoutCabinetInput[]
+    createMany?: BybitOrderInfoCreateManyCabinetInputEnvelope
+    set?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    disconnect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    delete?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    update?: BybitOrderInfoUpdateWithWhereUniqueWithoutCabinetInput | BybitOrderInfoUpdateWithWhereUniqueWithoutCabinetInput[]
+    updateMany?: BybitOrderInfoUpdateManyWithWhereWithoutCabinetInput | BybitOrderInfoUpdateManyWithWhereWithoutCabinetInput[]
+    deleteMany?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
+  }
+
+  export type BybitTransactionFromCabinetUncheckedUpdateManyWithoutBybitCabinetNestedInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput> | BybitTransactionFromCabinetCreateWithoutBybitCabinetInput[] | BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput[]
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput | BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput[]
+    upsert?: BybitTransactionFromCabinetUpsertWithWhereUniqueWithoutBybitCabinetInput | BybitTransactionFromCabinetUpsertWithWhereUniqueWithoutBybitCabinetInput[]
+    createMany?: BybitTransactionFromCabinetCreateManyBybitCabinetInputEnvelope
+    set?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    disconnect?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    delete?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    connect?: BybitTransactionFromCabinetWhereUniqueInput | BybitTransactionFromCabinetWhereUniqueInput[]
+    update?: BybitTransactionFromCabinetUpdateWithWhereUniqueWithoutBybitCabinetInput | BybitTransactionFromCabinetUpdateWithWhereUniqueWithoutBybitCabinetInput[]
+    updateMany?: BybitTransactionFromCabinetUpdateManyWithWhereWithoutBybitCabinetInput | BybitTransactionFromCabinetUpdateManyWithWhereWithoutBybitCabinetInput[]
+    deleteMany?: BybitTransactionFromCabinetScalarWhereInput | BybitTransactionFromCabinetScalarWhereInput[]
+  }
+
+  export type BybitOrderInfoUncheckedUpdateManyWithoutCabinetNestedInput = {
+    create?: XOR<BybitOrderInfoCreateWithoutCabinetInput, BybitOrderInfoUncheckedCreateWithoutCabinetInput> | BybitOrderInfoCreateWithoutCabinetInput[] | BybitOrderInfoUncheckedCreateWithoutCabinetInput[]
+    connectOrCreate?: BybitOrderInfoCreateOrConnectWithoutCabinetInput | BybitOrderInfoCreateOrConnectWithoutCabinetInput[]
+    upsert?: BybitOrderInfoUpsertWithWhereUniqueWithoutCabinetInput | BybitOrderInfoUpsertWithWhereUniqueWithoutCabinetInput[]
+    createMany?: BybitOrderInfoCreateManyCabinetInputEnvelope
+    set?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    disconnect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    delete?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    connect?: BybitOrderInfoWhereUniqueInput | BybitOrderInfoWhereUniqueInput[]
+    update?: BybitOrderInfoUpdateWithWhereUniqueWithoutCabinetInput | BybitOrderInfoUpdateWithWhereUniqueWithoutCabinetInput[]
+    updateMany?: BybitOrderInfoUpdateManyWithWhereWithoutCabinetInput | BybitOrderInfoUpdateManyWithWhereWithoutCabinetInput[]
+    deleteMany?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
+  }
+
+  export type BybitTransactionFromCabinetCreateNestedOneWithoutBybitClipMatchInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutBybitClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutBybitClipMatchInput
+    connect?: BybitTransactionFromCabinetWhereUniqueInput
+  }
+
+  export type IdexTransactionCreateNestedOneWithoutBybitClipMatchInput = {
+    create?: XOR<IdexTransactionCreateWithoutBybitClipMatchInput, IdexTransactionUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: IdexTransactionCreateOrConnectWithoutBybitClipMatchInput
+    connect?: IdexTransactionWhereUniqueInput
+  }
+
+  export type MatchBybitReportCreateNestedOneWithoutBybitClipMatchInput = {
+    create?: XOR<MatchBybitReportCreateWithoutBybitClipMatchInput, MatchBybitReportUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: MatchBybitReportCreateOrConnectWithoutBybitClipMatchInput
+    connect?: MatchBybitReportWhereUniqueInput
+  }
+
+  export type UserCreateNestedOneWithoutBybitClipMatchInput = {
+    create?: XOR<UserCreateWithoutBybitClipMatchInput, UserUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: UserCreateOrConnectWithoutBybitClipMatchInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type BybitTransactionFromCabinetUpdateOneRequiredWithoutBybitClipMatchNestedInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutBybitClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutBybitClipMatchInput
+    upsert?: BybitTransactionFromCabinetUpsertWithoutBybitClipMatchInput
+    connect?: BybitTransactionFromCabinetWhereUniqueInput
+    update?: XOR<XOR<BybitTransactionFromCabinetUpdateToOneWithWhereWithoutBybitClipMatchInput, BybitTransactionFromCabinetUpdateWithoutBybitClipMatchInput>, BybitTransactionFromCabinetUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type IdexTransactionUpdateOneRequiredWithoutBybitClipMatchNestedInput = {
+    create?: XOR<IdexTransactionCreateWithoutBybitClipMatchInput, IdexTransactionUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: IdexTransactionCreateOrConnectWithoutBybitClipMatchInput
+    upsert?: IdexTransactionUpsertWithoutBybitClipMatchInput
+    connect?: IdexTransactionWhereUniqueInput
+    update?: XOR<XOR<IdexTransactionUpdateToOneWithWhereWithoutBybitClipMatchInput, IdexTransactionUpdateWithoutBybitClipMatchInput>, IdexTransactionUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type MatchBybitReportUpdateOneWithoutBybitClipMatchNestedInput = {
+    create?: XOR<MatchBybitReportCreateWithoutBybitClipMatchInput, MatchBybitReportUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: MatchBybitReportCreateOrConnectWithoutBybitClipMatchInput
+    upsert?: MatchBybitReportUpsertWithoutBybitClipMatchInput
+    disconnect?: MatchBybitReportWhereInput | boolean
+    delete?: MatchBybitReportWhereInput | boolean
+    connect?: MatchBybitReportWhereUniqueInput
+    update?: XOR<XOR<MatchBybitReportUpdateToOneWithWhereWithoutBybitClipMatchInput, MatchBybitReportUpdateWithoutBybitClipMatchInput>, MatchBybitReportUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutBybitClipMatchNestedInput = {
+    create?: XOR<UserCreateWithoutBybitClipMatchInput, UserUncheckedCreateWithoutBybitClipMatchInput>
+    connectOrCreate?: UserCreateOrConnectWithoutBybitClipMatchInput
+    upsert?: UserUpsertWithoutBybitClipMatchInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutBybitClipMatchInput, UserUpdateWithoutBybitClipMatchInput>, UserUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type BybitTransactionFromCabinetCreateextractedPhonesInput = {
+    set: string[]
+  }
+
+  export type BybitClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput = {
+    create?: XOR<BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    createMany?: BybitClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+  }
+
+  export type BybitCabinetCreateNestedOneWithoutBybitTransactionFromCabinetInput = {
+    create?: XOR<BybitCabinetCreateWithoutBybitTransactionFromCabinetInput, BybitCabinetUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+    connectOrCreate?: BybitCabinetCreateOrConnectWithoutBybitTransactionFromCabinetInput
+    connect?: BybitCabinetWhereUniqueInput
+  }
+
+  export type ViresClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput = {
+    create?: XOR<ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    createMany?: ViresClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+  }
+
+  export type BybitClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput = {
+    create?: XOR<BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    createMany?: BybitClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+  }
+
+  export type ViresClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput = {
+    create?: XOR<ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    createMany?: ViresClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+  }
+
+  export type BybitTransactionFromCabinetUpdateextractedPhonesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type BybitClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput | BybitClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    createMany?: BybitClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput | BybitClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput | BybitClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
+  }
+
+  export type BybitCabinetUpdateOneRequiredWithoutBybitTransactionFromCabinetNestedInput = {
+    create?: XOR<BybitCabinetCreateWithoutBybitTransactionFromCabinetInput, BybitCabinetUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+    connectOrCreate?: BybitCabinetCreateOrConnectWithoutBybitTransactionFromCabinetInput
+    upsert?: BybitCabinetUpsertWithoutBybitTransactionFromCabinetInput
+    connect?: BybitCabinetWhereUniqueInput
+    update?: XOR<XOR<BybitCabinetUpdateToOneWithWhereWithoutBybitTransactionFromCabinetInput, BybitCabinetUpdateWithoutBybitTransactionFromCabinetInput>, BybitCabinetUncheckedUpdateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type ViresClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput | ViresClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    createMany?: ViresClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput | ViresClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput | ViresClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+  }
+
+  export type BybitClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput | BybitClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    createMany?: BybitClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput | BybitClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput | BybitClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput> | ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput[] | ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput | ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput | ViresClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    createMany?: ViresClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput | ViresClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput | ViresClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+  }
+
+  export type BybitClipMatchCreateNestedManyWithoutMatchBybitReportInput = {
+    create?: XOR<BybitClipMatchCreateWithoutMatchBybitReportInput, BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput> | BybitClipMatchCreateWithoutMatchBybitReportInput[] | BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput | BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput[]
+    createMany?: BybitClipMatchCreateManyMatchBybitReportInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+  }
+
+  export type UserCreateNestedOneWithoutMatchBybitReportInput = {
+    create?: XOR<UserCreateWithoutMatchBybitReportInput, UserUncheckedCreateWithoutMatchBybitReportInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMatchBybitReportInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type BybitClipMatchUncheckedCreateNestedManyWithoutMatchBybitReportInput = {
+    create?: XOR<BybitClipMatchCreateWithoutMatchBybitReportInput, BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput> | BybitClipMatchCreateWithoutMatchBybitReportInput[] | BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput | BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput[]
+    createMany?: BybitClipMatchCreateManyMatchBybitReportInputEnvelope
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+  }
+
+  export type BybitClipMatchUpdateManyWithoutMatchBybitReportNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutMatchBybitReportInput, BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput> | BybitClipMatchCreateWithoutMatchBybitReportInput[] | BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput | BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutMatchBybitReportInput | BybitClipMatchUpsertWithWhereUniqueWithoutMatchBybitReportInput[]
+    createMany?: BybitClipMatchCreateManyMatchBybitReportInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutMatchBybitReportInput | BybitClipMatchUpdateWithWhereUniqueWithoutMatchBybitReportInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutMatchBybitReportInput | BybitClipMatchUpdateManyWithWhereWithoutMatchBybitReportInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
+  }
+
+  export type UserUpdateOneRequiredWithoutMatchBybitReportNestedInput = {
+    create?: XOR<UserCreateWithoutMatchBybitReportInput, UserUncheckedCreateWithoutMatchBybitReportInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMatchBybitReportInput
+    upsert?: UserUpsertWithoutMatchBybitReportInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutMatchBybitReportInput, UserUpdateWithoutMatchBybitReportInput>, UserUncheckedUpdateWithoutMatchBybitReportInput>
+  }
+
+  export type BybitClipMatchUncheckedUpdateManyWithoutMatchBybitReportNestedInput = {
+    create?: XOR<BybitClipMatchCreateWithoutMatchBybitReportInput, BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput> | BybitClipMatchCreateWithoutMatchBybitReportInput[] | BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput[]
+    connectOrCreate?: BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput | BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput[]
+    upsert?: BybitClipMatchUpsertWithWhereUniqueWithoutMatchBybitReportInput | BybitClipMatchUpsertWithWhereUniqueWithoutMatchBybitReportInput[]
+    createMany?: BybitClipMatchCreateManyMatchBybitReportInputEnvelope
+    set?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    disconnect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    delete?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    connect?: BybitClipMatchWhereUniqueInput | BybitClipMatchWhereUniqueInput[]
+    update?: BybitClipMatchUpdateWithWhereUniqueWithoutMatchBybitReportInput | BybitClipMatchUpdateWithWhereUniqueWithoutMatchBybitReportInput[]
+    updateMany?: BybitClipMatchUpdateManyWithWhereWithoutMatchBybitReportInput | BybitClipMatchUpdateManyWithWhereWithoutMatchBybitReportInput[]
+    deleteMany?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
+  }
+
+  export type UserCreateNestedOneWithoutMatchViresReportInput = {
+    create?: XOR<UserCreateWithoutMatchViresReportInput, UserUncheckedCreateWithoutMatchViresReportInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMatchViresReportInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type ViresClipMatchCreateNestedManyWithoutMatchViresReportInput = {
+    create?: XOR<ViresClipMatchCreateWithoutMatchViresReportInput, ViresClipMatchUncheckedCreateWithoutMatchViresReportInput> | ViresClipMatchCreateWithoutMatchViresReportInput[] | ViresClipMatchUncheckedCreateWithoutMatchViresReportInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutMatchViresReportInput | ViresClipMatchCreateOrConnectWithoutMatchViresReportInput[]
+    createMany?: ViresClipMatchCreateManyMatchViresReportInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+  }
+
+  export type ViresClipMatchUncheckedCreateNestedManyWithoutMatchViresReportInput = {
+    create?: XOR<ViresClipMatchCreateWithoutMatchViresReportInput, ViresClipMatchUncheckedCreateWithoutMatchViresReportInput> | ViresClipMatchCreateWithoutMatchViresReportInput[] | ViresClipMatchUncheckedCreateWithoutMatchViresReportInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutMatchViresReportInput | ViresClipMatchCreateOrConnectWithoutMatchViresReportInput[]
+    createMany?: ViresClipMatchCreateManyMatchViresReportInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+  }
+
+  export type UserUpdateOneRequiredWithoutMatchViresReportNestedInput = {
+    create?: XOR<UserCreateWithoutMatchViresReportInput, UserUncheckedCreateWithoutMatchViresReportInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMatchViresReportInput
+    upsert?: UserUpsertWithoutMatchViresReportInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutMatchViresReportInput, UserUpdateWithoutMatchViresReportInput>, UserUncheckedUpdateWithoutMatchViresReportInput>
+  }
+
+  export type ViresClipMatchUpdateManyWithoutMatchViresReportNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutMatchViresReportInput, ViresClipMatchUncheckedCreateWithoutMatchViresReportInput> | ViresClipMatchCreateWithoutMatchViresReportInput[] | ViresClipMatchUncheckedCreateWithoutMatchViresReportInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutMatchViresReportInput | ViresClipMatchCreateOrConnectWithoutMatchViresReportInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutMatchViresReportInput | ViresClipMatchUpsertWithWhereUniqueWithoutMatchViresReportInput[]
+    createMany?: ViresClipMatchCreateManyMatchViresReportInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutMatchViresReportInput | ViresClipMatchUpdateWithWhereUniqueWithoutMatchViresReportInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutMatchViresReportInput | ViresClipMatchUpdateManyWithWhereWithoutMatchViresReportInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutMatchViresReportNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutMatchViresReportInput, ViresClipMatchUncheckedCreateWithoutMatchViresReportInput> | ViresClipMatchCreateWithoutMatchViresReportInput[] | ViresClipMatchUncheckedCreateWithoutMatchViresReportInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutMatchViresReportInput | ViresClipMatchCreateOrConnectWithoutMatchViresReportInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutMatchViresReportInput | ViresClipMatchUpsertWithWhereUniqueWithoutMatchViresReportInput[]
+    createMany?: ViresClipMatchCreateManyMatchViresReportInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutMatchViresReportInput | ViresClipMatchUpdateWithWhereUniqueWithoutMatchViresReportInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutMatchViresReportInput | ViresClipMatchUpdateManyWithWhereWithoutMatchViresReportInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+  }
+
+  export type UserCreateNestedOneWithoutViresCabinetInput = {
+    create?: XOR<UserCreateWithoutViresCabinetInput, UserUncheckedCreateWithoutViresCabinetInput>
+    connectOrCreate?: UserCreateOrConnectWithoutViresCabinetInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type ViresTransactionPayinCreateNestedManyWithoutViresCabinetInput = {
+    create?: XOR<ViresTransactionPayinCreateWithoutViresCabinetInput, ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput> | ViresTransactionPayinCreateWithoutViresCabinetInput[] | ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput[]
+    connectOrCreate?: ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput | ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput[]
+    createMany?: ViresTransactionPayinCreateManyViresCabinetInputEnvelope
+    connect?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+  }
+
+  export type ViresTransactionPayinUncheckedCreateNestedManyWithoutViresCabinetInput = {
+    create?: XOR<ViresTransactionPayinCreateWithoutViresCabinetInput, ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput> | ViresTransactionPayinCreateWithoutViresCabinetInput[] | ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput[]
+    connectOrCreate?: ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput | ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput[]
+    createMany?: ViresTransactionPayinCreateManyViresCabinetInputEnvelope
+    connect?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+  }
+
+  export type EnumPasswordTypeFieldUpdateOperationsInput = {
+    set?: $Enums.PasswordType
+  }
+
+  export type UserUpdateOneRequiredWithoutViresCabinetNestedInput = {
+    create?: XOR<UserCreateWithoutViresCabinetInput, UserUncheckedCreateWithoutViresCabinetInput>
+    connectOrCreate?: UserCreateOrConnectWithoutViresCabinetInput
+    upsert?: UserUpsertWithoutViresCabinetInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutViresCabinetInput, UserUpdateWithoutViresCabinetInput>, UserUncheckedUpdateWithoutViresCabinetInput>
+  }
+
+  export type ViresTransactionPayinUpdateManyWithoutViresCabinetNestedInput = {
+    create?: XOR<ViresTransactionPayinCreateWithoutViresCabinetInput, ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput> | ViresTransactionPayinCreateWithoutViresCabinetInput[] | ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput[]
+    connectOrCreate?: ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput | ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput[]
+    upsert?: ViresTransactionPayinUpsertWithWhereUniqueWithoutViresCabinetInput | ViresTransactionPayinUpsertWithWhereUniqueWithoutViresCabinetInput[]
+    createMany?: ViresTransactionPayinCreateManyViresCabinetInputEnvelope
+    set?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    disconnect?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    delete?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    connect?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    update?: ViresTransactionPayinUpdateWithWhereUniqueWithoutViresCabinetInput | ViresTransactionPayinUpdateWithWhereUniqueWithoutViresCabinetInput[]
+    updateMany?: ViresTransactionPayinUpdateManyWithWhereWithoutViresCabinetInput | ViresTransactionPayinUpdateManyWithWhereWithoutViresCabinetInput[]
+    deleteMany?: ViresTransactionPayinScalarWhereInput | ViresTransactionPayinScalarWhereInput[]
+  }
+
+  export type ViresTransactionPayinUncheckedUpdateManyWithoutViresCabinetNestedInput = {
+    create?: XOR<ViresTransactionPayinCreateWithoutViresCabinetInput, ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput> | ViresTransactionPayinCreateWithoutViresCabinetInput[] | ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput[]
+    connectOrCreate?: ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput | ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput[]
+    upsert?: ViresTransactionPayinUpsertWithWhereUniqueWithoutViresCabinetInput | ViresTransactionPayinUpsertWithWhereUniqueWithoutViresCabinetInput[]
+    createMany?: ViresTransactionPayinCreateManyViresCabinetInputEnvelope
+    set?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    disconnect?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    delete?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    connect?: ViresTransactionPayinWhereUniqueInput | ViresTransactionPayinWhereUniqueInput[]
+    update?: ViresTransactionPayinUpdateWithWhereUniqueWithoutViresCabinetInput | ViresTransactionPayinUpdateWithWhereUniqueWithoutViresCabinetInput[]
+    updateMany?: ViresTransactionPayinUpdateManyWithWhereWithoutViresCabinetInput | ViresTransactionPayinUpdateManyWithWhereWithoutViresCabinetInput[]
+    deleteMany?: ViresTransactionPayinScalarWhereInput | ViresTransactionPayinScalarWhereInput[]
+  }
+
+  export type BybitTransactionFromCabinetCreateNestedOneWithoutViresClipMatchInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutViresClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutViresClipMatchInput
+    connect?: BybitTransactionFromCabinetWhereUniqueInput
+  }
+
+  export type MatchViresReportCreateNestedOneWithoutViresClipMatchInput = {
+    create?: XOR<MatchViresReportCreateWithoutViresClipMatchInput, MatchViresReportUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: MatchViresReportCreateOrConnectWithoutViresClipMatchInput
+    connect?: MatchViresReportWhereUniqueInput
+  }
+
+  export type UserCreateNestedOneWithoutViresClipMatchInput = {
+    create?: XOR<UserCreateWithoutViresClipMatchInput, UserUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: UserCreateOrConnectWithoutViresClipMatchInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type ViresTransactionPayinCreateNestedOneWithoutViresClipMatchInput = {
+    create?: XOR<ViresTransactionPayinCreateWithoutViresClipMatchInput, ViresTransactionPayinUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: ViresTransactionPayinCreateOrConnectWithoutViresClipMatchInput
+    connect?: ViresTransactionPayinWhereUniqueInput
+  }
+
+  export type BybitTransactionFromCabinetUpdateOneRequiredWithoutViresClipMatchNestedInput = {
+    create?: XOR<BybitTransactionFromCabinetCreateWithoutViresClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: BybitTransactionFromCabinetCreateOrConnectWithoutViresClipMatchInput
+    upsert?: BybitTransactionFromCabinetUpsertWithoutViresClipMatchInput
+    connect?: BybitTransactionFromCabinetWhereUniqueInput
+    update?: XOR<XOR<BybitTransactionFromCabinetUpdateToOneWithWhereWithoutViresClipMatchInput, BybitTransactionFromCabinetUpdateWithoutViresClipMatchInput>, BybitTransactionFromCabinetUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type MatchViresReportUpdateOneWithoutViresClipMatchNestedInput = {
+    create?: XOR<MatchViresReportCreateWithoutViresClipMatchInput, MatchViresReportUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: MatchViresReportCreateOrConnectWithoutViresClipMatchInput
+    upsert?: MatchViresReportUpsertWithoutViresClipMatchInput
+    disconnect?: MatchViresReportWhereInput | boolean
+    delete?: MatchViresReportWhereInput | boolean
+    connect?: MatchViresReportWhereUniqueInput
+    update?: XOR<XOR<MatchViresReportUpdateToOneWithWhereWithoutViresClipMatchInput, MatchViresReportUpdateWithoutViresClipMatchInput>, MatchViresReportUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutViresClipMatchNestedInput = {
+    create?: XOR<UserCreateWithoutViresClipMatchInput, UserUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: UserCreateOrConnectWithoutViresClipMatchInput
+    upsert?: UserUpsertWithoutViresClipMatchInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutViresClipMatchInput, UserUpdateWithoutViresClipMatchInput>, UserUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type ViresTransactionPayinUpdateOneRequiredWithoutViresClipMatchNestedInput = {
+    create?: XOR<ViresTransactionPayinCreateWithoutViresClipMatchInput, ViresTransactionPayinUncheckedCreateWithoutViresClipMatchInput>
+    connectOrCreate?: ViresTransactionPayinCreateOrConnectWithoutViresClipMatchInput
+    upsert?: ViresTransactionPayinUpsertWithoutViresClipMatchInput
+    connect?: ViresTransactionPayinWhereUniqueInput
+    update?: XOR<XOR<ViresTransactionPayinUpdateToOneWithWhereWithoutViresClipMatchInput, ViresTransactionPayinUpdateWithoutViresClipMatchInput>, ViresTransactionPayinUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type ViresClipMatchCreateNestedManyWithoutViresTransactionPayinInput = {
+    create?: XOR<ViresClipMatchCreateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput> | ViresClipMatchCreateWithoutViresTransactionPayinInput[] | ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput | ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput[]
+    createMany?: ViresClipMatchCreateManyViresTransactionPayinInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+  }
+
+  export type ViresCabinetCreateNestedOneWithoutViresTransactionPayinInput = {
+    create?: XOR<ViresCabinetCreateWithoutViresTransactionPayinInput, ViresCabinetUncheckedCreateWithoutViresTransactionPayinInput>
+    connectOrCreate?: ViresCabinetCreateOrConnectWithoutViresTransactionPayinInput
+    connect?: ViresCabinetWhereUniqueInput
+  }
+
+  export type ViresClipMatchUncheckedCreateNestedManyWithoutViresTransactionPayinInput = {
+    create?: XOR<ViresClipMatchCreateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput> | ViresClipMatchCreateWithoutViresTransactionPayinInput[] | ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput | ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput[]
+    createMany?: ViresClipMatchCreateManyViresTransactionPayinInputEnvelope
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+  }
+
+  export type ViresClipMatchUpdateManyWithoutViresTransactionPayinNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput> | ViresClipMatchCreateWithoutViresTransactionPayinInput[] | ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput | ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutViresTransactionPayinInput | ViresClipMatchUpsertWithWhereUniqueWithoutViresTransactionPayinInput[]
+    createMany?: ViresClipMatchCreateManyViresTransactionPayinInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutViresTransactionPayinInput | ViresClipMatchUpdateWithWhereUniqueWithoutViresTransactionPayinInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutViresTransactionPayinInput | ViresClipMatchUpdateManyWithWhereWithoutViresTransactionPayinInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+  }
+
+  export type ViresCabinetUpdateOneRequiredWithoutViresTransactionPayinNestedInput = {
+    create?: XOR<ViresCabinetCreateWithoutViresTransactionPayinInput, ViresCabinetUncheckedCreateWithoutViresTransactionPayinInput>
+    connectOrCreate?: ViresCabinetCreateOrConnectWithoutViresTransactionPayinInput
+    upsert?: ViresCabinetUpsertWithoutViresTransactionPayinInput
+    connect?: ViresCabinetWhereUniqueInput
+    update?: XOR<XOR<ViresCabinetUpdateToOneWithWhereWithoutViresTransactionPayinInput, ViresCabinetUpdateWithoutViresTransactionPayinInput>, ViresCabinetUncheckedUpdateWithoutViresTransactionPayinInput>
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutViresTransactionPayinNestedInput = {
+    create?: XOR<ViresClipMatchCreateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput> | ViresClipMatchCreateWithoutViresTransactionPayinInput[] | ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput[]
+    connectOrCreate?: ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput | ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput[]
+    upsert?: ViresClipMatchUpsertWithWhereUniqueWithoutViresTransactionPayinInput | ViresClipMatchUpsertWithWhereUniqueWithoutViresTransactionPayinInput[]
+    createMany?: ViresClipMatchCreateManyViresTransactionPayinInputEnvelope
+    set?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    disconnect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    delete?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    connect?: ViresClipMatchWhereUniqueInput | ViresClipMatchWhereUniqueInput[]
+    update?: ViresClipMatchUpdateWithWhereUniqueWithoutViresTransactionPayinInput | ViresClipMatchUpdateWithWhereUniqueWithoutViresTransactionPayinInput[]
+    updateMany?: ViresClipMatchUpdateManyWithWhereWithoutViresTransactionPayinInput | ViresClipMatchUpdateManyWithWhereWithoutViresTransactionPayinInput[]
+    deleteMany?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -62761,6 +77174,23 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type NestedEnumPasswordTypeNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPasswordTypeNullableFilter<$PrismaModel> | $Enums.PasswordType | null
+  }
+
+  export type NestedEnumPasswordTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPasswordTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.PasswordType | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumPasswordTypeNullableFilter<$PrismaModel>
+    _max?: NestedEnumPasswordTypeNullableFilter<$PrismaModel>
+  }
+
   export type NestedEnumPeriodTypeFilter<$PrismaModel = never> = {
     equals?: $Enums.PeriodType | EnumPeriodTypeFieldRefInput<$PrismaModel>
     in?: $Enums.PeriodType[] | ListEnumPeriodTypeFieldRefInput<$PrismaModel>
@@ -62793,6 +77223,23 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumUserRoleFilter<$PrismaModel>
     _max?: NestedEnumUserRoleFilter<$PrismaModel>
+  }
+
+  export type NestedEnumPasswordTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumPasswordTypeFilter<$PrismaModel> | $Enums.PasswordType
+  }
+
+  export type NestedEnumPasswordTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PasswordType | EnumPasswordTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PasswordType[] | ListEnumPasswordTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumPasswordTypeWithAggregatesFilter<$PrismaModel> | $Enums.PasswordType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumPasswordTypeFilter<$PrismaModel>
+    _max?: NestedEnumPasswordTypeFilter<$PrismaModel>
   }
 
   export type CardBalanceCreateWithoutAuditLogInput = {
@@ -62925,11 +77372,15 @@ export namespace Prisma {
     bybitApiToken?: string | null
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
-    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
     Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
   }
 
@@ -62946,11 +77397,15 @@ export namespace Prisma {
     bybitApiToken?: string | null
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
-    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
     Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -63118,11 +77573,15 @@ export namespace Prisma {
     bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
   }
 
@@ -63139,11 +77598,15 @@ export namespace Prisma {
     bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -63151,39 +77614,39 @@ export namespace Prisma {
     orderNo: string
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
     user: UserCreateNestedOneWithoutBybitTransactionInput
   }
 
   export type BybitTransactionUncheckedCreateWithoutBybitMatchInput = {
     id?: number
     orderNo: string
-    userId: number
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
+    userId: number
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
   }
 
   export type BybitTransactionCreateOrConnectWithoutBybitMatchInput = {
@@ -63205,6 +77668,7 @@ export namespace Prisma {
     extraData: JsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutIdexTransactionInput
     IdexCabinet: IdexCabinetCreateNestedOneWithoutIdexTransactionInput
     Match?: MatchCreateNestedManyWithoutIdexTransactionInput
   }
@@ -63225,6 +77689,7 @@ export namespace Prisma {
     cabinetId: number
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
     Match?: MatchUncheckedCreateNestedManyWithoutIdexTransactionInput
   }
 
@@ -63248,39 +77713,39 @@ export namespace Prisma {
     orderNo?: StringFieldUpdateOperationsInput | string
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     user?: UserUpdateOneRequiredWithoutBybitTransactionNestedInput
   }
 
   export type BybitTransactionUncheckedUpdateWithoutBybitMatchInput = {
     id?: IntFieldUpdateOperationsInput | number
     orderNo?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type IdexTransactionUpsertWithoutBybitMatchInput = {
@@ -63308,6 +77773,7 @@ export namespace Prisma {
     extraData?: JsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutIdexTransactionNestedInput
     IdexCabinet?: IdexCabinetUpdateOneRequiredWithoutIdexTransactionNestedInput
     Match?: MatchUpdateManyWithoutIdexTransactionNestedInput
   }
@@ -63328,105 +77794,70 @@ export namespace Prisma {
     cabinetId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
     Match?: MatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
   }
 
-  export type UserCreateWithoutBybitOrderInfoInput = {
-    name: string
-    passCode: string
-    isActive?: boolean
+  export type BybitCabinetCreateWithoutBybitOrderInfoInput = {
     createdAt?: Date | string
     updatedAt: Date | string
-    lastNotification?: Date | string | null
-    role?: $Enums.UserRole
+    bybitEmail: string
     bybitApiSecret?: string | null
     bybitApiToken?: string | null
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
-    AuditLog?: AuditLogCreateNestedManyWithoutUserInput
-    BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
-    ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
-    TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
-    Transaction?: TransactionCreateNestedManyWithoutUserInput
-    WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetCreateNestedManyWithoutBybitCabinetInput
   }
 
-  export type UserUncheckedCreateWithoutBybitOrderInfoInput = {
+  export type BybitCabinetUncheckedCreateWithoutBybitOrderInfoInput = {
     id?: number
-    name: string
-    passCode: string
-    isActive?: boolean
     createdAt?: Date | string
     updatedAt: Date | string
-    lastNotification?: Date | string | null
-    role?: $Enums.UserRole
+    bybitEmail: string
     bybitApiSecret?: string | null
     bybitApiToken?: string | null
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
-    AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
-    BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
-    ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
-    TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
-    Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
-    WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUncheckedCreateNestedManyWithoutBybitCabinetInput
   }
 
-  export type UserCreateOrConnectWithoutBybitOrderInfoInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutBybitOrderInfoInput, UserUncheckedCreateWithoutBybitOrderInfoInput>
+  export type BybitCabinetCreateOrConnectWithoutBybitOrderInfoInput = {
+    where: BybitCabinetWhereUniqueInput
+    create: XOR<BybitCabinetCreateWithoutBybitOrderInfoInput, BybitCabinetUncheckedCreateWithoutBybitOrderInfoInput>
   }
 
-  export type UserUpsertWithoutBybitOrderInfoInput = {
-    update: XOR<UserUpdateWithoutBybitOrderInfoInput, UserUncheckedUpdateWithoutBybitOrderInfoInput>
-    create: XOR<UserCreateWithoutBybitOrderInfoInput, UserUncheckedCreateWithoutBybitOrderInfoInput>
-    where?: UserWhereInput
+  export type BybitCabinetUpsertWithoutBybitOrderInfoInput = {
+    update: XOR<BybitCabinetUpdateWithoutBybitOrderInfoInput, BybitCabinetUncheckedUpdateWithoutBybitOrderInfoInput>
+    create: XOR<BybitCabinetCreateWithoutBybitOrderInfoInput, BybitCabinetUncheckedCreateWithoutBybitOrderInfoInput>
+    where?: BybitCabinetWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutBybitOrderInfoInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutBybitOrderInfoInput, UserUncheckedUpdateWithoutBybitOrderInfoInput>
+  export type BybitCabinetUpdateToOneWithWhereWithoutBybitOrderInfoInput = {
+    where?: BybitCabinetWhereInput
+    data: XOR<BybitCabinetUpdateWithoutBybitOrderInfoInput, BybitCabinetUncheckedUpdateWithoutBybitOrderInfoInput>
   }
 
-  export type UserUpdateWithoutBybitOrderInfoInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    passCode?: StringFieldUpdateOperationsInput | string
-    isActive?: BoolFieldUpdateOperationsInput | boolean
+  export type BybitCabinetUpdateWithoutBybitOrderInfoInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitEmail?: StringFieldUpdateOperationsInput | string
     bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
     bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
-    BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
-    ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
-    TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
-    Transaction?: TransactionUpdateManyWithoutUserNestedInput
-    WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateManyWithoutBybitCabinetNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutBybitOrderInfoInput = {
+  export type BybitCabinetUncheckedUpdateWithoutBybitOrderInfoInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    passCode?: StringFieldUpdateOperationsInput | string
-    isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitEmail?: StringFieldUpdateOperationsInput | string
     bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
     bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
-    BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
-    ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
-    TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
-    Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
-    WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUncheckedUpdateManyWithoutBybitCabinetNestedInput
   }
 
   export type BybitMatchCreateWithoutBybitTransactionInput = {
@@ -63475,10 +77906,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
     Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
   }
 
@@ -63496,10 +77931,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
     Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -63564,10 +78003,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
   }
 
@@ -63585,10 +78028,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -65032,6 +79479,7 @@ export namespace Prisma {
     extraData: JsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutIdexTransactionInput
     BybitMatch?: BybitMatchCreateNestedManyWithoutIdexTransactionInput
     Match?: MatchCreateNestedManyWithoutIdexTransactionInput
   }
@@ -65051,6 +79499,7 @@ export namespace Prisma {
     extraData: JsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
     BybitMatch?: BybitMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
     Match?: MatchUncheckedCreateNestedManyWithoutIdexTransactionInput
   }
@@ -65236,6 +79685,43 @@ export namespace Prisma {
     WorkSessionIdexCabinet?: WorkSessionIdexCabinetUncheckedUpdateManyWithoutIdexCabinetNestedInput
   }
 
+  export type BybitClipMatchCreateWithoutIdexTransactionInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutBybitClipMatchInput
+    MatchBybitReport?: MatchBybitReportCreateNestedOneWithoutBybitClipMatchInput
+    User: UserCreateNestedOneWithoutBybitClipMatchInput
+  }
+
+  export type BybitClipMatchUncheckedCreateWithoutIdexTransactionInput = {
+    id?: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchBybitReportId?: number | null
+    userId: number
+  }
+
+  export type BybitClipMatchCreateOrConnectWithoutIdexTransactionInput = {
+    where: BybitClipMatchWhereUniqueInput
+    create: XOR<BybitClipMatchCreateWithoutIdexTransactionInput, BybitClipMatchUncheckedCreateWithoutIdexTransactionInput>
+  }
+
+  export type BybitClipMatchCreateManyIdexTransactionInputEnvelope = {
+    data: BybitClipMatchCreateManyIdexTransactionInput | BybitClipMatchCreateManyIdexTransactionInput[]
+    skipDuplicates?: boolean
+  }
+
   export type BybitMatchCreateWithoutIdexTransactionInput = {
     timeDifference: number
     grossExpense: number
@@ -65326,6 +79812,40 @@ export namespace Prisma {
   export type MatchCreateManyIdexTransactionInputEnvelope = {
     data: MatchCreateManyIdexTransactionInput | MatchCreateManyIdexTransactionInput[]
     skipDuplicates?: boolean
+  }
+
+  export type BybitClipMatchUpsertWithWhereUniqueWithoutIdexTransactionInput = {
+    where: BybitClipMatchWhereUniqueInput
+    update: XOR<BybitClipMatchUpdateWithoutIdexTransactionInput, BybitClipMatchUncheckedUpdateWithoutIdexTransactionInput>
+    create: XOR<BybitClipMatchCreateWithoutIdexTransactionInput, BybitClipMatchUncheckedCreateWithoutIdexTransactionInput>
+  }
+
+  export type BybitClipMatchUpdateWithWhereUniqueWithoutIdexTransactionInput = {
+    where: BybitClipMatchWhereUniqueInput
+    data: XOR<BybitClipMatchUpdateWithoutIdexTransactionInput, BybitClipMatchUncheckedUpdateWithoutIdexTransactionInput>
+  }
+
+  export type BybitClipMatchUpdateManyWithWhereWithoutIdexTransactionInput = {
+    where: BybitClipMatchScalarWhereInput
+    data: XOR<BybitClipMatchUpdateManyMutationInput, BybitClipMatchUncheckedUpdateManyWithoutIdexTransactionInput>
+  }
+
+  export type BybitClipMatchScalarWhereInput = {
+    AND?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
+    OR?: BybitClipMatchScalarWhereInput[]
+    NOT?: BybitClipMatchScalarWhereInput | BybitClipMatchScalarWhereInput[]
+    id?: IntFilter<"BybitClipMatch"> | number
+    idexTransactionId?: IntFilter<"BybitClipMatch"> | number
+    bybitTransactionId?: IntFilter<"BybitClipMatch"> | number
+    timeDifference?: IntFilter<"BybitClipMatch"> | number
+    grossExpense?: FloatFilter<"BybitClipMatch"> | number
+    grossIncome?: FloatFilter<"BybitClipMatch"> | number
+    grossProfit?: FloatFilter<"BybitClipMatch"> | number
+    profitPercentage?: FloatFilter<"BybitClipMatch"> | number
+    createdAt?: DateTimeFilter<"BybitClipMatch"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitClipMatch"> | Date | string
+    matchBybitReportId?: IntNullableFilter<"BybitClipMatch"> | number | null
+    userId?: IntFilter<"BybitClipMatch"> | number
   }
 
   export type BybitMatchUpsertWithWhereUniqueWithoutIdexTransactionInput = {
@@ -65422,6 +79942,7 @@ export namespace Prisma {
     extraData: JsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutIdexTransactionInput
     BybitMatch?: BybitMatchCreateNestedManyWithoutIdexTransactionInput
     IdexCabinet: IdexCabinetCreateNestedOneWithoutIdexTransactionInput
   }
@@ -65442,6 +79963,7 @@ export namespace Prisma {
     cabinetId: number
     createdAt?: Date | string
     updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
     BybitMatch?: BybitMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
   }
 
@@ -65515,6 +80037,7 @@ export namespace Prisma {
     extraData?: JsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutIdexTransactionNestedInput
     BybitMatch?: BybitMatchUpdateManyWithoutIdexTransactionNestedInput
     IdexCabinet?: IdexCabinetUpdateOneRequiredWithoutIdexTransactionNestedInput
   }
@@ -65535,6 +80058,7 @@ export namespace Prisma {
     cabinetId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
     BybitMatch?: BybitMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
   }
 
@@ -65597,10 +80121,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
     Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
   }
 
@@ -65618,10 +80146,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
     Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -65654,10 +80186,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
   }
 
@@ -65675,10 +80211,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -67006,10 +81546,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
     Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
   }
 
@@ -67027,10 +81571,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
     Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -67063,10 +81611,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
   }
 
@@ -67084,10 +81636,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -67137,10 +81693,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
   }
 
@@ -67158,10 +81718,14 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
     WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -67210,10 +81774,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
   }
 
@@ -67231,10 +81799,14 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
     WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -67273,28 +81845,40 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type BybitOrderInfoCreateWithoutUserInput = {
-    phoneNumbers?: BybitOrderInfoCreatephoneNumbersInput | string[]
+  export type BybitClipMatchCreateWithoutUserInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
     createdAt?: Date | string
     updatedAt: Date | string
-    orderNo: string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutBybitClipMatchInput
+    IdexTransaction: IdexTransactionCreateNestedOneWithoutBybitClipMatchInput
+    MatchBybitReport?: MatchBybitReportCreateNestedOneWithoutBybitClipMatchInput
   }
 
-  export type BybitOrderInfoUncheckedCreateWithoutUserInput = {
+  export type BybitClipMatchUncheckedCreateWithoutUserInput = {
     id?: number
-    phoneNumbers?: BybitOrderInfoCreatephoneNumbersInput | string[]
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
     createdAt?: Date | string
     updatedAt: Date | string
-    orderNo: string
+    matchBybitReportId?: number | null
   }
 
-  export type BybitOrderInfoCreateOrConnectWithoutUserInput = {
-    where: BybitOrderInfoWhereUniqueInput
-    create: XOR<BybitOrderInfoCreateWithoutUserInput, BybitOrderInfoUncheckedCreateWithoutUserInput>
+  export type BybitClipMatchCreateOrConnectWithoutUserInput = {
+    where: BybitClipMatchWhereUniqueInput
+    create: XOR<BybitClipMatchCreateWithoutUserInput, BybitClipMatchUncheckedCreateWithoutUserInput>
   }
 
-  export type BybitOrderInfoCreateManyUserInputEnvelope = {
-    data: BybitOrderInfoCreateManyUserInput | BybitOrderInfoCreateManyUserInput[]
+  export type BybitClipMatchCreateManyUserInputEnvelope = {
+    data: BybitClipMatchCreateManyUserInput | BybitClipMatchCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -67302,18 +81886,18 @@ export namespace Prisma {
     orderNo: string
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
     bybitMatch?: BybitMatchCreateNestedManyWithoutBybitTransactionInput
   }
 
@@ -67322,18 +81906,18 @@ export namespace Prisma {
     orderNo: string
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
     bybitMatch?: BybitMatchUncheckedCreateNestedManyWithoutBybitTransactionInput
   }
 
@@ -67344,6 +81928,88 @@ export namespace Prisma {
 
   export type BybitTransactionCreateManyUserInputEnvelope = {
     data: BybitTransactionCreateManyUserInput | BybitTransactionCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type MatchBybitReportCreateWithoutUserInput = {
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutMatchBybitReportInput
+  }
+
+  export type MatchBybitReportUncheckedCreateWithoutUserInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutMatchBybitReportInput
+  }
+
+  export type MatchBybitReportCreateOrConnectWithoutUserInput = {
+    where: MatchBybitReportWhereUniqueInput
+    create: XOR<MatchBybitReportCreateWithoutUserInput, MatchBybitReportUncheckedCreateWithoutUserInput>
+  }
+
+  export type MatchBybitReportCreateManyUserInputEnvelope = {
+    data: MatchBybitReportCreateManyUserInput | MatchBybitReportCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type MatchViresReportCreateWithoutUserInput = {
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutMatchViresReportInput
+  }
+
+  export type MatchViresReportUncheckedCreateWithoutUserInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutMatchViresReportInput
+  }
+
+  export type MatchViresReportCreateOrConnectWithoutUserInput = {
+    where: MatchViresReportWhereUniqueInput
+    create: XOR<MatchViresReportCreateWithoutUserInput, MatchViresReportUncheckedCreateWithoutUserInput>
+  }
+
+  export type MatchViresReportCreateManyUserInputEnvelope = {
+    data: MatchViresReportCreateManyUserInput | MatchViresReportCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -67452,6 +82118,78 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type ViresCabinetCreateWithoutUserInput = {
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    lastUpdate: Date | string
+    ViresTransactionPayin?: ViresTransactionPayinCreateNestedManyWithoutViresCabinetInput
+  }
+
+  export type ViresCabinetUncheckedCreateWithoutUserInput = {
+    id?: number
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    lastUpdate: Date | string
+    ViresTransactionPayin?: ViresTransactionPayinUncheckedCreateNestedManyWithoutViresCabinetInput
+  }
+
+  export type ViresCabinetCreateOrConnectWithoutUserInput = {
+    where: ViresCabinetWhereUniqueInput
+    create: XOR<ViresCabinetCreateWithoutUserInput, ViresCabinetUncheckedCreateWithoutUserInput>
+  }
+
+  export type ViresCabinetCreateManyUserInputEnvelope = {
+    data: ViresCabinetCreateManyUserInput | ViresCabinetCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ViresClipMatchCreateWithoutUserInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutViresClipMatchInput
+    MatchViresReport?: MatchViresReportCreateNestedOneWithoutViresClipMatchInput
+    ViresTransactionPayin: ViresTransactionPayinCreateNestedOneWithoutViresClipMatchInput
+  }
+
+  export type ViresClipMatchUncheckedCreateWithoutUserInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    bybitTransactionId: number
+  }
+
+  export type ViresClipMatchCreateOrConnectWithoutUserInput = {
+    where: ViresClipMatchWhereUniqueInput
+    create: XOR<ViresClipMatchCreateWithoutUserInput, ViresClipMatchUncheckedCreateWithoutUserInput>
+  }
+
+  export type ViresClipMatchCreateManyUserInputEnvelope = {
+    data: ViresClipMatchCreateManyUserInput | ViresClipMatchCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type WorkSessionCreateWithoutUserInput = {
     startTime: Date | string
     endTime?: Date | string | null
@@ -67501,32 +82239,20 @@ export namespace Prisma {
     data: XOR<AuditLogUpdateManyMutationInput, AuditLogUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type BybitOrderInfoUpsertWithWhereUniqueWithoutUserInput = {
-    where: BybitOrderInfoWhereUniqueInput
-    update: XOR<BybitOrderInfoUpdateWithoutUserInput, BybitOrderInfoUncheckedUpdateWithoutUserInput>
-    create: XOR<BybitOrderInfoCreateWithoutUserInput, BybitOrderInfoUncheckedCreateWithoutUserInput>
+  export type BybitClipMatchUpsertWithWhereUniqueWithoutUserInput = {
+    where: BybitClipMatchWhereUniqueInput
+    update: XOR<BybitClipMatchUpdateWithoutUserInput, BybitClipMatchUncheckedUpdateWithoutUserInput>
+    create: XOR<BybitClipMatchCreateWithoutUserInput, BybitClipMatchUncheckedCreateWithoutUserInput>
   }
 
-  export type BybitOrderInfoUpdateWithWhereUniqueWithoutUserInput = {
-    where: BybitOrderInfoWhereUniqueInput
-    data: XOR<BybitOrderInfoUpdateWithoutUserInput, BybitOrderInfoUncheckedUpdateWithoutUserInput>
+  export type BybitClipMatchUpdateWithWhereUniqueWithoutUserInput = {
+    where: BybitClipMatchWhereUniqueInput
+    data: XOR<BybitClipMatchUpdateWithoutUserInput, BybitClipMatchUncheckedUpdateWithoutUserInput>
   }
 
-  export type BybitOrderInfoUpdateManyWithWhereWithoutUserInput = {
-    where: BybitOrderInfoScalarWhereInput
-    data: XOR<BybitOrderInfoUpdateManyMutationInput, BybitOrderInfoUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type BybitOrderInfoScalarWhereInput = {
-    AND?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
-    OR?: BybitOrderInfoScalarWhereInput[]
-    NOT?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
-    id?: IntFilter<"BybitOrderInfo"> | number
-    phoneNumbers?: StringNullableListFilter<"BybitOrderInfo">
-    createdAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
-    updatedAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
-    orderNo?: StringFilter<"BybitOrderInfo"> | string
-    userId?: IntFilter<"BybitOrderInfo"> | number
+  export type BybitClipMatchUpdateManyWithWhereWithoutUserInput = {
+    where: BybitClipMatchScalarWhereInput
+    data: XOR<BybitClipMatchUpdateManyMutationInput, BybitClipMatchUncheckedUpdateManyWithoutUserInput>
   }
 
   export type BybitTransactionUpsertWithWhereUniqueWithoutUserInput = {
@@ -67551,21 +82277,91 @@ export namespace Prisma {
     NOT?: BybitTransactionScalarWhereInput | BybitTransactionScalarWhereInput[]
     id?: IntFilter<"BybitTransaction"> | number
     orderNo?: StringFilter<"BybitTransaction"> | string
-    userId?: IntFilter<"BybitTransaction"> | number
     counterparty?: StringNullableFilter<"BybitTransaction"> | string | null
     status?: StringFilter<"BybitTransaction"> | string
-    extractedPhones?: StringNullableListFilter<"BybitTransaction">
-    lastAttemptError?: StringNullableFilter<"BybitTransaction"> | string | null
+    userId?: IntFilter<"BybitTransaction"> | number
     createdAt?: DateTimeFilter<"BybitTransaction"> | Date | string
     updatedAt?: DateTimeFilter<"BybitTransaction"> | Date | string
     amount?: FloatFilter<"BybitTransaction"> | number
     asset?: StringFilter<"BybitTransaction"> | string
     dateTime?: DateTimeFilter<"BybitTransaction"> | Date | string
     originalData?: JsonNullableFilter<"BybitTransaction">
-    processed?: BoolFilter<"BybitTransaction"> | boolean
     totalPrice?: FloatFilter<"BybitTransaction"> | number
     type?: StringFilter<"BybitTransaction"> | string
     unitPrice?: FloatFilter<"BybitTransaction"> | number
+    processed?: BoolFilter<"BybitTransaction"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransaction">
+    lastAttemptError?: StringNullableFilter<"BybitTransaction"> | string | null
+  }
+
+  export type MatchBybitReportUpsertWithWhereUniqueWithoutUserInput = {
+    where: MatchBybitReportWhereUniqueInput
+    update: XOR<MatchBybitReportUpdateWithoutUserInput, MatchBybitReportUncheckedUpdateWithoutUserInput>
+    create: XOR<MatchBybitReportCreateWithoutUserInput, MatchBybitReportUncheckedCreateWithoutUserInput>
+  }
+
+  export type MatchBybitReportUpdateWithWhereUniqueWithoutUserInput = {
+    where: MatchBybitReportWhereUniqueInput
+    data: XOR<MatchBybitReportUpdateWithoutUserInput, MatchBybitReportUncheckedUpdateWithoutUserInput>
+  }
+
+  export type MatchBybitReportUpdateManyWithWhereWithoutUserInput = {
+    where: MatchBybitReportScalarWhereInput
+    data: XOR<MatchBybitReportUpdateManyMutationInput, MatchBybitReportUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type MatchBybitReportScalarWhereInput = {
+    AND?: MatchBybitReportScalarWhereInput | MatchBybitReportScalarWhereInput[]
+    OR?: MatchBybitReportScalarWhereInput[]
+    NOT?: MatchBybitReportScalarWhereInput | MatchBybitReportScalarWhereInput[]
+    id?: IntFilter<"MatchBybitReport"> | number
+    reportDate?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    totalMatches?: IntFilter<"MatchBybitReport"> | number
+    totalProfit?: FloatFilter<"MatchBybitReport"> | number
+    averageProfit?: FloatFilter<"MatchBybitReport"> | number
+    successRate?: FloatFilter<"MatchBybitReport"> | number
+    timeRangeStart?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    timeRangeEnd?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    notes?: StringNullableFilter<"MatchBybitReport"> | string | null
+    idexCabinets?: JsonNullableFilter<"MatchBybitReport">
+    createdAt?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    updatedAt?: DateTimeFilter<"MatchBybitReport"> | Date | string
+    userId?: IntFilter<"MatchBybitReport"> | number
+  }
+
+  export type MatchViresReportUpsertWithWhereUniqueWithoutUserInput = {
+    where: MatchViresReportWhereUniqueInput
+    update: XOR<MatchViresReportUpdateWithoutUserInput, MatchViresReportUncheckedUpdateWithoutUserInput>
+    create: XOR<MatchViresReportCreateWithoutUserInput, MatchViresReportUncheckedCreateWithoutUserInput>
+  }
+
+  export type MatchViresReportUpdateWithWhereUniqueWithoutUserInput = {
+    where: MatchViresReportWhereUniqueInput
+    data: XOR<MatchViresReportUpdateWithoutUserInput, MatchViresReportUncheckedUpdateWithoutUserInput>
+  }
+
+  export type MatchViresReportUpdateManyWithWhereWithoutUserInput = {
+    where: MatchViresReportScalarWhereInput
+    data: XOR<MatchViresReportUpdateManyMutationInput, MatchViresReportUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type MatchViresReportScalarWhereInput = {
+    AND?: MatchViresReportScalarWhereInput | MatchViresReportScalarWhereInput[]
+    OR?: MatchViresReportScalarWhereInput[]
+    NOT?: MatchViresReportScalarWhereInput | MatchViresReportScalarWhereInput[]
+    id?: IntFilter<"MatchViresReport"> | number
+    reportDate?: DateTimeFilter<"MatchViresReport"> | Date | string
+    totalMatches?: IntFilter<"MatchViresReport"> | number
+    totalProfit?: FloatFilter<"MatchViresReport"> | number
+    averageProfit?: FloatFilter<"MatchViresReport"> | number
+    successRate?: FloatFilter<"MatchViresReport"> | number
+    timeRangeStart?: DateTimeFilter<"MatchViresReport"> | Date | string
+    timeRangeEnd?: DateTimeFilter<"MatchViresReport"> | Date | string
+    notes?: StringNullableFilter<"MatchViresReport"> | string | null
+    idexCabinets?: JsonNullableFilter<"MatchViresReport">
+    createdAt?: DateTimeFilter<"MatchViresReport"> | Date | string
+    updatedAt?: DateTimeFilter<"MatchViresReport"> | Date | string
+    userId?: IntFilter<"MatchViresReport"> | number
   }
 
   export type ReportNotificationUpsertWithWhereUniqueWithoutUserInput = {
@@ -67666,6 +82462,72 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Transaction"> | Date | string
   }
 
+  export type ViresCabinetUpsertWithWhereUniqueWithoutUserInput = {
+    where: ViresCabinetWhereUniqueInput
+    update: XOR<ViresCabinetUpdateWithoutUserInput, ViresCabinetUncheckedUpdateWithoutUserInput>
+    create: XOR<ViresCabinetCreateWithoutUserInput, ViresCabinetUncheckedCreateWithoutUserInput>
+  }
+
+  export type ViresCabinetUpdateWithWhereUniqueWithoutUserInput = {
+    where: ViresCabinetWhereUniqueInput
+    data: XOR<ViresCabinetUpdateWithoutUserInput, ViresCabinetUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ViresCabinetUpdateManyWithWhereWithoutUserInput = {
+    where: ViresCabinetScalarWhereInput
+    data: XOR<ViresCabinetUpdateManyMutationInput, ViresCabinetUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ViresCabinetScalarWhereInput = {
+    AND?: ViresCabinetScalarWhereInput | ViresCabinetScalarWhereInput[]
+    OR?: ViresCabinetScalarWhereInput[]
+    NOT?: ViresCabinetScalarWhereInput | ViresCabinetScalarWhereInput[]
+    id?: IntFilter<"ViresCabinet"> | number
+    name?: StringNullableFilter<"ViresCabinet"> | string | null
+    login?: StringFilter<"ViresCabinet"> | string
+    password?: StringFilter<"ViresCabinet"> | string
+    type?: EnumPasswordTypeFilter<"ViresCabinet"> | $Enums.PasswordType
+    createdAt?: DateTimeFilter<"ViresCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"ViresCabinet"> | Date | string
+    comment?: StringNullableFilter<"ViresCabinet"> | string | null
+    userId?: IntFilter<"ViresCabinet"> | number
+    lastUpdate?: DateTimeFilter<"ViresCabinet"> | Date | string
+  }
+
+  export type ViresClipMatchUpsertWithWhereUniqueWithoutUserInput = {
+    where: ViresClipMatchWhereUniqueInput
+    update: XOR<ViresClipMatchUpdateWithoutUserInput, ViresClipMatchUncheckedUpdateWithoutUserInput>
+    create: XOR<ViresClipMatchCreateWithoutUserInput, ViresClipMatchUncheckedCreateWithoutUserInput>
+  }
+
+  export type ViresClipMatchUpdateWithWhereUniqueWithoutUserInput = {
+    where: ViresClipMatchWhereUniqueInput
+    data: XOR<ViresClipMatchUpdateWithoutUserInput, ViresClipMatchUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ViresClipMatchUpdateManyWithWhereWithoutUserInput = {
+    where: ViresClipMatchScalarWhereInput
+    data: XOR<ViresClipMatchUpdateManyMutationInput, ViresClipMatchUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ViresClipMatchScalarWhereInput = {
+    AND?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+    OR?: ViresClipMatchScalarWhereInput[]
+    NOT?: ViresClipMatchScalarWhereInput | ViresClipMatchScalarWhereInput[]
+    id?: IntFilter<"ViresClipMatch"> | number
+    viresTransactionId?: IntFilter<"ViresClipMatch"> | number
+    timeDifference?: IntFilter<"ViresClipMatch"> | number
+    grossExpense?: FloatFilter<"ViresClipMatch"> | number
+    grossIncome?: FloatFilter<"ViresClipMatch"> | number
+    grossProfit?: FloatFilter<"ViresClipMatch"> | number
+    profitPercentage?: FloatFilter<"ViresClipMatch"> | number
+    createdAt?: DateTimeFilter<"ViresClipMatch"> | Date | string
+    updatedAt?: DateTimeFilter<"ViresClipMatch"> | Date | string
+    matchViresReportId?: IntNullableFilter<"ViresClipMatch"> | number | null
+    userId?: IntFilter<"ViresClipMatch"> | number
+    bybitTransactionId?: IntFilter<"ViresClipMatch"> | number
+  }
+
   export type WorkSessionUpsertWithWhereUniqueWithoutUserInput = {
     where: WorkSessionWhereUniqueInput
     update: XOR<WorkSessionUpdateWithoutUserInput, WorkSessionUncheckedUpdateWithoutUserInput>
@@ -67710,11 +82572,15 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
     Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutWorkSessionInput = {
@@ -67731,11 +82597,15 @@ export namespace Prisma {
     lastBybitSyncAt?: Date | string | null
     lastBybitSyncStatus?: string | null
     AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
     BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
     ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
     TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
     Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutWorkSessionInput = {
@@ -67787,11 +82657,15 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutWorkSessionInput = {
@@ -67808,11 +82682,15 @@ export namespace Prisma {
     lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
     AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
-    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
     BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
     ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
     TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
     Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type WorkSessionIdexCabinetUpsertWithWhereUniqueWithoutWorkSessionInput = {
@@ -67949,6 +82827,1708 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     comment?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BybitTransactionFromCabinetCreateWithoutBybitCabinetInput = {
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput = {
+    id?: number
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetCreateOrConnectWithoutBybitCabinetInput = {
+    where: BybitTransactionFromCabinetWhereUniqueInput
+    create: XOR<BybitTransactionFromCabinetCreateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput>
+  }
+
+  export type BybitTransactionFromCabinetCreateManyBybitCabinetInputEnvelope = {
+    data: BybitTransactionFromCabinetCreateManyBybitCabinetInput | BybitTransactionFromCabinetCreateManyBybitCabinetInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BybitOrderInfoCreateWithoutCabinetInput = {
+    phoneNumbers?: BybitOrderInfoCreatephoneNumbersInput | string[]
+    createdAt?: Date | string
+    updatedAt: Date | string
+    orderNo: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status: string
+    type: string
+    amount: number
+    totalPrice: number
+    processed?: boolean
+    unitPrice: number
+  }
+
+  export type BybitOrderInfoUncheckedCreateWithoutCabinetInput = {
+    id?: number
+    phoneNumbers?: BybitOrderInfoCreatephoneNumbersInput | string[]
+    createdAt?: Date | string
+    updatedAt: Date | string
+    orderNo: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status: string
+    type: string
+    amount: number
+    totalPrice: number
+    processed?: boolean
+    unitPrice: number
+  }
+
+  export type BybitOrderInfoCreateOrConnectWithoutCabinetInput = {
+    where: BybitOrderInfoWhereUniqueInput
+    create: XOR<BybitOrderInfoCreateWithoutCabinetInput, BybitOrderInfoUncheckedCreateWithoutCabinetInput>
+  }
+
+  export type BybitOrderInfoCreateManyCabinetInputEnvelope = {
+    data: BybitOrderInfoCreateManyCabinetInput | BybitOrderInfoCreateManyCabinetInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BybitTransactionFromCabinetUpsertWithWhereUniqueWithoutBybitCabinetInput = {
+    where: BybitTransactionFromCabinetWhereUniqueInput
+    update: XOR<BybitTransactionFromCabinetUpdateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedUpdateWithoutBybitCabinetInput>
+    create: XOR<BybitTransactionFromCabinetCreateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitCabinetInput>
+  }
+
+  export type BybitTransactionFromCabinetUpdateWithWhereUniqueWithoutBybitCabinetInput = {
+    where: BybitTransactionFromCabinetWhereUniqueInput
+    data: XOR<BybitTransactionFromCabinetUpdateWithoutBybitCabinetInput, BybitTransactionFromCabinetUncheckedUpdateWithoutBybitCabinetInput>
+  }
+
+  export type BybitTransactionFromCabinetUpdateManyWithWhereWithoutBybitCabinetInput = {
+    where: BybitTransactionFromCabinetScalarWhereInput
+    data: XOR<BybitTransactionFromCabinetUpdateManyMutationInput, BybitTransactionFromCabinetUncheckedUpdateManyWithoutBybitCabinetInput>
+  }
+
+  export type BybitTransactionFromCabinetScalarWhereInput = {
+    AND?: BybitTransactionFromCabinetScalarWhereInput | BybitTransactionFromCabinetScalarWhereInput[]
+    OR?: BybitTransactionFromCabinetScalarWhereInput[]
+    NOT?: BybitTransactionFromCabinetScalarWhereInput | BybitTransactionFromCabinetScalarWhereInput[]
+    id?: IntFilter<"BybitTransactionFromCabinet"> | number
+    orderNo?: StringFilter<"BybitTransactionFromCabinet"> | string
+    counterparty?: StringNullableFilter<"BybitTransactionFromCabinet"> | string | null
+    status?: StringFilter<"BybitTransactionFromCabinet"> | string
+    createdAt?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    amount?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    asset?: StringFilter<"BybitTransactionFromCabinet"> | string
+    dateTime?: DateTimeFilter<"BybitTransactionFromCabinet"> | Date | string
+    originalData?: JsonNullableFilter<"BybitTransactionFromCabinet">
+    totalPrice?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    type?: StringFilter<"BybitTransactionFromCabinet"> | string
+    unitPrice?: FloatFilter<"BybitTransactionFromCabinet"> | number
+    processed?: BoolFilter<"BybitTransactionFromCabinet"> | boolean
+    extractedPhones?: StringNullableListFilter<"BybitTransactionFromCabinet">
+    lastAttemptError?: StringNullableFilter<"BybitTransactionFromCabinet"> | string | null
+    cabinetId?: IntFilter<"BybitTransactionFromCabinet"> | number
+  }
+
+  export type BybitOrderInfoUpsertWithWhereUniqueWithoutCabinetInput = {
+    where: BybitOrderInfoWhereUniqueInput
+    update: XOR<BybitOrderInfoUpdateWithoutCabinetInput, BybitOrderInfoUncheckedUpdateWithoutCabinetInput>
+    create: XOR<BybitOrderInfoCreateWithoutCabinetInput, BybitOrderInfoUncheckedCreateWithoutCabinetInput>
+  }
+
+  export type BybitOrderInfoUpdateWithWhereUniqueWithoutCabinetInput = {
+    where: BybitOrderInfoWhereUniqueInput
+    data: XOR<BybitOrderInfoUpdateWithoutCabinetInput, BybitOrderInfoUncheckedUpdateWithoutCabinetInput>
+  }
+
+  export type BybitOrderInfoUpdateManyWithWhereWithoutCabinetInput = {
+    where: BybitOrderInfoScalarWhereInput
+    data: XOR<BybitOrderInfoUpdateManyMutationInput, BybitOrderInfoUncheckedUpdateManyWithoutCabinetInput>
+  }
+
+  export type BybitOrderInfoScalarWhereInput = {
+    AND?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
+    OR?: BybitOrderInfoScalarWhereInput[]
+    NOT?: BybitOrderInfoScalarWhereInput | BybitOrderInfoScalarWhereInput[]
+    id?: IntFilter<"BybitOrderInfo"> | number
+    phoneNumbers?: StringNullableListFilter<"BybitOrderInfo">
+    createdAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
+    updatedAt?: DateTimeFilter<"BybitOrderInfo"> | Date | string
+    orderNo?: StringFilter<"BybitOrderInfo"> | string
+    dateTime?: DateTimeFilter<"BybitOrderInfo"> | Date | string
+    originalData?: JsonNullableFilter<"BybitOrderInfo">
+    status?: StringFilter<"BybitOrderInfo"> | string
+    type?: StringFilter<"BybitOrderInfo"> | string
+    amount?: IntFilter<"BybitOrderInfo"> | number
+    totalPrice?: FloatFilter<"BybitOrderInfo"> | number
+    processed?: BoolFilter<"BybitOrderInfo"> | boolean
+    unitPrice?: FloatFilter<"BybitOrderInfo"> | number
+    bybitCabinetId?: IntFilter<"BybitOrderInfo"> | number
+  }
+
+  export type BybitTransactionFromCabinetCreateWithoutBybitClipMatchInput = {
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    BybitCabinet: BybitCabinetCreateNestedOneWithoutBybitTransactionFromCabinetInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedCreateWithoutBybitClipMatchInput = {
+    id?: number
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    cabinetId: number
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetCreateOrConnectWithoutBybitClipMatchInput = {
+    where: BybitTransactionFromCabinetWhereUniqueInput
+    create: XOR<BybitTransactionFromCabinetCreateWithoutBybitClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitClipMatchInput>
+  }
+
+  export type IdexTransactionCreateWithoutBybitClipMatchInput = {
+    externalId: bigint | number
+    paymentMethodId: bigint | number
+    wallet: string
+    amount: JsonNullValueInput | InputJsonValue
+    total: JsonNullValueInput | InputJsonValue
+    status: number
+    approvedAt?: string | null
+    expiredAt?: string | null
+    createdAtExternal: string
+    updatedAtExternal: string
+    extraData: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitMatch?: BybitMatchCreateNestedManyWithoutIdexTransactionInput
+    IdexCabinet: IdexCabinetCreateNestedOneWithoutIdexTransactionInput
+    Match?: MatchCreateNestedManyWithoutIdexTransactionInput
+  }
+
+  export type IdexTransactionUncheckedCreateWithoutBybitClipMatchInput = {
+    id?: number
+    externalId: bigint | number
+    paymentMethodId: bigint | number
+    wallet: string
+    amount: JsonNullValueInput | InputJsonValue
+    total: JsonNullValueInput | InputJsonValue
+    status: number
+    approvedAt?: string | null
+    expiredAt?: string | null
+    createdAtExternal: string
+    updatedAtExternal: string
+    extraData: JsonNullValueInput | InputJsonValue
+    cabinetId: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitMatch?: BybitMatchUncheckedCreateNestedManyWithoutIdexTransactionInput
+    Match?: MatchUncheckedCreateNestedManyWithoutIdexTransactionInput
+  }
+
+  export type IdexTransactionCreateOrConnectWithoutBybitClipMatchInput = {
+    where: IdexTransactionWhereUniqueInput
+    create: XOR<IdexTransactionCreateWithoutBybitClipMatchInput, IdexTransactionUncheckedCreateWithoutBybitClipMatchInput>
+  }
+
+  export type MatchBybitReportCreateWithoutBybitClipMatchInput = {
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    User?: UserCreateNestedOneWithoutMatchBybitReportInput
+  }
+
+  export type MatchBybitReportUncheckedCreateWithoutBybitClipMatchInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId?: number
+  }
+
+  export type MatchBybitReportCreateOrConnectWithoutBybitClipMatchInput = {
+    where: MatchBybitReportWhereUniqueInput
+    create: XOR<MatchBybitReportCreateWithoutBybitClipMatchInput, MatchBybitReportUncheckedCreateWithoutBybitClipMatchInput>
+  }
+
+  export type UserCreateWithoutBybitClipMatchInput = {
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
+    Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutBybitClipMatchInput = {
+    id?: number
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
+    Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutBybitClipMatchInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutBybitClipMatchInput, UserUncheckedCreateWithoutBybitClipMatchInput>
+  }
+
+  export type BybitTransactionFromCabinetUpsertWithoutBybitClipMatchInput = {
+    update: XOR<BybitTransactionFromCabinetUpdateWithoutBybitClipMatchInput, BybitTransactionFromCabinetUncheckedUpdateWithoutBybitClipMatchInput>
+    create: XOR<BybitTransactionFromCabinetCreateWithoutBybitClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutBybitClipMatchInput>
+    where?: BybitTransactionFromCabinetWhereInput
+  }
+
+  export type BybitTransactionFromCabinetUpdateToOneWithWhereWithoutBybitClipMatchInput = {
+    where?: BybitTransactionFromCabinetWhereInput
+    data: XOR<BybitTransactionFromCabinetUpdateWithoutBybitClipMatchInput, BybitTransactionFromCabinetUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type BybitTransactionFromCabinetUpdateWithoutBybitClipMatchInput = {
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitCabinet?: BybitCabinetUpdateOneRequiredWithoutBybitTransactionFromCabinetNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedUpdateWithoutBybitClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinetId?: IntFieldUpdateOperationsInput | number
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type IdexTransactionUpsertWithoutBybitClipMatchInput = {
+    update: XOR<IdexTransactionUpdateWithoutBybitClipMatchInput, IdexTransactionUncheckedUpdateWithoutBybitClipMatchInput>
+    create: XOR<IdexTransactionCreateWithoutBybitClipMatchInput, IdexTransactionUncheckedCreateWithoutBybitClipMatchInput>
+    where?: IdexTransactionWhereInput
+  }
+
+  export type IdexTransactionUpdateToOneWithWhereWithoutBybitClipMatchInput = {
+    where?: IdexTransactionWhereInput
+    data: XOR<IdexTransactionUpdateWithoutBybitClipMatchInput, IdexTransactionUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type IdexTransactionUpdateWithoutBybitClipMatchInput = {
+    externalId?: BigIntFieldUpdateOperationsInput | bigint | number
+    paymentMethodId?: BigIntFieldUpdateOperationsInput | bigint | number
+    wallet?: StringFieldUpdateOperationsInput | string
+    amount?: JsonNullValueInput | InputJsonValue
+    total?: JsonNullValueInput | InputJsonValue
+    status?: IntFieldUpdateOperationsInput | number
+    approvedAt?: NullableStringFieldUpdateOperationsInput | string | null
+    expiredAt?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAtExternal?: StringFieldUpdateOperationsInput | string
+    updatedAtExternal?: StringFieldUpdateOperationsInput | string
+    extraData?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitMatch?: BybitMatchUpdateManyWithoutIdexTransactionNestedInput
+    IdexCabinet?: IdexCabinetUpdateOneRequiredWithoutIdexTransactionNestedInput
+    Match?: MatchUpdateManyWithoutIdexTransactionNestedInput
+  }
+
+  export type IdexTransactionUncheckedUpdateWithoutBybitClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    externalId?: BigIntFieldUpdateOperationsInput | bigint | number
+    paymentMethodId?: BigIntFieldUpdateOperationsInput | bigint | number
+    wallet?: StringFieldUpdateOperationsInput | string
+    amount?: JsonNullValueInput | InputJsonValue
+    total?: JsonNullValueInput | InputJsonValue
+    status?: IntFieldUpdateOperationsInput | number
+    approvedAt?: NullableStringFieldUpdateOperationsInput | string | null
+    expiredAt?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAtExternal?: StringFieldUpdateOperationsInput | string
+    updatedAtExternal?: StringFieldUpdateOperationsInput | string
+    extraData?: JsonNullValueInput | InputJsonValue
+    cabinetId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitMatch?: BybitMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
+    Match?: MatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
+  }
+
+  export type MatchBybitReportUpsertWithoutBybitClipMatchInput = {
+    update: XOR<MatchBybitReportUpdateWithoutBybitClipMatchInput, MatchBybitReportUncheckedUpdateWithoutBybitClipMatchInput>
+    create: XOR<MatchBybitReportCreateWithoutBybitClipMatchInput, MatchBybitReportUncheckedCreateWithoutBybitClipMatchInput>
+    where?: MatchBybitReportWhereInput
+  }
+
+  export type MatchBybitReportUpdateToOneWithWhereWithoutBybitClipMatchInput = {
+    where?: MatchBybitReportWhereInput
+    data: XOR<MatchBybitReportUpdateWithoutBybitClipMatchInput, MatchBybitReportUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type MatchBybitReportUpdateWithoutBybitClipMatchInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    User?: UserUpdateOneRequiredWithoutMatchBybitReportNestedInput
+  }
+
+  export type MatchBybitReportUncheckedUpdateWithoutBybitClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type UserUpsertWithoutBybitClipMatchInput = {
+    update: XOR<UserUpdateWithoutBybitClipMatchInput, UserUncheckedUpdateWithoutBybitClipMatchInput>
+    create: XOR<UserCreateWithoutBybitClipMatchInput, UserUncheckedCreateWithoutBybitClipMatchInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutBybitClipMatchInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutBybitClipMatchInput, UserUncheckedUpdateWithoutBybitClipMatchInput>
+  }
+
+  export type UserUpdateWithoutBybitClipMatchInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutBybitClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    IdexTransaction: IdexTransactionCreateNestedOneWithoutBybitClipMatchInput
+    MatchBybitReport?: MatchBybitReportCreateNestedOneWithoutBybitClipMatchInput
+    User: UserCreateNestedOneWithoutBybitClipMatchInput
+  }
+
+  export type BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput = {
+    id?: number
+    idexTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchBybitReportId?: number | null
+    userId: number
+  }
+
+  export type BybitClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput = {
+    where: BybitClipMatchWhereUniqueInput
+    create: XOR<BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type BybitClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope = {
+    data: BybitClipMatchCreateManyBybitTransactionFromCabinetInput | BybitClipMatchCreateManyBybitTransactionFromCabinetInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BybitCabinetCreateWithoutBybitTransactionFromCabinetInput = {
+    createdAt?: Date | string
+    updatedAt: Date | string
+    bybitEmail: string
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    BybitOrderInfo?: BybitOrderInfoCreateNestedManyWithoutCabinetInput
+  }
+
+  export type BybitCabinetUncheckedCreateWithoutBybitTransactionFromCabinetInput = {
+    id?: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    bybitEmail: string
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    BybitOrderInfo?: BybitOrderInfoUncheckedCreateNestedManyWithoutCabinetInput
+  }
+
+  export type BybitCabinetCreateOrConnectWithoutBybitTransactionFromCabinetInput = {
+    where: BybitCabinetWhereUniqueInput
+    create: XOR<BybitCabinetCreateWithoutBybitTransactionFromCabinetInput, BybitCabinetUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    MatchViresReport?: MatchViresReportCreateNestedOneWithoutViresClipMatchInput
+    User: UserCreateNestedOneWithoutViresClipMatchInput
+    ViresTransactionPayin: ViresTransactionPayinCreateNestedOneWithoutViresClipMatchInput
+  }
+
+  export type ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    userId: number
+  }
+
+  export type ViresClipMatchCreateOrConnectWithoutBybitTransactionFromCabinetInput = {
+    where: ViresClipMatchWhereUniqueInput
+    create: XOR<ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type ViresClipMatchCreateManyBybitTransactionFromCabinetInputEnvelope = {
+    data: ViresClipMatchCreateManyBybitTransactionFromCabinetInput | ViresClipMatchCreateManyBybitTransactionFromCabinetInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BybitClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput = {
+    where: BybitClipMatchWhereUniqueInput
+    update: XOR<BybitClipMatchUpdateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedUpdateWithoutBybitTransactionFromCabinetInput>
+    create: XOR<BybitClipMatchCreateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type BybitClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput = {
+    where: BybitClipMatchWhereUniqueInput
+    data: XOR<BybitClipMatchUpdateWithoutBybitTransactionFromCabinetInput, BybitClipMatchUncheckedUpdateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type BybitClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput = {
+    where: BybitClipMatchScalarWhereInput
+    data: XOR<BybitClipMatchUpdateManyMutationInput, BybitClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type BybitCabinetUpsertWithoutBybitTransactionFromCabinetInput = {
+    update: XOR<BybitCabinetUpdateWithoutBybitTransactionFromCabinetInput, BybitCabinetUncheckedUpdateWithoutBybitTransactionFromCabinetInput>
+    create: XOR<BybitCabinetCreateWithoutBybitTransactionFromCabinetInput, BybitCabinetUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+    where?: BybitCabinetWhereInput
+  }
+
+  export type BybitCabinetUpdateToOneWithWhereWithoutBybitTransactionFromCabinetInput = {
+    where?: BybitCabinetWhereInput
+    data: XOR<BybitCabinetUpdateWithoutBybitTransactionFromCabinetInput, BybitCabinetUncheckedUpdateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type BybitCabinetUpdateWithoutBybitTransactionFromCabinetInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bybitEmail?: StringFieldUpdateOperationsInput | string
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitOrderInfo?: BybitOrderInfoUpdateManyWithoutCabinetNestedInput
+  }
+
+  export type BybitCabinetUncheckedUpdateWithoutBybitTransactionFromCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bybitEmail?: StringFieldUpdateOperationsInput | string
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitOrderInfo?: BybitOrderInfoUncheckedUpdateManyWithoutCabinetNestedInput
+  }
+
+  export type ViresClipMatchUpsertWithWhereUniqueWithoutBybitTransactionFromCabinetInput = {
+    where: ViresClipMatchWhereUniqueInput
+    update: XOR<ViresClipMatchUpdateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedUpdateWithoutBybitTransactionFromCabinetInput>
+    create: XOR<ViresClipMatchCreateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedCreateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type ViresClipMatchUpdateWithWhereUniqueWithoutBybitTransactionFromCabinetInput = {
+    where: ViresClipMatchWhereUniqueInput
+    data: XOR<ViresClipMatchUpdateWithoutBybitTransactionFromCabinetInput, ViresClipMatchUncheckedUpdateWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type ViresClipMatchUpdateManyWithWhereWithoutBybitTransactionFromCabinetInput = {
+    where: ViresClipMatchScalarWhereInput
+    data: XOR<ViresClipMatchUpdateManyMutationInput, ViresClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetInput>
+  }
+
+  export type BybitClipMatchCreateWithoutMatchBybitReportInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutBybitClipMatchInput
+    IdexTransaction: IdexTransactionCreateNestedOneWithoutBybitClipMatchInput
+    User: UserCreateNestedOneWithoutBybitClipMatchInput
+  }
+
+  export type BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput = {
+    id?: number
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId: number
+  }
+
+  export type BybitClipMatchCreateOrConnectWithoutMatchBybitReportInput = {
+    where: BybitClipMatchWhereUniqueInput
+    create: XOR<BybitClipMatchCreateWithoutMatchBybitReportInput, BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput>
+  }
+
+  export type BybitClipMatchCreateManyMatchBybitReportInputEnvelope = {
+    data: BybitClipMatchCreateManyMatchBybitReportInput | BybitClipMatchCreateManyMatchBybitReportInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserCreateWithoutMatchBybitReportInput = {
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
+    Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutMatchBybitReportInput = {
+    id?: number
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
+    Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutMatchBybitReportInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutMatchBybitReportInput, UserUncheckedCreateWithoutMatchBybitReportInput>
+  }
+
+  export type BybitClipMatchUpsertWithWhereUniqueWithoutMatchBybitReportInput = {
+    where: BybitClipMatchWhereUniqueInput
+    update: XOR<BybitClipMatchUpdateWithoutMatchBybitReportInput, BybitClipMatchUncheckedUpdateWithoutMatchBybitReportInput>
+    create: XOR<BybitClipMatchCreateWithoutMatchBybitReportInput, BybitClipMatchUncheckedCreateWithoutMatchBybitReportInput>
+  }
+
+  export type BybitClipMatchUpdateWithWhereUniqueWithoutMatchBybitReportInput = {
+    where: BybitClipMatchWhereUniqueInput
+    data: XOR<BybitClipMatchUpdateWithoutMatchBybitReportInput, BybitClipMatchUncheckedUpdateWithoutMatchBybitReportInput>
+  }
+
+  export type BybitClipMatchUpdateManyWithWhereWithoutMatchBybitReportInput = {
+    where: BybitClipMatchScalarWhereInput
+    data: XOR<BybitClipMatchUpdateManyMutationInput, BybitClipMatchUncheckedUpdateManyWithoutMatchBybitReportInput>
+  }
+
+  export type UserUpsertWithoutMatchBybitReportInput = {
+    update: XOR<UserUpdateWithoutMatchBybitReportInput, UserUncheckedUpdateWithoutMatchBybitReportInput>
+    create: XOR<UserCreateWithoutMatchBybitReportInput, UserUncheckedCreateWithoutMatchBybitReportInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutMatchBybitReportInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutMatchBybitReportInput, UserUncheckedUpdateWithoutMatchBybitReportInput>
+  }
+
+  export type UserUpdateWithoutMatchBybitReportInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutMatchBybitReportInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserCreateWithoutMatchViresReportInput = {
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
+    Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutMatchViresReportInput = {
+    id?: number
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
+    Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutMatchViresReportInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutMatchViresReportInput, UserUncheckedCreateWithoutMatchViresReportInput>
+  }
+
+  export type ViresClipMatchCreateWithoutMatchViresReportInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutViresClipMatchInput
+    User: UserCreateNestedOneWithoutViresClipMatchInput
+    ViresTransactionPayin: ViresTransactionPayinCreateNestedOneWithoutViresClipMatchInput
+  }
+
+  export type ViresClipMatchUncheckedCreateWithoutMatchViresReportInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId: number
+    bybitTransactionId: number
+  }
+
+  export type ViresClipMatchCreateOrConnectWithoutMatchViresReportInput = {
+    where: ViresClipMatchWhereUniqueInput
+    create: XOR<ViresClipMatchCreateWithoutMatchViresReportInput, ViresClipMatchUncheckedCreateWithoutMatchViresReportInput>
+  }
+
+  export type ViresClipMatchCreateManyMatchViresReportInputEnvelope = {
+    data: ViresClipMatchCreateManyMatchViresReportInput | ViresClipMatchCreateManyMatchViresReportInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserUpsertWithoutMatchViresReportInput = {
+    update: XOR<UserUpdateWithoutMatchViresReportInput, UserUncheckedUpdateWithoutMatchViresReportInput>
+    create: XOR<UserCreateWithoutMatchViresReportInput, UserUncheckedCreateWithoutMatchViresReportInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutMatchViresReportInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutMatchViresReportInput, UserUncheckedUpdateWithoutMatchViresReportInput>
+  }
+
+  export type UserUpdateWithoutMatchViresReportInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutMatchViresReportInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type ViresClipMatchUpsertWithWhereUniqueWithoutMatchViresReportInput = {
+    where: ViresClipMatchWhereUniqueInput
+    update: XOR<ViresClipMatchUpdateWithoutMatchViresReportInput, ViresClipMatchUncheckedUpdateWithoutMatchViresReportInput>
+    create: XOR<ViresClipMatchCreateWithoutMatchViresReportInput, ViresClipMatchUncheckedCreateWithoutMatchViresReportInput>
+  }
+
+  export type ViresClipMatchUpdateWithWhereUniqueWithoutMatchViresReportInput = {
+    where: ViresClipMatchWhereUniqueInput
+    data: XOR<ViresClipMatchUpdateWithoutMatchViresReportInput, ViresClipMatchUncheckedUpdateWithoutMatchViresReportInput>
+  }
+
+  export type ViresClipMatchUpdateManyWithWhereWithoutMatchViresReportInput = {
+    where: ViresClipMatchScalarWhereInput
+    data: XOR<ViresClipMatchUpdateManyMutationInput, ViresClipMatchUncheckedUpdateManyWithoutMatchViresReportInput>
+  }
+
+  export type UserCreateWithoutViresCabinetInput = {
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
+    Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutViresCabinetInput = {
+    id?: number
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
+    Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutViresCabinetInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutViresCabinetInput, UserUncheckedCreateWithoutViresCabinetInput>
+  }
+
+  export type ViresTransactionPayinCreateWithoutViresCabinetInput = {
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+    ViresClipMatch?: ViresClipMatchCreateNestedManyWithoutViresTransactionPayinInput
+  }
+
+  export type ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput = {
+    id?: number
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+    ViresClipMatch?: ViresClipMatchUncheckedCreateNestedManyWithoutViresTransactionPayinInput
+  }
+
+  export type ViresTransactionPayinCreateOrConnectWithoutViresCabinetInput = {
+    where: ViresTransactionPayinWhereUniqueInput
+    create: XOR<ViresTransactionPayinCreateWithoutViresCabinetInput, ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput>
+  }
+
+  export type ViresTransactionPayinCreateManyViresCabinetInputEnvelope = {
+    data: ViresTransactionPayinCreateManyViresCabinetInput | ViresTransactionPayinCreateManyViresCabinetInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserUpsertWithoutViresCabinetInput = {
+    update: XOR<UserUpdateWithoutViresCabinetInput, UserUncheckedUpdateWithoutViresCabinetInput>
+    create: XOR<UserCreateWithoutViresCabinetInput, UserUncheckedCreateWithoutViresCabinetInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutViresCabinetInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutViresCabinetInput, UserUncheckedUpdateWithoutViresCabinetInput>
+  }
+
+  export type UserUpdateWithoutViresCabinetInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutViresCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type ViresTransactionPayinUpsertWithWhereUniqueWithoutViresCabinetInput = {
+    where: ViresTransactionPayinWhereUniqueInput
+    update: XOR<ViresTransactionPayinUpdateWithoutViresCabinetInput, ViresTransactionPayinUncheckedUpdateWithoutViresCabinetInput>
+    create: XOR<ViresTransactionPayinCreateWithoutViresCabinetInput, ViresTransactionPayinUncheckedCreateWithoutViresCabinetInput>
+  }
+
+  export type ViresTransactionPayinUpdateWithWhereUniqueWithoutViresCabinetInput = {
+    where: ViresTransactionPayinWhereUniqueInput
+    data: XOR<ViresTransactionPayinUpdateWithoutViresCabinetInput, ViresTransactionPayinUncheckedUpdateWithoutViresCabinetInput>
+  }
+
+  export type ViresTransactionPayinUpdateManyWithWhereWithoutViresCabinetInput = {
+    where: ViresTransactionPayinScalarWhereInput
+    data: XOR<ViresTransactionPayinUpdateManyMutationInput, ViresTransactionPayinUncheckedUpdateManyWithoutViresCabinetInput>
+  }
+
+  export type ViresTransactionPayinScalarWhereInput = {
+    AND?: ViresTransactionPayinScalarWhereInput | ViresTransactionPayinScalarWhereInput[]
+    OR?: ViresTransactionPayinScalarWhereInput[]
+    NOT?: ViresTransactionPayinScalarWhereInput | ViresTransactionPayinScalarWhereInput[]
+    id?: IntFilter<"ViresTransactionPayin"> | number
+    cabinetId?: IntFilter<"ViresTransactionPayin"> | number
+    createdAt?: DateTimeFilter<"ViresTransactionPayin"> | Date | string
+    sum_rub?: FloatFilter<"ViresTransactionPayin"> | number
+    sum_usdt?: FloatFilter<"ViresTransactionPayin"> | number
+    card?: StringFilter<"ViresTransactionPayin"> | string
+    fio?: StringFilter<"ViresTransactionPayin"> | string
+    bank?: StringFilter<"ViresTransactionPayin"> | string
+    uuid?: StringFilter<"ViresTransactionPayin"> | string
+  }
+
+  export type BybitTransactionFromCabinetCreateWithoutViresClipMatchInput = {
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutBybitTransactionFromCabinetInput
+    BybitCabinet: BybitCabinetCreateNestedOneWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedCreateWithoutViresClipMatchInput = {
+    id?: number
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+    cabinetId: number
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutBybitTransactionFromCabinetInput
+  }
+
+  export type BybitTransactionFromCabinetCreateOrConnectWithoutViresClipMatchInput = {
+    where: BybitTransactionFromCabinetWhereUniqueInput
+    create: XOR<BybitTransactionFromCabinetCreateWithoutViresClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutViresClipMatchInput>
+  }
+
+  export type MatchViresReportCreateWithoutViresClipMatchInput = {
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    User?: UserCreateNestedOneWithoutMatchViresReportInput
+  }
+
+  export type MatchViresReportUncheckedCreateWithoutViresClipMatchInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId?: number
+  }
+
+  export type MatchViresReportCreateOrConnectWithoutViresClipMatchInput = {
+    where: MatchViresReportWhereUniqueInput
+    create: XOR<MatchViresReportCreateWithoutViresClipMatchInput, MatchViresReportUncheckedCreateWithoutViresClipMatchInput>
+  }
+
+  export type UserCreateWithoutViresClipMatchInput = {
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountCreateNestedManyWithoutUserInput
+    Transaction?: TransactionCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutViresClipMatchInput = {
+    id?: number
+    name: string
+    passCode: string
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt: Date | string
+    lastNotification?: Date | string | null
+    role?: $Enums.UserRole
+    bybitApiSecret?: string | null
+    bybitApiToken?: string | null
+    lastBybitSyncAt?: Date | string | null
+    lastBybitSyncStatus?: string | null
+    AuditLog?: AuditLogUncheckedCreateNestedManyWithoutUserInput
+    BybitClipMatch?: BybitClipMatchUncheckedCreateNestedManyWithoutUserInput
+    BybitTransaction?: BybitTransactionUncheckedCreateNestedManyWithoutUserInput
+    MatchBybitReport?: MatchBybitReportUncheckedCreateNestedManyWithoutUserInput
+    MatchViresReport?: MatchViresReportUncheckedCreateNestedManyWithoutUserInput
+    ReportNotification?: ReportNotificationUncheckedCreateNestedManyWithoutUserInput
+    TelegramAccount?: TelegramAccountUncheckedCreateNestedManyWithoutUserInput
+    Transaction?: TransactionUncheckedCreateNestedManyWithoutUserInput
+    ViresCabinet?: ViresCabinetUncheckedCreateNestedManyWithoutUserInput
+    WorkSession?: WorkSessionUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutViresClipMatchInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutViresClipMatchInput, UserUncheckedCreateWithoutViresClipMatchInput>
+  }
+
+  export type ViresTransactionPayinCreateWithoutViresClipMatchInput = {
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+    ViresCabinet: ViresCabinetCreateNestedOneWithoutViresTransactionPayinInput
+  }
+
+  export type ViresTransactionPayinUncheckedCreateWithoutViresClipMatchInput = {
+    id?: number
+    cabinetId: number
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+  }
+
+  export type ViresTransactionPayinCreateOrConnectWithoutViresClipMatchInput = {
+    where: ViresTransactionPayinWhereUniqueInput
+    create: XOR<ViresTransactionPayinCreateWithoutViresClipMatchInput, ViresTransactionPayinUncheckedCreateWithoutViresClipMatchInput>
+  }
+
+  export type BybitTransactionFromCabinetUpsertWithoutViresClipMatchInput = {
+    update: XOR<BybitTransactionFromCabinetUpdateWithoutViresClipMatchInput, BybitTransactionFromCabinetUncheckedUpdateWithoutViresClipMatchInput>
+    create: XOR<BybitTransactionFromCabinetCreateWithoutViresClipMatchInput, BybitTransactionFromCabinetUncheckedCreateWithoutViresClipMatchInput>
+    where?: BybitTransactionFromCabinetWhereInput
+  }
+
+  export type BybitTransactionFromCabinetUpdateToOneWithWhereWithoutViresClipMatchInput = {
+    where?: BybitTransactionFromCabinetWhereInput
+    data: XOR<BybitTransactionFromCabinetUpdateWithoutViresClipMatchInput, BybitTransactionFromCabinetUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type BybitTransactionFromCabinetUpdateWithoutViresClipMatchInput = {
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+    BybitCabinet?: BybitCabinetUpdateOneRequiredWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedUpdateWithoutViresClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinetId?: IntFieldUpdateOperationsInput | number
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type MatchViresReportUpsertWithoutViresClipMatchInput = {
+    update: XOR<MatchViresReportUpdateWithoutViresClipMatchInput, MatchViresReportUncheckedUpdateWithoutViresClipMatchInput>
+    create: XOR<MatchViresReportCreateWithoutViresClipMatchInput, MatchViresReportUncheckedCreateWithoutViresClipMatchInput>
+    where?: MatchViresReportWhereInput
+  }
+
+  export type MatchViresReportUpdateToOneWithWhereWithoutViresClipMatchInput = {
+    where?: MatchViresReportWhereInput
+    data: XOR<MatchViresReportUpdateWithoutViresClipMatchInput, MatchViresReportUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type MatchViresReportUpdateWithoutViresClipMatchInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    User?: UserUpdateOneRequiredWithoutMatchViresReportNestedInput
+  }
+
+  export type MatchViresReportUncheckedUpdateWithoutViresClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type UserUpsertWithoutViresClipMatchInput = {
+    update: XOR<UserUpdateWithoutViresClipMatchInput, UserUncheckedUpdateWithoutViresClipMatchInput>
+    create: XOR<UserCreateWithoutViresClipMatchInput, UserUncheckedCreateWithoutViresClipMatchInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutViresClipMatchInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutViresClipMatchInput, UserUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type UserUpdateWithoutViresClipMatchInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutViresClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    passCode?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastNotification?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    bybitApiSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    bybitApiToken?: NullableStringFieldUpdateOperationsInput | string | null
+    lastBybitSyncAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastBybitSyncStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    AuditLog?: AuditLogUncheckedUpdateManyWithoutUserNestedInput
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutUserNestedInput
+    BybitTransaction?: BybitTransactionUncheckedUpdateManyWithoutUserNestedInput
+    MatchBybitReport?: MatchBybitReportUncheckedUpdateManyWithoutUserNestedInput
+    MatchViresReport?: MatchViresReportUncheckedUpdateManyWithoutUserNestedInput
+    ReportNotification?: ReportNotificationUncheckedUpdateManyWithoutUserNestedInput
+    TelegramAccount?: TelegramAccountUncheckedUpdateManyWithoutUserNestedInput
+    Transaction?: TransactionUncheckedUpdateManyWithoutUserNestedInput
+    ViresCabinet?: ViresCabinetUncheckedUpdateManyWithoutUserNestedInput
+    WorkSession?: WorkSessionUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type ViresTransactionPayinUpsertWithoutViresClipMatchInput = {
+    update: XOR<ViresTransactionPayinUpdateWithoutViresClipMatchInput, ViresTransactionPayinUncheckedUpdateWithoutViresClipMatchInput>
+    create: XOR<ViresTransactionPayinCreateWithoutViresClipMatchInput, ViresTransactionPayinUncheckedCreateWithoutViresClipMatchInput>
+    where?: ViresTransactionPayinWhereInput
+  }
+
+  export type ViresTransactionPayinUpdateToOneWithWhereWithoutViresClipMatchInput = {
+    where?: ViresTransactionPayinWhereInput
+    data: XOR<ViresTransactionPayinUpdateWithoutViresClipMatchInput, ViresTransactionPayinUncheckedUpdateWithoutViresClipMatchInput>
+  }
+
+  export type ViresTransactionPayinUpdateWithoutViresClipMatchInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+    ViresCabinet?: ViresCabinetUpdateOneRequiredWithoutViresTransactionPayinNestedInput
+  }
+
+  export type ViresTransactionPayinUncheckedUpdateWithoutViresClipMatchInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    cabinetId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ViresClipMatchCreateWithoutViresTransactionPayinInput = {
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    BybitTransactionFromCabinet: BybitTransactionFromCabinetCreateNestedOneWithoutViresClipMatchInput
+    MatchViresReport?: MatchViresReportCreateNestedOneWithoutViresClipMatchInput
+    User: UserCreateNestedOneWithoutViresClipMatchInput
+  }
+
+  export type ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput = {
+    id?: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    userId: number
+    bybitTransactionId: number
+  }
+
+  export type ViresClipMatchCreateOrConnectWithoutViresTransactionPayinInput = {
+    where: ViresClipMatchWhereUniqueInput
+    create: XOR<ViresClipMatchCreateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput>
+  }
+
+  export type ViresClipMatchCreateManyViresTransactionPayinInputEnvelope = {
+    data: ViresClipMatchCreateManyViresTransactionPayinInput | ViresClipMatchCreateManyViresTransactionPayinInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ViresCabinetCreateWithoutViresTransactionPayinInput = {
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    lastUpdate: Date | string
+    User: UserCreateNestedOneWithoutViresCabinetInput
+  }
+
+  export type ViresCabinetUncheckedCreateWithoutViresTransactionPayinInput = {
+    id?: number
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    userId: number
+    lastUpdate: Date | string
+  }
+
+  export type ViresCabinetCreateOrConnectWithoutViresTransactionPayinInput = {
+    where: ViresCabinetWhereUniqueInput
+    create: XOR<ViresCabinetCreateWithoutViresTransactionPayinInput, ViresCabinetUncheckedCreateWithoutViresTransactionPayinInput>
+  }
+
+  export type ViresClipMatchUpsertWithWhereUniqueWithoutViresTransactionPayinInput = {
+    where: ViresClipMatchWhereUniqueInput
+    update: XOR<ViresClipMatchUpdateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedUpdateWithoutViresTransactionPayinInput>
+    create: XOR<ViresClipMatchCreateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedCreateWithoutViresTransactionPayinInput>
+  }
+
+  export type ViresClipMatchUpdateWithWhereUniqueWithoutViresTransactionPayinInput = {
+    where: ViresClipMatchWhereUniqueInput
+    data: XOR<ViresClipMatchUpdateWithoutViresTransactionPayinInput, ViresClipMatchUncheckedUpdateWithoutViresTransactionPayinInput>
+  }
+
+  export type ViresClipMatchUpdateManyWithWhereWithoutViresTransactionPayinInput = {
+    where: ViresClipMatchScalarWhereInput
+    data: XOR<ViresClipMatchUpdateManyMutationInput, ViresClipMatchUncheckedUpdateManyWithoutViresTransactionPayinInput>
+  }
+
+  export type ViresCabinetUpsertWithoutViresTransactionPayinInput = {
+    update: XOR<ViresCabinetUpdateWithoutViresTransactionPayinInput, ViresCabinetUncheckedUpdateWithoutViresTransactionPayinInput>
+    create: XOR<ViresCabinetCreateWithoutViresTransactionPayinInput, ViresCabinetUncheckedCreateWithoutViresTransactionPayinInput>
+    where?: ViresCabinetWhereInput
+  }
+
+  export type ViresCabinetUpdateToOneWithWhereWithoutViresTransactionPayinInput = {
+    where?: ViresCabinetWhereInput
+    data: XOR<ViresCabinetUpdateWithoutViresTransactionPayinInput, ViresCabinetUncheckedUpdateWithoutViresTransactionPayinInput>
+  }
+
+  export type ViresCabinetUpdateWithoutViresTransactionPayinInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    User?: UserUpdateOneRequiredWithoutViresCabinetNestedInput
+  }
+
+  export type ViresCabinetUncheckedUpdateWithoutViresTransactionPayinInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: IntFieldUpdateOperationsInput | number
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BybitMatchCreateManyBybitTransactionInput = {
@@ -68514,6 +85094,7 @@ export namespace Prisma {
     extraData?: JsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutIdexTransactionNestedInput
     BybitMatch?: BybitMatchUpdateManyWithoutIdexTransactionNestedInput
     Match?: MatchUpdateManyWithoutIdexTransactionNestedInput
   }
@@ -68533,6 +85114,7 @@ export namespace Prisma {
     extraData?: JsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
     BybitMatch?: BybitMatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
     Match?: MatchUncheckedUpdateManyWithoutIdexTransactionNestedInput
   }
@@ -68569,6 +85151,20 @@ export namespace Prisma {
     assignedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type BybitClipMatchCreateManyIdexTransactionInput = {
+    id?: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchBybitReportId?: number | null
+    userId: number
+  }
+
   export type BybitMatchCreateManyIdexTransactionInput = {
     id?: number
     bybitTransactionId: number
@@ -68591,6 +85187,47 @@ export namespace Prisma {
     profitPercentage: number
     createdAt?: Date | string
     updatedAt: Date | string
+  }
+
+  export type BybitClipMatchUpdateWithoutIdexTransactionInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateOneWithoutBybitClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutBybitClipMatchNestedInput
+  }
+
+  export type BybitClipMatchUncheckedUpdateWithoutIdexTransactionInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type BybitClipMatchUncheckedUpdateManyWithoutIdexTransactionInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
   }
 
   export type BybitMatchUpdateWithoutIdexTransactionInput = {
@@ -69250,12 +85887,18 @@ export namespace Prisma {
     cardPouringId?: number | null
   }
 
-  export type BybitOrderInfoCreateManyUserInput = {
+  export type BybitClipMatchCreateManyUserInput = {
     id?: number
-    phoneNumbers?: BybitOrderInfoCreatephoneNumbersInput | string[]
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
     createdAt?: Date | string
     updatedAt: Date | string
-    orderNo: string
+    matchBybitReportId?: number | null
   }
 
   export type BybitTransactionCreateManyUserInput = {
@@ -69263,18 +85906,48 @@ export namespace Prisma {
     orderNo: string
     counterparty?: string | null
     status: string
-    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
-    lastAttemptError?: string | null
     createdAt?: Date | string
     updatedAt: Date | string
     amount: number
     asset: string
     dateTime: Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: boolean
     totalPrice: number
     type: string
     unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+  }
+
+  export type MatchBybitReportCreateManyUserInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
+  }
+
+  export type MatchViresReportCreateManyUserInput = {
+    id?: number
+    reportDate: Date | string
+    totalMatches: number
+    totalProfit: number
+    averageProfit: number
+    successRate: number
+    timeRangeStart: Date | string
+    timeRangeEnd: Date | string
+    notes?: string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt: Date | string
   }
 
   export type ReportNotificationCreateManyUserInput = {
@@ -69313,6 +85986,32 @@ export namespace Prisma {
     originalData?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt: Date | string
+  }
+
+  export type ViresCabinetCreateManyUserInput = {
+    id?: number
+    name?: string | null
+    login: string
+    password: string
+    type: $Enums.PasswordType
+    createdAt?: Date | string
+    updatedAt: Date | string
+    comment?: string | null
+    lastUpdate: Date | string
+  }
+
+  export type ViresClipMatchCreateManyUserInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    bybitTransactionId: number
   }
 
   export type WorkSessionCreateManyUserInput = {
@@ -69364,45 +86063,63 @@ export namespace Prisma {
     cardPouringId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type BybitOrderInfoUpdateWithoutUserInput = {
-    phoneNumbers?: BybitOrderInfoUpdatephoneNumbersInput | string[]
+  export type BybitClipMatchUpdateWithoutUserInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    orderNo?: StringFieldUpdateOperationsInput | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    IdexTransaction?: IdexTransactionUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateOneWithoutBybitClipMatchNestedInput
   }
 
-  export type BybitOrderInfoUncheckedUpdateWithoutUserInput = {
+  export type BybitClipMatchUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    phoneNumbers?: BybitOrderInfoUpdatephoneNumbersInput | string[]
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    orderNo?: StringFieldUpdateOperationsInput | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type BybitOrderInfoUncheckedUpdateManyWithoutUserInput = {
+  export type BybitClipMatchUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    phoneNumbers?: BybitOrderInfoUpdatephoneNumbersInput | string[]
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    orderNo?: StringFieldUpdateOperationsInput | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type BybitTransactionUpdateWithoutUserInput = {
     orderNo?: StringFieldUpdateOperationsInput | string
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     bybitMatch?: BybitMatchUpdateManyWithoutBybitTransactionNestedInput
   }
 
@@ -69411,18 +86128,18 @@ export namespace Prisma {
     orderNo?: StringFieldUpdateOperationsInput | string
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     bybitMatch?: BybitMatchUncheckedUpdateManyWithoutBybitTransactionNestedInput
   }
 
@@ -69431,18 +86148,110 @@ export namespace Prisma {
     orderNo?: StringFieldUpdateOperationsInput | string
     counterparty?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
-    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     amount?: FloatFieldUpdateOperationsInput | number
     asset?: StringFieldUpdateOperationsInput | string
     dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
     originalData?: NullableJsonNullValueInput | InputJsonValue
-    processed?: BoolFieldUpdateOperationsInput | boolean
     totalPrice?: FloatFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type MatchBybitReportUpdateWithoutUserInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutMatchBybitReportNestedInput
+  }
+
+  export type MatchBybitReportUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutMatchBybitReportNestedInput
+  }
+
+  export type MatchBybitReportUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MatchViresReportUpdateWithoutUserInput = {
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutMatchViresReportNestedInput
+  }
+
+  export type MatchViresReportUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutMatchViresReportNestedInput
+  }
+
+  export type MatchViresReportUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    reportDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalMatches?: IntFieldUpdateOperationsInput | number
+    totalProfit?: FloatFieldUpdateOperationsInput | number
+    averageProfit?: FloatFieldUpdateOperationsInput | number
+    successRate?: FloatFieldUpdateOperationsInput | number
+    timeRangeStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    timeRangeEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    idexCabinets?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ReportNotificationUpdateWithoutUserInput = {
@@ -69558,6 +86367,84 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type ViresCabinetUpdateWithoutUserInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    ViresTransactionPayin?: ViresTransactionPayinUpdateManyWithoutViresCabinetNestedInput
+  }
+
+  export type ViresCabinetUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    ViresTransactionPayin?: ViresTransactionPayinUncheckedUpdateManyWithoutViresCabinetNestedInput
+  }
+
+  export type ViresCabinetUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    login?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    type?: EnumPasswordTypeFieldUpdateOperationsInput | $Enums.PasswordType
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ViresClipMatchUpdateWithoutUserInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutViresClipMatchNestedInput
+    MatchViresReport?: MatchViresReportUpdateOneWithoutViresClipMatchNestedInput
+    ViresTransactionPayin?: ViresTransactionPayinUpdateOneRequiredWithoutViresClipMatchNestedInput
+  }
+
+  export type ViresClipMatchUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+  }
+
   export type WorkSessionUpdateWithoutUserInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -69610,6 +86497,468 @@ export namespace Prisma {
   export type WorkSessionIdexCabinetUncheckedUpdateManyWithoutWorkSessionInput = {
     idexCabinetId?: IntFieldUpdateOperationsInput | number
     assignedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BybitTransactionFromCabinetCreateManyBybitCabinetInput = {
+    id?: number
+    orderNo: string
+    counterparty?: string | null
+    status: string
+    createdAt?: Date | string
+    updatedAt: Date | string
+    amount: number
+    asset: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice: number
+    type: string
+    unitPrice: number
+    processed?: boolean
+    extractedPhones?: BybitTransactionFromCabinetCreateextractedPhonesInput | string[]
+    lastAttemptError?: string | null
+  }
+
+  export type BybitOrderInfoCreateManyCabinetInput = {
+    id?: number
+    phoneNumbers?: BybitOrderInfoCreatephoneNumbersInput | string[]
+    createdAt?: Date | string
+    updatedAt: Date | string
+    orderNo: string
+    dateTime: Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status: string
+    type: string
+    amount: number
+    totalPrice: number
+    processed?: boolean
+    unitPrice: number
+  }
+
+  export type BybitTransactionFromCabinetUpdateWithoutBybitCabinetInput = {
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitClipMatch?: BybitClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedUpdateWithoutBybitCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+    BybitClipMatch?: BybitClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetNestedInput
+  }
+
+  export type BybitTransactionFromCabinetUncheckedUpdateManyWithoutBybitCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    orderNo?: StringFieldUpdateOperationsInput | string
+    counterparty?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    asset?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    extractedPhones?: BybitTransactionFromCabinetUpdateextractedPhonesInput | string[]
+    lastAttemptError?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BybitOrderInfoUpdateWithoutCabinetInput = {
+    phoneNumbers?: BybitOrderInfoUpdatephoneNumbersInput | string[]
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    orderNo?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    amount?: IntFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type BybitOrderInfoUncheckedUpdateWithoutCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    phoneNumbers?: BybitOrderInfoUpdatephoneNumbersInput | string[]
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    orderNo?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    amount?: IntFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type BybitOrderInfoUncheckedUpdateManyWithoutCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    phoneNumbers?: BybitOrderInfoUpdatephoneNumbersInput | string[]
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    orderNo?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    originalData?: NullableJsonNullValueInput | InputJsonValue
+    status?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    amount?: IntFieldUpdateOperationsInput | number
+    totalPrice?: FloatFieldUpdateOperationsInput | number
+    processed?: BoolFieldUpdateOperationsInput | boolean
+    unitPrice?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type BybitClipMatchCreateManyBybitTransactionFromCabinetInput = {
+    id?: number
+    idexTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchBybitReportId?: number | null
+    userId: number
+  }
+
+  export type ViresClipMatchCreateManyBybitTransactionFromCabinetInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    userId: number
+  }
+
+  export type BybitClipMatchUpdateWithoutBybitTransactionFromCabinetInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    IdexTransaction?: IdexTransactionUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    MatchBybitReport?: MatchBybitReportUpdateOneWithoutBybitClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutBybitClipMatchNestedInput
+  }
+
+  export type BybitClipMatchUncheckedUpdateWithoutBybitTransactionFromCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type BybitClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchBybitReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresClipMatchUpdateWithoutBybitTransactionFromCabinetInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    MatchViresReport?: MatchViresReportUpdateOneWithoutViresClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutViresClipMatchNestedInput
+    ViresTransactionPayin?: ViresTransactionPayinUpdateOneRequiredWithoutViresClipMatchNestedInput
+  }
+
+  export type ViresClipMatchUncheckedUpdateWithoutBybitTransactionFromCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutBybitTransactionFromCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type BybitClipMatchCreateManyMatchBybitReportInput = {
+    id?: number
+    idexTransactionId: number
+    bybitTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId: number
+  }
+
+  export type BybitClipMatchUpdateWithoutMatchBybitReportInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    IdexTransaction?: IdexTransactionUpdateOneRequiredWithoutBybitClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutBybitClipMatchNestedInput
+  }
+
+  export type BybitClipMatchUncheckedUpdateWithoutMatchBybitReportInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type BybitClipMatchUncheckedUpdateManyWithoutMatchBybitReportInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    idexTransactionId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresClipMatchCreateManyMatchViresReportInput = {
+    id?: number
+    viresTransactionId: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    userId: number
+    bybitTransactionId: number
+  }
+
+  export type ViresClipMatchUpdateWithoutMatchViresReportInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutViresClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutViresClipMatchNestedInput
+    ViresTransactionPayin?: ViresTransactionPayinUpdateOneRequiredWithoutViresClipMatchNestedInput
+  }
+
+  export type ViresClipMatchUncheckedUpdateWithoutMatchViresReportInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutMatchViresReportInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    viresTransactionId?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresTransactionPayinCreateManyViresCabinetInput = {
+    id?: number
+    createdAt: Date | string
+    sum_rub: number
+    sum_usdt: number
+    card: string
+    fio: string
+    bank: string
+    uuid: string
+  }
+
+  export type ViresTransactionPayinUpdateWithoutViresCabinetInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+    ViresClipMatch?: ViresClipMatchUpdateManyWithoutViresTransactionPayinNestedInput
+  }
+
+  export type ViresTransactionPayinUncheckedUpdateWithoutViresCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+    ViresClipMatch?: ViresClipMatchUncheckedUpdateManyWithoutViresTransactionPayinNestedInput
+  }
+
+  export type ViresTransactionPayinUncheckedUpdateManyWithoutViresCabinetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sum_rub?: FloatFieldUpdateOperationsInput | number
+    sum_usdt?: FloatFieldUpdateOperationsInput | number
+    card?: StringFieldUpdateOperationsInput | string
+    fio?: StringFieldUpdateOperationsInput | string
+    bank?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ViresClipMatchCreateManyViresTransactionPayinInput = {
+    id?: number
+    timeDifference: number
+    grossExpense: number
+    grossIncome: number
+    grossProfit: number
+    profitPercentage: number
+    createdAt?: Date | string
+    updatedAt: Date | string
+    matchViresReportId?: number | null
+    userId: number
+    bybitTransactionId: number
+  }
+
+  export type ViresClipMatchUpdateWithoutViresTransactionPayinInput = {
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    BybitTransactionFromCabinet?: BybitTransactionFromCabinetUpdateOneRequiredWithoutViresClipMatchNestedInput
+    MatchViresReport?: MatchViresReportUpdateOneWithoutViresClipMatchNestedInput
+    User?: UserUpdateOneRequiredWithoutViresClipMatchNestedInput
+  }
+
+  export type ViresClipMatchUncheckedUpdateWithoutViresTransactionPayinInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ViresClipMatchUncheckedUpdateManyWithoutViresTransactionPayinInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    timeDifference?: IntFieldUpdateOperationsInput | number
+    grossExpense?: FloatFieldUpdateOperationsInput | number
+    grossIncome?: FloatFieldUpdateOperationsInput | number
+    grossProfit?: FloatFieldUpdateOperationsInput | number
+    profitPercentage?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    matchViresReportId?: NullableIntFieldUpdateOperationsInput | number | null
+    userId?: IntFieldUpdateOperationsInput | number
+    bybitTransactionId?: IntFieldUpdateOperationsInput | number
   }
 
 

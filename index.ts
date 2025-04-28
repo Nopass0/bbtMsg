@@ -1,530 +1,181 @@
-import { PrismaClient, type User } from './generated/prisma';
-import axios from 'axios';
+// src/bybitCabinetWorker.ts  (полная версия)
+import { PrismaClient, type BybitCabinet } from './generated/prisma';
+import axios, { AxiosError } from 'axios';
 import crypto from 'crypto';
-// import * as dotenv from 'dotenv';
-// dotenv.config(); // Example if using dotenv
 
 const prisma = new PrismaClient();
 
-// --- Configuration ---
-const POLL_INTERVAL_MS = 60 * 1000; // How often to check for new transactions
-const BATCH_SIZE = 10; // How many transactions to process in one go
-const DELAY_BETWEEN_REQUESTS_MS = 1000; // Delay between Bybit API requests
-const BYBIT_API_BASE_URL = 'https://api.bybit.com'; // Mainnet URL
-const RECV_WINDOW = 5000; // Standard receive window
-const DB_QUERY_RETRIES = 3; // Number of retries for the main DB query
-const DB_RETRY_DELAY_MS = 2000; // Delay between DB query retries
+/* ───────── конфигурация ───────── */
+const BYBIT = 'https://api.bybit.com';
+const RECV  = 5_000;
+const POLL  = 60_000;
+const PAGE  = 50;
+const CHAT_WAIT = 1_000;
+const DB_WAIT   = 2_000;
+const DB_RETRIES = 3;
+const PHONE_RE = /(?:(?:\+?7|8)[\s-]?)?(?:\(?\d{3}\)?[\s-]?)?\d{3}[\s-]?\d{2}[\s-]?\d{2}/g;
 
-// --- Phone Number Extraction ---
-const PHONE_REGEX = /(?:(?:\+?7|8)[- ]?)?(?:\(?\d{3}\)?[- ]?)?\d{3}[- ]?\d{2}[- ]?\d{2}/g;
+/* ───────── синхронизация времени ───────── */
+let Δ = 0;
+async function syncTime() {
+  const { data } = await axios.get(`${BYBIT}/v5/market/time`);
+  Δ = Math.floor(Number(data?.result?.timeNano ?? 0) / 1e6) - Date.now();
+  console.log(`⏱️  Time sync Δ=${Δ} ms`);
+}
+const ts = () => Date.now() + Δ;
 
-// Функция удалена, так как теперь мы используем прямое создание подписи
+/* ───────── утилиты ───────── */
+const hmac = (sec: string, str: string) => crypto.createHmac('sha256', sec).update(str).digest('hex');
+function headers(key: string, sec: string, body: object) {
+  const t = ts().toString(), b = JSON.stringify(body);
+  return {
+    'X-BAPI-API-KEY': key,
+    'X-BAPI-TIMESTAMP': t,
+    'X-BAPI-RECV-WINDOW': RECV.toString(),
+    'X-BAPI-SIGN': hmac(sec, `${t}${key}${RECV}${b}`),
+    'Content-Type': 'application/json'
+  };
+}
+const phones = (txt: string) => [...new Set(
+  (txt.match(PHONE_RE) ?? []).map(p => {
+    let d = p.replace(/\D/g, '');
+    if (d.length === 10) d = '+7' + d;
+    if (d.length === 11 && d.startsWith('8')) d = '+7' + d.slice(1);
+    return d.startsWith('+7') && d.length === 12 ? d : null;
+  }).filter(Boolean) as string[]
+)];
 
+const rc = (e: AxiosError | Error) => (e as AxiosError).response?.data?.ret_code ?? (e as AxiosError).response?.data?.retCode;
+const denied  = (e: AxiosError | Error) => /permission denied/i.test((e as Error).message) || [912000014,10005].includes(rc(e));
+const missOrd = (e: AxiosError | Error) => /Failed to retrieve order number/i.test((e as Error).message) || rc(e) === 912200165;
 
-// --- Real Bybit Chat History Fetching (Uses Per-User Keys) ---
-/**
- * Fetches the chat message history for a given Bybit P2P order using user-specific API keys.
- *
- * @param orderNo The Bybit order number (passed as orderId to the API)
- * @param apiKey The user's Bybit API Key (bybitApiToken)
- * @param apiSecret The user's Bybit API Secret (bybitApiSecret)
- * @returns Promise resolving to the concatenated text chat history
- */
-async function fetchOrderChatHistory(orderNo: string, apiKey: string, apiSecret: string): Promise<string> {
-    console.log(`-> Fetching real chat history for order: ${orderNo}`);
-    let allTextMessages = "";
-    let currentPage = 1;
-    const pageSize = 50;
-    let hasMorePages = true;
-    const endpoint = '/v5/p2p/order/message/listpage';
-    const url = `${BYBIT_API_BASE_URL}${endpoint}`;
-
-    if (!apiKey || !apiSecret) {
-        throw new Error(`API Key or Secret is missing for order ${orderNo} fetch.`);
-    }
-    
-    // Ensure time is synchronized
-    if (!timeSyncComplete) {
-        await syncTimeWithBybit();
-    }
-
-    while (hasMorePages) {
-        try {
-            console.log(`--> Fetching page ${currentPage} for order ${orderNo}...`);
-
-            // Get adjusted timestamp
-            const timestamp = getBybitTimestamp();
-            const params = {
-                orderId: orderNo,
-                size: pageSize.toString(),
-                currentPage: currentPage.toString(),
-            };
-            
-            // Create parameters string
-            const paramsString = JSON.stringify(params);
-            
-            // Create signature string
-            const signString = `${timestamp}${apiKey}${RECV_WINDOW}${paramsString}`;
-            
-            // Generate signature
-            const signature = crypto
-                .createHmac('sha256', apiSecret)
-                .update(signString)
-                .digest('hex');
-
-            // Set headers
-            const headers = {
-                'Content-Type': 'application/json',
-                'X-BAPI-API-KEY': apiKey,
-                'X-BAPI-TIMESTAMP': timestamp.toString(),
-                'X-BAPI-RECV-WINDOW': RECV_WINDOW.toString(),
-                'X-BAPI-SIGN': signature,
-            };
-
-            // Make API request
-            const response = await axios.post(url, params, { headers });
-
-            // Check if response is successful
-            if (response.data?.ret_code !== 0) {
-                 console.error(`Bybit API Error Response for order ${orderNo}, page ${currentPage}:`, JSON.stringify(response.data, null, 2));
-                 throw new Error(`Bybit API error: ${response.data?.ret_code} - ${response.data?.ret_msg || 'Unknown error'}`);
-            }
-
-            // Access the nested result
-            const messages = response.data?.result?.result as Array<any> || [];
-            const totalPages = parseInt(response.data?.result?.totalPages || '1');
-            
-            console.log(`    Got ${messages.length} messages from page ${currentPage}/${totalPages}`);
-            
-            // Extract text messages
-            if (messages.length > 0) {
-                 messages.forEach(msg => {
-                    if (msg.contentType === 'str' && (msg.msgType === 1 || msg.msgType === 5)) {
-                        // Add message text to our accumulated string
-                        allTextMessages += `${msg.message}\n`;
-                    }
-                });
-            }
-            
-            // Check if there are more pages to fetch
-            if (currentPage < totalPages) {
-                currentPage++;
-            } else {
-                hasMorePages = false;
-            }
-
-        } catch (error: any) {
-            if (axios.isAxiosError(error)) {
-                 console.error(`Axios error fetching chat history page ${currentPage} for order ${orderNo}:`, error.response?.data || error.message);
-            } else {
-                console.error(`Error fetching chat history page ${currentPage} for order ${orderNo}:`, error.message || error);
-            }
-            hasMorePages = false;
-            throw error;
-        }
-    }
-
-    return allTextMessages;
+/* ───────── API ───────── */
+async function listOrders(c: BybitCabinet) {
+  const body = { page:1, size:20, side:[0], status:[50] };          // Buy+Completed
+  const { data } = await axios.post(`${BYBIT}/v5/p2p/order/simplifyList`, body,
+                                    { headers: headers(c.bybitApiToken!, c.bybitApiSecret!, body) });
+  if (data?.ret_code ?? data?.retCode) throw new Error(`${data.ret_msg || data.retMsg}`);
+  return data.result?.items ?? [];
+}
+async function chat(orderNo: string, c: BybitCabinet) {
+  let page = 1, buf = '', more = true;
+  while (more) {
+    const body = { orderId: orderNo, size: PAGE, currentPage: page };
+    const { data } = await axios.post(`${BYBIT}/v5/p2p/order/message/listpage`, body,
+                                      { headers: headers(c.bybitApiToken!, c.bybitApiSecret!, body) });
+    if (data?.ret_code ?? data?.retCode) throw new Error(`${data.ret_msg || data.retMsg}`);
+    (data.result?.result ?? []).forEach((m: any) =>
+      m.contentType === 'str' && (m.msgType === 1 || m.msgType === 5) && (buf += `${m.message}\n`));
+    more = page++ < Number(data.result?.totalPages ?? 1);
+    if (more) await new Promise(r => setTimeout(r, CHAT_WAIT));
+  }
+  return buf;
 }
 
-// --- Extract phone numbers from a string using regex, normalize to +7 format, and deduplicate
-function extractPhoneNumbers(text: string): string[] {
-    const matches = text.match(PHONE_REGEX) || [];
-    
-    // Remove duplicates and normalize phone numbers to +7 format
-    return [...new Set(matches)].map(phone => {
-        // Format to +7XXXXXXXXXX standard format
-        let normalized = phone.replace(/[^0-9+]/g, '');
-        if (normalized.startsWith('8') && normalized.length === 11) {
-            normalized = '+7' + normalized.substring(1);
-        } else if (!normalized.startsWith('+') && normalized.length === 10) {
-            normalized = '+7' + normalized;
-        }
-        return normalized;
-    }).filter(phone => {
-        // Only keep valid phone numbers
-        return phone.match(/^\+7\d{10}$/) !== null;
-    });
-}
+/* ───────── сводка ───────── */
+interface Sum { ok:number; skip:number; add:number; upd:number; phone:number; chatErr:number; deny:number; other:number; }
+const newsum = ():Sum => ({ok:0,skip:0,add:0,upd:0,phone:0,chatErr:0,deny:0,other:0});
+const slog = (s:Sum) => console.log(`📊  OK ${s.ok} skip ${s.skip} | +${s.add}/upd ${s.upd} | phones ${s.phone} | chatErr ${s.chatErr} perm ${s.deny} other ${s.other}`);
 
-// Global variable to track time synchronization
-let globalTimeOffset = 0;
-let timeSyncComplete = false;
+/* ───────── запись ───────── */
+async function persist(c: BybitCabinet, it: any, ph: string[], s: Sum) {
+  const orderNo = it.orderNo ?? it.orderId ?? it.id;
+  const exists  = await prisma.bybitTransactionFromCabinet.findUnique({ where:{ orderNo } });
 
-/**
- * Synchronize time with Bybit server
- * This should be called before making authenticated requests
- */
-async function syncTimeWithBybit(): Promise<void> {
-    try {
-        // Call Bybit's time endpoint (this endpoint doesn't require authentication)
-        const response = await axios.get(`${BYBIT_API_BASE_URL}/v5/market/time`);
-        
-        if (response.data && response.data.result && response.data.result.timeNano) {
-            const serverTime = Math.floor(Number(response.data.result.timeNano) / 1000000);
-            const localTime = Date.now();
-            globalTimeOffset = serverTime - localTime;
-            
-            console.log(`Синхронизация времени с сервером Bybit. Смещение: ${globalTimeOffset}ms`);
-            timeSyncComplete = true;
-            return;
-        }
-        throw new Error('Неполный ответ от сервера Bybit при синхронизации времени');
-    } catch (error: any) {
-        console.error('Ошибка при синхронизации времени с сервером Bybit:', error.message);
-        globalTimeOffset = 0; // Reset offset on error
-        throw error;
+  /* --- BybitTransactionFromCabinet --- */
+  await prisma.bybitTransactionFromCabinet.upsert({
+    where: { orderNo },
+    create:{
+      orderNo, cabinetId: c.id,
+      status:String(it.status), type:'BUY',
+      counterparty: it.targetNickName,
+      asset:it.tokenId,
+      amount:+it.amount,
+      unitPrice:+it.price,
+      totalPrice:+it.price*+it.amount,
+      dateTime:new Date(+it.createDate),
+      originalData:it,
+      extractedPhones:ph,
+      processed:false,
+      createdAt:new Date(),
+      updatedAt:new Date()       // <<<<< FIX
+    },
+    update:{
+      status:String(it.status),
+      counterparty:it.targetNickName,
+      extractedPhones:ph,
+      updatedAt:new Date()
     }
+  });
+
+  /* --- BybitOrderInfo --- */
+  await prisma.bybitOrderInfo.upsert({
+    where:{ orderNo_bybitCabinetId:{ orderNo, bybitCabinetId:c.id } },
+    create:{
+      orderNo, bybitCabinetId:c.id,
+      phoneNumbers:ph,
+      dateTime:new Date(+it.createDate),
+      status:String(it.status), type:'BUY',
+      amount:Math.round(+it.amount),
+      unitPrice:+it.price,
+      totalPrice:+it.price*+it.amount,
+      originalData:it,
+      processed:false,
+      createdAt:new Date(),
+      updatedAt:new Date()       // <<<<< FIX
+    },
+    update:{ phoneNumbers:ph, updatedAt:new Date() }
+  });
+
+  ph.length && (s.phone += ph.length);
+  exists ? s.upd++ : s.add++;
 }
 
-/**
- * Get current timestamp adjusted for server time
- */
-function getBybitTimestamp(): number {
-    return Date.now() + globalTimeOffset;
-}
+/* ───────── кабинет ───────── */
+async function handle(c: BybitCabinet, s: Sum) {
+  try {
+    const list = await listOrders(c); s.ok++;
+    for (const it of list) {
+      const id = it.orderNo ?? it.orderId ?? it.id;
+      if (!id) { s.other++; continue; }
 
-/**
- * Fetches user's recent Buy transactions directly from Bybit API
- */
-async function fetchUserBuyTransactions(user: User): Promise<BybitTransaction[]> {
-    if (!user.bybitApiToken || !user.bybitApiSecret) {
-        throw new Error(`User ${user.id} missing API keys`);
+      try {
+        const txt = await chat(id, c);
+        await persist(c, it, phones(txt), s);
+        await new Promise(r => setTimeout(r, CHAT_WAIT));
+      } catch (e) {
+        missOrd(e as AxiosError) ? s.chatErr++ : s.other++;
+        console.warn(`⚠️  Order ${id}: ${(e as Error).message}`);
+      }
     }
-    
-    console.log(`Получение транзакций покупок для пользователя ${user.id}...`);
-    
-    try {
-        // Ensure time is synchronized first
-        if (!timeSyncComplete) {
-            await syncTimeWithBybit();
-        }
-        
-        // Create timestamp for API request
-        const timestamp = getBybitTimestamp();
-        const endpoint = '/v5/p2p/order/simplifyList';
-        
-        // Parameters for Bybit API request
-        // Important: API expects nullable values for optional parameters
-        const params = {
-            page: 1,
-            size: 20,
-            status: null,       // Make these null instead of arrays for optional params
-            beginTime: null,
-            endTime: null,
-            tokenId: null,
-            side: [0]           // 0 = Buy transactions
-        };
-        
-        // Convert params to JSON string
-        const paramsString = JSON.stringify(params);
-        
-        // Generate signature string (timestamp + apiKey + recvWindow + body)
-        const signString = `${timestamp}${user.bybitApiToken}${RECV_WINDOW}${paramsString}`;
-        
-        // Generate signature using HMAC-SHA256
-        const signature = crypto
-            .createHmac('sha256', user.bybitApiSecret)
-            .update(signString)
-            .digest('hex');
-        
-        // Set up request headers
-        const headers = {
-            'X-BAPI-API-KEY': user.bybitApiToken,
-            'X-BAPI-SIGN': signature,
-            'X-BAPI-TIMESTAMP': timestamp.toString(),
-            'X-BAPI-RECV-WINDOW': RECV_WINDOW.toString(),
-            'Content-Type': 'application/json'
-        };
-        
-        console.log('Request params:', paramsString);
-        console.log('Request URL:', `${BYBIT_API_BASE_URL}${endpoint}`);
-        
-        // Make API request
-        const response = await axios.post(
-            `${BYBIT_API_BASE_URL}${endpoint}`,
-            params, // Send params as object, not string
-            { headers }
-        );
-        
-        // Check if API request was successful
-        if (response.data?.ret_code !== 0) {
-            console.error(`Bybit API Error for user ${user.id}:`, JSON.stringify(response.data, null, 2));
-            throw new Error(`Bybit API error: ${response.data?.ret_code} - ${response.data?.ret_msg || 'Unknown error'}`);
-        }
-        
-        // Process and return transactions
-        const transactions = response.data?.result?.items || [];
-        
-        // Ensure these are Buy transactions (side=0) and Completed (status=50)
-        const buyTransactions = transactions.filter((tx: any) => 
-            tx.side === 0 && tx.status === 50
-        );
-        
-        console.log(`Найдено ${buyTransactions.length} транзакций покупок из ${transactions.length} всего для пользователя ${user.id}`);
-        
-        return buyTransactions;
-        
-    } catch (error: any) {
-        console.error(`Ошибка при получении транзакций для пользователя ${user.id}:`, error.message);
-        throw error;
-    }
+  } catch (e) {
+    denied(e as AxiosError) ? (s.deny++, s.skip++, console.warn(`⛔  Cabinet #${c.id} skipped — permission denied`))
+                            : (s.other++, console.error(`❌  Cabinet #${c.id}: ${(e as Error).message}`));
+  }
 }
 
-// --- Transaction Processing (Accepts User Keys) ---
-/**
- * Processes a single Buy transaction: fetches chat history using user's keys,
- * extracts phone numbers, and stores them in BybitOrderInfo.
- * 
- * @param transaction The BybitTransaction (Buy type) object from Prisma (must include user)
- * @param apiKey The user's Bybit API Key
- * @param apiSecret The user's Bybit API Secret
- */
-async function processTransaction(transaction: BybitTransaction & { user: User }, apiKey: string, apiSecret: string): Promise<void> {
-    console.log(`Обработка транзакции ПОКУПКИ ID: ${transaction.id}, orderNo: ${transaction.orderNo}, пользователь: ${transaction.user.id}`);
-    
-    try {
-        // Step 1: Extract chat history from Bybit
-        const chatHistory = await fetchOrderChatHistory(transaction.orderNo, apiKey, apiSecret);
-        console.log(`Получена история чата для orderNo: ${transaction.orderNo}, длина: ${chatHistory.length} символов`);
-        
-        // Step 2: Extract phone numbers
-        const phoneNumbers = extractPhoneNumbers(chatHistory);
-        
-        console.log(`Извлечено номеров телефонов: ${phoneNumbers.length} для orderNo: ${transaction.orderNo}`);
-        
-        if (phoneNumbers.length > 0) {
-            console.log(`Найдены номера: ${phoneNumbers.join(', ')}`);
-            
-            // Save to BybitOrderInfo
-            // Check if record exists for this orderNo
-            const existingInfo = await prisma.bybitOrderInfo.findFirst({
-                where: { 
-                    orderNo: transaction.orderNo,
-                },
-            });
-            
-            if (existingInfo) {
-                // Update existing record
-                await prisma.bybitOrderInfo.update({
-                    where: { id: existingInfo.id },
-                    data: {
-                        phoneNumbers: phoneNumbers,
-                        updatedAt: new Date()
-                    },
-                });
-                console.log(`Обновлена запись BybitOrderInfo ID: ${existingInfo.id} для заказа ${transaction.orderNo}`);
-            } else {
-                // Create new record
-                const orderInfo = await prisma.bybitOrderInfo.create({
-                    data: {
-                        orderNo: transaction.orderNo,
-                        phoneNumbers: phoneNumbers,
-                        updatedAt: new Date()
-                    },
-                });
-                console.log(`Создана запись BybitOrderInfo ID: ${orderInfo.id} для заказа ${transaction.orderNo}`);
-            }
-        } else {
-            console.log(`Номера телефонов не найдены в чате для заказа ${transaction.orderNo}`);
-        }
-
-        // Mark transaction as processed
-        await prisma.bybitTransaction.update({
-            where: { id: transaction.id },
-            data: {
-                processed: true,
-            },
+/* ───────── цикл ───────── */
+async function main() {
+  await syncTime();
+  while (true) {
+    const sum = newsum();
+    for (let i=1;;i++) {
+      try {
+        const cabs = await prisma.bybitCabinet.findMany({
+          where:{ bybitApiToken:{not:null}, bybitApiSecret:{not:null} }
         });
-
-        console.log(`Транзакция покупки ${transaction.id} успешно обработана.`);
-        
-    } catch (error: any) {
-        console.error(`Ошибка при обработке транзакции ${transaction.id}:`, error.message);
-        
-        // Mark transaction with error but don't set as processed
-        await prisma.bybitTransaction.update({
-            where: { id: transaction.id },
-            data: {
-                processed: false, // Keep as false to allow retry
-                lastAttemptError: error.message?.substring(0, 255) || 'Unknown error'
-            },
-        });
+        for (const c of cabs) await handle(c, sum);
+        break;
+      } catch (e) {
+        if (i>=DB_RETRIES) throw e;
+        console.error(`DB retry ${i}/${DB_RETRIES}`); await new Promise(r=>setTimeout(r,DB_WAIT));
+      }
     }
+    slog(sum);
+    await new Promise(r=>setTimeout(r,POLL));
+  }
 }
 
-/**
- * Process a single transaction directly from Bybit API response
- */
-async function processDirectTransaction(transaction: BybitTransaction, user: User): Promise<void> {
-    console.log(`Обработка транзакции ПОКУПКИ orderId: ${transaction.id}, пользователь: ${user.id}`);
-    
-    try {
-        // Extract chat history from Bybit
-        const chatHistory = await fetchOrderChatHistory(transaction.id, user.bybitApiToken!, user.bybitApiSecret!);
-        console.log(`Получена история чата для orderNo: ${transaction.id}, длина: ${chatHistory.length} символов`);
-        
-        // Extract phone numbers
-        const phoneNumbers = extractPhoneNumbers(chatHistory);
-        console.log(`Извлечено номеров телефонов: ${phoneNumbers.length} для orderNo: ${transaction.id}`);
-        
-        if (phoneNumbers.length > 0) {
-            console.log(`Найдены номера: ${phoneNumbers.join(', ')}`);
-            
-            // Save to BybitOrderInfo
-            const existingInfo = await prisma.bybitOrderInfo.findFirst({
-                where: { 
-                    orderNo: transaction.id,
-                    userId: user.id
-                },
-            });
-            
-            if (existingInfo) {
-                // Update existing record
-                await prisma.bybitOrderInfo.update({
-                    where: { id: existingInfo.id },
-                    data: {
-                        phoneNumbers: phoneNumbers,
-                        updatedAt: new Date()
-                    },
-                });
-                console.log(`Обновлена запись BybitOrderInfo ID: ${existingInfo.id} для заказа ${transaction.id}`);
-            } else {
-                // Create new record
-                const orderInfo = await prisma.bybitOrderInfo.create({
-                    data: {
-                        orderNo: transaction.id,
-                        userId: user.id,
-                        phoneNumbers: phoneNumbers,
-                        updatedAt: new Date(),
-                        createdAt: new Date()
-                    },
-                });
-                console.log(`Создана запись BybitOrderInfo ID: ${orderInfo.id} для заказа ${transaction.id}`);
-            }
-        } else {
-            console.log(`Номера телефонов не найдены в чате для заказа ${transaction.id}`);
-        }
-
-        console.log(`Транзакция покупки ${transaction.id} успешно обработана.`);
-        
-    } catch (error: any) {
-        console.error(`Ошибка при обработке транзакции ${transaction.id}:`, error.message);
-    }
-}
-
-// Interface for Bybit API transaction
-interface BybitTransaction {
-    id: string;        // В API Bybit это поле содержит ID заказа
-    side: number;      // 0 = Buy, 1 = Sell
-    status: number;    // 50 = Completed
-    targetNickName?: string;
-    tokenId: string;
-    amount: string;
-    price: string;
-    createDate: string;
-    [key: string]: any;
-}
-
-// --- Main Processing Loop ---
-async function mainProcessingLoop() {
-    console.log('Запуск цикла прямой обработки покупок Bybit...');
-    
-    try {
-        // Выполняем синхронизацию времени при запуске
-        await syncTimeWithBybit();
-        console.log('Успешная синхронизация времени с Bybit API');
-    } catch (error) {
-        console.error('Ошибка синхронизации времени. Продолжаем без синхронизации:', error);
-    }
-
-    while (true) { // Infinite loop, will be interrupted by SIGINT/SIGTERM
-        let users: User[] = [];
-        let dbQuerySuccess = false;
-        
-        // Retry loop for database query to get users with API keys
-        for (let attempt = 1; attempt <= DB_QUERY_RETRIES; attempt++) {
-            try {
-                // Query active users with API keys
-                users = await prisma.user.findMany({
-                    where: {
-                        isActive: true,
-                        bybitApiToken: { not: null, not: '' },
-                        bybitApiSecret: { not: null, not: '' }
-                    }
-                });
-                dbQuerySuccess = true; // Mark as successful if query completes
-                console.log(`Найдено ${users.length} активных пользователей с API ключами Bybit`);
-                break; // Exit retry loop on success
-            } catch (dbError: any) {
-                console.error(`Попытка ${attempt} запроса пользователей не удалась:`, dbError.message || dbError);
-                if (attempt < DB_QUERY_RETRIES) {
-                    console.log(`Ожидание ${DB_RETRY_DELAY_MS}ms перед повторной попыткой...`);
-                    await new Promise(resolve => setTimeout(resolve, DB_RETRY_DELAY_MS));
-                } else {
-                    console.error(`Запрос пользователей не удался после ${DB_QUERY_RETRIES} попыток. Пропускаем цикл.`);
-                }
-            }
-        }
-
-        // Only proceed if the database query was successful
-        if (dbQuerySuccess && users.length > 0) {
-            // Process each user
-            for (const user of users) {
-                try {
-                    console.log(`Обработка пользователя ID: ${user.id}`);
-                    
-                    // Get user's Bybit transactions directly from the API
-                    const buyTransactions = await fetchUserBuyTransactions(user);
-                    
-                    if (buyTransactions.length > 0) {
-                        console.log(`Найдено ${buyTransactions.length} транзакций покупок для пользователя ${user.id}`);
-                        
-                        // Process each transaction
-                        for (const transaction of buyTransactions) {
-                            try {
-                                // Process each transaction
-                                await processDirectTransaction(transaction, user);
-                                await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_REQUESTS_MS));
-                            } catch (txError: any) {
-                                console.error(`Ошибка обработки транзакции ${transaction.orderId} для пользователя ${user.id}:`, txError.message);
-                            }
-                        }
-                    } else {
-                        console.log(`Транзакции покупок не найдены для пользователя ${user.id}`);
-                    }
-                    
-                    // Wait between users to avoid API rate limits
-                    await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_REQUESTS_MS * 3));
-                    
-                } catch (userError: any) {
-                    console.error(`Ошибка обработки пользователя ${user.id}:`, userError.message);
-                }
-            }
-        } else {
-            console.log('Нет активных пользователей с API ключами Bybit');
-        }
-
-        // Wait before the next poll cycle
-        console.log(`Ожидание ${POLL_INTERVAL_MS / 1000} секунд перед следующей проверкой...`);
-        await new Promise(resolve => setTimeout(resolve, POLL_INTERVAL_MS));
-    }
-}
-
-// --- Graceful Shutdown ---
-async function shutdown() {
-    console.log('Disconnecting Prisma...');
-    await prisma.$disconnect();
-    console.log('Prisma disconnected. Exiting.');
-    process.exit(0);
-}
-
-process.on('SIGINT', shutdown);
-process.on('SIGTERM', shutdown);
-
-// --- Start the process ---
-mainProcessingLoop().catch(async (e) => {
-    console.error('Unhandled error in main processing loop:', e);
-    await prisma.$disconnect();
-    process.exit(1);
-});
+/* ───────── завершение ───────── */
+['SIGINT','SIGTERM'].forEach(sig=>process.on(sig as NodeJS.Signals, async ()=>{ await prisma.$disconnect(); process.exit(0); }));
+main().catch(async e=>{ console.error(e); await prisma.$disconnect(); process.exit(1); });
