@@ -55,6 +55,7 @@ async function listOrders(c: BybitCabinet) {
   const { data } = await axios.post(`${BYBIT}/v5/p2p/order/simplifyList`, body,
                                     { headers: headers(c.bybitApiToken!, c.bybitApiSecret!, body) });
   if (data?.ret_code ?? data?.retCode) throw new Error(`${data.ret_msg || data.retMsg}`);
+  console.log(data.result?.items)
   return data.result?.items ?? [];
 }
 async function chat(orderNo: string, c: BybitCabinet) {
@@ -80,33 +81,7 @@ const slog = (s:Sum) => console.log(`📊  OK ${s.ok} skip ${s.skip} | +${s.add}
 /* ───────── запись ───────── */
 async function persist(c: BybitCabinet, it: any, ph: string[], s: Sum) {
   const orderNo = it.orderNo ?? it.orderId ?? it.id;
-  const exists  = await prisma.bybitTransactionFromCabinet.findUnique({ where:{ orderNo } });
-
-  /* --- BybitTransactionFromCabinet --- */
-  await prisma.bybitTransactionFromCabinet.upsert({
-    where: { orderNo },
-    create:{
-      orderNo, cabinetId: c.id,
-      status:String(it.status), type:'BUY',
-      counterparty: it.targetNickName,
-      asset:it.tokenId,
-      amount:+it.amount,
-      unitPrice:+it.price,
-      totalPrice:+it.price*+it.amount,
-      dateTime:new Date(+it.createDate),
-      originalData:it,
-      extractedPhones:ph,
-      processed:false,
-      createdAt:new Date(),
-      updatedAt:new Date()       // <<<<< FIX
-    },
-    update:{
-      status:String(it.status),
-      counterparty:it.targetNickName,
-      extractedPhones:ph,
-      updatedAt:new Date()
-    }
-  });
+  const exists  = await prisma.bybitOrderInfo.findFirst({ where:{ orderNo } });
 
   /* --- BybitOrderInfo --- */
   await prisma.bybitOrderInfo.upsert({
