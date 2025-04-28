@@ -37,13 +37,19 @@ function headers(key: string, sec: string, body: object) {
   };
 }
 const phones = (txt: string) => [...new Set(
-  (txt.match(PHONE_RE) ?? []).map(p => {
-    let d = p.replace(/\D/g, '');
-    if (d.length === 10) d = '+7' + d;
-    if (d.length === 11 && d.startsWith('8')) d = '+7' + d.slice(1);
-    return d.startsWith('+7') && d.length === 12 ? d : null;
-  }).filter(Boolean) as string[]
-)];
+    (txt.match(PHONE_RE) ?? []).map(p => {
+      let d = p.replace(/\D/g, '');
+  
+      // 10 цифр: «926…» → «+7…»
+      if (d.length === 10) d = '+7' + d;
+  
+      // 11 цифр: «8…» или «7…» → «+7…»
+      if (d.length === 11 && /^[78]/.test(d)) d = '+7' + d.slice(1);
+  
+      return /^\+7\d{10}$/.test(d) ? d : null;   // финальная валидация
+    }).filter(Boolean) as string[]
+  )];
+  
 
 const rc = (e: AxiosError | Error) => (e as AxiosError).response?.data?.ret_code ?? (e as AxiosError).response?.data?.retCode;
 const denied  = (e: AxiosError | Error) => /permission denied/i.test((e as Error).message) || [912000014,10005].includes(rc(e));
